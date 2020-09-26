@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+
+  <meta name="description" content="根据北京大学shindou开设的《量子统计物理》第一章部分内容整理。 为方便起见，考虑二维膜的小振动，即$\phi(\vec x)&#x3D;z(x,y)$。拉氏量为 L(\phi,\dot\phi)&#x3D;\frac12\int\mathrm{d}^2\vec x\dot\phi(\vec x)^2-\frac12\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x&#39;K(\vec x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="场的量子化">
+<meta property="og:url" content="https://github.com/sakura-98/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/index.html">
+<meta property="og:site_name" content="Sakura&#39;s Blog">
+<meta property="og:description" content="根据北京大学shindou开设的《量子统计物理》第一章部分内容整理。 为方便起见，考虑二维膜的小振动，即$\phi(\vec x)&#x3D;z(x,y)$。拉氏量为 L(\phi,\dot\phi)&#x3D;\frac12\int\mathrm{d}^2\vec x\dot\phi(\vec x)^2-\frac12\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x&#39;K(\vec x">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-26T02:44:53.202Z">
+<meta property="article:author" content="Sakura">
+<meta property="article:tag" content="physics">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://github.com/sakura-98/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>场的量子化 | Sakura's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Sakura's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E9%87%8F%E8%A1%A8%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">动量表象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E9%87%8F%E5%AD%90%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">二次量子化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6%E4%B8%8E%E5%B9%B3%E7%A7%BB"><span class="nav-number">3.</span> <span class="nav-text">动量算符与平移</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sakura</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sakura-98" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sakura-98"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yzsu@pku.edu.cn" title="E-Mail → mailto:yzsu@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/sakura-98" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sakura">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sakura's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          场的量子化
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-24 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-24T00:00:00+08:00">2020-09-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/QSP/" itemprop="url" rel="index"><span itemprop="name">QSP</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>根据北京大学shindou开设的《量子统计物理》第一章部分内容整理。</p>
+<p>为方便起见，考虑二维膜的小振动，即$\phi(\vec x)=z(x,y)$。拉氏量为</p>
+<script type="math/tex; mode=display">L(\phi,\dot\phi)=\frac12\int\mathrm{d}^2\vec x\dot\phi(\vec x)^2-\frac12\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'K(\vec x-\vec x')\phi(\vec x)\phi(\vec x')</script><p>相应的广义动量为</p>
+<script type="math/tex; mode=display">\Pi(\vec x)=\frac{\delta L}{\delta\dot\phi(\vec x)}=\dot\phi(\vec x)</script><p>所以可以写出哈密顿量</p>
+<script type="math/tex; mode=display">\begin{aligned}&H(\vec \phi,\vec\Pi)=\int\mathrm{d}\vec x\dot\phi(\vec x)\Pi(\vec x)-L(\phi,\dot\phi(\phi,\Pi))\\
+&=\frac12\int\mathrm{d}^2\vec x\Pi(\vec x)^2+\frac12\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'K(\vec x-\vec x')\phi(\vec x)\phi(\vec x')\end{aligned}\tag{H.0}</script><p>正则量子化的程序为</p>
+<script type="math/tex; mode=display">[\phi(\vec x),\phi(\vec x')]=[\Pi(\vec x),\Pi(\vec x')]=0\\
+[\phi(\vec x),\Pi(\vec x')]=i\hbar\delta(\vec x-\vec x')\tag{C.0}</script><a id="more"></a>
+<h3 id="动量表象"><a href="#动量表象" class="headerlink" title="动量表象"></a>动量表象</h3><p>做法是将场算符和动量算符都做傅里叶变换。为了不引起歧义</p>
+<script type="math/tex; mode=display">\tilde\phi(\vec k)=\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x}\phi(\vec x)\\
+\tilde\Pi(\vec k)=\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x}\Pi(\vec x)</script><blockquote>
+<p>由于场算符和动量算符都是厄米算符</p>
+<script type="math/tex; mode=display">\tilde\phi^\dagger(\vec k)=\int\mathrm{d}\vec xe^{i\vec k\cdot\vec x}\phi(\vec x)=\tilde\phi(-\vec k)</script></blockquote>
+<p>将相互作用项也变换到动量表象</p>
+<script type="math/tex; mode=display">\omega^2(\vec k)=\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x} K(\vec x)</script><blockquote>
+<p>由于$K(\vec x)=K(-\vec x)$，所以</p>
+<script type="math/tex; mode=display">\omega^2(\vec k)=\int\mathrm{d}^2\vec x\frac{e^{-i\vec k\cdot\vec x}+e^{i\vec k\cdot\vec x}}{2}K(\vec x)=\int\mathrm{d}^2\vec x\cos(\vec k\cdot\vec x)K(\vec x)</script><p>所以可以得到$\omega^2(\vec k)\in\mathbb R$和$\omega^2(\vec k)=\omega^2(-\vec k)$<br>此处假定$\omega^2(\vec k)\ge0$</p>
+</blockquote>
+<p>则哈密顿量第二项化为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'K(\vec x-\vec x')\phi(\vec x)\phi(\vec x')\\
+=&\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\frac{\mathrm{d}^2\vec k_1}{(2\pi)^2}\frac{\mathrm{d}^2\vec k_2}{(2\pi)^2}\omega^2(\vec k)\phi(\vec k_1)\phi(\vec k_2)e^{i\vec k\cdot(\vec x-\vec x')+i\vec k_1\cdot\vec x+i\vec k_2\cdot\vec x'}\\
+=&\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\mathrm{d}^2\vec k_1\mathrm{d}^2\vec k_2\omega^2(\vec k)\phi(\vec k_1)\phi(\vec k_2)\delta(\vec k_1+\vec k)\delta(\vec k_2-\vec k)\\
+=&\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\omega^2(\vec k)\phi(-\vec k)\phi(\vec k)
+\end{aligned}</script><p>根据</p>
+<script type="math/tex; mode=display">\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x}\delta(\vec x)=1</script><p>第一项可以直接写出（略），因此哈密顿量为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+H(\phi,\Pi)&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\left[\Pi(-\vec k)\Pi(\vec k)+\omega^2(\vec k)\phi(-\vec k)\phi(\vec k)\right]\\
+&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\left[\Pi^\dagger(\vec k)\Pi(\vec k)+\omega^2(\vec k)\phi^\dagger(\vec k)\phi(\vec k)\right]\\
+\end{aligned}\tag{H.1}</script><p>trivial的对易关系有</p>
+<script type="math/tex; mode=display">[\phi(\vec k),\phi(\vec k')]=[\Pi(\vec k),\Pi(\vec k')]=0</script><p>不太trivial的为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+[\phi(\vec k),\pi(\vec k')]&=\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'e^{-i\vec k\cdot\vec x-i\vec k'\cdot\vec x'}[\phi(\vec x),\Pi(\vec x')]\\
+&=\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x-i\vec k'\cdot\vec x}i\hbar=i\hbar(2\pi)^2\delta(\vec k+\vec k')
+\end{aligned}\tag{C.1}</script><h3 id="二次量子化"><a href="#二次量子化" class="headerlink" title="二次量子化"></a>二次量子化</h3><p>根据(H.1)，构造</p>
+<script type="math/tex; mode=display">a(\vec k)=\frac1{\sqrt2}\left[\sqrt{\frac{\omega(\vec k)}\hbar}\phi(\vec k)+\frac i{\sqrt{\omega(\vec k)\hbar}}\Pi(\vec k)\right]</script><p>其厄米共轭为</p>
+<script type="math/tex; mode=display">a^\dagger(\vec k)=\frac1{\sqrt2}\left[\sqrt{\frac{\omega(\vec k)}\hbar}\phi(-\vec k)-\frac i{\sqrt{\omega(\vec k)\hbar}}\Pi(-\vec k)\right]</script><p>逆变换为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\phi(\vec k)&=\frac1{\sqrt2}\sqrt\frac\hbar{\omega(\vec k)}\left[a(\vec k)+a^\dagger(-\vec k)\right]\\
+\Pi(\vec k)&=\frac{-i}{\sqrt2}\sqrt{\hbar\omega(\vec k)}\left[a(\vec k)-a^\dagger(-\vec k)\right]\\
+\end{aligned}</script><p>代入(H.1)为</p>
+<script type="math/tex; mode=display">\begin{aligned}H&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\hbar\omega(\vec k)\left[a(-\vec k)a^\dagger(-\vec k)+a^\dagger(\vec k)a(\vec k)\right]\\
+&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\hbar\omega(\vec k)\left[a(\vec k)a^\dagger(\vec k)+a^\dagger(\vec k)a(\vec k)\right]
+\end{aligned}\tag{H.2}</script><p>第二个等号来自$\omega(\vec k)=\omega(-\vec k)$<br>同样，考察$a,a^\dagger$的对易关系</p>
+<script type="math/tex; mode=display">[a(\vec k),a^\dagger(\vec k')]=\frac1{2\hbar}\left[-i\sqrt{\frac{\omega(\vec k)}{\omega(\vec k')}}[\phi(\vec k,\Pi(-\vec k')]\right.\\\left.-i\sqrt{\frac{\omega(\vec k')}{\omega(\vec k)}}[\phi(-\vec k'),\Pi(\vec k)]\right]=(2\pi)^2\delta(\vec k-\vec k')\tag{C.2}</script><script type="math/tex; mode=display">[a(\vec k),a(\vec k')]=\frac i{2\hbar}\left[\sqrt{\frac{\omega(\vec k)}{\omega(\vec k')}}[\phi(\vec k),\Pi(\vec k')]\right.\\\left.+\sqrt{\frac{\omega(\vec k')}{\omega(\vec k)}}[\Pi(\vec k),\phi(\vec k')]\right]=0</script><p>利用(C.2)可以将(H.2)写为更熟悉的形式</p>
+<script type="math/tex; mode=display">H=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\hbar\omega(\vec k)\left[a^\dagger(\vec k)a(\vec k)+\frac{(2\pi)^2}2\right]</script><h3 id="动量算符与平移"><a href="#动量算符与平移" class="headerlink" title="动量算符与平移"></a>动量算符与平移</h3><p>定义算符</p>
+<script type="math/tex; mode=display">\vec P=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\hbar\vec ka^\dagger(\vec k)a(\vec k)</script><p>它显然满足</p>
+<script type="math/tex; mode=display">[\vec P,a^\dagger(\vec k)]=\hbar\vec ka^\dagger(\vec k),[\vec P,a(\vec k)]=-\hbar\vec ka^\dagger(\vec k)</script><p>所以作用在某个量子态$|K\rangle=|k_1,\cdots k_n\rangle$上时</p>
+<script type="math/tex; mode=display">\begin{aligned}\vec P|K\rangle=&\vec Pa^\dagger(k_1)\cdots a^\dagger(k_n)|vac\rangle\\
+=&\hbar\vec k_1|K\rangle+a^\dagger(k_1)\vec Pa^\dagger(k_2)\cdots a^\dagger(k_n)|vac\rangle\\
+=&\cdots=\hbar(\vec k_1+\cdots\vec k_n)|K\rangle
+\end{aligned}</script><p>这说明$\vec P$的意义是总动量。<br><strong>接下来说明$\vec P$的第二个物理意义，即平移</strong><br>计算$[\vec P,\phi(\vec x)]$，首先需要将坐标表象波函数用二次量子化表象表示出来</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\phi(\vec x)&=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}e^{i\vec k\cdot\vec x}\phi(\vec k)\\
+&=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\frac1{\sqrt2}\sqrt\frac\hbar{\omega(\vec k)}e^{i\vec k\cdot\vec x}\left[a(\vec k)+a^\dagger(-\vec k)\right]\\
+&=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\frac1{\sqrt2}\sqrt\frac\hbar{\omega(\vec k)}\left[a(\vec k)e^{i\vec k\cdot\vec x}+a^\dagger(\vec k)e^{-i\vec k\cdot\vec x}\right]\\
+\end{aligned}</script><p>所以</p>
+<script type="math/tex; mode=display">[\vec P,\phi(\vec x)]=i\hbar\nabla\phi(\vec x)</script><p>定义一个辅助函数</p>
+<script type="math/tex; mode=display">f(\vec x,\vec y)=e^{\vec y\cdot\vec P/i\hbar}\phi(\vec x)e^{-\vec y\cdot\vec P/i\hbar}</script><p>对$\vec y$求偏导</p>
+<script type="math/tex; mode=display">\nabla_yf(\vec x,\vec y)=\frac{1}{i\hbar}e^{\vec y\cdot\vec P/i\hbar}[\vec P,\phi(\vec x)]e^{-\vec y\cdot\vec P/i\hbar}=\nabla_xf(\vec x,\vec y)</script><p>所以$f(\vec x,\vec y)=f(\vec x-\vec y)$，又因为$f(\vec x,\vec 0)=\phi(\vec x)$，所以</p>
+<script type="math/tex; mode=display">e^{\vec y\cdot\vec P/i\hbar}\phi(\vec x)e^{-\vec y\cdot\vec P/i\hbar}=\phi(\vec x-\vec y)</script>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/physics/" rel="tag"># physics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/" rel="prev" title="链接颜色变化">
+                  <i class="fa fa-chevron-left"></i> 链接颜色变化
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/09/25/%E6%A0%87%E9%87%8F%E5%9C%BA%E7%90%86%E8%AE%BA/" rel="next" title="标量场理论">
+                  标量场理论 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MIT</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.15.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+    <div class="pjax">
+  
+
+  
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+    </div>
+</body>
+</html>
