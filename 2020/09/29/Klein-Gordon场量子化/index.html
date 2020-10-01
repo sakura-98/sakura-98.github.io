@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+
+  <meta name="description" content="Klein-Gordon方程为 \left(-\partial^2+\omega_0^2\right)\psi&#x3D;0\tag{1}在之前的文章中已经给出对易关系 [\phi(x),\phi(y)]&#x3D;c_+\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac1{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Klein-Gordon场量子化">
+<meta property="og:url" content="https://github.com/sakura-98/2020/09/29/Klein-Gordon%E5%9C%BA%E9%87%8F%E5%AD%90%E5%8C%96/index.html">
+<meta property="og:site_name" content="Sakura&#39;s Blog">
+<meta property="og:description" content="Klein-Gordon方程为 \left(-\partial^2+\omega_0^2\right)\psi&#x3D;0\tag{1}在之前的文章中已经给出对易关系 [\phi(x),\phi(y)]&#x3D;c_+\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac1{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-10-01T09:55:03.686Z">
+<meta property="article:author" content="Sakura">
+<meta property="article:tag" content="physics">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://github.com/sakura-98/2020/09/29/Klein-Gordon%E5%9C%BA%E9%87%8F%E5%AD%90%E5%8C%96/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Klein-Gordon场量子化 | Sakura's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Sakura's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97-c"><span class="nav-number">1.</span> <span class="nav-text">计算$c_+$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E7%9A%84%E5%9B%9B%E7%9F%A2%E9%87%8F%EF%BC%884-%E5%8A%A8%E9%87%8F%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">哈密顿量的四矢量（4-动量）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E9%87%8F%E5%AD%90%E5%8C%96%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%8F%98%E6%8D%A2%E5%88%B0%E5%8A%A8%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="nav-number">3.</span> <span class="nav-text">二次量子化第一步：变换到动量空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E9%87%8F%E5%AD%90%E5%8C%96%EF%BC%9A%E6%8E%A2%E7%B4%A2-a-a-dagger-%E7%9A%84%E7%89%A9%E7%90%86%E6%84%8F%E4%B9%89"><span class="nav-number">4.</span> <span class="nav-text">二次量子化：探索$a,a^\dagger$的物理意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%8A%A8%E9%87%8F%E7%9A%84%E4%BA%8C%E6%AC%A1%E9%87%8F%E5%AD%90%E5%8C%96"><span class="nav-number">5.</span> <span class="nav-text">4-动量的二次量子化</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sakura</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sakura-98" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sakura-98"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yzsu@pku.edu.cn" title="E-Mail → mailto:yzsu@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/sakura-98" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/09/29/Klein-Gordon%E5%9C%BA%E9%87%8F%E5%AD%90%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sakura">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sakura's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Klein-Gordon场量子化
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-29 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-29T00:00:00+08:00">2020-09-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/QFT/" itemprop="url" rel="index"><span itemprop="name">QFT</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Klein-Gordon方程为</p>
+<script type="math/tex; mode=display">\left(-\partial^2+\omega_0^2\right)\psi=0\tag{1}</script><p>在<a href="/2020/09/25/标量场理论">之前的文章</a>中已经给出对易关系</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac1{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{2}</script><p>其中</p>
+<script type="math/tex; mode=display">\omega_{\vec k}=\sqrt{\vec k^2+\omega_0^2}\tag{3}</script><p>我们不加证明地认为</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]\tag{4}</script><p>其中$\tau=\sqrt{-(x-y)^2}$。我们将从此处继续完成Klein-Gordon场的量子化。<br><a id="more"></a></p>
+<h3 id="计算-c"><a href="#计算-c" class="headerlink" title="计算$c_+$"></a>计算$c_+$</h3><p>因为场算符是厄米的，所以（第二个等号用到厄米性）</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(y)]^*=[\phi^\dagger(y),\phi^\dagger(x)]=[\phi(y),\phi(x)]=-[\phi(x),\phi(y)]</script><p>最后一步仅仅用到对易子的定义。所以</p>
+<script type="math/tex; mode=display">C^*(x)=-C(x)</script><p>根据(4)可知$c_+\in\mathbb R$。又因为场算符可以任意伸缩，只需要伸缩量为实数以保持厄米性，所以可以另$c_+=\pm1$。</p>
+<p>接下来要计算到底是哪一个，工具是利用哈密顿量有下界。首先我们有</p>
+<script type="math/tex; mode=display">[\phi(t,\vec x),\phi(t,\vec y)]\equiv 0\tag{5}</script><p>当$\vec x=\vec y$时是显然的，否则是因为类空。进一步可以计算</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&[\phi(t,\vec x),\dot\phi(t,\vec y)]\\
+=&\lim_{\epsilon\rightarrow0}\left[\phi(t,\vec x),\frac1\epsilon(\phi(t+\epsilon,\vec y)-\phi(t,\vec y))\right]\\
+=&\lim_{\epsilon\rightarrow0}\frac1\epsilon[\phi(t,\vec x),\phi(t+\epsilon,\vec y)]\\
+=&\lim_{\epsilon\rightarrow0}\frac{c_+}\epsilon\mathrm{sign}(-\epsilon)\left[i\omega_0\theta(\epsilon^2-|\vec x-\vec y|^2)\frac{J_1(\omega_0\sqrt{\epsilon^2-|\vec x-\vec y|^2})}{4\pi\sqrt{\epsilon^2-|\vec x-\vec y|^2}}-\frac i{2\pi}\delta(\epsilon^2-|\vec x-\vec y|^2)\right]
+\end{aligned}\tag{6}</script><p>当$\vec x-\vec y\neq\vec 0$时，只需$|\epsilon|&lt;|\vec x-\vec y|$即可得到$\theta,\delta$函数均为$0$，所以$[\phi(t,\vec x),\dot\phi(t,\vec y)]\propto\delta(\vec x-\vec y)$。</p>
+<p>(6)式第一项中的$J_1(x)=\frac x2-\frac{x^3}{16}+o(x^5)$，所以对$\vec x$积分后领头阶为$\epsilon^3$，在趋于零的时候贡献为$0$。所以对$\vec x$全空间积分为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\int[\phi(t,\vec x),\dot\phi(t,\vec y)]\mathrm{d}^3\vec x=&\lim_{\epsilon\rightarrow0}-\frac{ic_+}{2\pi\epsilon}\mathrm{sign}(-\epsilon)\int\mathrm{d}^3\vec x\ \delta(\epsilon^2-|\vec x-\vec y|^2)\\
+=&\lim_{\epsilon\rightarrow0}-\frac{ic_+}{2\pi\epsilon}\mathrm{sign}(-\epsilon)\int_0^\infty 4\pi r^2\mathrm{d}r\delta(\epsilon^2-r^2)\\
+=&\lim_{\epsilon\rightarrow0}-\frac{ic_+}{2\pi\epsilon}\mathrm{sign}(-\epsilon)\int_0^\infty 4\pi r^2\mathrm{d}r\frac{1}{2|\epsilon|}\delta(\epsilon-r)\\
+=&ic_+
+\end{aligned}</script><p>最后一步是注意到符号函数。因此</p>
+<script type="math/tex; mode=display">\left\{\begin{array}{l}
+[\phi(t,\vec x),\dot\phi(t,\vec y)]=ic_+\delta(\vec x-\vec y)\\
+[\phi(t,\vec x),\phi(t,\vec y)]=0
+\end{array}\right.\tag{8}</script><p>根据Heisenberg绘景下的运动方程</p>
+<script type="math/tex; mode=display">i\dot\phi(x)=[\phi(x),\hat H]\Rightarrow i\ddot\phi(x)=[\dot\phi(x),\hat x]\tag{9}</script><p>再根据Klein-Gordon方程</p>
+<script type="math/tex; mode=display">(-\partial^2+\omega_0^2)\phi=0\Rightarrow[\dot\phi(x),\hat H]=i(\nabla^2\phi-\omega_0^2\phi)\tag{10}</script><p>利用(9)“推出”符号左边的等式猜测$\hat H$中有$\frac{1}{2c_+}\int\mathrm{d}^3\vec y\ \dot\phi^2(t,\vec y)$项，再利用(10)“推出”符号右边的等式猜测</p>
+<script type="math/tex; mode=display">\hat H=\frac{1}{2c_+}\int\mathrm{d}^3\vec x\left[\dot\phi^2+(\nabla\phi)^2+\omega_0^2\phi^2\right]\tag{11}</script><p>验证(10)式如下:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&[\dot\phi(x),\hat H]=\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2+\omega_0^2\phi^2(\vec y)]\\
+=&\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2]+\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),\omega_0^2\phi^2(\vec y)]\\
+=&\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2]+\frac1{c_+}\int\mathrm{d}^3\vec y\ [-ic_+\delta(\vec x-\vec y)]\omega^2_0\phi(\vec y)\\
+=&\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2]-i\omega^2_0\phi(\vec x)\\
+=&\frac1{2c_+}\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y)[\dot\phi(x),\nabla_{\vec y}\phi(\vec y)]\\
+ &+\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),\nabla_{\vec y}\phi(\vec y)]\nabla_{\vec y}\phi(\vec y)-i\omega_0^2\phi(\vec x)\\
+=&\frac1{c_+}\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y)\nabla_{\vec y}[-ic_+\delta(\vec x-\vec y)]-i\omega_0^2\phi(\vec x)\\
+=&-i\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y)\nabla_{\vec y}\delta(\vec x-\vec y)-i\omega_0^2\phi(\vec x)\\
+=&i\int\mathrm{d}^3\vec y\ \delta(\vec x-\vec y)\nabla^2_{\vec y}\phi(\vec y)-i\omega_0^2\phi(\vec x)\\
+=&i\nabla^2_{\vec x}\phi(\vec x)-i\omega_0^2\phi(\vec x)\\
+\end{aligned}</script><p>根据哈密顿有有下界可知$c_+=1$，因为积分内明显是正定的。</p>
+<blockquote>
+<p>还有一个小问题，这里没计算$[\dot\phi(t,\vec x),\dot\phi(t,\vec y)]$<br>不过可以将(11)式$\dot\phi\rightarrow\pi$认为是逻辑起点，正如大多数教材都从拉格朗日量出发。</p>
+</blockquote>
+<h3 id="哈密顿量的四矢量（4-动量）"><a href="#哈密顿量的四矢量（4-动量）" class="headerlink" title="哈密顿量的四矢量（4-动量）"></a>哈密顿量的四矢量（4-动量）</h3><p>(9)式写成四矢量的形式为下式的$0$分量</p>
+<script type="math/tex; mode=display">i\partial^\mu\phi(x)=[P^\mu,\phi(x)],i\partial^\mu\dot\phi(x)=[P^\mu,\dot\phi(x)]\tag{12}</script><p>猜测</p>
+<script type="math/tex; mode=display">\vec P=-\int\mathrm{d}^3\vec y\ \dot\phi(\vec y)\nabla_{\vec y}\phi(\vec y)\tag{13}</script><p>验证(12)左式</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&[P^\mathrm i,\phi(x)]=-\int\mathrm d^3\vec y\ [\dot\phi(\vec y),\phi(x)]\partial^\mathrm i_{\vec y}\phi(\vec y)\\
+=&-\int\mathrm d^3\vec y\ [-i\delta(\vec x-\vec y)]\partial^\mathrm i_{\vec y}\phi(\vec y)\\
+=&i\partial^\mathrm i\phi(\vec x)
+\end{aligned}</script><h3 id="二次量子化第一步：变换到动量空间"><a href="#二次量子化第一步：变换到动量空间" class="headerlink" title="二次量子化第一步：变换到动量空间"></a>二次量子化第一步：变换到动量空间</h3><p>定义</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\tilde\phi(k)=\int\mathrm d^4x\ e^{-ik\cdot x}\phi(x)\\
+&\phi(x)=\int\frac{\mathrm d^4k}{(2\pi)^4}\ e^{ik\cdot x}\tilde\phi(k)\\
+\end{aligned}\right.\tag{14}</script><p>则Klein-Gordon方程变为</p>
+<script type="math/tex; mode=display">(k^2+\omega_0^2)\tilde\phi(k)=0\tag{15}</script><p>厄米性条件变为</p>
+<script type="math/tex; mode=display">\tilde\phi^\dagger(k)=\int\mathrm d^4x\ e^{ik\cdot x}\phi^\dagger(x)=\tilde\phi(-k)\tag{16}</script><p>根据(15)式，满足Lorentz不变性的非平庸解为</p>
+<script type="math/tex; mode=display">\tilde\phi(k)=2\pi\delta(k^2+\omega_0^2)\left[a(\vec k)\theta(k^0)+a^\dagger(-\vec k)\theta(-k^0)\right]\tag{17}</script><p>此处仅假设了$k^0&gt;0$；至于$k^0&lt;0$时，利用了(16)式$\tilde\phi(k)=\tilde\phi^\dagger(-k)=2\pi\delta(k^2+\omega_0^2)a^\dagger(-\vec k)$</p>
+<blockquote>
+<script type="math/tex; mode=display">\begin{aligned}&[H,\tilde\phi(k)]=\int\mathrm d^4x\ e^{-ik\cdot x}[H,\phi(x)]\\
+=&\int\mathrm d^4x\ e^{-ik\cdot x}[-i\dot\phi(x)]\\
+=&-i\int\mathrm d^3\vec x\ e^{-i\vec k\cdot\vec x}\int\mathrm dt\ e^{i\omega_{\vec k}t}\dot\phi(x)\\
+=&i\int\mathrm d^3\vec x\ e^{-i\vec k\cdot\vec x}\int\mathrm{d}t\ i\omega_{\vec k}\phi(x)e^{i\omega_{\vec k}t}=-\omega_{\vec k}\tilde\phi(k)\end{aligned}</script><p>所以$H\tilde\phi(k)|E\rangle=(E-\omega_{\vec k})\tilde\phi(k)|E\rangle$，即$k^0=\omega_{\vec k}&gt;0$处$\tilde\phi(k)$为湮灭算符，$k^0&lt;0$处为产生算符</p>
+</blockquote>
+<p>对易关系为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&[\tilde\phi(k),\tilde\phi(l)]=\int\mathrm{d}^4x\mathrm{d}^4y\ e^{-ik\cdot x-il\cdot y}[\phi(x),\phi(y)]\\
+=&\int\mathrm{d}^4x\mathrm{d}^4y\ e^{-ik\cdot x-il\cdot y}\int\frac{\mathrm{d}k'}{(2\pi)^4}\ e^{ik'\cdot(x-y)}2\pi\delta(k'^2+\omega_0^2)\mathrm{sign}(k'^0)\\
+=&(2\pi)^4\int\mathrm{d}k'\ \delta(k'-k)\delta(k'+l)2\pi\delta(k'^2+\omega_0^2)\mathrm{sign}(k'^0)\\
+=&(2\pi)^4\delta(k+l)2\pi\delta(k^2+\omega_0^2)\mathrm{sign}(k^0)\\
+\end{aligned}\tag{18}</script><h3 id="二次量子化：探索-a-a-dagger-的物理意义"><a href="#二次量子化：探索-a-a-dagger-的物理意义" class="headerlink" title="二次量子化：探索$a,a^\dagger$的物理意义"></a>二次量子化：探索$a,a^\dagger$的物理意义</h3><p>利用(17)式可将场算符写为</p>
+<script type="math/tex; mode=display">\phi(x)=\int\frac{\mathrm d^4k}{(2\pi)^4}\ e^{ik\cdot x}2\pi\delta(k^2+\omega_0^2)\left[a(\vec k)\theta(k^0)+a^\dagger(-\vec k)\theta(-k^0)\right]</script><p>同样对$k^0$积分后为</p>
+<script type="math/tex; mode=display">\begin{aligned}\phi(x)=&\int\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}\ e^{i\vec k\cdot\vec x}\left[a(\vec k)e^{-i\omega_{\vec k}t}+a^\dagger(-\vec k)e^{i\omega_{\vec k}t}\right]\\
+=&\int\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}\ \left[a(\vec k)e^{ik\cdot x}+a^\dagger(\vec k)e^{-ik\cdot x}\right]\end{aligned}\tag{19}</script><p>为了反解出$a(\vec k)$，我们计算</p>
+<script type="math/tex; mode=display">\left[\omega_{\vec k}+i\frac{\partial}{\partial t}\right]e^{i\xi k\cdot x}=\left[\omega_{\vec k}+\xi k^0\right]e^{i\xi k\cdot x}=(1+\xi)\omega_{\vec k}e^{ik\cdot x}</script><p>所以作用在$\phi(x)$上后$a^\dagger$的贡献消失，$a$的贡献与分母恰好约掉，即</p>
+<script type="math/tex; mode=display">\left[\omega_{\vec k}+i\frac{\partial}{\partial t}\right]\phi(x)=\int\frac{\mathrm d^3\vec k}{(2\pi)^3}a(\vec k)e^{ik\cdot x}</script><p>所以两边同时乘上$e^{i\omega_{\vec k}t}$后做傅里叶变换</p>
+<script type="math/tex; mode=display">\begin{aligned}a(\vec k)=&\int\mathrm{d}^3\vec k\ e^{i\omega_{\vec k}t-i\vec k\cdot\vec x}\left[\omega_{\vec k}+i\frac{\partial}{\partial t}\right]\phi(x)\\
+=&\int\mathrm{d}^3\vec k\ e^{-ik\cdot x}\left[\omega_{\vec k}+i\frac{\partial}{\partial t}\right]\phi(x)\end{aligned}\tag{20}</script><p>另一方面，(17)式对$k^0$积分得</p>
+<script type="math/tex; mode=display">\int_0^\infty\mathrm{d}k^0\ \tilde\phi(k)=\frac{2\pi}{2\omega_{\vec k}}a(\vec k)</script><p>同理可得</p>
+<script type="math/tex; mode=display">a^\dagger(\vec k)=\frac{\omega_{\vec k}}\pi\int_0^\infty\mathrm dk^0\tilde\phi(-k)</script><p>所以对易关系为</p>
+<script type="math/tex; mode=display">
+\left\{\begin{aligned}[a(\vec k),a(\vec l)]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(k),\tilde\phi(l)]=0\\
+[a^\dagger(\vec k),a^\dagger(\vec l)]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(-k),\tilde\phi(-l)]=0\\
+[a(\vec k),a^\dagger(\vec l)]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(k),\tilde\phi(-l)]\\
+&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ (2\pi)^4\delta(k-l)2\pi\delta(k^2+\omega_0^2)\mathrm{sign}(k^0)\\
+&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\ (2\pi)^4\delta(\vec k-\vec l)2\pi\delta(k^2+\omega_0^2)\\
+&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}(2\pi)^4\delta(\vec k-\vec l)2\pi\frac{1}{2\omega_{\vec k}}=(2\pi)^32\omega_{\vec k}\delta(\vec k-\vec l)
+\end{aligned}\right.\tag{21}</script><p>至此二次量子化完毕，只需升降算符的对易关系满足(21)式，且场算符为</p>
+<script type="math/tex; mode=display">\tilde\phi(k)=\int\frac{\mathrm{d}^3\vec k}{(2\pi)^32\omega_{\vec k}}\left[a(\vec k)e^{ik\cdot x}+a^\dagger(\vec k)e^{-ik\cdot x}\right]\tag{22}</script><h3 id="4-动量的二次量子化"><a href="#4-动量的二次量子化" class="headerlink" title="4-动量的二次量子化"></a>4-动量的二次量子化</h3><p>进一步，4-动量(11)式和(13)式用升降算符表示（即将(19)式代入）。为此，先计算其导数$\dot\phi,\nabla\phi$。简记$\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}=\tilde{\mathrm dk}$</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+\phi(x)&=\int\tilde{\mathrm dk}\ \left[a(\vec k)e^{ik\cdot x}+a^\dagger(\vec k)e^{-ik\cdot x}\right]\\
+\dot\phi(x)&=\int\tilde{\mathrm dk}\ (-i\omega_{\vec k})\left[a(\vec k)e^{ik\cdot x}-a^\dagger(\vec k)e^{-ik\cdot x}\right]\\
+\nabla\phi(x)&=\int\tilde{\mathrm dk}\ i\vec k\left[a(\vec k)e^{ik\cdot x}-a^\dagger(\vec k)e^{-ik\cdot x}\right]\\
+\end{aligned}\right.\tag{23}</script><p>4-动量的空间部分仅有一项，先行计算</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\vec P=-\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)e^{ik\cdot x}-a^\dagger(\vec k)e^{-ik\cdot x}\right]
+\left[a(\vec k')e^{ik'\cdot x}-a^\dagger(\vec k')e^{-ik'\cdot x}\right]\\
+=&-\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)a(\vec k')e^{i(k+k')\cdot x}+a^\dagger(\vec k)a^\dagger(\vec k')e^{-i(k+k')\cdot x}\right]\\
+&+\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)a^\dagger(\vec k')e^{i(k-k')\cdot x}+a^\dagger(\vec k)a(\vec k')e^{-i(k-k')\cdot x}\right]\\
+=&-\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ (2\pi)^3\delta(\vec k+\vec k')\omega_{\vec k}\vec k'
+\left[a(\vec k)a(\vec k')e^{-i(\omega_{\vec k}+\omega_{\vec k'})t}+a^\dagger(\vec k)a^\dagger(\vec k')e^{i(\omega_{\vec k}+\omega_{\vec k'})t}\right]\\
+&+\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)a^\dagger(\vec k')e^{i(k-k')\cdot x}+a^\dagger(\vec k)a(\vec k')e^{-i(k-k')\cdot x}\right]\\
+=&-\frac12\int\tilde{\mathrm dk'}\ \vec k'
+\left[a(-\vec k')a(\vec k')e^{-i2\omega_{\vec k'}t}+a^\dagger(-\vec k')a^\dagger(\vec k')e^{i2\omega_{\vec k'}t}\right]\\
+&+\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)a^\dagger(\vec k')e^{i(k-k')\cdot x}+a^\dagger(\vec k)a(\vec k')e^{-i(k-k')\cdot x}\right]\\
+=&-\frac12\int\tilde{\mathrm dk'}\ \vec k'
+\left[a(-\vec k')a(\vec k')e^{-i2\omega_{\vec k'}t}+a^\dagger(-\vec k')a^\dagger(\vec k')e^{i2\omega_{\vec k'}t}\right]\\
+&+\frac12\int\tilde{\mathrm dk'}\ \vec k'
+\left[a(\vec k')a^\dagger(\vec k')+a^\dagger(\vec k')a(\vec k')\right]\\
+\end{aligned}\tag{24}</script><p>最后一个等号是对第二行做了和第一行一样的操作。因为湮灭算符之间对易，产生算符之间也对易，所以第一行被积函数是奇函数，进而结果为$0$。第二行利用对易关系得到$\int\mathrm d^3\vec k\ \vec k\delta(0)$，也根据奇偶性消去这项。最终</p>
+<script type="math/tex; mode=display">\vec P=\int\tilde{\mathrm dk}\ \vec ka^\dagger(\vec k)a(\vec k)\tag{25}</script><p>能量部分也类似计算得到</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&H=
+\end{aligned}\tag{26}</script>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/physics/" rel="tag"># physics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/09/28/%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/" rel="prev" title="搭建hexo博客">
+                  <i class="fa fa-chevron-left"></i> 搭建hexo博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sakura</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1.15.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+    <div class="pjax">
+  
+
+  
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+    </div>
+</body>
+</html>
