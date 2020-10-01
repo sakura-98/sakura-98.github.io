@@ -15,7 +15,7 @@ date: 2020-09-28
 ### 基本功能
 安装hexo
 ```sh
-npm install hexo-cli.g
+npm install hexo-cli -g
 hexo init blog
 cd blog
 
@@ -31,6 +31,7 @@ url: <your url>
 depoly:
     type: git
     repo: git@<your repository>
+    branch: master
 ```
 
 初始化git
@@ -44,6 +45,15 @@ git config --global user.name "Your Name"
 ssh-keygen -t rsa
 cat /root/.ssh/id_rsa.pub # for Linux
 type C:\\Users\<user's name>\.ssh\id_rsa.pub # for windows
+```
+复制到github里的ssh密钥。
+
+备份源码至同一仓库（可选）
+```sh
+git remote add origin <your repository>
+git add .
+git commit -m "<commit message>"
+git push --set-upstream origin origin/source
 ```
 简单命令
 ```sh
