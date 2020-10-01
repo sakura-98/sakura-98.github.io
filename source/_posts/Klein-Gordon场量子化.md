@@ -71,7 +71,7 @@ $$\begin{aligned}
 > 还有一个小问题，这里没计算$[\dot\phi(t,\vec x),\dot\phi(t,\vec y)]$
 > 不过可以将(11)式$\dot\phi\rightarrow\pi$认为是逻辑起点，正如大多数教材都从拉格朗日量出发。
 
-### 哈密顿量的四矢量
+### 哈密顿量的四矢量（4-动量）
 (9)式写成四矢量的形式为下式的$0$分量
 $$i\partial^\mu\phi(x)=[P^\mu,\phi(x)],i\partial^\mu\dot\phi(x)=[P^\mu,\dot\phi(x)]\tag{12}$$
 猜测
@@ -94,6 +94,8 @@ $$(k^2+\omega_0^2)\tilde\phi(k)=0\tag{15}$$
 $$\tilde\phi^\dagger(k)=\int\mathrm d^4x\ e^{ik\cdot x}\phi^\dagger(x)=\tilde\phi(-k)\tag{16}$$
 根据(15)式，满足Lorentz不变性的非平庸解为
 $$\tilde\phi(k)=2\pi\delta(k^2+\omega_0^2)\left[a(\vec k)\theta(k^0)+a^\dagger(-\vec k)\theta(-k^0)\right]\tag{17}$$
+此处仅假设了$k^0>0$；至于$k^0<0$时，利用了(16)式$\tilde\phi(k)=\tilde\phi^\dagger(-k)=2\pi\delta(k^2+\omega_0^2)a^\dagger(-\vec k)$
+
 > $$\begin{aligned}&[H,\tilde\phi(k)]=\int\mathrm d^4x\ e^{-ik\cdot x}[H,\phi(x)]\\
 > =&\int\mathrm d^4x\ e^{-ik\cdot x}[-i\dot\phi(x)]\\
 > =&-i\int\mathrm d^3\vec x\ e^{-i\vec k\cdot\vec x}\int\mathrm dt\ e^{i\omega_{\vec k}t}\dot\phi(x)\\
@@ -109,3 +111,70 @@ $$\begin{aligned}
 \end{aligned}\tag{18}$$
 
 ### 二次量子化：探索$a,a^\dagger$的物理意义
+利用(17)式可将场算符写为
+$$\phi(x)=\int\frac{\mathrm d^4k}{(2\pi)^4}\ e^{ik\cdot x}2\pi\delta(k^2+\omega_0^2)\left[a(\vec k)\theta(k^0)+a^\dagger(-\vec k)\theta(-k^0)\right]$$
+同样对$k^0$积分后为
+$$\begin{aligned}\phi(x)=&\int\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}\ e^{i\vec k\cdot\vec x}\left[a(\vec k)e^{-i\omega_{\vec k}t}+a^\dagger(-\vec k)e^{i\omega_{\vec k}t}\right]\\
+=&\int\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}\ \left[a(\vec k)e^{ik\cdot x}+a^\dagger(\vec k)e^{-ik\cdot x}\right]\end{aligned}\tag{19}$$
+为了反解出$a(\vec k)$，我们计算
+$$\left[\omega_{\vec k}+i\frac{\partial}{\partial t}\right]e^{i\xi k\cdot x}=\left[\omega_{\vec k}+\xi k^0\right]e^{i\xi k\cdot x}=(1+\xi)\omega_{\vec k}e^{ik\cdot x}$$
+所以作用在$\phi(x)$上后$a^\dagger$的贡献消失，$a$的贡献与分母恰好约掉，即
+$$\left[\omega_{\vec k}+i\frac{\partial}{\partial t}\right]\phi(x)=\int\frac{\mathrm d^3\vec k}{(2\pi)^3}a(\vec k)e^{ik\cdot x}$$
+所以两边同时乘上$e^{i\omega_{\vec k}t}$后做傅里叶变换
+$$\begin{aligned}a(\vec k)=&\int\mathrm{d}^3\vec k\ e^{i\omega_{\vec k}t-i\vec k\cdot\vec x}\left[\omega_{\vec k}+i\frac{\partial}{\partial t}\right]\phi(x)\\
+=&\int\mathrm{d}^3\vec k\ e^{-ik\cdot x}\left[\omega_{\vec k}+i\frac{\partial}{\partial t}\right]\phi(x)\end{aligned}\tag{20}$$
+另一方面，(17)式对$k^0$积分得
+$$\int_0^\infty\mathrm{d}k^0\ \tilde\phi(k)=\frac{2\pi}{2\omega_{\vec k}}a(\vec k)$$
+同理可得
+$$a^\dagger(\vec k)=\frac{\omega_{\vec k}}\pi\int_0^\infty\mathrm dk^0\tilde\phi(-k)$$
+所以对易关系为
+$$
+\left\{\begin{aligned}\left[a(\vec k),a(\vec l)\right]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(k),\tilde\phi(l)]=0\\
+[a^\dagger(\vec k),a^\dagger(\vec l)]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(-k),\tilde\phi(-l)]=0\\
+[a(\vec k),a^\dagger(\vec l)]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(k),\tilde\phi(-l)]\\
+&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ (2\pi)^4\delta(k-l)2\pi\delta(k^2+\omega_0^2)\mathrm{sign}(k^0)\\
+&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\ (2\pi)^4\delta(\vec k-\vec l)2\pi\delta(k^2+\omega_0^2)\\
+&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}(2\pi)^4\delta(\vec k-\vec l)2\pi\frac{1}{2\omega_{\vec k}}=(2\pi)^32\omega_{\vec k}\delta(\vec k-\vec l)
+\end{aligned}\right.\tag{21}$$
+至此二次量子化完毕，只需升降算符的对易关系满足(21)式，且场算符为
+$$\tilde\phi(k)=\int\frac{\mathrm{d}^3\vec k}{(2\pi)^32\omega_{\vec k}}\left[a(\vec k)e^{ik\cdot x}+a^\dagger(\vec k)e^{-ik\cdot x}\right]\tag{22}$$
+
+### 4-动量的二次量子化
+进一步，4-动量(11)式和(13)式用升降算符表示（即将(19)式代入）。为此，先计算其导数$\dot\phi,\nabla\phi$。简记$\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}=\tilde{\mathrm dk}$
+$$\left\{\begin{aligned}
+\phi(x)&=\int\tilde{\mathrm dk}\ \left[a(\vec k)e^{ik\cdot x}+a^\dagger(\vec k)e^{-ik\cdot x}\right]\\
+\dot\phi(x)&=\int\tilde{\mathrm dk}\ (-i\omega_{\vec k})\left[a(\vec k)e^{ik\cdot x}-a^\dagger(\vec k)e^{-ik\cdot x}\right]\\
+\nabla\phi(x)&=\int\tilde{\mathrm dk}\ i\vec k\left[a(\vec k)e^{ik\cdot x}-a^\dagger(\vec k)e^{-ik\cdot x}\right]\\
+\end{aligned}\right.\tag{23}$$
+4-动量的空间部分仅有一项，先行计算
+$$\begin{aligned}
+&\vec P=-\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)e^{ik\cdot x}-a^\dagger(\vec k)e^{-ik\cdot x}\right]
+\left[a(\vec k')e^{ik'\cdot x}-a^\dagger(\vec k')e^{-ik'\cdot x}\right]\\
+=&-\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)a(\vec k')e^{i(k+k')\cdot x}+a^\dagger(\vec k)a^\dagger(\vec k')e^{-i(k+k')\cdot x}\right]\\
+&+\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)a^\dagger(\vec k')e^{i(k-k')\cdot x}+a^\dagger(\vec k)a(\vec k')e^{-i(k-k')\cdot x}\right]\\
+=&-\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ (2\pi)^3\delta(\vec k+\vec k')\omega_{\vec k}\vec k'
+\left[a(\vec k)a(\vec k')e^{-i(\omega_{\vec k}+\omega_{\vec k'})t}+a^\dagger(\vec k)a^\dagger(\vec k')e^{i(\omega_{\vec k}+\omega_{\vec k'})t}\right]\\
+&+\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)a^\dagger(\vec k')e^{i(k-k')\cdot x}+a^\dagger(\vec k)a(\vec k')e^{-i(k-k')\cdot x}\right]\\
+=&-\frac12\int\tilde{\mathrm dk'}\ \vec k'
+\left[a(-\vec k')a(\vec k')e^{-i2\omega_{\vec k'}t}+a^\dagger(-\vec k')a^\dagger(\vec k')e^{i2\omega_{\vec k'}t}\right]\\
+&+\int\mathrm{d}^3\vec x\int\tilde{\mathrm dk}\tilde{\mathrm dk'}\ \omega_{\vec k}\vec k'
+\left[a(\vec k)a^\dagger(\vec k')e^{i(k-k')\cdot x}+a^\dagger(\vec k)a(\vec k')e^{-i(k-k')\cdot x}\right]\\
+=&-\frac12\int\tilde{\mathrm dk'}\ \vec k'
+\left[a(-\vec k')a(\vec k')e^{-i2\omega_{\vec k'}t}+a^\dagger(-\vec k')a^\dagger(\vec k')e^{i2\omega_{\vec k'}t}\right]\\
+&+\frac12\int\tilde{\mathrm dk'}\ \vec k'
+\left[a(\vec k')a^\dagger(\vec k')+a^\dagger(\vec k')a(\vec k')\right]\\
+\end{aligned}\tag{24}$$
+最后一个等号是对第二行做了和第一行一样的操作。因为湮灭算符之间对易，产生算符之间也对易，所以第一行被积函数是奇函数，进而结果为$0$。第二行利用对易关系得到$\int\mathrm d^3\vec k\ \vec k\delta(0)$，也根据奇偶性消去这项。最终
+$$\vec P=\int\tilde{\mathrm dk}\ \vec ka^\dagger(\vec k)a(\vec k)\tag{25}$$
+能量部分也类似计算得到
+$$\begin{aligned}
+H=&\frac12\int\frac{\tilde{\mathrm{d}k}}{2\omega_{\vec k}}(-\omega_{\vec k}^2+\vec k^2+\omega_0^2)\left[a(-\vec k)a(\vec k)e^{-i2\omega_{\vec k}t}+a^\dagger(-\vec k)a^\dagger(\vec k)e^{i2\omega_{\vec k}t}\right]\\
+&+\frac12\int\frac{\tilde{\mathrm{d}k}}{2\omega_{\vec k}}(\omega_{\vec k}^2+\vec k^2+m^2)\left[a(\vec k)a^\dagger(\vec k)+a^\dagger(\vec k)a(\vec k)\right]
+\end{aligned}\tag{26}$$
+用$\omega_{\vec k}^2=\vec k^2+\omega_0^2$即可将第一项清零并将第二项化简，结果为
+$$H=\int\tilde{\mathrm dk}\ \omega_{\vec k}a^\dagger(\vec k)a(\vec k)+\int\mathrm{d}^3\vec k\ \omega_{\vec k}\delta(0)\tag{27}$$
+第二项是自能发散，往往可以直接置为$0$，因为我们并不关心它。
