@@ -30,7 +30,7 @@
 <meta property="og:description" content="Klein-Gordon方程为 \left(-\partial^2+\omega_0^2\right)\psi&#x3D;0\tag{1}在之前的文章中已经给出对易关系 [\phi(x),\phi(y)]&#x3D;c_+\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac1{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-01T09:55:03.686Z">
+<meta property="article:modified_time" content="2020-10-01T10:21:52.848Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
@@ -184,7 +184,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -377,7 +377,7 @@
 <script type="math/tex; mode=display">\int_0^\infty\mathrm{d}k^0\ \tilde\phi(k)=\frac{2\pi}{2\omega_{\vec k}}a(\vec k)</script><p>同理可得</p>
 <script type="math/tex; mode=display">a^\dagger(\vec k)=\frac{\omega_{\vec k}}\pi\int_0^\infty\mathrm dk^0\tilde\phi(-k)</script><p>所以对易关系为</p>
 <script type="math/tex; mode=display">
-\left\{\begin{aligned}[a(\vec k),a(\vec l)]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(k),\tilde\phi(l)]=0\\
+\left\{\begin{aligned}\left[a(\vec k),a(\vec l)\right]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(k),\tilde\phi(l)]=0\\
 [a^\dagger(\vec k),a^\dagger(\vec l)]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(-k),\tilde\phi(-l)]=0\\
 [a(\vec k),a^\dagger(\vec l)]&=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ [\tilde\phi(k),\tilde\phi(-l)]\\
 &=\frac{\omega_{\vec k}\omega_{\vec l}}{\pi^2}\int_0^\infty\mathrm{d}k^0\mathrm{d}l^0\ (2\pi)^4\delta(k-l)2\pi\delta(k^2+\omega_0^2)\mathrm{sign}(k^0)\\
@@ -413,8 +413,11 @@
 \end{aligned}\tag{24}</script><p>最后一个等号是对第二行做了和第一行一样的操作。因为湮灭算符之间对易，产生算符之间也对易，所以第一行被积函数是奇函数，进而结果为$0$。第二行利用对易关系得到$\int\mathrm d^3\vec k\ \vec k\delta(0)$，也根据奇偶性消去这项。最终</p>
 <script type="math/tex; mode=display">\vec P=\int\tilde{\mathrm dk}\ \vec ka^\dagger(\vec k)a(\vec k)\tag{25}</script><p>能量部分也类似计算得到</p>
 <script type="math/tex; mode=display">\begin{aligned}
-&H=
-\end{aligned}\tag{26}</script>
+H=&\frac12\int\frac{\tilde{\mathrm{d}k}}{2\omega_{\vec k}}(-\omega_{\vec k}^2+\vec k^2+\omega_0^2)\left[a(-\vec k)a(\vec k)e^{-i2\omega_{\vec k}t}+a^\dagger(-\vec k)a^\dagger(\vec k)e^{i2\omega_{\vec k}t}\right]\\
+&+\frac12\int\frac{\tilde{\mathrm{d}k}}{2\omega_{\vec k}}(\omega_{\vec k}^2+\vec k^2+m^2)\left[a(\vec k)a^\dagger(\vec k)+a^\dagger(\vec k)a(\vec k)\right]
+\end{aligned}\tag{26}</script><p>用$\omega_{\vec k}^2=\vec k^2+\omega_0^2$即可将第一项清零并将第二项化简，结果为</p>
+<script type="math/tex; mode=display">H=\int\tilde{\mathrm dk}\ \omega_{\vec k}a^\dagger(\vec k)a(\vec k)+\int\mathrm{d}^3\vec k\ \omega_{\vec k}\delta(0)\tag{27}</script><p>第二项是自能发散，往往可以直接置为$0$，因为我们并不关心它。</p>
+
     </div>
 
     
@@ -435,6 +438,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2020/10/05/Heisenberg%E6%A8%A1%E5%9E%8B/" rel="next" title="Heisenberg模型">
+                  Heisenberg模型 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
