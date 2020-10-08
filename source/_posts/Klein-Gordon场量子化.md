@@ -13,7 +13,7 @@ $$[\phi(x),\phi(y)]=c_+\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac1{2\omega_{\v
 其中
 $$\omega_{\vec k}=\sqrt{\vec k^2+\omega_0^2}\tag{3}$$
 
-我们不加证明地认为
+我们将在[其他地方证明](/2020/10/08/一道积分证明)
 $$[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]\tag{4}$$
 其中$\tau=\sqrt{-(x-y)^2}$。我们将从此处继续完成Klein-Gordon场的量子化。
 <!--more-->
