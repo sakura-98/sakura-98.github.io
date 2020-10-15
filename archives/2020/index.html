@@ -19,7 +19,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":-1,"unescape":false,"preload":false}};
   </script>
 
   <meta property="og:type" content="website">
@@ -114,6 +114,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -137,11 +138,38 @@
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -178,7 +206,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -240,13 +268,33 @@
   <div class="post-block">
     <div class="post-content">
       <div class="collection-title">
-        <span class="collection-header">Um..! 7 posts in total. Keep on posting.</span>
+        <span class="collection-header">Um..! 8 posts in total. Keep on posting.</span>
       </div>
 
       
     <div class="collection-year">
       <span class="collection-header">2020</span>
     </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2020-10-15T00:00:00+08:00"
+              content="2020-10-15">
+          10-15
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/10/15/Gell-Mann&Low%E5%AE%9A%E7%90%86/" itemprop="url">
+            <span itemprop="name">Gell-Mann&Low 定理</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -359,8 +407,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/" itemprop="url">
-            <span itemprop="name">场的量子化</span>
+          <a class="post-title-link" href="/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/" itemprop="url">
+            <span itemprop="name">链接颜色变化</span>
           </a>
       </div>
 
@@ -379,8 +427,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/" itemprop="url">
-            <span itemprop="name">链接颜色变化</span>
+          <a class="post-title-link" href="/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/" itemprop="url">
+            <span itemprop="name">场的量子化</span>
           </a>
       </div>
 
@@ -441,8 +489,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Sakura</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
     </div>
   </footer>
@@ -491,6 +537,8 @@ document.addEventListener('pjax:success', () => {
 
 
 
+
+  <script src="/js/local-search.js"></script>
 
 
 
