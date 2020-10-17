@@ -92,7 +92,9 @@ $$\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\ra
 $$\hat H(t=0)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}=(E_0+\Delta E)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}$$
 即得证。
 ### 补充说明
-$\epsilon\rightarrow0$时，$\langle\Phi|\Psi^g(\epsilon)\rangle=A^g\exp(i\epsilon^{-1}\alpha^g)$，所以
+利用(1.7)式
+$$\hat U(-\infty,0)=\sum_{n=0}^\infty\left(\frac{g}{i\hbar}\right)^n\frac{1}{n!}\int_{-\infty}^0e^{\epsilon t_1}\mathrm dt_1\cdots e^{\epsilon t_n}\mathrm dt_n\ \hat H_1^n\tag{4.1}=\exp\left(\frac{g\hat H_1}{i\hbar\epsilon}\right)$$
+所以$\langle\Phi|\Psi^g(\epsilon)\rangle=\langle\Phi|\exp(-i\frac g{\hbar\epsilon}\hat H_1)|\Phi\rangle=A^g\exp(i\epsilon^{-1}\alpha^g)$，所以
 $$
 \lim_{\epsilon\rightarrow0}i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]=\hbar g\frac{\partial\alpha^g}{\partial g}
 $$
