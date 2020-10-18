@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Gell-Mann&amp;Low 定理</title>
+    <url>/2020/10/15/Gell-Mann&amp;Low%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<p>Gell-Mann Low 定理说的是，在绝热引入相互作用的方法下计算出的本征态就是相互作用系统的本征态。即系统的哈密顿量为</p>
+<script type="math/tex; mode=display">\hat H=\hat H_0+\hat H_I=\hat H_0+ge^{-\epsilon|t|}\hat H_1\tag{1}</script><p>非相互作用部分本征态$|\Phi\rangle$，则若</p>
+<script type="math/tex; mode=display">\lim_{\epsilon\rightarrow 0}\frac{\hat U_\epsilon(0,-\infty;g)|\Phi\rangle}{\langle\Phi|\hat U_\epsilon(0,-\infty;g)|\Phi\rangle}\equiv
+\lim_{\epsilon\rightarrow 0}\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}
+=\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}\tag{2}</script><p>注意到定义了$|\Psi^g(\epsilon)\rangle$，而且并没有说$|\Psi^g(\epsilon)\rangle\xrightarrow{\epsilon\rightarrow0}|\Psi^g\rangle$。那么有</p>
+<script type="math/tex; mode=display">\hat H(t=0)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}=E\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}\tag{3}</script><a id="more"></a>
+<h3 id="相互作用表象"><a href="#相互作用表象" class="headerlink" title="相互作用表象"></a>相互作用表象</h3><p>波函数和算符分别为</p>
+<script type="math/tex; mode=display">|\Psi_I(t)\rangle\equiv e^{i\hat H_0t/\hbar}|\Psi_S(t)\rangle,\quad\hat O_I(t)\equiv e^{i\hat H_0t/\hbar}\hat O_Se^{-i\hat H_0t/\hbar}\tag{1.1}</script><p>因此波函数运动方程为</p>
+<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}|\Psi_I(t)\rangle=\hat H_I|\Psi_I(t)\rangle\tag{1.2}</script><p>算符运动方程为</p>
+<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat O_I(t)=\left[\hat O_I(t),\hat H_0\right]\tag{1.3}</script><p>根据(1.1)可得时间演化算符$\hat U(t,t_0)$为</p>
+<script type="math/tex; mode=display">\hat U(t,t_0)=e^{i\hat H_0t/\hbar}e^{-i\hat H(t-t_0)/\hbar}e^{-i\hat H_0t_0/\hbar}\tag{1.4}</script><p>之所以不从(1.2)式出发，是因为$\hat H_I(t)$之间不一定对易，导致得不到简单的结果。但从(1.2)出发能得到时间演化算符的运动方程，通过迭代也能得到其表达式</p>
+<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat U(t,t_0)=\hat H_I(t)\hat U(t,t_0)\tag{1.5}</script><p>当然，作为“算符”，它也应当满足(1.3)式，只不过用处不太大。</p>
+<p>对(1.5)式积分，考虑到$\hat U(t_0,t_0)=\hat 1$</p>
+<script type="math/tex; mode=display">\hat U(t,t_0)=\hat 1+\frac{1}{i\hbar}\int_{t_0}^t\hat H_I(t_1)\hat U(t_1,t_0)\mathrm dt_1\tag{1.6}</script><p>继续迭代，最终得到</p>
+<script type="math/tex; mode=display">\hat U(t,t_0)=\sum_{n=0}^\infty\left(\frac{1}{i\hbar}\right)^n\frac{1}{n!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ \hat T\left[\hat H_I(t_1)\cdots\hat H_I(t_n)\right]\tag{1.7}</script><p>其中引入编时算符$\hat T$使得各个$t_i$等价。</p>
+<h3 id="求解哈密顿量和时间演化的对易"><a href="#求解哈密顿量和时间演化的对易" class="headerlink" title="求解哈密顿量和时间演化的对易"></a>求解哈密顿量和时间演化的对易</h3><p>这是证明过程中会遇到的一个问题，我们将其处理为引理。</p>
+<p>因为$\hat U$能表示为$\hat H_1$的函数，正如(1.7)所示，因此我们从这里开始计算。使用(1.3)</p>
+<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat H_1(t)=[\hat H_1,\hat H_0]\tag{2.1}</script><p>因此$n$个$\hat H_1$的乘积有</p>
+<script type="math/tex; mode=display">[\hat H_1(t_1)\cdots\hat H_1(t_n),\hat H_0]=i\hbar\left(\frac{\partial}{\partial t_1}+\cdots+\frac{\partial}{\partial t_n}\right)\hat H_1(t_1)\cdots\hat H_1(t_n)\tag{2.2}</script><p>为了引入编时算符，我们能够证明（直接计算即可）</p>
+<script type="math/tex; mode=display">\sum_{j=1}^n\frac{\partial}{\partial t_j}\theta(t_{P(1)}-t_{P(2)})\cdots\theta(t_{P(n-1)}-t_{P(n)})=0\tag{2.3}</script><p>所以(2.2)式可直接套上编时算符，此时$t_1,\cdots t_n$完全等价，于是</p>
+<script type="math/tex; mode=display">[\hat T[\hat H_1(t_1)\cdots\hat H_1(t_n)],\hat H_0]=in\hbar\frac{\partial}{\partial t_1}\hat T[\hat H_1(t_1)\cdots\hat H_1(t_n)]\tag{2.4}</script><p>和(1)代回(1.7)得</p>
+<script type="math/tex; mode=display">\begin{aligned}[]
+[\hat U(t,t_0),\hat H_0]&=\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
+&\times\frac{\partial}{\partial t_1}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]
+\end{aligned}\tag{2.5}</script><h3 id="正式证明"><a href="#正式证明" class="headerlink" title="正式证明"></a>正式证明</h3><script type="math/tex; mode=display">\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=\left(\hat H_0\hat U_\epsilon(0,-\infty;g)-\hat U_\epsilon(0,-\infty;g)E_0\right)|\Phi\rangle\tag{3.1}</script><p>注意到右边是一个对易子，因为$\hat H_0|\Phi\rangle=E_0|\Phi\rangle$。所以可将(2.5)代入</p>
+<script type="math/tex; mode=display">\begin{aligned}\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=&-\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
+&\times\frac{\partial}{\partial t_1}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]|\Phi\rangle
+\end{aligned}\tag{3.2}</script><p>对$t_1$做分部积分，注意到积分下限有因子$e^{-\epsilon\infty}=0$，上限有$t_1=0&gt;t_j$，所以为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&-\hat H_1\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{-\infty}^0\mathrm dt_2\cdots\mathrm dt_n\ e^{\epsilon(t_2+\cdots+t_n)}\hat T\left[\hat H_1(t_2)\cdots\hat H_1(t_n)\right]|\Phi\rangle\\
+&+\epsilon\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{-\infty}^0\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]|\Phi\rangle
+\end{aligned}</script><p>对于第一项，可以重新编号$2\rightarrow1,3\rightarrow2,\cdots n\rightarrow(n-1)$得到$-g\hat H_1\hat U_\epsilon(0,-\infty;g)|\Phi\rangle$；</p>
+<p>对于第二项，也可通过简单的算符与$\hat U_\epsilon(0,-\infty;g)$联系起来。两者结合得</p>
+<script type="math/tex; mode=display">\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=-g\hat H_1|\Psi^g(\epsilon)\rangle+\epsilon i\hbar g\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle</script><p>移项后得到</p>
+<script type="math/tex; mode=display">\left(\hat H_0+g\hat H_1-E_0\right)|\Psi^g(\epsilon)\rangle=\epsilon i\hbar g\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle\tag{3.3}</script><p>但是不能直接取极限$\epsilon\rightarrow 0$得到$|\Psi^g\rangle$是$\hat H=\hat H_0+\hat H_1$的本征态，因为</p>
+<ol>
+<li>我们并不知道$|\Psi^g(\epsilon)\rangle$随$g$的变化关系</li>
+<li>我们并不知道$|\Psi^g(\epsilon\rightarrow0)\rangle$是否就是$|\Psi^g\rangle$</li>
+<li>倘若右边为零，说明相互作用不会改变本征能量，只会改变本征矢，这是荒谬的</li>
+</ol>
+<p>受Gell-Mann&amp;Low定理的条件(2)启发，我们去凑相应的形式，计算</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle=\frac{\partial}{\partial g}\left[\langle\Phi|\Psi^g(\epsilon)\rangle\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]\\
+=&\langle\Phi|\Psi^g(\epsilon)\rangle\frac{\partial}{\partial g}\left[\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]+\frac{\partial}{\partial g}\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\\
+\end{aligned}\tag{3.4}</script><p>代入(3.3)得</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\\
+=&i\epsilon\hbar g\frac{\partial}{\partial g}\left[\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]\\
++&i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}
+\end{aligned}\tag{3.5}</script><p>利用(2)可知，上式取$\epsilon\rightarrow0$时，第一项的括号内为常数，所以可以使用极限公式$\lim AB=\lim A\times\lim B$得到值$0$。第二项要能取极限是有要求的，即$\lim_{\epsilon\rightarrow0}i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]$极限存在，设为$\Delta E^g$。假设满足要求（具体见补充说明），则上式为</p>
+<script type="math/tex; mode=display">\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}
+=\lim_{\epsilon\rightarrow0}\left\{i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\right\}\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}
+\tag{3.6}</script><p>因此令$g=1$即得到</p>
+<script type="math/tex; mode=display">\hat H(t=0)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}=(E_0+\Delta E)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}</script><p>即得证。</p>
+<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><p>利用(1.7)式</p>
+<script type="math/tex; mode=display">\hat U(-\infty,0)=\sum_{n=0}^\infty\left(\frac{g}{i\hbar}\right)^n\frac{1}{n!}\int_{-\infty}^0e^{\epsilon t_1}\mathrm dt_1\cdots e^{\epsilon t_n}\mathrm dt_n\ \hat H_1^n\tag{4.1}=\exp\left(\frac{g\hat H_1}{i\hbar\epsilon}\right)</script><p>所以$\langle\Phi|\Psi^g(\epsilon)\rangle=\langle\Phi|\exp(-i\frac g{\hbar\epsilon}\hat H_1)|\Phi\rangle=A^g\exp(i\epsilon^{-1}\alpha^g)$，所以</p>
+<script type="math/tex; mode=display">
+\lim_{\epsilon\rightarrow0}i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]=\hbar g\frac{\partial\alpha^g}{\partial g}</script><p>因此证明中(3.6)式成立</p>
+]]></content>
+      <categories>
+        <category>QSP</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Klein-Gordon场量子化</title>
     <url>/2020/09/29/Klein-Gordon%E5%9C%BA%E9%87%8F%E5%AD%90%E5%8C%96/</url>
     <content><![CDATA[<p>Klein-Gordon方程为</p>
@@ -135,98 +204,6 @@ H=&\frac12\int\frac{\tilde{\mathrm{d}k}}{2\omega_{\vec k}}(-\omega_{\vec k}^2+\v
       </tags>
   </entry>
   <entry>
-    <title>搭建hexo博客</title>
-    <url>/2020/09/28/%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>记录搭建hexo博客的步骤。</p>
-<p>默认安装好了node.js和git,如若没有:</p>
-<p><a href="https://nodejs.org">点击此处下载node.js</a></p>
-<p><a href="https://git-scm.com">点击此处下载git</a></p>
-<a id="more"></a>
-<h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><p>安装hexo<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save <span class="comment"># 安装git插件</span></span><br></pre></td></tr></table></figure></p>
-<p>修改_config.xml<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">&lt;your</span> <span class="string">url&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">depoly:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@&lt;your</span> <span class="string">repository&gt;</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<p>初始化git<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br></pre></td></tr></table></figure></p>
-<p>创建ssh秘钥<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line">cat /root/.ssh/id_rsa.pub <span class="comment"># for Linux</span></span><br><span class="line"><span class="built_in">type</span> C:\\Users\&lt;user<span class="string">&#x27;s name&gt;\.ssh\id_rsa.pub # for windows</span></span><br></pre></td></tr></table></figure><br>复制到github里的ssh密钥。</p>
-<p>备份源码至同一仓库（可选）<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;your repository&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;&lt;commit message&gt;&quot;</span></span><br><span class="line">git push --set-upstream origin origin/<span class="built_in">source</span></span><br></pre></td></tr></table></figure><br>简单命令<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo s <span class="comment"># server 创建本地服务器，打开https://localhost:4000即可查看</span></span><br><span class="line">hexo g <span class="comment"># generate 生成网页文件</span></span><br><span class="line">hexo d <span class="comment"># deploy 配置到github</span></span><br><span class="line">hexo clean <span class="comment"># 清理生成文件</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="主题相关"><a href="#主题相关" class="headerlink" title="主题相关"></a>主题相关</h3><p>更换主题，以Next为例<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<p>修改_config.xml<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Themes:</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></p>
-<p>配置主题themes/next/_config.yml。参见文档内注释即可</p>
-<h3 id="创建tags界面-categories同理"><a href="#创建tags界面-categories同理" class="headerlink" title="创建tags界面(categories同理)"></a>创建tags界面(categories同理)</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在source/tags/index.md修改为<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<h3 id="数学模式"><a href="#数学模式" class="headerlink" title="数学模式"></a>数学模式</h3><p>需要更换markdown引擎<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></p>
-<p>在node_modules/kramed/lib/rules/inline.js中修改一些语义处理<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure></p>
-<p>最后再在<strong>主题配置</strong>和<strong>文件头</strong>里打开mathjax即可</p>
-<h3 id="插图方式"><a href="#插图方式" class="headerlink" title="插图方式"></a>插图方式</h3><p>打开本地配置_config.yml的开关<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-<p>在source文件夹下建立images文件夹，将图片放于此文件夹下，引用时<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">&lt;name&gt;</span>](<span class="link">/images/&lt;pic-name&gt;</span>)</span><br></pre></td></tr></table></figure></p>
-<p>或者放在创建文章时的同名文件夹下，引用时直接使用名字</p>
-<h3 id="引用其他博文"><a href="#引用其他博文" class="headerlink" title="引用其他博文"></a>引用其他博文</h3><p>将配置文件的永久链接修改为<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:category/:title/</span></span><br></pre></td></tr></table></figure><br>至此文件储存路径为”/目录/标题”，因此引用时可<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[](../<span class="xml"><span class="tag">&lt;<span class="name">同级目录下的文件</span>&gt;</span></span>)</span><br><span class="line">[](/<span class="xml"><span class="tag">&lt;<span class="name">绝对路径-目录</span>&gt;</span></span>/<span class="xml"><span class="tag">&lt;<span class="name">标题</span>&gt;</span></span>)</span><br></pre></td></tr></table></figure></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>一道积分证明</title>
-    <url>/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/</url>
-    <content><![CDATA[<p>在<a href="/2020/09/29/Klein-Gordon场量子化">之前的一篇文章</a>里提到一个积分</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\int\frac{\mathrm d^4k}{(2\pi)^4}(2\pi)\left[e^{ik\cdot x}\theta(k^0)-e^{ik\cdot x}\theta(-k^0)\right]\delta(k^2+\omega_0^2)</script><script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]</script><p>本文用于证明此积分。<br><a id="more"></a></p>
-<p>先将$k^0$积掉，只计算第一项</p>
-<script type="math/tex; mode=display">\int_{-\infty}^\infty\mathrm dk^0\ e^{-ik^0x^0}\theta(k^0)\delta\left[-(k^0)^2+\vec k^2+\omega_0^2\right]=\frac{e^{-i\sqrt{\vec k^2+\omega_0^2}x^0}}{2\sqrt{\vec k^2+\omega_0^2}}</script><p>再将积分变换到球坐标，定义$|\vec x|=r,r^0=x^0-y^0$，那么 $\tau^2=(r^0)^2-r^2$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac1{c_+}[\phi(x),\phi(y)]\\
-=&\int\frac{k^2\sin\theta\mathrm{d}k\mathrm{d}\theta\mathrm{d}\phi}{(2\pi)^32\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)e^{ikr\cos\theta}\\
-=&\int_0^\infty\frac{k^2\mathrm{d}k}{(2\pi)^22\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{2\sin kr}{kr}\\
-=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
-=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left[\sum_{n=0}^\infty\frac{(r^0)^{2n+1}}{(2n+1)!}(-1)^{n+1}2i\sqrt{k^2+\omega_0^2}^{2n+1}\right]\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
-=&\sum_{n=0}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\int_0^\infty(k^2+\omega_0^2)^nk\sin kr\mathrm{d}k\\
-=&\sum_{n=0}^\infty\sum_{m=0}^n\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-=&\sum_{m=0}^\infty\sum_{n=m}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-\end{aligned}\tag{1}</script><p>求和变换 $(n,m)\rightarrow(l=n-m,m)$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac1{c_+}[\phi(x),\phi(y)]\\
-=&\sum_{m=0}^\infty\sum_{l=0}^\infty\frac{(r^0)^{2(l+m)+1}(-1)^{m+l+1}i}{(2m+2l+1)!2\pi^2r}\frac{(m+l)!}{m!l!}\int_0^\infty k^{2l+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
-\sum_{l=0}^\infty\frac{(-1)^l(m+l)!}{(2m+2l+1)!l!} (kr^0)^{2l+1}\sin kr\mathrm{d}k\\
-=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
-2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr\mathrm{d}k\\
-\end{aligned}\tag{2}</script><p>其中 $j_m$ 是球贝塞尔函数。简单起见，定义</p>
-<script type="math/tex; mode=display">I[m;r,\epsilon]=\int_0^\infty2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr e^{-k\epsilon}\mathrm{d}k\tag{3}</script><p>利用Mathematica，计算得</p>
-<script type="math/tex; mode=display">I[0;r,\epsilon]=\int_0^\infty\sin kr^0\sin kr e^{-k\epsilon}\mathrm{d}k=\frac{2\epsilon r^0r}{\epsilon^4+2\epsilon^2(r^2+(r^0)^2)+((r^0)^2-r^2)^2}</script><p>也就是</p>
-<script type="math/tex; mode=display">\begin{aligned}
-I[0;r,0^+]&=\pi rr^0\sqrt{\frac2{(r^0)^2+r^2}}\delta((r^0)^2-r^2)\\
-&=\pi r\mathrm{sign}(r^0)\delta((r^0)^2-r^2)\\
-&=\pi r\mathrm{sign}(r^0)\delta(\tau^2)
-\end{aligned}\tag{4}</script><p>再次利用Mathematica，有公式</p>
-<script type="math/tex; mode=display">\int_0^{\pm\infty}\mathrm{d}x\ x^{1-m}j_m(x)\sin xy=\pm2^{-m}\pi y\frac{(1-y^2)^{-1+m}}{\Gamma(m)}\theta(1-y^2)</script><p>令$x=kr^0,y=r/r^0$，得到</p>
-<script type="math/tex; mode=display">I[m;r,0]=2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\tag{5}</script><p>(4)(5)代入(2)</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac 1c_+[\phi(x),\phi(y)]=i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}I[m;r,0]\\
-=&i\frac{-1}{2\pi^2r}\pi r\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=1}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\\
-=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=1}^\infty\frac{(-1)^{m+1}}{2\pi m!(m-1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m}\theta(\tau^2)\mathrm{sign}(r^0)\\
-=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=0}^\infty\frac{(-1)^m}{2\pi m!(m+1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m+2}\theta(\tau^2)\mathrm{sign}(r^0)\\
-\end{aligned}\tag{6}</script><p>注意到</p>
-<script type="math/tex; mode=display">J_1(x)=\sum_{m=0}^\infty\frac{(-1)^m}{m!(m+1)!}\left(\frac x2\right)^{2m+1}</script><p>(6)式变为</p>
-<script type="math/tex; mode=display">\frac 1{c_+}[\phi(x),\phi(y)]=i\frac1{2\pi}\mathrm{sign}(r^0)\left[-\delta(\tau^2)+\frac{1}{\tau^2}\frac{\omega_0\tau}2J_1(\omega_0\tau)\theta(\tau^2)\right]</script><p>这正是我们要证明的</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(y)]=ic_+\mathrm{sign}(r^0)\left[\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac1{2\pi}\delta(\tau^2)\right]\tag{7}</script>]]></content>
-      <categories>
-        <category>QFT</category>
-      </categories>
-      <tags>
-        <tag>physics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>链接颜色变化</title>
-    <url>/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/</url>
-    <content><![CDATA[<p>本文用于改变超链接的参数。</p>
-<p>最简单的链接为<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.baidu.com&quot;</span>&gt;</span>点击进入百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><br>但是默认点击前为蓝色，点击后变为紫色。<br><a id="more"></a><br>想要更改颜色可在head内加入<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:black;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure><br>link是未点击时的样式，visited时点击后的样式。此外还有hover，active分别为悬停和点击。</p>
-<p>当然不仅仅是改变颜色，还有其他操作，比如去掉下划线</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;<span class="attribute">text-decoration</span>:none;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:black;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Heisenberg模型</title>
     <url>/2020/10/05/Heisenberg%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<p>根据北京大学shindou开设的《量子统计物理》第一次作业第二题整理。</p>
@@ -312,60 +289,70 @@ I[0;r,0^+]&=\pi rr^0\sqrt{\frac2{(r^0)^2+r^2}}\delta((r^0)^2-r^2)\\
       </tags>
   </entry>
   <entry>
-    <title>标量场理论</title>
-    <url>/2020/09/25/%E6%A0%87%E9%87%8F%E5%9C%BA%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<p>标量场是指场变量与参考系无关的场。在参考系变换下</p>
-<script type="math/tex; mode=display">\left\{\begin{array}{ll}
-x\rightarrow\bar x=\Lambda x+a & (\bar x^\mu=\Lambda^\mu_{\ \ \nu} x^\nu+a^\mu)\\
-\phi\rightarrow\phi & (\bar\phi(\bar x)=\bar\phi(\bar x(x))=\phi(x))
-\end{array}\right.</script><p>其中$\Lambda$是恰当正时Lorentz变换。假设$a=0$，则</p>
-<script type="math/tex; mode=display">\bar\phi(\bar x)=\phi(x)=\phi(\Lambda^{-1}\bar x)</script><a id="more"></a>
-<p>对于无穷小变换$\Lambda^\mu_{\ \ \nu}=\delta^\mu_{\ \ \nu}+\theta^\mu_{\ \ \nu}$，其逆变换为$(\Lambda^{-1})^\mu_{\ \ \nu}=\delta^\mu_{\ \ \nu}-\theta^\mu_{\ \ \nu}$</p>
+    <title>on-shell等价与LSZ约化</title>
+    <url>/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/</url>
+    <content><![CDATA[<p> LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。<br><a id="more"></a></p>
+<h3 id="on-shell等价函数"><a href="#on-shell等价函数" class="headerlink" title="on-shell等价函数"></a>on-shell等价函数</h3><p>设$m$是<strong>相互作用</strong>标量场$\phi$中单粒子的静质量。若有两个函数$\psi_1(x),\psi_2(x)$，它们的傅里叶变换$\tilde\psi_i(k)\equiv\int e^{-ik\cdot x}\psi_i(x)\mathrm dx$在on-shell条件$l^2+m^2=0$满足时均有</p>
+<script type="math/tex; mode=display">\tilde\psi_1(l)=\tilde\psi_2(l)</script><p>可以计算</p>
 <script type="math/tex; mode=display">\begin{aligned}
-\delta\phi(x)&\equiv\bar\phi(x)-\phi(x)=\phi(\Lambda^{-1}x)-\phi(x)\\
-&=-\theta^\mu_{\ \ \nu}x^\nu\frac{\partial}{\partial x^\mu}\phi(x)\equiv-\theta_{\mu\nu}x^\nu\partial^\nu\phi(x)
-\end{aligned}</script><blockquote>
-<p>接下来会多次用到$\theta$的反对称性，证明思路如下：<br>根据间隔不变性有</p>
-<script type="math/tex; mode=display">\mathrm ds^2=g_{\mu\nu}x^\mu x^\nu=g_{\mu\nu}\Lambda^\mu_{\ \ \alpha}\Lambda^\nu_{\ \ \beta}x^\alpha x^\beta</script><p>因此$g_{\mu\nu}\Lambda^\mu_{\ \ \alpha}\Lambda^\nu_{\ \ \beta}=g_{\alpha\beta}$，将无穷小变换代入并略去$\theta$的高阶项得</p>
-<script type="math/tex; mode=display">g_{\alpha\nu}\theta^\nu_{\ \ \beta}+g_{\mu\beta}\theta^\mu_{\ \ \alpha}=\theta_{\alpha\beta}+\theta_{\beta\alpha}=0</script></blockquote>
-<p>对其进行进一步变换（第三个等号用到$\theta$反对称）</p>
+\int\mathrm d^4x\ \psi(x)\phi(x)|0\rangle=&\int\mathrm d^4x\frac{\mathrm d^4k}{(2\pi)^4}\frac{\mathrm d^4l}{(2\pi)^4}e^{-i(k-l)\cdot x}\tilde\psi(k)\tilde\phi(-l)|0\rangle\\
+=&\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{\mathrm d^4l}{(2\pi)^4}(2\pi)^4\delta(k-l)\tilde\psi(k)\tilde\phi(-l)|0\rangle\\
+=&\int\frac{\mathrm d^4k}{(2\pi)^4}\tilde\psi(k)\tilde\phi(-k)|0\rangle\\
+\end{aligned}</script><p>因为不满足on-shell条件时$\tilde\phi(-k)|0\rangle=0$，所以</p>
+<script type="math/tex; mode=display">\int\mathrm d^4x\ \psi_1(x)\phi(x)|0\rangle=\int\mathrm d^4x\ \psi_2(x)\phi(x)|0\rangle\tag{1}</script><p>假设$F(x)$具有相对论性波函数的形式</p>
+<script type="math/tex; mode=display">F(x)=\int\frac{\mathrm d^3\vec l}{(2\pi)^3}\ f(\vec l)e^{-i\omega_{\vec l}t+i\vec l\cdot x}\tag2</script><p>我们想要证明，对于所有的$T$，$F(x)g(t-T)$都是on-shell等价的。这是因为</p>
 <script type="math/tex; mode=display">\begin{aligned}
-\delta\phi(x)&=-\theta_{\mu\nu}x^\nu\partial^\mu\phi(x)\\
-&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu+\theta_{\mu\nu}x^\nu\partial^\mu\right)\phi(x)\\
-&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\nu\mu}x^\nu\partial^\mu\right)\phi(x)\\
-&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\mu\nu}x^\mu\partial^\nu\right)\phi(x)
-\end{aligned}</script><p>定义线性变换</p>
-<script type="math/tex; mode=display">\mathscr L^{\mu\nu}=-i\left(x^\nu\partial^\mu-x^\mu\partial^\nu\right)</script><p><strong><font color="red" size=5>注意:</font></strong> 这个线性变换不是做在态矢量的Hilbert空间上，而是做在场算符组成的空间上<br>结论为：</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\delta\phi(x)=&\frac i2\theta_{\mu\nu}\mathscr L^{\mu\nu}\phi(x)\\
-=&i\left[\theta_{01}\mathscr L^{01}+\theta_{02}\mathscr L^{02}+\theta_{03}\mathscr L^{03}\right.\\
-&+\theta_{12}\mathscr L^{12}+\theta_{23}\mathscr L^{23}+\theta_{31}\mathscr L^{31}\left.\right]\phi(x)
-\end{aligned}</script><blockquote>
-<p>容易看出，$\mathscr L^{12}$对应$z$方向角动量，同理可得其他六项的意义。<br>所以$\phi$与自旋无关，即对应无自旋粒子。</p>
-</blockquote>
-<h4 id="正则量子化"><a href="#正则量子化" class="headerlink" title="正则量子化"></a>正则量子化</h4><p>Klein-Gordon方程为</p>
-<script type="math/tex; mode=display">\left(\frac{\partial^2}{\partial t^2}-\nabla^2+\omega_0^2\right)\Psi=0</script><p>或写作</p>
-<script type="math/tex; mode=display">(-\partial^2+\omega_0^2)\Psi=0\tag{1.1}</script><p>我们假设场算符满足（反）对易关系，即</p>
-<script type="math/tex; mode=display">\phi(x)\phi(y)-\sigma\phi(y)\phi(x)=C(x-y)\tag{1.2}</script><p>其中$\sigma=\pm1$。为了确定具体是正是负，我们考虑</p>
-<script type="math/tex; mode=display">C(-x)=\phi(0)\phi(x)-\sigma\phi(x)\phi(0)=-\sigma C(x)\tag{1.3}</script><p>因此$\sigma$的正负性与$C(x)$的奇偶性相关。取$y=0$，将$(-\partial^2+\omega_0^2)$作用在(1.2)式上得</p>
-<script type="math/tex; mode=display">0=(-\partial^2+\omega_0^2)C(x)\tag{1.4}</script><p>为了求解$C(x)$，做变换</p>
+&\int\mathrm d^4x\ e^{-ik\cdot x}F(x)g(t-T)\\
+=&\int\mathrm d^4x\frac{\mathrm d^3\vec l}{(2\pi)^3}\frac{\mathrm d\omega}{2\pi}\ e^{ik\cdot x}f(\vec l)e^{-i\omega_{\vec l}t+i\vec l\cdot x}\tilde g(\omega)e^{-i\omega (t-T)}\\
+=&\int\frac{\mathrm d^3\vec l}{(2\pi)^3}\frac{\mathrm d\omega}{2\pi}\ f(\vec l)\tilde g(\omega)(2\pi)\delta(k^0-\omega_{\vec l}-\omega)(2\pi)^3\delta(-\vec k+\vec l)e^{i\omega T}\\
+=&f(\vec k)\tilde g(k^0-\omega_{\vec k})e^{i(k^0-\omega_{\vec k})T}\\
+\end{aligned}\tag3</script><p>on-shell意味着$k^0=\omega_{\vec k}$，因此(3)式与$T$无关。</p>
+<h3 id="入态-in-rangle-与出态-out-rangle"><a href="#入态-in-rangle-与出态-out-rangle" class="headerlink" title="入态$|in\rangle$与出态$|out\rangle$"></a>入态$|in\rangle$与出态$|out\rangle$</h3><p>入态指的是$t\rightarrow-\infty$时有确定的、可分辨的轨迹和粒子数，$t\rightarrow+\infty$时粒子数、轨迹均不确定；<br>出态指的是$t\rightarrow+\infty$时有确定的、可分辨的轨迹和粒子数，$t\rightarrow-\infty$时粒子数、轨迹均不确定。<br><strong>我们要求出态和入态的所有粒子动量均不一样</strong>，不然的话可以不考虑不散射的粒子。</p>
+<p>先考虑入态，设</p>
+<script type="math/tex; mode=display">
+C_\alpha=\int\mathrm d^4x_\alpha\ u_\alpha(x_\alpha)\phi_\alpha(x_\alpha)=\int\frac{\mathrm d^4k}{(2\pi)^4}\ \tilde u(k)\tilde\phi(-k)\tag4</script><p>其中$\alpha$标记粒子，$u_\alpha$为一个小窗。这个小窗时间方向为$g_\alpha(t-T_-),T_-\rightarrow-\infty$，空间（动量）方向为$f_\alpha(\mathbf k_\alpha)$——所以当$|T_-|$足够大时，只需每个粒子的$\mathbf p_\alpha$不相等，就能将它们完全分开。这样，</p>
+<script type="math/tex; mode=display">
+u_\alpha(x)=g_\alpha(t-T_-)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f_\alpha(\mathbf k_\alpha)e^{-i\omega_{\mathbf k}t+i\mathbf{k\cdot x}}\tag{5}</script><p>显然这是$F(x)g(t-T)$的形式，因此on-shell等价，之后会用到该结论。<br>可以变换到$k$空间，为</p>
+<script type="math/tex; mode=display">
+\tilde u_\alpha(k)=\tilde g(k^0-\omega_{\mathbf k})f_\alpha(\mathbf k)e^{i(k^0-\omega_\mathbf k)T_-}
+\tag6</script><p>因此(4)中只有$k=(\omega_\mathbf k,\mathbf k)$附近的值被提取出来，即为产生算符。</p>
+<blockquote>
+<p>一个极端的取法是$\delta$函数</p>
+<script type="math/tex; mode=display">g_\alpha(t-T_-)=\delta(t_\alpha-T_-),f_\alpha(\mathbf k_\alpha)=(2\pi)^32\omega_\mathbf k\delta^3(\mathbf{k-p}_\alpha)</script></blockquote>
+<p>因此，单粒子被限制在$(T_-,\mathbf x(t=0)+\mathbf p_\alpha T_-)$附近，单粒子态为$C_\alpha|0\rangle$。而且各个粒子时间几乎相等，空间互不重叠，所以是类空的，因此所有的粒子算符对易</p>
+<script type="math/tex; mode=display">|in\rangle=C_1C_2\cdots C_n|0\rangle\tag7</script><p>同理定义出态，直接写出</p>
 <script type="math/tex; mode=display">\left\{\begin{aligned}
-\tilde C(k)&=\int\mathrm{d}^4xe^{-ik\cdot x}C(x)\\
-C(x)&=\int\frac{\mathrm{d}^4k}{(2\pi)^4}e^{ik\cdot x}\tilde C(k)
-\end{aligned}\tag{1.5}\right.</script><blockquote>
-<script type="math/tex; mode=display">k\cdot x=g_{\mu\nu}k^\mu x^\nu=-k^0t+\vec k\cdot\vec x</script></blockquote>
-<p>因此(1.4)化为</p>
-<script type="math/tex; mode=display">0=\int\frac{\mathrm{d}^4k}{(2\pi)^4}(k^2+\omega_0^2)e^{ik\cdot x}\tilde C(k)\tag{1.6}</script><p>这说明除了$k^2+\omega_0^2=0$的地方以外，$\tilde C(k)\equiv0$。<br>根据Lorentz不变性</p>
-<script type="math/tex; mode=display">\begin{aligned}\tilde C(\Lambda k)=&\int\mathrm{d}^4(\Lambda^{-1}x)e^{-i(\Lambda k)\cdot(\Lambda^{-1}x)}C(\Lambda^{-1}x)\\
-=&\int\mathrm{d}^4(\Lambda^{-1}x)e^{-ik\cdot x}C(\Lambda^{-1}x)\\
-=&\int\mathrm{d}^4xe^{-ik\cdot x}C(x)=\tilde C(k)\end{aligned}\tag{1.7}</script><p>因此$\tilde C(k)$在$k_0=\sqrt{\vec k^2+\omega_0^2}\equiv\omega_{\vec k}$上取值均相等，在$k_0=-\omega_{\vec k}$上取值也均相等。</p>
-<script type="math/tex; mode=display">\tilde C(k)=c_+(2\pi)\delta(k^2+\omega_0^2)\theta(k^0)+c_-(2\pi)\delta(k^2+\omega_0^2)\theta(-k^0)\tag{1.8}</script><p>之所以选择$\delta(k^2+\omega_0^2)$而非$\delta(k^0\pm\omega_{\vec k})$是为了满足Lorentz不变性的要求。而两者之间有联系</p>
-<script type="math/tex; mode=display">\delta(k^2+\omega_0^2)=\frac{1}{2\omega_{\vec k}}\left(\delta(k^0+\omega_{\vec k})+\delta(k^0-\omega_{\vec k})\right)\tag{1.9}</script><p>将(1.8)(1.9)代入(1.5)变换回坐标表象得</p>
-<script type="math/tex; mode=display">C(x)=\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[c_+e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}+c_-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.10}</script><p>取类空坐标$C(t=0,\vec x)=0$，即得到$c_++c_-=0$，于是</p>
-<script type="math/tex; mode=display">C(x)=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.11}</script><p>因此</p>
-<script type="math/tex; mode=display">C(-x)=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{i\omega_{\vec k}t-i\vec k\cdot\vec x}-e^{-i\omega_{\vec k}t-i\vec k\cdot\vec x}\right]=-C(x)\tag{1.12}</script><p>第二个等号取了$\vec k\rightarrow-\vec k$。根据(1.3)可知$\sigma=1$，即场算符对易关系为</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(0)]=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.13}</script><p><a href="/2020/09/29/Klein-Gordon场量子化">未完待续</a></p>
-]]></content>
+&D_{\alpha'}=\int\mathrm d^4x'_{\alpha'}\ u'_{\alpha'}(x'_{\alpha'})\phi(x'_{\alpha'})\\
+&u'_{\alpha'}(x)=g'_{\alpha'}(t-T_+)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f'_{\alpha'}(\mathbf k)e^{-i\omega_{\mathbf k}t+i\mathbf{k\cdot x}}\\
+&T_+\rightarrow+\infty\\
+&|out\rangle=D_1D_2\cdots D_{n'}|0\rangle
+\end{aligned}\right.\tag8</script><p>因此两者的内积——转移振幅为</p>
+<script type="math/tex; mode=display">\langle out|in\rangle=\langle0|\hat T[D_1^\dagger\cdots D_{n'}^\dagger C_1\cdots C_n]|0\rangle\tag9</script><p>编时算符在此其实没有作用，因为出态之间对易，末态之间也对易，出态和末态本身已经编时。</p>
+<h3 id="LSZ约化公式"><a href="#LSZ约化公式" class="headerlink" title="LSZ约化公式"></a>LSZ约化公式</h3><p>定义</p>
+<script type="math/tex; mode=display">\overline C_\alpha=\int\mathrm d^4x_\alpha \bar u_\alpha(x_\alpha)\phi(x_\alpha),
+\bar u_\alpha(x_\alpha)=g_\alpha(t_\alpha-T_+)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f_\alpha(\mathbf k_\alpha)e^{ik\cdot x}</script><p>可以证明，$C_\alpha\rightarrow\overline C_\alpha$后，(9)的右边变成零，这是因为编时算符要求它移到所有$C$算符左方，类空性质（因为动量均不相等）允许它移到所有$D$算符左方。因此会出现$\langle 0|\overline C_\alpha$。因为$\bar u_\alpha$和$\bar u$ on-shell 等价，所以同(6)可知提取出了产生部分，即$\overline C_\alpha$为产生算符。于是(9)可以改写为</p>
+<script type="math/tex; mode=display">\langle out|in\rangle=\langle0|\hat T[(\overline D_1-D_1)^\dagger\cdots (\overline D_{n'}-D_{n'})^\dagger (C_1-\overline C_1)\cdots (C_n-\overline C_n)]|0\rangle\tag{10}</script><p>略去下标，计算 $C-\overline C$，首先将时间变换到频率</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&C-\overline C=\int\mathrm d^4 x\int\frac{\mathrm d\nu}{2\pi}\tilde g(\nu)\left(e^{-i\nu(t-T_-)}-e^{i\nu (t-T_+)}\right)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}f(\mathbf k)e^{ik\cdot x}\phi(x)\\
+&=\int\frac{\mathrm d^4x\mathrm d\nu\mathrm d^3\mathbf k}{(2\pi)^4}\tilde g(\nu)\left(e^{i\nu T_-}-e^{-i\nu T_+}\right)f(\mathbf k)e^{-i(\omega_\mathbf k+\nu)t+i\mathbf{k\cdot x}}\phi(x)
+\end{aligned}</script><p>我们知道Klein-Gordon场无相互作用，因此若$\phi$满足$(-\partial^2+m^2)\phi=0$，上式应当为$0$；而对于又相互作用的场则为有限值。方便起见，先作用在指数项上，变为</p>
+<script type="math/tex; mode=display">
+\int\frac{\mathrm d^4x\mathrm d\nu\mathrm d^3\mathbf k}{(2\pi)^4}\tilde g(\nu)\frac{e^{i\nu T_-}-e^{-i\nu T_+}}{-2\omega_\mathbf k\nu-\nu^2}f(\mathbf k)(-\partial^2+m^2)\left[e^{-i(\omega_\mathbf k+\nu)t+i\mathbf{k\cdot x}}\right]\phi(x)</script><p>其中用到了$\omega_\mathbf k^2=m^2+\mathbf k^2$。利用分部积分可以将偏导挪到$\phi$上</p>
+<script type="math/tex; mode=display">
+\int\frac{\mathrm d^4x\mathrm d\nu\mathrm d^3\mathbf k}{(2\pi)^4}\tilde g(\nu)\frac{e^{i\nu T_-}-e^{-i\nu T_+}}{-2\omega_\mathbf k\nu-\nu^2}f(\mathbf k)e^{-i(\omega_\mathbf k+\nu)t+i\mathbf{k\cdot x}}(-\partial^2+m^2)\phi(x)</script><p>由于$|T_\pm|\rightarrow\infty$，所以对于任何变化“缓慢”的函数$f(\nu)$，$0\notin[a,b]$，都有$\int_a^bf(\nu)e^{i\nu T_\pm}\mathrm d\nu=0$。而对于$0\in[a,b]$，因为有效的只有$0$附近的值，所以可以将$\nu^2$项丢弃</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^\infty\frac{e^{i\nu T}}{\nu}\mathrm d\nu=i\int_{\nu=-\infty}^\infty\frac{\sin\nu T}{\nu T}\mathrm d(\nu T)=i\pi\mathrm{sign}(T)</script><p>因此</p>
+<script type="math/tex; mode=display">
+C-\overline C=\int\mathrm d^4x\tilde{dk}\ ie^{ik\cdot x}\tilde g(0)f(\mathbf k)(\partial^2-m^2)\phi(x)\tag{11}</script><p>取$\tilde g(0)=1$，则</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\langle out|in\rangle=i^{n+n'}\\
+\times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
+\times&\int\tilde{\mathrm dp'_1}f'_1(\mathbf p'_1)\cdots\int\tilde{\mathrm dp'_{n'}}f'_{n'}(\mathbf p'_{n'})\\
+\times&\int\mathrm d^4x_1(m^2-\partial^2_1)\cdots\int\mathrm d^4x_n(m^2-\partial^2_n)\\
+\times&\int\mathrm d^4x'_1(m^2-\partial'^2_1)\cdots\int\mathrm d^4x'_{n'}(m^2-\partial'^2_{n'})\\
+\times&\langle0|\hat T[\phi(x_1')\cdots\phi'(x_{n'})]|0\rangle
+\end{aligned}\tag{12}</script>]]></content>
       <categories>
         <category>QFT</category>
       </categories>
@@ -445,71 +432,157 @@ H(\phi,\Pi)&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\left[\Pi(-\vec k)\Pi
       </tags>
   </entry>
   <entry>
-    <title>Gell-Mann&amp;Low 定理</title>
-    <url>/2020/10/15/Gell-Mann&amp;Low%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[<p>Gell-Mann Low 定理说的是，在绝热引入相互作用的方法下计算出的本征态就是相互作用系统的本征态。即系统的哈密顿量为</p>
-<script type="math/tex; mode=display">\hat H=\hat H_0+\hat H_I=\hat H_0+ge^{-\epsilon|t|}\hat H_1\tag{1}</script><p>非相互作用部分本征态$|\Phi\rangle$，则若</p>
-<script type="math/tex; mode=display">\lim_{\epsilon\rightarrow 0}\frac{\hat U_\epsilon(0,-\infty;g)|\Phi\rangle}{\langle\Phi|\hat U_\epsilon(0,-\infty;g)|\Phi\rangle}\equiv
-\lim_{\epsilon\rightarrow 0}\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}
-=\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}\tag{2}</script><p>注意到定义了$|\Psi^g(\epsilon)\rangle$，而且并没有说$|\Psi^g(\epsilon)\rangle\xrightarrow{\epsilon\rightarrow0}|\Psi^g\rangle$。那么有</p>
-<script type="math/tex; mode=display">\hat H(t=0)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}=E\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}\tag{3}</script><a id="more"></a>
-<h3 id="相互作用表象"><a href="#相互作用表象" class="headerlink" title="相互作用表象"></a>相互作用表象</h3><p>波函数和算符分别为</p>
-<script type="math/tex; mode=display">|\Psi_I(t)\rangle\equiv e^{i\hat H_0t/\hbar}|\Psi_S(t)\rangle,\quad\hat O_I(t)\equiv e^{i\hat H_0t/\hbar}\hat O_Se^{-i\hat H_0t/\hbar}\tag{1.1}</script><p>因此波函数运动方程为</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}|\Psi_I(t)\rangle=\hat H_I|\Psi_I(t)\rangle\tag{1.2}</script><p>算符运动方程为</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat O_I(t)=\left[\hat O_I(t),\hat H_0\right]\tag{1.3}</script><p>根据(1.1)可得时间演化算符$\hat U(t,t_0)$为</p>
-<script type="math/tex; mode=display">\hat U(t,t_0)=e^{i\hat H_0t/\hbar}e^{-i\hat H(t-t_0)/\hbar}e^{-i\hat H_0t_0/\hbar}\tag{1.4}</script><p>之所以不从(1.2)式出发，是因为$\hat H_I(t)$之间不一定对易，导致得不到简单的结果。但从(1.2)出发能得到时间演化算符的运动方程，通过迭代也能得到其表达式</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat U(t,t_0)=\hat H_I(t)\hat U(t,t_0)\tag{1.5}</script><p>当然，作为“算符”，它也应当满足(1.3)式，只不过用处不太大。</p>
-<p>对(1.5)式积分，考虑到$\hat U(t_0,t_0)=\hat 1$</p>
-<script type="math/tex; mode=display">\hat U(t,t_0)=\hat 1+\frac{1}{i\hbar}\int_{t_0}^t\hat H_I(t_1)\hat U(t_1,t_0)\mathrm dt_1\tag{1.6}</script><p>继续迭代，最终得到</p>
-<script type="math/tex; mode=display">\hat U(t,t_0)=\sum_{n=0}^\infty\left(\frac{1}{i\hbar}\right)^n\frac{1}{n!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ \hat T\left[\hat H_I(t_1)\cdots\hat H_I(t_n)\right]\tag{1.7}</script><p>其中引入编时算符$\hat T$使得各个$t_i$等价。</p>
-<h3 id="求解哈密顿量和时间演化的对易"><a href="#求解哈密顿量和时间演化的对易" class="headerlink" title="求解哈密顿量和时间演化的对易"></a>求解哈密顿量和时间演化的对易</h3><p>这是证明过程中会遇到的一个问题，我们将其处理为引理。</p>
-<p>因为$\hat U$能表示为$\hat H_1$的函数，正如(1.7)所示，因此我们从这里开始计算。使用(1.3)</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat H_1(t)=[\hat H_1,\hat H_0]\tag{2.1}</script><p>因此$n$个$\hat H_1$的乘积有</p>
-<script type="math/tex; mode=display">[\hat H_1(t_1)\cdots\hat H_1(t_n),\hat H_0]=i\hbar\left(\frac{\partial}{\partial t_1}+\cdots+\frac{\partial}{\partial t_n}\right)\hat H_1(t_1)\cdots\hat H_1(t_n)\tag{2.2}</script><p>为了引入编时算符，我们能够证明（直接计算即可）</p>
-<script type="math/tex; mode=display">\sum_{j=1}^n\frac{\partial}{\partial t_j}\theta(t_{P(1)}-t_{P(2)})\cdots\theta(t_{P(n-1)}-t_{P(n)})=0\tag{2.3}</script><p>所以(2.2)式可直接套上编时算符，此时$t_1,\cdots t_n$完全等价，于是</p>
-<script type="math/tex; mode=display">[\hat T[\hat H_1(t_1)\cdots\hat H_1(t_n)],\hat H_0]=in\hbar\frac{\partial}{\partial t_1}\hat T[\hat H_1(t_1)\cdots\hat H_1(t_n)]\tag{2.4}</script><p>和(1)代回(1.7)得</p>
-<script type="math/tex; mode=display">\begin{aligned}[]
-[\hat U(t,t_0),\hat H_0]&=\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
-&\times\frac{\partial}{\partial t_1}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]
-\end{aligned}\tag{2.5}</script><h3 id="正式证明"><a href="#正式证明" class="headerlink" title="正式证明"></a>正式证明</h3><script type="math/tex; mode=display">\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=\left(\hat H_0\hat U_\epsilon(0,-\infty;g)-\hat U_\epsilon(0,-\infty;g)E_0\right)|\Phi\rangle\tag{3.1}</script><p>注意到右边是一个对易子，因为$\hat H_0|\Phi\rangle=E_0|\Phi\rangle$。所以可将(2.5)代入</p>
-<script type="math/tex; mode=display">\begin{aligned}\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=&-\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
-&\times\frac{\partial}{\partial t_1}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]|\Phi\rangle
-\end{aligned}\tag{3.2}</script><p>对$t_1$做分部积分，注意到积分下限有因子$e^{-\epsilon\infty}=0$，上限有$t_1=0&gt;t_j$，所以为</p>
+    <title>一道积分证明</title>
+    <url>/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/</url>
+    <content><![CDATA[<p>在<a href="/2020/09/29/Klein-Gordon场量子化">之前的一篇文章</a>里提到一个积分</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\int\frac{\mathrm d^4k}{(2\pi)^4}(2\pi)\left[e^{ik\cdot x}\theta(k^0)-e^{ik\cdot x}\theta(-k^0)\right]\delta(k^2+\omega_0^2)</script><script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]</script><p>本文用于证明此积分。<br><a id="more"></a></p>
+<p>先将$k^0$积掉，只计算第一项</p>
+<script type="math/tex; mode=display">\int_{-\infty}^\infty\mathrm dk^0\ e^{-ik^0x^0}\theta(k^0)\delta\left[-(k^0)^2+\vec k^2+\omega_0^2\right]=\frac{e^{-i\sqrt{\vec k^2+\omega_0^2}x^0}}{2\sqrt{\vec k^2+\omega_0^2}}</script><p>再将积分变换到球坐标，定义$|\vec x|=r,r^0=x^0-y^0$，那么 $\tau^2=(r^0)^2-r^2$</p>
 <script type="math/tex; mode=display">\begin{aligned}
-&-\hat H_1\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{-\infty}^0\mathrm dt_2\cdots\mathrm dt_n\ e^{\epsilon(t_2+\cdots+t_n)}\hat T\left[\hat H_1(t_2)\cdots\hat H_1(t_n)\right]|\Phi\rangle\\
-&+\epsilon\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{-\infty}^0\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]|\Phi\rangle
-\end{aligned}</script><p>对于第一项，可以重新编号$2\rightarrow1,3\rightarrow2,\cdots n\rightarrow(n-1)$得到$-g\hat H_1\hat U_\epsilon(0,-\infty;g)|\Phi\rangle$；</p>
-<p>对于第二项，也可通过简单的算符与$\hat U_\epsilon(0,-\infty;g)$联系起来。两者结合得</p>
-<script type="math/tex; mode=display">\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=-g\hat H_1|\Psi^g(\epsilon)\rangle+\epsilon i\hbar g\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle</script><p>移项后得到</p>
-<script type="math/tex; mode=display">\left(\hat H_0+g\hat H_1-E_0\right)|\Psi^g(\epsilon)\rangle=\epsilon i\hbar g\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle\tag{3.3}</script><p>但是不能直接取极限$\epsilon\rightarrow 0$得到$|\Psi^g\rangle$是$\hat H=\hat H_0+\hat H_1$的本征态，因为</p>
-<ol>
-<li>我们并不知道$|\Psi^g(\epsilon)\rangle$随$g$的变化关系</li>
-<li>我们并不知道$|\Psi^g(\epsilon\rightarrow0)\rangle$是否就是$|\Psi^g\rangle$</li>
-<li>倘若右边为零，说明相互作用不会改变本征能量，只会改变本征矢，这是荒谬的</li>
-</ol>
-<p>受Gell-Mann&amp;Low定理的条件(2)启发，我们去凑相应的形式，计算</p>
+&\frac1{c_+}[\phi(x),\phi(y)]\\
+=&\int\frac{k^2\sin\theta\mathrm{d}k\mathrm{d}\theta\mathrm{d}\phi}{(2\pi)^32\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)e^{ikr\cos\theta}\\
+=&\int_0^\infty\frac{k^2\mathrm{d}k}{(2\pi)^22\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{2\sin kr}{kr}\\
+=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
+=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left[\sum_{n=0}^\infty\frac{(r^0)^{2n+1}}{(2n+1)!}(-1)^{n+1}2i\sqrt{k^2+\omega_0^2}^{2n+1}\right]\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
+=&\sum_{n=0}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\int_0^\infty(k^2+\omega_0^2)^nk\sin kr\mathrm{d}k\\
+=&\sum_{n=0}^\infty\sum_{m=0}^n\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
+=&\sum_{m=0}^\infty\sum_{n=m}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
+\end{aligned}\tag{1}</script><p>求和变换 $(n,m)\rightarrow(l=n-m,m)$</p>
 <script type="math/tex; mode=display">\begin{aligned}
-&\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle=\frac{\partial}{\partial g}\left[\langle\Phi|\Psi^g(\epsilon)\rangle\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]\\
-=&\langle\Phi|\Psi^g(\epsilon)\rangle\frac{\partial}{\partial g}\left[\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]+\frac{\partial}{\partial g}\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\\
-\end{aligned}\tag{3.4}</script><p>代入(3.3)得</p>
+&\frac1{c_+}[\phi(x),\phi(y)]\\
+=&\sum_{m=0}^\infty\sum_{l=0}^\infty\frac{(r^0)^{2(l+m)+1}(-1)^{m+l+1}i}{(2m+2l+1)!2\pi^2r}\frac{(m+l)!}{m!l!}\int_0^\infty k^{2l+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
+=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
+\sum_{l=0}^\infty\frac{(-1)^l(m+l)!}{(2m+2l+1)!l!} (kr^0)^{2l+1}\sin kr\mathrm{d}k\\
+=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
+2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr\mathrm{d}k\\
+\end{aligned}\tag{2}</script><p>其中 $j_m$ 是球贝塞尔函数。简单起见，定义</p>
+<script type="math/tex; mode=display">I[m;r,\epsilon]=\int_0^\infty2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr e^{-k\epsilon}\mathrm{d}k\tag{3}</script><p>利用Mathematica，计算得</p>
+<script type="math/tex; mode=display">I[0;r,\epsilon]=\int_0^\infty\sin kr^0\sin kr e^{-k\epsilon}\mathrm{d}k=\frac{2\epsilon r^0r}{\epsilon^4+2\epsilon^2(r^2+(r^0)^2)+((r^0)^2-r^2)^2}</script><p>也就是</p>
 <script type="math/tex; mode=display">\begin{aligned}
-&\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\\
-=&i\epsilon\hbar g\frac{\partial}{\partial g}\left[\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]\\
-+&i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}
-\end{aligned}\tag{3.5}</script><p>利用(2)可知，上式取$\epsilon\rightarrow0$时，第一项的括号内为常数，所以可以使用极限公式$\lim AB=\lim A\times\lim B$得到值$0$。第二项要能取极限是有要求的，即$\lim_{\epsilon\rightarrow0}i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]$极限存在，设为$\Delta E^g$。假设满足要求（具体见补充说明），则上式为</p>
-<script type="math/tex; mode=display">\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}
-=\lim_{\epsilon\rightarrow0}\left\{i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\right\}\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}
-\tag{3.6}</script><p>因此令$g=1$即得到</p>
-<script type="math/tex; mode=display">\hat H(t=0)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}=(E_0+\Delta E)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}</script><p>即得证。</p>
-<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><p>$\epsilon\rightarrow0$时，$\langle\Phi|\Psi^g(\epsilon)\rangle=A^g\exp(i\epsilon^{-1}\alpha^g)$，所以</p>
-<script type="math/tex; mode=display">
-\lim_{\epsilon\rightarrow0}i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]=\hbar g\frac{\partial\alpha^g}{\partial g}</script><p>因此证明中(3.6)式成立</p>
-]]></content>
+I[0;r,0^+]&=\pi rr^0\sqrt{\frac2{(r^0)^2+r^2}}\delta((r^0)^2-r^2)\\
+&=\pi r\mathrm{sign}(r^0)\delta((r^0)^2-r^2)\\
+&=\pi r\mathrm{sign}(r^0)\delta(\tau^2)
+\end{aligned}\tag{4}</script><p>再次利用Mathematica，有公式</p>
+<script type="math/tex; mode=display">\int_0^{\pm\infty}\mathrm{d}x\ x^{1-m}j_m(x)\sin xy=\pm2^{-m}\pi y\frac{(1-y^2)^{-1+m}}{\Gamma(m)}\theta(1-y^2)</script><p>令$x=kr^0,y=r/r^0$，得到</p>
+<script type="math/tex; mode=display">I[m;r,0]=2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\tag{5}</script><p>(4)(5)代入(2)</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\frac 1c_+[\phi(x),\phi(y)]=i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}I[m;r,0]\\
+=&i\frac{-1}{2\pi^2r}\pi r\mathrm{sign}(r^0)\delta(\tau^2)\\
++&i\sum_{m=1}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\\
+=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
++&i\sum_{m=1}^\infty\frac{(-1)^{m+1}}{2\pi m!(m-1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m}\theta(\tau^2)\mathrm{sign}(r^0)\\
+=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
++&i\sum_{m=0}^\infty\frac{(-1)^m}{2\pi m!(m+1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m+2}\theta(\tau^2)\mathrm{sign}(r^0)\\
+\end{aligned}\tag{6}</script><p>注意到</p>
+<script type="math/tex; mode=display">J_1(x)=\sum_{m=0}^\infty\frac{(-1)^m}{m!(m+1)!}\left(\frac x2\right)^{2m+1}</script><p>(6)式变为</p>
+<script type="math/tex; mode=display">\frac 1{c_+}[\phi(x),\phi(y)]=i\frac1{2\pi}\mathrm{sign}(r^0)\left[-\delta(\tau^2)+\frac{1}{\tau^2}\frac{\omega_0\tau}2J_1(\omega_0\tau)\theta(\tau^2)\right]</script><p>这正是我们要证明的</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(y)]=ic_+\mathrm{sign}(r^0)\left[\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac1{2\pi}\delta(\tau^2)\right]\tag{7}</script>]]></content>
       <categories>
-        <category>QSP</category>
+        <category>QFT</category>
       </categories>
       <tags>
         <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建hexo博客</title>
+    <url>/2020/09/28/%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>记录搭建hexo博客的步骤。</p>
+<p>默认安装好了node.js和git,如若没有:</p>
+<p><a href="https://nodejs.org">点击此处下载node.js</a></p>
+<p><a href="https://git-scm.com">点击此处下载git</a></p>
+<a id="more"></a>
+<h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><p>安装hexo<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save <span class="comment"># 安装git插件</span></span><br></pre></td></tr></table></figure></p>
+<p>修改_config.xml<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">&lt;your</span> <span class="string">url&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">depoly:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@&lt;your</span> <span class="string">repository&gt;</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<p>初始化git<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br></pre></td></tr></table></figure></p>
+<p>创建ssh秘钥<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line">cat /root/.ssh/id_rsa.pub <span class="comment"># for Linux</span></span><br><span class="line"><span class="built_in">type</span> C:\\Users\&lt;user<span class="string">&#x27;s name&gt;\.ssh\id_rsa.pub # for windows</span></span><br></pre></td></tr></table></figure><br>复制到github里的ssh密钥。</p>
+<p>备份源码至同一仓库（可选）<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;your repository&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;&lt;commit message&gt;&quot;</span></span><br><span class="line">git push --set-upstream origin origin/<span class="built_in">source</span></span><br></pre></td></tr></table></figure><br>简单命令<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo s <span class="comment"># server 创建本地服务器，打开https://localhost:4000即可查看</span></span><br><span class="line">hexo g <span class="comment"># generate 生成网页文件</span></span><br><span class="line">hexo d <span class="comment"># deploy 配置到github</span></span><br><span class="line">hexo clean <span class="comment"># 清理生成文件</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="主题相关"><a href="#主题相关" class="headerlink" title="主题相关"></a>主题相关</h3><p>更换主题，以Next为例<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
+<p>修改_config.xml<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Themes:</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></p>
+<p>配置主题themes/next/_config.yml。参见文档内注释即可</p>
+<h3 id="创建tags界面-categories同理"><a href="#创建tags界面-categories同理" class="headerlink" title="创建tags界面(categories同理)"></a>创建tags界面(categories同理)</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>在source/tags/index.md修改为<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h3 id="数学模式"><a href="#数学模式" class="headerlink" title="数学模式"></a>数学模式</h3><p>需要更换markdown引擎<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></p>
+<p>在node_modules/kramed/lib/rules/inline.js中修改一些语义处理<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure></p>
+<p>最后再在<strong>主题配置</strong>和<strong>文件头</strong>里打开mathjax即可</p>
+<h3 id="插图方式"><a href="#插图方式" class="headerlink" title="插图方式"></a>插图方式</h3><p>打开本地配置_config.yml的开关<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>在source文件夹下建立images文件夹，将图片放于此文件夹下，引用时<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">&lt;name&gt;</span>](<span class="link">/images/&lt;pic-name&gt;</span>)</span><br></pre></td></tr></table></figure></p>
+<p>或者放在创建文章时的同名文件夹下，引用时直接使用名字</p>
+<h3 id="引用其他博文"><a href="#引用其他博文" class="headerlink" title="引用其他博文"></a>引用其他博文</h3><p>将配置文件的永久链接修改为<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:category/:title/</span></span><br></pre></td></tr></table></figure><br>至此文件储存路径为”/目录/标题”，因此引用时可<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[](../<span class="xml"><span class="tag">&lt;<span class="name">同级目录下的文件</span>&gt;</span></span>)</span><br><span class="line">[](/<span class="xml"><span class="tag">&lt;<span class="name">绝对路径-目录</span>&gt;</span></span>/<span class="xml"><span class="tag">&lt;<span class="name">标题</span>&gt;</span></span>)</span><br></pre></td></tr></table></figure></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>标量场理论</title>
+    <url>/2020/09/25/%E6%A0%87%E9%87%8F%E5%9C%BA%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<p>标量场是指场变量与参考系无关的场。在参考系变换下</p>
+<script type="math/tex; mode=display">\left\{\begin{array}{ll}
+x\rightarrow\bar x=\Lambda x+a & (\bar x^\mu=\Lambda^\mu_{\ \ \nu} x^\nu+a^\mu)\\
+\phi\rightarrow\phi & (\bar\phi(\bar x)=\bar\phi(\bar x(x))=\phi(x))
+\end{array}\right.</script><p>其中$\Lambda$是恰当正时Lorentz变换。假设$a=0$，则</p>
+<script type="math/tex; mode=display">\bar\phi(\bar x)=\phi(x)=\phi(\Lambda^{-1}\bar x)</script><a id="more"></a>
+<p>对于无穷小变换$\Lambda^\mu_{\ \ \nu}=\delta^\mu_{\ \ \nu}+\theta^\mu_{\ \ \nu}$，其逆变换为$(\Lambda^{-1})^\mu_{\ \ \nu}=\delta^\mu_{\ \ \nu}-\theta^\mu_{\ \ \nu}$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\delta\phi(x)&\equiv\bar\phi(x)-\phi(x)=\phi(\Lambda^{-1}x)-\phi(x)\\
+&=-\theta^\mu_{\ \ \nu}x^\nu\frac{\partial}{\partial x^\mu}\phi(x)\equiv-\theta_{\mu\nu}x^\nu\partial^\nu\phi(x)
+\end{aligned}</script><blockquote>
+<p>接下来会多次用到$\theta$的反对称性，证明思路如下：<br>根据间隔不变性有</p>
+<script type="math/tex; mode=display">\mathrm ds^2=g_{\mu\nu}x^\mu x^\nu=g_{\mu\nu}\Lambda^\mu_{\ \ \alpha}\Lambda^\nu_{\ \ \beta}x^\alpha x^\beta</script><p>因此$g_{\mu\nu}\Lambda^\mu_{\ \ \alpha}\Lambda^\nu_{\ \ \beta}=g_{\alpha\beta}$，将无穷小变换代入并略去$\theta$的高阶项得</p>
+<script type="math/tex; mode=display">g_{\alpha\nu}\theta^\nu_{\ \ \beta}+g_{\mu\beta}\theta^\mu_{\ \ \alpha}=\theta_{\alpha\beta}+\theta_{\beta\alpha}=0</script></blockquote>
+<p>对其进行进一步变换（第三个等号用到$\theta$反对称）</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\delta\phi(x)&=-\theta_{\mu\nu}x^\nu\partial^\mu\phi(x)\\
+&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu+\theta_{\mu\nu}x^\nu\partial^\mu\right)\phi(x)\\
+&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\nu\mu}x^\nu\partial^\mu\right)\phi(x)\\
+&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\mu\nu}x^\mu\partial^\nu\right)\phi(x)
+\end{aligned}</script><p>定义线性变换</p>
+<script type="math/tex; mode=display">\mathscr L^{\mu\nu}=-i\left(x^\nu\partial^\mu-x^\mu\partial^\nu\right)</script><p><strong><font color="red" size=5>注意:</font></strong> 这个线性变换不是做在态矢量的Hilbert空间上，而是做在场算符组成的空间上<br>结论为：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\delta\phi(x)=&\frac i2\theta_{\mu\nu}\mathscr L^{\mu\nu}\phi(x)\\
+=&i\left[\theta_{01}\mathscr L^{01}+\theta_{02}\mathscr L^{02}+\theta_{03}\mathscr L^{03}\right.\\
+&+\theta_{12}\mathscr L^{12}+\theta_{23}\mathscr L^{23}+\theta_{31}\mathscr L^{31}\left.\right]\phi(x)
+\end{aligned}</script><blockquote>
+<p>容易看出，$\mathscr L^{12}$对应$z$方向角动量，同理可得其他六项的意义。<br>所以$\phi$与自旋无关，即对应无自旋粒子。</p>
+</blockquote>
+<h4 id="正则量子化"><a href="#正则量子化" class="headerlink" title="正则量子化"></a>正则量子化</h4><p>Klein-Gordon方程为</p>
+<script type="math/tex; mode=display">\left(\frac{\partial^2}{\partial t^2}-\nabla^2+\omega_0^2\right)\Psi=0</script><p>或写作</p>
+<script type="math/tex; mode=display">(-\partial^2+\omega_0^2)\Psi=0\tag{1.1}</script><p>我们假设场算符满足（反）对易关系，即</p>
+<script type="math/tex; mode=display">\phi(x)\phi(y)-\sigma\phi(y)\phi(x)=C(x-y)\tag{1.2}</script><p>其中$\sigma=\pm1$。为了确定具体是正是负，我们考虑</p>
+<script type="math/tex; mode=display">C(-x)=\phi(0)\phi(x)-\sigma\phi(x)\phi(0)=-\sigma C(x)\tag{1.3}</script><p>因此$\sigma$的正负性与$C(x)$的奇偶性相关。取$y=0$，将$(-\partial^2+\omega_0^2)$作用在(1.2)式上得</p>
+<script type="math/tex; mode=display">0=(-\partial^2+\omega_0^2)C(x)\tag{1.4}</script><p>为了求解$C(x)$，做变换</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+\tilde C(k)&=\int\mathrm{d}^4xe^{-ik\cdot x}C(x)\\
+C(x)&=\int\frac{\mathrm{d}^4k}{(2\pi)^4}e^{ik\cdot x}\tilde C(k)
+\end{aligned}\tag{1.5}\right.</script><blockquote>
+<script type="math/tex; mode=display">k\cdot x=g_{\mu\nu}k^\mu x^\nu=-k^0t+\vec k\cdot\vec x</script></blockquote>
+<p>因此(1.4)化为</p>
+<script type="math/tex; mode=display">0=\int\frac{\mathrm{d}^4k}{(2\pi)^4}(k^2+\omega_0^2)e^{ik\cdot x}\tilde C(k)\tag{1.6}</script><p>这说明除了$k^2+\omega_0^2=0$的地方以外，$\tilde C(k)\equiv0$。<br>根据Lorentz不变性</p>
+<script type="math/tex; mode=display">\begin{aligned}\tilde C(\Lambda k)=&\int\mathrm{d}^4(\Lambda^{-1}x)e^{-i(\Lambda k)\cdot(\Lambda^{-1}x)}C(\Lambda^{-1}x)\\
+=&\int\mathrm{d}^4(\Lambda^{-1}x)e^{-ik\cdot x}C(\Lambda^{-1}x)\\
+=&\int\mathrm{d}^4xe^{-ik\cdot x}C(x)=\tilde C(k)\end{aligned}\tag{1.7}</script><p>因此$\tilde C(k)$在$k_0=\sqrt{\vec k^2+\omega_0^2}\equiv\omega_{\vec k}$上取值均相等，在$k_0=-\omega_{\vec k}$上取值也均相等。</p>
+<script type="math/tex; mode=display">\tilde C(k)=c_+(2\pi)\delta(k^2+\omega_0^2)\theta(k^0)+c_-(2\pi)\delta(k^2+\omega_0^2)\theta(-k^0)\tag{1.8}</script><p>之所以选择$\delta(k^2+\omega_0^2)$而非$\delta(k^0\pm\omega_{\vec k})$是为了满足Lorentz不变性的要求。而两者之间有联系</p>
+<script type="math/tex; mode=display">\delta(k^2+\omega_0^2)=\frac{1}{2\omega_{\vec k}}\left(\delta(k^0+\omega_{\vec k})+\delta(k^0-\omega_{\vec k})\right)\tag{1.9}</script><p>将(1.8)(1.9)代入(1.5)变换回坐标表象得</p>
+<script type="math/tex; mode=display">C(x)=\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[c_+e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}+c_-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.10}</script><p>取类空坐标$C(t=0,\vec x)=0$，即得到$c_++c_-=0$，于是</p>
+<script type="math/tex; mode=display">C(x)=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.11}</script><p>因此</p>
+<script type="math/tex; mode=display">C(-x)=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{i\omega_{\vec k}t-i\vec k\cdot\vec x}-e^{-i\omega_{\vec k}t-i\vec k\cdot\vec x}\right]=-C(x)\tag{1.12}</script><p>第二个等号取了$\vec k\rightarrow-\vec k$。根据(1.3)可知$\sigma=1$，即场算符对易关系为</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(0)]=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.13}</script><p><a href="/2020/09/29/Klein-Gordon场量子化">未完待续</a></p>
+]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>链接颜色变化</title>
+    <url>/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/</url>
+    <content><![CDATA[<p>本文用于改变超链接的参数。</p>
+<p>最简单的链接为<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.baidu.com&quot;</span>&gt;</span>点击进入百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><br>但是默认点击前为蓝色，点击后变为紫色。<br><a id="more"></a><br>想要更改颜色可在head内加入<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:black;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure><br>link是未点击时的样式，visited时点击后的样式。此外还有hover，active分别为悬停和点击。</p>
+<p>当然不仅仅是改变颜色，还有其他操作，比如去掉下划线</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;<span class="attribute">text-decoration</span>:none;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:black;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>html</tag>
       </tags>
   </entry>
 </search>

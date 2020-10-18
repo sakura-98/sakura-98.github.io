@@ -22,21 +22,21 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":-1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="根据北京大学shindou开设的《量子统计物理》第一章部分内容整理。 为方便起见，考虑二维膜的小振动，即$\phi(\vec x)&#x3D;z(x,y)$。拉氏量为 L(\phi,\dot\phi)&#x3D;\frac12\int\mathrm{d}^2\vec x\dot\phi(\vec x)^2-\frac12\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x&#39;K(\vec x">
+  <meta name="description" content="LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="场的量子化">
-<meta property="og:url" content="https://github.com/sakura-98/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/index.html">
+<meta property="og:title" content="on-shell等价与LSZ约化">
+<meta property="og:url" content="https://github.com/sakura-98/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="根据北京大学shindou开设的《量子统计物理》第一章部分内容整理。 为方便起见，考虑二维膜的小振动，即$\phi(\vec x)&#x3D;z(x,y)$。拉氏量为 L(\phi,\dot\phi)&#x3D;\frac12\int\mathrm{d}^2\vec x\dot\phi(\vec x)^2-\frac12\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x&#39;K(\vec x">
+<meta property="og:description" content="LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-15T08:56:40.056Z">
+<meta property="article:published_time" content="2020-10-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-10-17T13:01:37.235Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://github.com/sakura-98/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/">
+<link rel="canonical" href="https://github.com/sakura-98/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/">
 
 
 <script data-pjax class="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>场的量子化 | Sakura's Blog</title>
+  <title>on-shell等价与LSZ约化 | Sakura's Blog</title>
   
 
 
@@ -199,7 +199,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E9%87%8F%E8%A1%A8%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">动量表象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E9%87%8F%E5%AD%90%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">二次量子化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6%E4%B8%8E%E5%B9%B3%E7%A7%BB"><span class="nav-number">3.</span> <span class="nav-text">动量算符与平移</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#on-shell%E7%AD%89%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">on-shell等价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A5%E6%80%81-in-rangle-%E4%B8%8E%E5%87%BA%E6%80%81-out-rangle"><span class="nav-number">2.</span> <span class="nav-text">入态$|in\rangle$与出态$|out\rangle$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSZ%E7%BA%A6%E5%8C%96%E5%85%AC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">LSZ约化公式</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -276,7 +276,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -289,7 +289,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          场的量子化
+          on-shell等价与LSZ约化
         </h1>
 
         <div class="post-meta-container">
@@ -300,7 +300,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-09-24 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-24T00:00:00+08:00">2020-09-24</time>
+      <time title="Created: 2020-10-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-13T00:00:00+08:00">2020-10-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -308,7 +308,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/QSP/" itemprop="url" rel="index"><span itemprop="name">QSP</span></a>
+          <a href="/categories/QFT/" itemprop="url" rel="index"><span itemprop="name">QFT</span></a>
         </span>
     </span>
 
@@ -322,67 +322,68 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>根据北京大学shindou开设的《量子统计物理》第一章部分内容整理。</p>
-<p>为方便起见，考虑二维膜的小振动，即$\phi(\vec x)=z(x,y)$。拉氏量为</p>
-<script type="math/tex; mode=display">L(\phi,\dot\phi)=\frac12\int\mathrm{d}^2\vec x\dot\phi(\vec x)^2-\frac12\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'K(\vec x-\vec x')\phi(\vec x)\phi(\vec x')</script><p>相应的广义动量为</p>
-<script type="math/tex; mode=display">\Pi(\vec x)=\frac{\delta L}{\delta\dot\phi(\vec x)}=\dot\phi(\vec x)</script><p>所以可以写出哈密顿量</p>
-<script type="math/tex; mode=display">\begin{aligned}&H(\vec \phi,\vec\Pi)=\int\mathrm{d}\vec x\dot\phi(\vec x)\Pi(\vec x)-L(\phi,\dot\phi(\phi,\Pi))\\
-&=\frac12\int\mathrm{d}^2\vec x\Pi(\vec x)^2+\frac12\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'K(\vec x-\vec x')\phi(\vec x)\phi(\vec x')\end{aligned}\tag{H.0}</script><p>正则量子化的程序为</p>
-<script type="math/tex; mode=display">[\phi(\vec x),\phi(\vec x')]=[\Pi(\vec x),\Pi(\vec x')]=0\\
-[\phi(\vec x),\Pi(\vec x')]=i\hbar\delta(\vec x-\vec x')\tag{C.0}</script><a id="more"></a>
-<h3 id="动量表象"><a href="#动量表象" class="headerlink" title="动量表象"></a>动量表象</h3><p>做法是将场算符和动量算符都做傅里叶变换。为了不引起歧义</p>
-<script type="math/tex; mode=display">\tilde\phi(\vec k)=\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x}\phi(\vec x)\\
-\tilde\Pi(\vec k)=\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x}\Pi(\vec x)</script><blockquote>
-<p>由于场算符和动量算符都是厄米算符</p>
-<script type="math/tex; mode=display">\tilde\phi^\dagger(\vec k)=\int\mathrm{d}\vec xe^{i\vec k\cdot\vec x}\phi(\vec x)=\tilde\phi(-\vec k)</script></blockquote>
-<p>将相互作用项也变换到动量表象</p>
-<script type="math/tex; mode=display">\omega^2(\vec k)=\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x} K(\vec x)</script><blockquote>
-<p>由于$K(\vec x)=K(-\vec x)$，所以</p>
-<script type="math/tex; mode=display">\omega^2(\vec k)=\int\mathrm{d}^2\vec x\frac{e^{-i\vec k\cdot\vec x}+e^{i\vec k\cdot\vec x}}{2}K(\vec x)=\int\mathrm{d}^2\vec x\cos(\vec k\cdot\vec x)K(\vec x)</script><p>所以可以得到$\omega^2(\vec k)\in\mathbb R$和$\omega^2(\vec k)=\omega^2(-\vec k)$<br>此处假定$\omega^2(\vec k)\ge0$</p>
-</blockquote>
-<p>则哈密顿量第二项化为</p>
+        <p> LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。<br><a id="more"></a></p>
+<h3 id="on-shell等价函数"><a href="#on-shell等价函数" class="headerlink" title="on-shell等价函数"></a>on-shell等价函数</h3><p>设$m$是<strong>相互作用</strong>标量场$\phi$中单粒子的静质量。若有两个函数$\psi_1(x),\psi_2(x)$，它们的傅里叶变换$\tilde\psi_i(k)\equiv\int e^{-ik\cdot x}\psi_i(x)\mathrm dx$在on-shell条件$l^2+m^2=0$满足时均有</p>
+<script type="math/tex; mode=display">\tilde\psi_1(l)=\tilde\psi_2(l)</script><p>可以计算</p>
 <script type="math/tex; mode=display">\begin{aligned}
-&\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'K(\vec x-\vec x')\phi(\vec x)\phi(\vec x')\\
-=&\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\frac{\mathrm{d}^2\vec k_1}{(2\pi)^2}\frac{\mathrm{d}^2\vec k_2}{(2\pi)^2}\omega^2(\vec k)\phi(\vec k_1)\phi(\vec k_2)e^{i\vec k\cdot(\vec x-\vec x')+i\vec k_1\cdot\vec x+i\vec k_2\cdot\vec x'}\\
-=&\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\mathrm{d}^2\vec k_1\mathrm{d}^2\vec k_2\omega^2(\vec k)\phi(\vec k_1)\phi(\vec k_2)\delta(\vec k_1+\vec k)\delta(\vec k_2-\vec k)\\
-=&\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\omega^2(\vec k)\phi(-\vec k)\phi(\vec k)
-\end{aligned}</script><p>根据</p>
-<script type="math/tex; mode=display">\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x}\delta(\vec x)=1</script><p>第一项可以直接写出（略），因此哈密顿量为</p>
+\int\mathrm d^4x\ \psi(x)\phi(x)|0\rangle=&\int\mathrm d^4x\frac{\mathrm d^4k}{(2\pi)^4}\frac{\mathrm d^4l}{(2\pi)^4}e^{-i(k-l)\cdot x}\tilde\psi(k)\tilde\phi(-l)|0\rangle\\
+=&\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{\mathrm d^4l}{(2\pi)^4}(2\pi)^4\delta(k-l)\tilde\psi(k)\tilde\phi(-l)|0\rangle\\
+=&\int\frac{\mathrm d^4k}{(2\pi)^4}\tilde\psi(k)\tilde\phi(-k)|0\rangle\\
+\end{aligned}</script><p>因为不满足on-shell条件时$\tilde\phi(-k)|0\rangle=0$，所以</p>
+<script type="math/tex; mode=display">\int\mathrm d^4x\ \psi_1(x)\phi(x)|0\rangle=\int\mathrm d^4x\ \psi_2(x)\phi(x)|0\rangle\tag{1}</script><p>假设$F(x)$具有相对论性波函数的形式</p>
+<script type="math/tex; mode=display">F(x)=\int\frac{\mathrm d^3\vec l}{(2\pi)^3}\ f(\vec l)e^{-i\omega_{\vec l}t+i\vec l\cdot x}\tag2</script><p>我们想要证明，对于所有的$T$，$F(x)g(t-T)$都是on-shell等价的。这是因为</p>
 <script type="math/tex; mode=display">\begin{aligned}
-H(\phi,\Pi)&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\left[\Pi(-\vec k)\Pi(\vec k)+\omega^2(\vec k)\phi(-\vec k)\phi(\vec k)\right]\\
-&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\left[\Pi^\dagger(\vec k)\Pi(\vec k)+\omega^2(\vec k)\phi^\dagger(\vec k)\phi(\vec k)\right]\\
-\end{aligned}\tag{H.1}</script><p>trivial的对易关系有</p>
-<script type="math/tex; mode=display">[\phi(\vec k),\phi(\vec k')]=[\Pi(\vec k),\Pi(\vec k')]=0</script><p>不太trivial的为</p>
+&\int\mathrm d^4x\ e^{-ik\cdot x}F(x)g(t-T)\\
+=&\int\mathrm d^4x\frac{\mathrm d^3\vec l}{(2\pi)^3}\frac{\mathrm d\omega}{2\pi}\ e^{ik\cdot x}f(\vec l)e^{-i\omega_{\vec l}t+i\vec l\cdot x}\tilde g(\omega)e^{-i\omega (t-T)}\\
+=&\int\frac{\mathrm d^3\vec l}{(2\pi)^3}\frac{\mathrm d\omega}{2\pi}\ f(\vec l)\tilde g(\omega)(2\pi)\delta(k^0-\omega_{\vec l}-\omega)(2\pi)^3\delta(-\vec k+\vec l)e^{i\omega T}\\
+=&f(\vec k)\tilde g(k^0-\omega_{\vec k})e^{i(k^0-\omega_{\vec k})T}\\
+\end{aligned}\tag3</script><p>on-shell意味着$k^0=\omega_{\vec k}$，因此(3)式与$T$无关。</p>
+<h3 id="入态-in-rangle-与出态-out-rangle"><a href="#入态-in-rangle-与出态-out-rangle" class="headerlink" title="入态$|in\rangle$与出态$|out\rangle$"></a>入态$|in\rangle$与出态$|out\rangle$</h3><p>入态指的是$t\rightarrow-\infty$时有确定的、可分辨的轨迹和粒子数，$t\rightarrow+\infty$时粒子数、轨迹均不确定；<br>出态指的是$t\rightarrow+\infty$时有确定的、可分辨的轨迹和粒子数，$t\rightarrow-\infty$时粒子数、轨迹均不确定。<br><strong>我们要求出态和入态的所有粒子动量均不一样</strong>，不然的话可以不考虑不散射的粒子。</p>
+<p>先考虑入态，设</p>
+<script type="math/tex; mode=display">
+C_\alpha=\int\mathrm d^4x_\alpha\ u_\alpha(x_\alpha)\phi_\alpha(x_\alpha)=\int\frac{\mathrm d^4k}{(2\pi)^4}\ \tilde u(k)\tilde\phi(-k)\tag4</script><p>其中$\alpha$标记粒子，$u_\alpha$为一个小窗。这个小窗时间方向为$g_\alpha(t-T_-),T_-\rightarrow-\infty$，空间（动量）方向为$f_\alpha(\mathbf k_\alpha)$——所以当$|T_-|$足够大时，只需每个粒子的$\mathbf p_\alpha$不相等，就能将它们完全分开。这样，</p>
+<script type="math/tex; mode=display">
+u_\alpha(x)=g_\alpha(t-T_-)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f_\alpha(\mathbf k_\alpha)e^{-i\omega_{\mathbf k}t+i\mathbf{k\cdot x}}\tag{5}</script><p>显然这是$F(x)g(t-T)$的形式，因此on-shell等价，之后会用到该结论。<br>可以变换到$k$空间，为</p>
+<script type="math/tex; mode=display">
+\tilde u_\alpha(k)=\tilde g(k^0-\omega_{\mathbf k})f_\alpha(\mathbf k)e^{i(k^0-\omega_\mathbf k)T_-}
+\tag6</script><p>因此(4)中只有$k=(\omega_\mathbf k,\mathbf k)$附近的值被提取出来，即为产生算符。</p>
+<blockquote>
+<p>一个极端的取法是$\delta$函数</p>
+<script type="math/tex; mode=display">g_\alpha(t-T_-)=\delta(t_\alpha-T_-),f_\alpha(\mathbf k_\alpha)=(2\pi)^32\omega_\mathbf k\delta^3(\mathbf{k-p}_\alpha)</script></blockquote>
+<p>因此，单粒子被限制在$(T_-,\mathbf x(t=0)+\mathbf p_\alpha T_-)$附近，单粒子态为$C_\alpha|0\rangle$。而且各个粒子时间几乎相等，空间互不重叠，所以是类空的，因此所有的粒子算符对易</p>
+<script type="math/tex; mode=display">|in\rangle=C_1C_2\cdots C_n|0\rangle\tag7</script><p>同理定义出态，直接写出</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&D_{\alpha'}=\int\mathrm d^4x'_{\alpha'}\ u'_{\alpha'}(x'_{\alpha'})\phi(x'_{\alpha'})\\
+&u'_{\alpha'}(x)=g'_{\alpha'}(t-T_+)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f'_{\alpha'}(\mathbf k)e^{-i\omega_{\mathbf k}t+i\mathbf{k\cdot x}}\\
+&T_+\rightarrow+\infty\\
+&|out\rangle=D_1D_2\cdots D_{n'}|0\rangle
+\end{aligned}\right.\tag8</script><p>因此两者的内积——转移振幅为</p>
+<script type="math/tex; mode=display">\langle out|in\rangle=\langle0|\hat T[D_1^\dagger\cdots D_{n'}^\dagger C_1\cdots C_n]|0\rangle\tag9</script><p>编时算符在此其实没有作用，因为出态之间对易，末态之间也对易，出态和末态本身已经编时。</p>
+<h3 id="LSZ约化公式"><a href="#LSZ约化公式" class="headerlink" title="LSZ约化公式"></a>LSZ约化公式</h3><p>定义</p>
+<script type="math/tex; mode=display">\overline C_\alpha=\int\mathrm d^4x_\alpha \bar u_\alpha(x_\alpha)\phi(x_\alpha),
+\bar u_\alpha(x_\alpha)=g_\alpha(t_\alpha-T_+)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f_\alpha(\mathbf k_\alpha)e^{ik\cdot x}</script><p>可以证明，$C_\alpha\rightarrow\overline C_\alpha$后，(9)的右边变成零，这是因为编时算符要求它移到所有$C$算符左方，类空性质（因为动量均不相等）允许它移到所有$D$算符左方。因此会出现$\langle 0|\overline C_\alpha$。因为$\bar u_\alpha$和$\bar u$ on-shell 等价，所以同(6)可知提取出了产生部分，即$\overline C_\alpha$为产生算符。于是(9)可以改写为</p>
+<script type="math/tex; mode=display">\langle out|in\rangle=\langle0|\hat T[(\overline D_1-D_1)^\dagger\cdots (\overline D_{n'}-D_{n'})^\dagger (C_1-\overline C_1)\cdots (C_n-\overline C_n)]|0\rangle\tag{10}</script><p>略去下标，计算 $C-\overline C$，首先将时间变换到频率</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&C-\overline C=\int\mathrm d^4 x\int\frac{\mathrm d\nu}{2\pi}\tilde g(\nu)\left(e^{-i\nu(t-T_-)}-e^{i\nu (t-T_+)}\right)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}f(\mathbf k)e^{ik\cdot x}\phi(x)\\
+&=\int\frac{\mathrm d^4x\mathrm d\nu\mathrm d^3\mathbf k}{(2\pi)^4}\tilde g(\nu)\left(e^{i\nu T_-}-e^{-i\nu T_+}\right)f(\mathbf k)e^{-i(\omega_\mathbf k+\nu)t+i\mathbf{k\cdot x}}\phi(x)
+\end{aligned}</script><p>我们知道Klein-Gordon场无相互作用，因此若$\phi$满足$(-\partial^2+m^2)\phi=0$，上式应当为$0$；而对于又相互作用的场则为有限值。方便起见，先作用在指数项上，变为</p>
+<script type="math/tex; mode=display">
+\int\frac{\mathrm d^4x\mathrm d\nu\mathrm d^3\mathbf k}{(2\pi)^4}\tilde g(\nu)\frac{e^{i\nu T_-}-e^{-i\nu T_+}}{-2\omega_\mathbf k\nu-\nu^2}f(\mathbf k)(-\partial^2+m^2)\left[e^{-i(\omega_\mathbf k+\nu)t+i\mathbf{k\cdot x}}\right]\phi(x)</script><p>其中用到了$\omega_\mathbf k^2=m^2+\mathbf k^2$。利用分部积分可以将偏导挪到$\phi$上</p>
+<script type="math/tex; mode=display">
+\int\frac{\mathrm d^4x\mathrm d\nu\mathrm d^3\mathbf k}{(2\pi)^4}\tilde g(\nu)\frac{e^{i\nu T_-}-e^{-i\nu T_+}}{-2\omega_\mathbf k\nu-\nu^2}f(\mathbf k)e^{-i(\omega_\mathbf k+\nu)t+i\mathbf{k\cdot x}}(-\partial^2+m^2)\phi(x)</script><p>由于$|T_\pm|\rightarrow\infty$，所以对于任何变化“缓慢”的函数$f(\nu)$，$0\notin[a,b]$，都有$\int_a^bf(\nu)e^{i\nu T_\pm}\mathrm d\nu=0$。而对于$0\in[a,b]$，因为有效的只有$0$附近的值，所以可以将$\nu^2$项丢弃</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^\infty\frac{e^{i\nu T}}{\nu}\mathrm d\nu=i\int_{\nu=-\infty}^\infty\frac{\sin\nu T}{\nu T}\mathrm d(\nu T)=i\pi\mathrm{sign}(T)</script><p>因此</p>
+<script type="math/tex; mode=display">
+C-\overline C=\int\mathrm d^4x\tilde{dk}\ ie^{ik\cdot x}\tilde g(0)f(\mathbf k)(\partial^2-m^2)\phi(x)\tag{11}</script><p>取$\tilde g(0)=1$，则</p>
 <script type="math/tex; mode=display">\begin{aligned}
-[\phi(\vec k),\pi(\vec k')]&=\int\mathrm{d}^2\vec x\mathrm{d}^2\vec x'e^{-i\vec k\cdot\vec x-i\vec k'\cdot\vec x'}[\phi(\vec x),\Pi(\vec x')]\\
-&=\int\mathrm{d}^2\vec xe^{-i\vec k\cdot\vec x-i\vec k'\cdot\vec x}i\hbar=i\hbar(2\pi)^2\delta(\vec k+\vec k')
-\end{aligned}\tag{C.1}</script><h3 id="二次量子化"><a href="#二次量子化" class="headerlink" title="二次量子化"></a>二次量子化</h3><p>根据(H.1)，构造</p>
-<script type="math/tex; mode=display">a(\vec k)=\frac1{\sqrt2}\left[\sqrt{\frac{\omega(\vec k)}\hbar}\phi(\vec k)+\frac i{\sqrt{\omega(\vec k)\hbar}}\Pi(\vec k)\right]</script><p>其厄米共轭为</p>
-<script type="math/tex; mode=display">a^\dagger(\vec k)=\frac1{\sqrt2}\left[\sqrt{\frac{\omega(\vec k)}\hbar}\phi(-\vec k)-\frac i{\sqrt{\omega(\vec k)\hbar}}\Pi(-\vec k)\right]</script><p>逆变换为</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\phi(\vec k)&=\frac1{\sqrt2}\sqrt\frac\hbar{\omega(\vec k)}\left[a(\vec k)+a^\dagger(-\vec k)\right]\\
-\Pi(\vec k)&=\frac{-i}{\sqrt2}\sqrt{\hbar\omega(\vec k)}\left[a(\vec k)-a^\dagger(-\vec k)\right]\\
-\end{aligned}</script><p>代入(H.1)为</p>
-<script type="math/tex; mode=display">\begin{aligned}H&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\hbar\omega(\vec k)\left[a(-\vec k)a^\dagger(-\vec k)+a^\dagger(\vec k)a(\vec k)\right]\\
-&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\hbar\omega(\vec k)\left[a(\vec k)a^\dagger(\vec k)+a^\dagger(\vec k)a(\vec k)\right]
-\end{aligned}\tag{H.2}</script><p>第二个等号来自$\omega(\vec k)=\omega(-\vec k)$<br>同样，考察$a,a^\dagger$的对易关系</p>
-<script type="math/tex; mode=display">[a(\vec k),a^\dagger(\vec k')]=\frac1{2\hbar}\left[-i\sqrt{\frac{\omega(\vec k)}{\omega(\vec k')}}[\phi(\vec k,\Pi(-\vec k')]\right.\\\left.-i\sqrt{\frac{\omega(\vec k')}{\omega(\vec k)}}[\phi(-\vec k'),\Pi(\vec k)]\right]=(2\pi)^2\delta(\vec k-\vec k')\tag{C.2}</script><script type="math/tex; mode=display">[a(\vec k),a(\vec k')]=\frac i{2\hbar}\left[\sqrt{\frac{\omega(\vec k)}{\omega(\vec k')}}[\phi(\vec k),\Pi(\vec k')]\right.\\\left.+\sqrt{\frac{\omega(\vec k')}{\omega(\vec k)}}[\Pi(\vec k),\phi(\vec k')]\right]=0</script><p>利用(C.2)可以将(H.2)写为更熟悉的形式</p>
-<script type="math/tex; mode=display">H=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\hbar\omega(\vec k)\left[a^\dagger(\vec k)a(\vec k)+\frac{(2\pi)^2}2\right]</script><h3 id="动量算符与平移"><a href="#动量算符与平移" class="headerlink" title="动量算符与平移"></a>动量算符与平移</h3><p>定义算符</p>
-<script type="math/tex; mode=display">\vec P=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\hbar\vec ka^\dagger(\vec k)a(\vec k)</script><p>它显然满足</p>
-<script type="math/tex; mode=display">[\vec P,a^\dagger(\vec k)]=\hbar\vec ka^\dagger(\vec k),[\vec P,a(\vec k)]=-\hbar\vec ka^\dagger(\vec k)</script><p>所以作用在某个量子态$|K\rangle=|k_1,\cdots k_n\rangle$上时</p>
-<script type="math/tex; mode=display">\begin{aligned}\vec P|K\rangle=&\vec Pa^\dagger(k_1)\cdots a^\dagger(k_n)|vac\rangle\\
-=&\hbar\vec k_1|K\rangle+a^\dagger(k_1)\vec Pa^\dagger(k_2)\cdots a^\dagger(k_n)|vac\rangle\\
-=&\cdots=\hbar(\vec k_1+\cdots\vec k_n)|K\rangle
-\end{aligned}</script><p>这说明$\vec P$的意义是总动量。<br><strong>接下来说明$\vec P$的第二个物理意义，即平移</strong><br>计算$[\vec P,\phi(\vec x)]$，首先需要将坐标表象波函数用二次量子化表象表示出来</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\phi(\vec x)&=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}e^{i\vec k\cdot\vec x}\phi(\vec k)\\
-&=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\frac1{\sqrt2}\sqrt\frac\hbar{\omega(\vec k)}e^{i\vec k\cdot\vec x}\left[a(\vec k)+a^\dagger(-\vec k)\right]\\
-&=\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\frac1{\sqrt2}\sqrt\frac\hbar{\omega(\vec k)}\left[a(\vec k)e^{i\vec k\cdot\vec x}+a^\dagger(\vec k)e^{-i\vec k\cdot\vec x}\right]\\
-\end{aligned}</script><p>所以</p>
-<script type="math/tex; mode=display">[\vec P,\phi(\vec x)]=i\hbar\nabla\phi(\vec x)</script><p>定义一个辅助函数</p>
-<script type="math/tex; mode=display">f(\vec x,\vec y)=e^{\vec y\cdot\vec P/i\hbar}\phi(\vec x)e^{-\vec y\cdot\vec P/i\hbar}</script><p>对$\vec y$求偏导</p>
-<script type="math/tex; mode=display">\nabla_yf(\vec x,\vec y)=\frac{1}{i\hbar}e^{\vec y\cdot\vec P/i\hbar}[\vec P,\phi(\vec x)]e^{-\vec y\cdot\vec P/i\hbar}=\nabla_xf(\vec x,\vec y)</script><p>所以$f(\vec x,\vec y)=f(\vec x-\vec y)$，又因为$f(\vec x,\vec 0)=\phi(\vec x)$，所以</p>
-<script type="math/tex; mode=display">e^{\vec y\cdot\vec P/i\hbar}\phi(\vec x)e^{-\vec y\cdot\vec P/i\hbar}=\phi(\vec x-\vec y)</script>
+&\langle out|in\rangle=i^{n+n'}\\
+\times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
+\times&\int\tilde{\mathrm dp'_1}f'_1(\mathbf p'_1)\cdots\int\tilde{\mathrm dp'_{n'}}f'_{n'}(\mathbf p'_{n'})\\
+\times&\int\mathrm d^4x_1(m^2-\partial^2_1)\cdots\int\mathrm d^4x_n(m^2-\partial^2_n)\\
+\times&\int\mathrm d^4x'_1(m^2-\partial'^2_1)\cdots\int\mathrm d^4x'_{n'}(m^2-\partial'^2_{n'})\\
+\times&\langle0|\hat T[\phi(x_1')\cdots\phi'(x_{n'})]|0\rangle
+\end{aligned}\tag{12}</script>
     </div>
 
     
@@ -398,13 +399,13 @@ H(\phi,\Pi)&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\left[\Pi(-\vec k)\Pi
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/" rel="prev" title="链接颜色变化">
-                  <i class="fa fa-chevron-left"></i> 链接颜色变化
+                <a href="/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/" rel="prev" title="一道积分证明">
+                  <i class="fa fa-chevron-left"></i> 一道积分证明
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/09/25/%E6%A0%87%E9%87%8F%E5%9C%BA%E7%90%86%E8%AE%BA/" rel="next" title="标量场理论">
-                  标量场理论 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/10/15/Gell-Mann&Low%E5%AE%9A%E7%90%86/" rel="next" title="Gell-Mann&Low 定理">
+                  Gell-Mann&Low 定理 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
