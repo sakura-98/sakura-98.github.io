@@ -70,6 +70,170 @@
       </tags>
   </entry>
   <entry>
+    <title>Heisenberg模型</title>
+    <url>/2020/10/05/Heisenberg%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p>根据北京大学shindou开设的《量子统计物理》第一次作业第二题整理。</p>
+<p>Heisenberg模型是描述铁磁性的最简单的模型。考虑一个$N\times N\times N$，晶格常数为$a$的立方晶体，在每个格点上都有自旋算符$\hat{\vec s}_{\vec j}=(\hat s_{\vec j,x},\hat s_{\vec j,y},\hat s_{\vec j,z})$。哈密顿量为</p>
+<script type="math/tex; mode=display">\hat H=-J\sum_{\langle\vec i,\vec j\rangle}\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}</script><p>其中$\langle\vec i,\vec j\rangle$表示近邻原子，相互作用$J&gt;0$。<br><a id="more"></a></p>
+<h3 id="基态-full-rangle-z"><a href="#基态-full-rangle-z" class="headerlink" title="基态$|full\rangle_z$"></a>基态$|full\rangle_z$</h3><p>显然当所有格点上自旋均同向时能量最低，定义此时为基态$|full\rangle_z$。当然，要求它是哈密顿算符的本征态。</p>
+<script type="math/tex; mode=display">|full\rangle_z\equiv\prod_{\vec j}|s(s+1),s\rangle_{\vec j,z}\tag{1}</script><p>其中$|s(s+1),s\rangle_{\vec j,z}$是$\hat{\vec s}_{\vec j}^2,\hat s_{\vec j,z}$的共同本征态，本征值为$s(s+1),s$。为了证明它是哈密顿量的本征态，先计算$\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}$（不要求近邻）作用其上的结果。<br>定义升降算符</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+\hat s_{\vec j,+}&=\hat s_{\vec j,x}+i\hat s_{\vec j,y}\\
+\hat s_{\vec j,-}&=\hat s_{\vec j,x}-i\hat s_{\vec j,y}\\
+\end{aligned}\right.\tag{2}</script><p>略去下标$\vec j$，容易证明$[\hat s_z,\hat s_+]=i\hat s_j+\hat s_x=\hat s_+,[\hat s_z,\hat s_-]=-\hat s_-$，因此物理意义为升降算符。这样的话</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}=\hat s_{\vec i,x}\hat s_{\vec j,x}+\hat s_{\vec i,y}\hat s_{\vec j,y}+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
+=&\frac14\left(\hat s_{\vec i,+}+\hat s_{\vec i,-}\right)\left(\hat s_{\vec j,+}+\hat s_{\vec j,-}\right)
+-\frac14\left(\hat s_{\vec i,+}-\hat s_{\vec i,-}\right)\left(\hat s_{\vec j,+}-\hat s_{\vec j,-}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
+=&\frac12\left(\hat s_{\vec i,+}\hat s_{\vec j,-}+\hat s_{\vec i,-}\hat s_{\vec j,+}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
+\end{aligned}\tag3</script><p>根据升降算符的性质$\hat s_{\vec i,+}|s(s+1),s\rangle_{\vec i,z}=0$，所以</p>
+<script type="math/tex; mode=display">\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}|full\rangle=\hat s_{\vec i,z}\hat s_{\vec j,z}|full\rangle=s^2|full\rangle</script><p>对所有近邻自旋求和得</p>
+<script type="math/tex; mode=display">\hat H|full\rangle=-3JN^3s^2|full\rangle\tag4</script><h3 id="较低激发态-准玻色子"><a href="#较低激发态-准玻色子" class="headerlink" title="较低激发态-准玻色子"></a>较低激发态-准玻色子</h3><p>使用Holstein-Primakoff变换，玻色子$[\hat b,\hat b^\dagger]=1$</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\hat s_z=s-\hat b^\dagger\hat b\\
+&\hat s_+=\sqrt{2s}\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\hat b\\
+&\hat s_-=\sqrt{2s}\hat b^\dagger\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\\
+\end{aligned}\right.\tag5</script><p>验证对易关系</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&[\hat s_x,\hat s_y]=i\hat s_z\\
+&[\hat s_z,\hat s_x]=i\hat s_y\\
+&[\hat s_z,\hat s_y]=-i\hat s_x\\
+\end{aligned}\right.\Leftrightarrow
+\left\{\begin{aligned}
+&[\hat s_+,\hat s_-]=2\hat s_z\\
+&[\hat s_z,\hat s_+]=\hat s_+\\
+&[\hat s_z,\hat s_-]=-\hat s_-\\
+\end{aligned}\right.
+\tag6</script><p>右边三项都是极其容易证明的。<br>考虑$\hat b^\dagger\hat b$的本征态$|n\rangle$，则根据(5)式得</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\hat s_z|n\rangle=(s-n)|n\rangle\\
+&\hat s_+|n\rangle=\sqrt{2s}\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\sqrt n|n-1\rangle=\sqrt{(2s-n+1)n}|n-1\rangle\\
+&\hat s_-|n\rangle=\sqrt{2s}\hat b^\dagger\left(1-\frac{n}{2s}\right)^{1/2}|n\rangle=\sqrt{(2s-n)(n+1)}|n+1\rangle\\
+\end{aligned}\right.\tag7</script><h3 id="大s展开"><a href="#大s展开" class="headerlink" title="大s展开"></a>大s展开</h3><p>将(5)代入(3)得到用$\hat b,\hat b^\dagger$表示的哈密顿量，当$s\gg n$时可只保留$\frac1s$低阶项。顺便可定义$M=s-n$代替$n$，但在此处用不到</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\hat H=-J\sum_{\langle\vec i,\vec j\rangle}\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}\\
+=&-J\sum_{\langle\vec i,\vec j\rangle}\left[\frac12\left(\hat s_{\vec i,+}\hat s_{\vec j,-}+\hat s_{\vec i,-}\hat s_{\vec j,+}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\right]\\
+\approx&-J\sum_{\langle\vec i,\vec j\rangle}\left[s\left(\hat b_{\vec i}\hat b^\dagger_{\vec j}+\hat b^\dagger_{\vec i}\hat b_{\vec j}\right)+\left(s-\hat b^\dagger_{\vec i}\hat b_{\vec i}\right)\left(s-\hat b^\dagger_{\vec j}\hat b_{\vec j}\right)\right]\\
+\approx&-Js\sum_{\langle\vec i,\vec j\rangle}\left(\hat b_{\vec i}\hat b^\dagger_{\vec j}+\hat b^\dagger_{\vec i}\hat b_{\vec j}-\hat b^\dagger_{\vec i}\hat b_{\vec i}-\hat b^\dagger_{\vec j}\hat b_{\vec j}\right)-J\sum_{\langle\vec i,\vec j\rangle}s^2\\
+\end{aligned}\tag8</script><p>第二项实际上就是基态能量$E_0-3JN^3s^2$正如(4)式；第一项为了方便起见展开写，最终为</p>
+<script type="math/tex; mode=display">\hat H=-Js\sum_{\vec i}\sum_{\nu=x,y,z}\left(\hat b_{\vec i}\hat b^\dagger_{\vec i+\vec e_\nu}+\hat b^\dagger_{\vec i}\hat b_{\vec i+\vec e_\nu}-\hat b^\dagger_{\vec i}\hat b_{\vec i}-\hat b^\dagger_{\vec i+\vec e_\nu}\hat b_{\vec i+\vec e_\nu}\right)+E_0\tag9</script><h3 id="对角化"><a href="#对角化" class="headerlink" title="对角化"></a>对角化</h3><p>一般而言，二次型通过傅里叶变换就能做到对角化，也就是说，定义</p>
+<script type="math/tex; mode=display">\tilde b_{\vec k}=\sum_{\vec i}\frac1{\sqrt{N^3}}\hat b_{\vec i}e^{-i\vec k\cdot\vec i}\tag{10}</script><p>因为格点有限，所以$\vec k$也是分立的，即用三个整数$k_x,k_y,k_z$描述</p>
+<script type="math/tex; mode=display">\vec k=\frac{2\pi}{Na}(k_x,k_y,k_z)\tag{11}</script><p>容易验证逆变换为</p>
+<script type="math/tex; mode=display">\hat b_{\vec i}=\sum_{\vec k}\frac1{\sqrt{N^3}}\tilde b_{\vec k}e^{i\vec k\cdot\vec i}\tag{12}</script><p>以及对易关系</p>
+<script type="math/tex; mode=display">\left[\tilde b_{\vec k},\tilde b^\dagger_{\vec k'}\right]=\sum_{\vec i,\vec j}\frac1{N^3}[\hat b_{\vec i},\hat b_{\vec j}^\dagger]e^{-i\vec k\cdot\vec i+i\vec k'\cdot\vec j}=\sum_{\vec i}\frac1{N^3}e^{-i(\vec k-\vec k')\cdot\vec i}=\delta_{\vec k,\vec k'}\tag{13}</script><script type="math/tex; mode=display">\left[\tilde b_{\vec k},\tilde b_{\vec k'}\right]=\left[\tilde b^\dagger_{\vec k},\tilde b^\dagger_{\vec k'}\right]=0</script><p>将(12)代入(9)即可，但在此之前先计算</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\sum_{\vec i}\hat b^\dagger_{\vec i}\hat b_{\vec i+\vec j}=\sum_{\vec i}\sum_{\vec k,\vec k'}\frac1{N^3}\tilde b_{\vec k}^\dagger e^{i\vec k\cdot\vec i}\tilde b_{\vec k'}e^{-i\vec k'\cdot(\vec i+\vec j)}\\
+=&\sum_{\vec i}\sum_{\vec k,\vec k'}\frac1{N^3}\tilde b_{\vec k}^\dagger\tilde b_{\vec k'}e^{i(\vec k-\vec k')\cdot\vec i}e^{-i\vec k'\cdot\vec j}\\
+=&\sum_{\vec k,\vec k'}\tilde b_{\vec k}^\dagger\tilde b_{\vec k'}\delta(\vec k-\vec k')e^{-i\vec k'\cdot\vec j}=\sum_{\vec k}\tilde b_{\vec k}^\dagger\tilde b_{\vec k}e^{-i\vec k\cdot\vec j}\\
+\end{aligned}\tag{14}</script><p>所以(9)为</p>
+<script type="math/tex; mode=display">\hat H=-Js\sum_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}\sum_{\nu=x,y,z}\left(e^{i\vec k\cdot\vec e_\nu}+e^{-i\vec k\cdot\vec e_\nu}-2\right)+E_0\tag{15}</script><p>即</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\hat H=\sum_{\vec k}\hbar\omega_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}+E_0\\
+&\hbar\omega_{\vec k}=4Js\left[\sin^2\frac{\vec k\cdot\vec e_x}2+\sin^2\frac{\vec k\cdot\vec e_y}2+\sin^2\frac{\vec k\cdot\vec e_z}2\right]
+\end{aligned}\tag{16}</script><h3 id="热容"><a href="#热容" class="headerlink" title="热容"></a>热容</h3><p>当然，为了要和实验对比，我们计算定容热容$C_V$，一般过程为</p>
+<script type="math/tex; mode=display">Z\rightarrow F\rightarrow U\rightarrow C_V</script><p>配分函数$Z$:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&Z=Tr\left[e^{-\beta\hat H}\right]=e^{-\beta E_0}Tr\left[\prod_{\vec k}e^{-\beta\hbar\omega_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}}\right]\\
+=&e^{-\beta E_0}\prod_{\vec k}\sum_{n_{\vec k}}e^{-\beta\hbar\omega_{\vec k}n_{\vec k}}=e^{-\beta E_0}\prod_{\vec k}\frac1{1-e^{-\beta\hbar\omega_{\vec k}}}\\
+\end{aligned}</script><p>自由能</p>
+<script type="math/tex; mode=display">F=-k_BT\ln Z=E_0+\sum_{\vec k}k_BT\ln\left(1-e^{-\hbar\omega_{\vec k}/k_BT}\right)</script><p>内能</p>
+<script type="math/tex; mode=display">U=F+TS=F-T\frac{\partial F}{\partial T}=E_0+\sum_{\vec k}\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k}/k_BT}-1}</script><p>其实这也正是Bose-Einstein分布的内能公式。而偏导是因为$F=F(V,T)$，体积的信息包含在$\vec k$中，正如(11)(16)式<br>进而定容内能为</p>
+<script type="math/tex; mode=display">C_V=\frac{\partial U}{\partial T}=\sum_{\vec k}\left(\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k}/k_BT}-1}\right)^2\frac{e^{\hbar\omega_{\vec k}/k_BT}}{k_BT^2}\tag{17}</script><p>低温极限根据(16)式可得$\omega_{\vec k}=\rho_s|\vec k|^2$，根据(11)式</p>
+<script type="math/tex; mode=display">\sum_{\vec k}=\left(\frac{Na}{2\pi}\right)^3\int_{|\vec k|<2\pi/a}\mathrm{d}^3\vec k</script><p>因此(17)近似为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&C_V=\frac{\partial U}{\partial T}=\sum_{\vec k}\left(\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k^2/k_BT}}-1}\right)^2\frac{e^{\hbar\omega_{\vec k}/k_BT}}{k_BT^2}\\
+\approx&\left(\frac{Na}{2\pi}\right)^3\int_0^{\pi/a}4\pi k^2\mathrm{d}k\ \left(\frac{\hbar\rho_s k^2}{e^{\hbar\rho_s k^2/k_BT}-1}\right)^2\frac{e^{\hbar\rho_s k^2/k_BT}}{k_BT^2}\\
+=&\left(\frac{Na}{2\pi}\right)^3\int_0^{\sqrt{\frac{\hbar\rho_s\pi} {k_BTa}}}4\pi\left(\frac{k_BT}{\hbar\rho_s}\right)^{3/2} \frac{\sqrt u}2\mathrm{d}u\ \left(\frac{k_BTu}{e^u-1}\right)^2\frac{e^u}{k_BT^2}\\
+\approx&\frac{(Na)^3}{4\pi^2}\left(\frac{k_B}{\hbar\rho_s}\right)^{3/2}\int_0^\infty \frac{u^{5/2}e^u}{(e^u-1)^2}\mathrm{d}u\ k_BT^{3/2}
+\end{aligned}</script><p>所以低温下热容和温度$3/2$次方成正比。</p>
+]]></content>
+      <categories>
+        <category>QSP</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KG场的路径积分</title>
+    <url>/2020/10/22/KG%E5%9C%BA%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<p>路径积分的思想为：所有可能的路径都对传播子有贡献，权重为作用量的指数因子。其优势有</p>
+<ol>
+<li>能自然地给出编时乘积的期望值</li>
+<li>所有量都是纯数/Grassmann数，无需考虑复杂的算符对易关系</li>
+<li>只需求导，计算方便<del>代价是最开始的计算复杂</del></li>
+<li>数值计算方便、误差小<del>可能吧，别人说的，我也不知道</del></li>
+</ol>
+<p>在应用到四维时空上时出现了很严重的问题，希望将来能够解决。<br><a id="more"></a></p>
+<h3 id="路径积分与编时算符期望值"><a href="#路径积分与编时算符期望值" class="headerlink" title="路径积分与编时算符期望值"></a>路径积分与编时算符期望值</h3><p>约定 $t_\pm$ 满足 $\Im(t_\pm)\rightarrow\mp\infty$，实部不做限制。假设Hamiltonian最低本征值为0，则对于任意态矢，只要和基态不正交，就有</p>
+<script type="math/tex; mode=display">
+e^{iHt_-}|1\rangle=\langle0|1\rangle|0\rangle,\langle2|e^{-iHt_+}=\langle0|\langle2|0\rangle</script><p>所以海森堡表象中</p>
+<script type="math/tex; mode=display">
+\langle0|Q(t_1)Q(t_2)|0\rangle=\frac{\langle2|
+e^{-iH(t_+-t_1)}Q(0)e^{-iH(t_1-t_2)}Q(0)e^{-iH(t_2-t_-)}|1\rangle}{\langle2|e^{-iH(t_+-t_-)}|1\rangle}\tag{1}</script><p>用$Q$的本征值构造恒等算符，在$Q(0)$附近插入</p>
+<script type="math/tex; mode=display">
+Q(0)=\int\mathrm dq\mathrm dq\ |q'\rangle\langle q'|Q(0)|q\rangle\langle q|=\int\mathrm dq\mathrm dq\ q|q'\rangle\langle q'|q\rangle\langle q|=\int\mathrm dq\ q|q\rangle\langle q|</script><p>取足够多的“时间”点使得对于$j=0\sim N,t^{(j)}-t^{(j+1)}\rightarrow0+0i$，右边强调的是虚部和实部都足够“连续”。其中$|q^{(0)}\rangle=|2\rangle,|q^{(N+1)}\rangle=|1\rangle,t^{(i_1)}=t_1,t^{(i_2)}=t_2$。(1)式变为</p>
+<script type="math/tex; mode=display">
+分子=\int\prod_{j=1}^N\left(\mathrm dq^{(j)}\right)q^{(i_1)}q^{(i_2)}\prod_{j=0}^N\langle q^{(j)}|e^{-iH(t^{(j)}-t^{(j+1)})}|q^{(j+1)}\rangle</script><p>第二个连乘中每一项都插入正则动量$P$的完备性关系，考虑到$\delta t$保留一阶项时总误差能控制在一阶，所以指数上的算符可以“当作纯数”来处理</p>
+<script type="math/tex; mode=display">
+\prod_{j=0}^N\int\frac{\mathrm d^dp}{(2\pi)^d}e^{-iH(p,q)\delta t}e^{ip(q^{(j)}-q^{(j+1)})}=\exp\left[i\int_{t_-}^{t_+}\mathrm dt\ \left(p\dot q-H\right)\right]</script><p>指数上为作用量$iS=i\int L\mathrm dt$。同样可以计算(1)的分母，所以完整形式为</p>
+<script type="math/tex; mode=display">
+\langle 0|Q(t_1)Q(t_2)|0\rangle=\frac
+{\int[\mathrm dq]\ q(t_1)q(t_2)e^{iS}}
+{\int[\mathrm dq]\ e^{iS}}\tag{2}</script><h3 id="常见路径（编时、虚时）"><a href="#常见路径（编时、虚时）" class="headerlink" title="常见路径（编时、虚时）"></a>常见路径（编时、虚时）</h3><p>当然可以额外要求$\Im\left(t^{(j)}-t^{(j+1)}\right)\le 0$，这样使得积分路径单调“下降”。如下图<font color="blue">蓝线</font><br><img data-src="/images/pathIntegral.png" alt="三种不同路径"><br>或者给时间一个很小的虚部，如<font color="red">红线</font>。此时可以看到取（几乎）实轴为路径时自动给出编时算符期望值。<br>在红线基础上做Wick转动，可以证明无穷远处的积分为零，所以<font color="green">绿线</font>（虚轴）积分值与红线相等。进一步可做变量代换$x^4\equiv x_4\equiv ix_0=it$，此时$\int_{green}\mathrm dt=i\int_{-\infty}^\infty\mathrm dx^4$，因此变为欧氏空间的积分。</p>
+<h3 id="含源路径积分和Wick定理"><a href="#含源路径积分和Wick定理" class="headerlink" title="含源路径积分和Wick定理"></a>含源路径积分和Wick定理</h3><p>定义</p>
+<script type="math/tex; mode=display">
+Z[J]=\int[\mathrm dq]\ e^{iS+\int\mathrm dt\ J(t)q(t)}\tag{3}</script><p>则(2)式为</p>
+<script type="math/tex; mode=display">
+\langle0|Q(t_1)Q(t_2)|0\rangle=\frac{1}{Z[0]}\left.\frac{\delta^2 Z[J]}{\delta J(t_1)\delta J(t_2)}\right|_{J=0}\tag4</script><p>若$S$为二次型，即找得到$K(t_i,t_j)=K(t_j,t_i)$满足</p>
+<script type="math/tex; mode=display">
+iS=-\int\mathrm dt_i\mathrm dt_j\ K(t_i,t_j)q(t_i)q(t_j)</script><p>那么(3)式做shift：$q(t_i)\rightarrow q(t_i)+\frac12\int\mathrm dt_j\ K^{-1}(t_i,t_j)q(t_j)$可得</p>
+<script type="math/tex; mode=display">
+Z[J]=Z[0]\exp\left[\frac14\int\mathrm dt_i\mathrm dt_j\ K^{-1}(t_i,t_j)J(t_i)J(t_j)\right]\tag5</script><p>由(4)(5)即可很容易看出Wick定理，即高阶项可以用二阶项表示。对于有相互作用体系，作用量不再是二次型，但是可以通过微扰展开（费曼图方法）。</p>
+<p>因此，很基础的问题是：二阶项/传播子/格林函数是什么样子的？</p>
+<h3 id="传播子"><a href="#传播子" class="headerlink" title="传播子"></a>传播子</h3><p>传播子的定义为</p>
+<script type="math/tex; mode=display">
+\Delta(x-y)=i\langle0|T\phi(x)\phi(y)|0\rangle</script><p>根据之前讨论，为绿线上的路径积分。KG场的作用量为</p>
+<script type="math/tex; mode=display">
+S=\int\mathrm d^4x\ \mathcal L,\quad
+\mathcal L(x)=-\frac12\partial_\mu\phi(x)\partial^\mu\phi(x)-\frac12m^2\phi(x)^2</script><h4 id="Wick转动至虚时"><a href="#Wick转动至虚时" class="headerlink" title="Wick转动至虚时"></a>Wick转动至虚时</h4><p>做Wick转动并引入虚时$x_E^4=it,\varphi(x_E)=\phi(x)$</p>
+<script type="math/tex; mode=display">iS=-\int\mathrm d^4x_E\ \frac12\left(\sum_{i=1}^4(\partial_i\varphi(x_E))^2+m^2\varphi(x_E)^2\right)</script><p>下标$E$表示欧氏空间。做傅里叶变换</p>
+<script type="math/tex; mode=display">\tilde\varphi(k_E)=\int\mathrm d^4x_E\ e^{-ik_E\cdot x_E}\varphi(x_E)</script><p>则作用量变为</p>
+<script type="math/tex; mode=display">iS=-\int\frac{\mathrm d^4k_E}{(2\pi)^4}\ \frac12\left(k_E^2+m^2\right)\tilde\varphi(k_E)\tilde\varphi(-k_E)</script><p>根据(5)有</p>
+<script type="math/tex; mode=display">Z[J(k_E)]=Z[0]\exp\left[\int\mathrm d^4 k_E\ \frac14\frac{2(2\pi)^4}{k_E^2+m^2}J(k_E)J(-k_E)\right]</script><p>所以</p>
+<script type="math/tex; mode=display">\langle0|\tilde\varphi(k_E)\tilde\varphi(l_E)|0\rangle=\frac{(2\pi)^4}{k_E^2+m^2}\delta(k_E+J_E)</script><p>进而可计算</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\Delta_E(x_E-y_E)=&i\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac{\mathrm d^4l_E}{(2\pi)^4}\ e^{ik_E\cdot x_E+il_E\cdot y_E}\langle0|\tilde\varphi(k_E)\tilde\varphi(l_E)|0\rangle\\
+=&i\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac{e^{ik_E\cdot(x_E-y_E)}}{k_E^2+m^2}
+\end{aligned}\tag6</script><p>为了看得更清楚，将(6)拆分开</p>
+<script type="math/tex; mode=display">\Delta(t,\mathbf x)=\Delta_E(x_E)=i\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\int_{-\infty}^\infty\frac{\mathrm dk^4}{2\pi}\frac{e^{i\mathbf{k\cdot x}}e^{ik^4(it)}}{(k^4)^2+\mathbf k^2+m^2}</script><p>要使$k^0$从$+i\infty\rightarrow-i\infty$，应当为$k^4=ik^0$，因此</p>
+<script type="math/tex; mode=display">\Delta(t,\mathbf x)=-\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\int_{i\infty}^{-i\infty}\frac{\mathrm dk^0}{2\pi}\frac{e^{i\mathbf{k\cdot x}}e^{-ik^0t}}{-(k^0)^2+\mathbf k^2+m^2}</script><p>$k^0$转动回（接近）实轴，则为了不穿过极点$\pm\sqrt{\mathbf k^2+m^2}$，需要将极点写为$\pm(\sqrt{\mathbf k^2+m^2}-i\epsilon)$——也可理解为换一个实轴</p>
+<script type="math/tex; mode=display">\Delta(t,\mathbf x)=-\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{e^{i\mathbf{k\cdot x}}e^{-ik^0t}}{k^2+m^2-i\epsilon}\tag7</script><h4 id="Wick转动回实时"><a href="#Wick转动回实时" class="headerlink" title="Wick转动回实时"></a>Wick转动回实时</h4><p>需要注意的是(7)式中$\Re(t)=0$，通过解析延拓至实轴可知</p>
+<script type="math/tex; mode=display">\Delta(x)=-\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{e^{i\mathbf{k\cdot x}}e^{-ik^0t}}{k^2+m^2-i\epsilon}=-\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{e^{ik\cdot x}}{k^2+m^2-i\epsilon}\tag8</script><h3 id="四维时空下的传播子（有很大问题）"><a href="#四维时空下的传播子（有很大问题）" class="headerlink" title="四维时空下的传播子（有很大问题）"></a>四维时空下的传播子（有很大问题）</h3><p>对于四维时空，是可以精确求出，我们从(6)和(8)分别计算之。<strong>两种方法都出现了很严重的问题，甚至比两者结果不同更加严重</strong></p>
+<h4 id="欧氏空间-解析延拓"><a href="#欧氏空间-解析延拓" class="headerlink" title="欧氏空间-解析延拓"></a>欧氏空间-解析延拓</h4><script type="math/tex; mode=display">\begin{aligned}
+&\Delta_E(x_E)=i\int\frac{d^4k_E}{(2\pi)^4}\frac{e^{ik_E\cdot x_E}}{k_E^2+m^2}\\
+=&i\int_0^\infty\frac{k^3\mathrm dk}{(2\pi)^4}\frac{1}{k^2+m^2}\int_0^\pi\sin^2\alpha e^{ik|x_E|\cos\alpha}\mathrm d\alpha\int_0^\pi\sin\beta\mathrm d\beta\int_0^{2\pi}\mathrm d\gamma\\
+=&i\int_0^\infty\frac{k^3\mathrm dk}{(2\pi)^2}\frac{1}{k^2+m^2}\frac{J_1(k|x_E|)}{k|x_E|}=\frac{im}{(2\pi)^2}\frac{K_1(m|x_E|)}{|x_E|}
+\end{aligned}</script><script type="math/tex; mode=display">\Rightarrow\Delta(x)=\frac{im}{(2\pi)^2}\frac{K_1(m\sqrt{\mathbf x^2-t^2})}{\sqrt{\mathbf x^2-t^2}}\tag9</script><p>它的问题在于，类空的时候有意义，类时的意义需要进一步探讨。</p>
+<h4 id="闵氏空间-直接计算"><a href="#闵氏空间-直接计算" class="headerlink" title="闵氏空间-直接计算"></a>闵氏空间-直接计算</h4><p>先对$k^0$积分：$t&lt;0$时取上半围道，否则取下半围道</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\Delta(x)&=\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}e^{i\mathbf {k\cdot x}}\int\mathrm dk^0\frac{e^{-ik^0t}}{(k^0-\omega_{\mathbf k}+i\epsilon)(k^0+\omega_{\mathbf k}-i\epsilon)}\\
+&=\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}e^{i\mathbf {k\cdot x}}\left[\frac{\pi i}{\omega_\mathbf k-i\epsilon}\theta(t)+\frac{\pi i}{-\omega_\mathbf k+i\epsilon}\theta(-t)\right]\\
+&=i\pi\mathrm{sign}(t)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}\frac{e^{i\mathbf {k\cdot x}}}{\omega_\mathbf k-i\epsilon}\\
+&=i\mathrm{sign}(t)\int_0^\infty\frac{k^2\mathrm dk}{(2\pi)^2}\frac{1}{\sqrt{k^2+m^2}-i\epsilon}\frac{\sin k|\mathbf x|}{k|\mathbf x|}\\
+&=\frac{i\mathrm{sign}(t)}{|\mathbf x|}\int_0^\infty\frac{\mathrm dk}{(2\pi)^2}\frac{k\sin k|\mathbf x|}{\sqrt{k^2+m^2}}\\
+&=\frac{i\mathrm{sign}(t)}{\mathbf x^2}\int_0^\infty\frac{\mathrm du}{(2\pi)^2}\frac{u\sin u}{\sqrt{u^2+m^2\mathbf x^2}}\\
+\end{aligned}</script><p>之所以能扔掉$\epsilon$，是因为即使是一阶项在$\epsilon\rightarrow0$时也趋于零。最后一个等号为变量代换。<br>可惜最后的积分不收敛。<br>我们期待它和(9)能一致，可是(9)对于时间是偶函数，而这里对于时间是奇函数。<br>&lt;!— 但我们知道正弦函数平均值为零，所以</p>
+<p><script type="math/tex">\Delta(x)=\frac{i\mathrm{sign}(t)}{\mathbf x^2}\int_0^\infty\frac{\mathrm du}{(2\pi)^2}\left[\frac{u}{\sqrt{u^2+m^2\mathbf x^2}}-1\right]\sin u</script> —&gt;</p>
+]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Klein-Gordon场量子化</title>
     <url>/2020/09/29/Klein-Gordon%E5%9C%BA%E9%87%8F%E5%AD%90%E5%8C%96/</url>
     <content><![CDATA[<p>Klein-Gordon方程为</p>
@@ -204,91 +368,6 @@ H=&\frac12\int\frac{\tilde{\mathrm{d}k}}{2\omega_{\vec k}}(-\omega_{\vec k}^2+\v
       </tags>
   </entry>
   <entry>
-    <title>Heisenberg模型</title>
-    <url>/2020/10/05/Heisenberg%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<p>根据北京大学shindou开设的《量子统计物理》第一次作业第二题整理。</p>
-<p>Heisenberg模型是描述铁磁性的最简单的模型。考虑一个$N\times N\times N$，晶格常数为$a$的立方晶体，在每个格点上都有自旋算符$\hat{\vec s}_{\vec j}=(\hat s_{\vec j,x},\hat s_{\vec j,y},\hat s_{\vec j,z})$。哈密顿量为</p>
-<script type="math/tex; mode=display">\hat H=-J\sum_{\langle\vec i,\vec j\rangle}\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}</script><p>其中$\langle\vec i,\vec j\rangle$表示近邻原子，相互作用$J&gt;0$。<br><a id="more"></a></p>
-<h3 id="基态-full-rangle-z"><a href="#基态-full-rangle-z" class="headerlink" title="基态$|full\rangle_z$"></a>基态$|full\rangle_z$</h3><p>显然当所有格点上自旋均同向时能量最低，定义此时为基态$|full\rangle_z$。当然，要求它是哈密顿算符的本征态。</p>
-<script type="math/tex; mode=display">|full\rangle_z\equiv\prod_{\vec j}|s(s+1),s\rangle_{\vec j,z}\tag{1}</script><p>其中$|s(s+1),s\rangle_{\vec j,z}$是$\hat{\vec s}_{\vec j}^2,\hat s_{\vec j,z}$的共同本征态，本征值为$s(s+1),s$。为了证明它是哈密顿量的本征态，先计算$\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}$（不要求近邻）作用其上的结果。<br>定义升降算符</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-\hat s_{\vec j,+}&=\hat s_{\vec j,x}+i\hat s_{\vec j,y}\\
-\hat s_{\vec j,-}&=\hat s_{\vec j,x}-i\hat s_{\vec j,y}\\
-\end{aligned}\right.\tag{2}</script><p>略去下标$\vec j$，容易证明$[\hat s_z,\hat s_+]=i\hat s_j+\hat s_x=\hat s_+,[\hat s_z,\hat s_-]=-\hat s_-$，因此物理意义为升降算符。这样的话</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}=\hat s_{\vec i,x}\hat s_{\vec j,x}+\hat s_{\vec i,y}\hat s_{\vec j,y}+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
-=&\frac14\left(\hat s_{\vec i,+}+\hat s_{\vec i,-}\right)\left(\hat s_{\vec j,+}+\hat s_{\vec j,-}\right)
--\frac14\left(\hat s_{\vec i,+}-\hat s_{\vec i,-}\right)\left(\hat s_{\vec j,+}-\hat s_{\vec j,-}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
-=&\frac12\left(\hat s_{\vec i,+}\hat s_{\vec j,-}+\hat s_{\vec i,-}\hat s_{\vec j,+}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
-\end{aligned}\tag3</script><p>根据升降算符的性质$\hat s_{\vec i,+}|s(s+1),s\rangle_{\vec i,z}=0$，所以</p>
-<script type="math/tex; mode=display">\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}|full\rangle=\hat s_{\vec i,z}\hat s_{\vec j,z}|full\rangle=s^2|full\rangle</script><p>对所有近邻自旋求和得</p>
-<script type="math/tex; mode=display">\hat H|full\rangle=-3JN^3s^2|full\rangle\tag4</script><h3 id="较低激发态-准玻色子"><a href="#较低激发态-准玻色子" class="headerlink" title="较低激发态-准玻色子"></a>较低激发态-准玻色子</h3><p>使用Holstein-Primakoff变换，玻色子$[\hat b,\hat b^\dagger]=1$</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&\hat s_z=s-\hat b^\dagger\hat b\\
-&\hat s_+=\sqrt{2s}\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\hat b\\
-&\hat s_-=\sqrt{2s}\hat b^\dagger\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\\
-\end{aligned}\right.\tag5</script><p>验证对易关系</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&[\hat s_x,\hat s_y]=i\hat s_z\\
-&[\hat s_z,\hat s_x]=i\hat s_y\\
-&[\hat s_z,\hat s_y]=-i\hat s_x\\
-\end{aligned}\right.\Leftrightarrow
-\left\{\begin{aligned}
-&[\hat s_+,\hat s_-]=2\hat s_z\\
-&[\hat s_z,\hat s_+]=\hat s_+\\
-&[\hat s_z,\hat s_-]=-\hat s_-\\
-\end{aligned}\right.
-\tag6</script><p>右边三项都是极其容易证明的。<br>考虑$\hat b^\dagger\hat b$的本征态$|n\rangle$，则根据(5)式得</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&\hat s_z|n\rangle=(s-n)|n\rangle\\
-&\hat s_+|n\rangle=\sqrt{2s}\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\sqrt n|n-1\rangle=\sqrt{(2s-n+1)n}|n-1\rangle\\
-&\hat s_-|n\rangle=\sqrt{2s}\hat b^\dagger\left(1-\frac{n}{2s}\right)^{1/2}|n\rangle=\sqrt{(2s-n)(n+1)}|n+1\rangle\\
-\end{aligned}\right.\tag7</script><h3 id="大s展开"><a href="#大s展开" class="headerlink" title="大s展开"></a>大s展开</h3><p>将(5)代入(3)得到用$\hat b,\hat b^\dagger$表示的哈密顿量，当$s\gg n$时可只保留$\frac1s$低阶项。顺便可定义$M=s-n$代替$n$，但在此处用不到</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\hat H=-J\sum_{\langle\vec i,\vec j\rangle}\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}\\
-=&-J\sum_{\langle\vec i,\vec j\rangle}\left[\frac12\left(\hat s_{\vec i,+}\hat s_{\vec j,-}+\hat s_{\vec i,-}\hat s_{\vec j,+}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\right]\\
-\approx&-J\sum_{\langle\vec i,\vec j\rangle}\left[s\left(\hat b_{\vec i}\hat b^\dagger_{\vec j}+\hat b^\dagger_{\vec i}\hat b_{\vec j}\right)+\left(s-\hat b^\dagger_{\vec i}\hat b_{\vec i}\right)\left(s-\hat b^\dagger_{\vec j}\hat b_{\vec j}\right)\right]\\
-\approx&-Js\sum_{\langle\vec i,\vec j\rangle}\left(\hat b_{\vec i}\hat b^\dagger_{\vec j}+\hat b^\dagger_{\vec i}\hat b_{\vec j}-\hat b^\dagger_{\vec i}\hat b_{\vec i}-\hat b^\dagger_{\vec j}\hat b_{\vec j}\right)-J\sum_{\langle\vec i,\vec j\rangle}s^2\\
-\end{aligned}\tag8</script><p>第二项实际上就是基态能量$E_0-3JN^3s^2$正如(4)式；第一项为了方便起见展开写，最终为</p>
-<script type="math/tex; mode=display">\hat H=-Js\sum_{\vec i}\sum_{\nu=x,y,z}\left(\hat b_{\vec i}\hat b^\dagger_{\vec i+\vec e_\nu}+\hat b^\dagger_{\vec i}\hat b_{\vec i+\vec e_\nu}-\hat b^\dagger_{\vec i}\hat b_{\vec i}-\hat b^\dagger_{\vec i+\vec e_\nu}\hat b_{\vec i+\vec e_\nu}\right)+E_0\tag9</script><h3 id="对角化"><a href="#对角化" class="headerlink" title="对角化"></a>对角化</h3><p>一般而言，二次型通过傅里叶变换就能做到对角化，也就是说，定义</p>
-<script type="math/tex; mode=display">\tilde b_{\vec k}=\sum_{\vec i}\frac1{\sqrt{N^3}}\hat b_{\vec i}e^{-i\vec k\cdot\vec i}\tag{10}</script><p>因为格点有限，所以$\vec k$也是分立的，即用三个整数$k_x,k_y,k_z$描述</p>
-<script type="math/tex; mode=display">\vec k=\frac{2\pi}{Na}(k_x,k_y,k_z)\tag{11}</script><p>容易验证逆变换为</p>
-<script type="math/tex; mode=display">\hat b_{\vec i}=\sum_{\vec k}\frac1{\sqrt{N^3}}\tilde b_{\vec k}e^{i\vec k\cdot\vec i}\tag{12}</script><p>以及对易关系</p>
-<script type="math/tex; mode=display">\left[\tilde b_{\vec k},\tilde b^\dagger_{\vec k'}\right]=\sum_{\vec i,\vec j}\frac1{N^3}[\hat b_{\vec i},\hat b_{\vec j}^\dagger]e^{-i\vec k\cdot\vec i+i\vec k'\cdot\vec j}=\sum_{\vec i}\frac1{N^3}e^{-i(\vec k-\vec k')\cdot\vec i}=\delta_{\vec k,\vec k'}\tag{13}</script><script type="math/tex; mode=display">\left[\tilde b_{\vec k},\tilde b_{\vec k'}\right]=\left[\tilde b^\dagger_{\vec k},\tilde b^\dagger_{\vec k'}\right]=0</script><p>将(12)代入(9)即可，但在此之前先计算</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\sum_{\vec i}\hat b^\dagger_{\vec i}\hat b_{\vec i+\vec j}=\sum_{\vec i}\sum_{\vec k,\vec k'}\frac1{N^3}\tilde b_{\vec k}^\dagger e^{i\vec k\cdot\vec i}\tilde b_{\vec k'}e^{-i\vec k'\cdot(\vec i+\vec j)}\\
-=&\sum_{\vec i}\sum_{\vec k,\vec k'}\frac1{N^3}\tilde b_{\vec k}^\dagger\tilde b_{\vec k'}e^{i(\vec k-\vec k')\cdot\vec i}e^{-i\vec k'\cdot\vec j}\\
-=&\sum_{\vec k,\vec k'}\tilde b_{\vec k}^\dagger\tilde b_{\vec k'}\delta(\vec k-\vec k')e^{-i\vec k'\cdot\vec j}=\sum_{\vec k}\tilde b_{\vec k}^\dagger\tilde b_{\vec k}e^{-i\vec k\cdot\vec j}\\
-\end{aligned}\tag{14}</script><p>所以(9)为</p>
-<script type="math/tex; mode=display">\hat H=-Js\sum_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}\sum_{\nu=x,y,z}\left(e^{i\vec k\cdot\vec e_\nu}+e^{-i\vec k\cdot\vec e_\nu}-2\right)+E_0\tag{15}</script><p>即</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\hat H=\sum_{\vec k}\hbar\omega_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}+E_0\\
-&\hbar\omega_{\vec k}=4Js\left[\sin^2\frac{\vec k\cdot\vec e_x}2+\sin^2\frac{\vec k\cdot\vec e_y}2+\sin^2\frac{\vec k\cdot\vec e_z}2\right]
-\end{aligned}\tag{16}</script><h3 id="热容"><a href="#热容" class="headerlink" title="热容"></a>热容</h3><p>当然，为了要和实验对比，我们计算定容热容$C_V$，一般过程为</p>
-<script type="math/tex; mode=display">Z\rightarrow F\rightarrow U\rightarrow C_V</script><p>配分函数$Z$:</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&Z=Tr\left[e^{-\beta\hat H}\right]=e^{-\beta E_0}Tr\left[\prod_{\vec k}e^{-\beta\hbar\omega_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}}\right]\\
-=&e^{-\beta E_0}\prod_{\vec k}\sum_{n_{\vec k}}e^{-\beta\hbar\omega_{\vec k}n_{\vec k}}=e^{-\beta E_0}\prod_{\vec k}\frac1{1-e^{-\beta\hbar\omega_{\vec k}}}\\
-\end{aligned}</script><p>自由能</p>
-<script type="math/tex; mode=display">F=-k_BT\ln Z=E_0+\sum_{\vec k}k_BT\ln\left(1-e^{-\hbar\omega_{\vec k}/k_BT}\right)</script><p>内能</p>
-<script type="math/tex; mode=display">U=F+TS=F-T\frac{\partial F}{\partial T}=E_0+\sum_{\vec k}\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k}/k_BT}-1}</script><p>其实这也正是Bose-Einstein分布的内能公式。而偏导是因为$F=F(V,T)$，体积的信息包含在$\vec k$中，正如(11)(16)式<br>进而定容内能为</p>
-<script type="math/tex; mode=display">C_V=\frac{\partial U}{\partial T}=\sum_{\vec k}\left(\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k}/k_BT}-1}\right)^2\frac{e^{\hbar\omega_{\vec k}/k_BT}}{k_BT^2}\tag{17}</script><p>低温极限根据(16)式可得$\omega_{\vec k}=\rho_s|\vec k|^2$，根据(11)式</p>
-<script type="math/tex; mode=display">\sum_{\vec k}=\left(\frac{Na}{2\pi}\right)^3\int_{|\vec k|<2\pi/a}\mathrm{d}^3\vec k</script><p>因此(17)近似为</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&C_V=\frac{\partial U}{\partial T}=\sum_{\vec k}\left(\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k^2/k_BT}}-1}\right)^2\frac{e^{\hbar\omega_{\vec k}/k_BT}}{k_BT^2}\\
-\approx&\left(\frac{Na}{2\pi}\right)^3\int_0^{\pi/a}4\pi k^2\mathrm{d}k\ \left(\frac{\hbar\rho_s k^2}{e^{\hbar\rho_s k^2/k_BT}-1}\right)^2\frac{e^{\hbar\rho_s k^2/k_BT}}{k_BT^2}\\
-=&\left(\frac{Na}{2\pi}\right)^3\int_0^{\sqrt{\frac{\hbar\rho_s\pi} {k_BTa}}}4\pi\left(\frac{k_BT}{\hbar\rho_s}\right)^{3/2} \frac{\sqrt u}2\mathrm{d}u\ \left(\frac{k_BTu}{e^u-1}\right)^2\frac{e^u}{k_BT^2}\\
-\approx&\frac{(Na)^3}{4\pi^2}\left(\frac{k_B}{\hbar\rho_s}\right)^{3/2}\int_0^\infty \frac{u^{5/2}e^u}{(e^u-1)^2}\mathrm{d}u\ k_BT^{3/2}
-\end{aligned}</script><p>所以低温下热容和温度$3/2$次方成正比。</p>
-]]></content>
-      <categories>
-        <category>QSP</category>
-      </categories>
-      <tags>
-        <tag>physics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>on-shell等价与LSZ约化</title>
     <url>/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/</url>
     <content><![CDATA[<p> LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。<br><a id="more"></a></p>
@@ -353,6 +432,59 @@ C-\overline C=\int\mathrm d^4x\tilde{dk}\ ie^{ik\cdot x}\tilde g(0)f(\mathbf k)(
 \times&\int\mathrm d^4x'_1(m^2-\partial'^2_1)\cdots\int\mathrm d^4x'_{n'}(m^2-\partial'^2_{n'})\\
 \times&\langle0|\hat T[\phi(x_1')\cdots\phi'(x_{n'})]|0\rangle
 \end{aligned}\tag{12}</script>]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一道积分证明</title>
+    <url>/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/</url>
+    <content><![CDATA[<p>在<a href="/2020/09/29/Klein-Gordon场量子化">之前的一篇文章</a>里提到一个积分</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\int\frac{\mathrm d^4k}{(2\pi)^4}(2\pi)\left[e^{ik\cdot x}\theta(k^0)-e^{ik\cdot x}\theta(-k^0)\right]\delta(k^2+\omega_0^2)</script><script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]</script><p>本文用于证明此积分。<br><a id="more"></a></p>
+<p>先将$k^0$积掉，只计算第一项</p>
+<script type="math/tex; mode=display">\int_{-\infty}^\infty\mathrm dk^0\ e^{-ik^0x^0}\theta(k^0)\delta\left[-(k^0)^2+\vec k^2+\omega_0^2\right]=\frac{e^{-i\sqrt{\vec k^2+\omega_0^2}x^0}}{2\sqrt{\vec k^2+\omega_0^2}}</script><p>再将积分变换到球坐标，定义$|\vec x|=r,r^0=x^0-y^0$，那么 $\tau^2=(r^0)^2-r^2$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\frac1{c_+}[\phi(x),\phi(y)]\\
+=&\int\frac{k^2\sin\theta\mathrm{d}k\mathrm{d}\theta\mathrm{d}\phi}{(2\pi)^32\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)e^{ikr\cos\theta}\\
+=&\int_0^\infty\frac{k^2\mathrm{d}k}{(2\pi)^22\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{2\sin kr}{kr}\\
+=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
+=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left[\sum_{n=0}^\infty\frac{(r^0)^{2n+1}}{(2n+1)!}(-1)^{n+1}2i\sqrt{k^2+\omega_0^2}^{2n+1}\right]\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
+=&\sum_{n=0}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\int_0^\infty(k^2+\omega_0^2)^nk\sin kr\mathrm{d}k\\
+=&\sum_{n=0}^\infty\sum_{m=0}^n\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
+=&\sum_{m=0}^\infty\sum_{n=m}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
+\end{aligned}\tag{1}</script><p>求和变换 $(n,m)\rightarrow(l=n-m,m)$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\frac1{c_+}[\phi(x),\phi(y)]\\
+=&\sum_{m=0}^\infty\sum_{l=0}^\infty\frac{(r^0)^{2(l+m)+1}(-1)^{m+l+1}i}{(2m+2l+1)!2\pi^2r}\frac{(m+l)!}{m!l!}\int_0^\infty k^{2l+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
+=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
+\sum_{l=0}^\infty\frac{(-1)^l(m+l)!}{(2m+2l+1)!l!} (kr^0)^{2l+1}\sin kr\mathrm{d}k\\
+=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
+2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr\mathrm{d}k\\
+\end{aligned}\tag{2}</script><p>其中 $j_m$ 是球贝塞尔函数。简单起见，定义</p>
+<script type="math/tex; mode=display">I[m;r,\epsilon]=\int_0^\infty2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr e^{-k\epsilon}\mathrm{d}k\tag{3}</script><p>利用Mathematica，计算得</p>
+<script type="math/tex; mode=display">I[0;r,\epsilon]=\int_0^\infty\sin kr^0\sin kr e^{-k\epsilon}\mathrm{d}k=\frac{2\epsilon r^0r}{\epsilon^4+2\epsilon^2(r^2+(r^0)^2)+((r^0)^2-r^2)^2}</script><p>也就是</p>
+<script type="math/tex; mode=display">\begin{aligned}
+I[0;r,0^+]&=\pi rr^0\sqrt{\frac2{(r^0)^2+r^2}}\delta((r^0)^2-r^2)\\
+&=\pi r\mathrm{sign}(r^0)\delta((r^0)^2-r^2)\\
+&=\pi r\mathrm{sign}(r^0)\delta(\tau^2)
+\end{aligned}\tag{4}</script><p>再次利用Mathematica，有公式</p>
+<script type="math/tex; mode=display">\int_0^{\pm\infty}\mathrm{d}x\ x^{1-m}j_m(x)\sin xy=\pm2^{-m}\pi y\frac{(1-y^2)^{-1+m}}{\Gamma(m)}\theta(1-y^2)</script><p>令$x=kr^0,y=r/r^0$，得到</p>
+<script type="math/tex; mode=display">I[m;r,0]=2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\tag{5}</script><p>(4)(5)代入(2)</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\frac 1c_+[\phi(x),\phi(y)]=i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}I[m;r,0]\\
+=&i\frac{-1}{2\pi^2r}\pi r\mathrm{sign}(r^0)\delta(\tau^2)\\
++&i\sum_{m=1}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\\
+=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
++&i\sum_{m=1}^\infty\frac{(-1)^{m+1}}{2\pi m!(m-1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m}\theta(\tau^2)\mathrm{sign}(r^0)\\
+=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
++&i\sum_{m=0}^\infty\frac{(-1)^m}{2\pi m!(m+1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m+2}\theta(\tau^2)\mathrm{sign}(r^0)\\
+\end{aligned}\tag{6}</script><p>注意到</p>
+<script type="math/tex; mode=display">J_1(x)=\sum_{m=0}^\infty\frac{(-1)^m}{m!(m+1)!}\left(\frac x2\right)^{2m+1}</script><p>(6)式变为</p>
+<script type="math/tex; mode=display">\frac 1{c_+}[\phi(x),\phi(y)]=i\frac1{2\pi}\mathrm{sign}(r^0)\left[-\delta(\tau^2)+\frac{1}{\tau^2}\frac{\omega_0\tau}2J_1(\omega_0\tau)\theta(\tau^2)\right]</script><p>这正是我们要证明的</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(y)]=ic_+\mathrm{sign}(r^0)\left[\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac1{2\pi}\delta(\tau^2)\right]\tag{7}</script>]]></content>
       <categories>
         <category>QFT</category>
       </categories>
@@ -426,59 +558,6 @@ H(\phi,\Pi)&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\left[\Pi(-\vec k)\Pi
 <script type="math/tex; mode=display">e^{\vec y\cdot\vec P/i\hbar}\phi(\vec x)e^{-\vec y\cdot\vec P/i\hbar}=\phi(\vec x-\vec y)</script>]]></content>
       <categories>
         <category>QSP</category>
-      </categories>
-      <tags>
-        <tag>physics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一道积分证明</title>
-    <url>/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/</url>
-    <content><![CDATA[<p>在<a href="/2020/09/29/Klein-Gordon场量子化">之前的一篇文章</a>里提到一个积分</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\int\frac{\mathrm d^4k}{(2\pi)^4}(2\pi)\left[e^{ik\cdot x}\theta(k^0)-e^{ik\cdot x}\theta(-k^0)\right]\delta(k^2+\omega_0^2)</script><script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]</script><p>本文用于证明此积分。<br><a id="more"></a></p>
-<p>先将$k^0$积掉，只计算第一项</p>
-<script type="math/tex; mode=display">\int_{-\infty}^\infty\mathrm dk^0\ e^{-ik^0x^0}\theta(k^0)\delta\left[-(k^0)^2+\vec k^2+\omega_0^2\right]=\frac{e^{-i\sqrt{\vec k^2+\omega_0^2}x^0}}{2\sqrt{\vec k^2+\omega_0^2}}</script><p>再将积分变换到球坐标，定义$|\vec x|=r,r^0=x^0-y^0$，那么 $\tau^2=(r^0)^2-r^2$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac1{c_+}[\phi(x),\phi(y)]\\
-=&\int\frac{k^2\sin\theta\mathrm{d}k\mathrm{d}\theta\mathrm{d}\phi}{(2\pi)^32\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)e^{ikr\cos\theta}\\
-=&\int_0^\infty\frac{k^2\mathrm{d}k}{(2\pi)^22\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{2\sin kr}{kr}\\
-=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
-=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left[\sum_{n=0}^\infty\frac{(r^0)^{2n+1}}{(2n+1)!}(-1)^{n+1}2i\sqrt{k^2+\omega_0^2}^{2n+1}\right]\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
-=&\sum_{n=0}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\int_0^\infty(k^2+\omega_0^2)^nk\sin kr\mathrm{d}k\\
-=&\sum_{n=0}^\infty\sum_{m=0}^n\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-=&\sum_{m=0}^\infty\sum_{n=m}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-\end{aligned}\tag{1}</script><p>求和变换 $(n,m)\rightarrow(l=n-m,m)$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac1{c_+}[\phi(x),\phi(y)]\\
-=&\sum_{m=0}^\infty\sum_{l=0}^\infty\frac{(r^0)^{2(l+m)+1}(-1)^{m+l+1}i}{(2m+2l+1)!2\pi^2r}\frac{(m+l)!}{m!l!}\int_0^\infty k^{2l+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
-\sum_{l=0}^\infty\frac{(-1)^l(m+l)!}{(2m+2l+1)!l!} (kr^0)^{2l+1}\sin kr\mathrm{d}k\\
-=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
-2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr\mathrm{d}k\\
-\end{aligned}\tag{2}</script><p>其中 $j_m$ 是球贝塞尔函数。简单起见，定义</p>
-<script type="math/tex; mode=display">I[m;r,\epsilon]=\int_0^\infty2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr e^{-k\epsilon}\mathrm{d}k\tag{3}</script><p>利用Mathematica，计算得</p>
-<script type="math/tex; mode=display">I[0;r,\epsilon]=\int_0^\infty\sin kr^0\sin kr e^{-k\epsilon}\mathrm{d}k=\frac{2\epsilon r^0r}{\epsilon^4+2\epsilon^2(r^2+(r^0)^2)+((r^0)^2-r^2)^2}</script><p>也就是</p>
-<script type="math/tex; mode=display">\begin{aligned}
-I[0;r,0^+]&=\pi rr^0\sqrt{\frac2{(r^0)^2+r^2}}\delta((r^0)^2-r^2)\\
-&=\pi r\mathrm{sign}(r^0)\delta((r^0)^2-r^2)\\
-&=\pi r\mathrm{sign}(r^0)\delta(\tau^2)
-\end{aligned}\tag{4}</script><p>再次利用Mathematica，有公式</p>
-<script type="math/tex; mode=display">\int_0^{\pm\infty}\mathrm{d}x\ x^{1-m}j_m(x)\sin xy=\pm2^{-m}\pi y\frac{(1-y^2)^{-1+m}}{\Gamma(m)}\theta(1-y^2)</script><p>令$x=kr^0,y=r/r^0$，得到</p>
-<script type="math/tex; mode=display">I[m;r,0]=2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\tag{5}</script><p>(4)(5)代入(2)</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac 1c_+[\phi(x),\phi(y)]=i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}I[m;r,0]\\
-=&i\frac{-1}{2\pi^2r}\pi r\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=1}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\\
-=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=1}^\infty\frac{(-1)^{m+1}}{2\pi m!(m-1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m}\theta(\tau^2)\mathrm{sign}(r^0)\\
-=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=0}^\infty\frac{(-1)^m}{2\pi m!(m+1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m+2}\theta(\tau^2)\mathrm{sign}(r^0)\\
-\end{aligned}\tag{6}</script><p>注意到</p>
-<script type="math/tex; mode=display">J_1(x)=\sum_{m=0}^\infty\frac{(-1)^m}{m!(m+1)!}\left(\frac x2\right)^{2m+1}</script><p>(6)式变为</p>
-<script type="math/tex; mode=display">\frac 1{c_+}[\phi(x),\phi(y)]=i\frac1{2\pi}\mathrm{sign}(r^0)\left[-\delta(\tau^2)+\frac{1}{\tau^2}\frac{\omega_0\tau}2J_1(\omega_0\tau)\theta(\tau^2)\right]</script><p>这正是我们要证明的</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(y)]=ic_+\mathrm{sign}(r^0)\left[\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac1{2\pi}\delta(\tau^2)\right]\tag{7}</script>]]></content>
-      <categories>
-        <category>QFT</category>
       </categories>
       <tags>
         <tag>physics</tag>
