@@ -164,7 +164,11 @@
 <li>只需求导，计算方便<del>代价是最开始的计算复杂</del></li>
 <li>数值计算方便、误差小<del>可能吧，别人说的，我也不知道</del></li>
 </ol>
-<p>在应用到四维时空上时出现了很严重的问题，希望将来能够解决。<br><a id="more"></a></p>
+<p>在应用到四维时空上时出现了很严重的问题，希望将来能够解决。</p>
+<ul>
+<li>[ ] 在欧氏空间和闵氏空间里分别计算传播子</li>
+</ul>
+<a id="more"></a>
 <h3 id="路径积分与编时算符期望值"><a href="#路径积分与编时算符期望值" class="headerlink" title="路径积分与编时算符期望值"></a>路径积分与编时算符期望值</h3><p>约定 $t_\pm$ 满足 $\Im(t_\pm)\rightarrow\mp\infty$，实部不做限制。假设Hamiltonian最低本征值为0，则对于任意态矢，只要和基态不正交，就有</p>
 <script type="math/tex; mode=display">
 e^{iHt_-}|1\rangle=\langle0|1\rangle|0\rangle,\langle2|e^{-iHt_+}=\langle0|\langle2|0\rangle</script><p>所以海森堡表象中</p>
@@ -180,7 +184,7 @@ Q(0)=\int\mathrm dq\mathrm dq\ |q'\rangle\langle q'|Q(0)|q\rangle\langle q|=\int
 <script type="math/tex; mode=display">
 \langle 0|Q(t_1)Q(t_2)|0\rangle=\frac
 {\int[\mathrm dq]\ q(t_1)q(t_2)e^{iS}}
-{\int[\mathrm dq]\ e^{iS}}\tag{2}</script><h3 id="常见路径（编时、虚时）"><a href="#常见路径（编时、虚时）" class="headerlink" title="常见路径（编时、虚时）"></a>常见路径（编时、虚时）</h3><p>当然可以额外要求$\Im\left(t^{(j)}-t^{(j+1)}\right)\le 0$，这样使得积分路径单调“下降”。如下图<font color="blue">蓝线</font><br><img data-src="/images/pathIntegral.png" alt="三种不同路径"><br>或者给时间一个很小的虚部，如<font color="red">红线</font>。此时可以看到取（几乎）实轴为路径时自动给出编时算符期望值。<br>在红线基础上做Wick转动，可以证明无穷远处的积分为零，所以<font color="green">绿线</font>（虚轴）积分值与红线相等。进一步可做变量代换$x^4\equiv x_4\equiv ix_0=it$，此时$\int_{green}\mathrm dt=i\int_{-\infty}^\infty\mathrm dx^4$，因此变为欧氏空间的积分。</p>
+{\int[\mathrm dq]\ e^{iS}}\tag{2}</script><h3 id="常见路径（编时、虚时）"><a href="#常见路径（编时、虚时）" class="headerlink" title="常见路径（编时、虚时）"></a>常见路径（编时、虚时）</h3><p>当然可以额外要求$\Im\left(t^{(j)}-t^{(j+1)}\right)\le 0$，这样使得积分路径单调“下降”。如下图$\color{blue}蓝线$<br><img data-src="/images/pathIntegral.png" alt="三种不同路径"><br>或者给时间一个很小的虚部，如$\color{red}{红线}$。此时可以看到取（几乎）实轴为路径时自动给出编时算符期望值。<br>在红线基础上做Wick转动，可以证明无穷远处的积分为零，所以$\color{green}{绿线}$（虚轴）积分值与红线相等。进一步可做变量代换$x^4\equiv x_4\equiv ix_0=it$，此时$\int_{green}\mathrm dt=i\int_{-\infty}^\infty\mathrm dx^4$，因此变为欧氏空间的积分。</p>
 <h3 id="含源路径积分和Wick定理"><a href="#含源路径积分和Wick定理" class="headerlink" title="含源路径积分和Wick定理"></a>含源路径积分和Wick定理</h3><p>定义</p>
 <script type="math/tex; mode=display">
 Z[J]=\int[\mathrm dq]\ e^{iS+\int\mathrm dt\ J(t)q(t)}\tag{3}</script><p>则(2)式为</p>
@@ -218,13 +222,12 @@ S=\int\mathrm d^4x\ \mathcal L,\quad
 <h4 id="闵氏空间-直接计算"><a href="#闵氏空间-直接计算" class="headerlink" title="闵氏空间-直接计算"></a>闵氏空间-直接计算</h4><p>先对$k^0$积分：$t&lt;0$时取上半围道，否则取下半围道</p>
 <script type="math/tex; mode=display">\begin{aligned}
 \Delta(x)&=\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}e^{i\mathbf {k\cdot x}}\int\mathrm dk^0\frac{e^{-ik^0t}}{(k^0-\omega_{\mathbf k}+i\epsilon)(k^0+\omega_{\mathbf k}-i\epsilon)}\\
-&=\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}e^{i\mathbf {k\cdot x}}\left[\frac{\pi i}{\omega_\mathbf k-i\epsilon}\theta(t)+\frac{\pi i}{-\omega_\mathbf k+i\epsilon}\theta(-t)\right]\\
-&=i\pi\mathrm{sign}(t)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}\frac{e^{i\mathbf {k\cdot x}}}{\omega_\mathbf k-i\epsilon}\\
-&=i\mathrm{sign}(t)\int_0^\infty\frac{k^2\mathrm dk}{(2\pi)^2}\frac{1}{\sqrt{k^2+m^2}-i\epsilon}\frac{\sin k|\mathbf x|}{k|\mathbf x|}\\
-&=\frac{i\mathrm{sign}(t)}{|\mathbf x|}\int_0^\infty\frac{\mathrm dk}{(2\pi)^2}\frac{k\sin k|\mathbf x|}{\sqrt{k^2+m^2}}\\
-&=\frac{i\mathrm{sign}(t)}{\mathbf x^2}\int_0^\infty\frac{\mathrm du}{(2\pi)^2}\frac{u\sin u}{\sqrt{u^2+m^2\mathbf x^2}}\\
-\end{aligned}</script><p>之所以能扔掉$\epsilon$，是因为即使是一阶项在$\epsilon\rightarrow0$时也趋于零。最后一个等号为变量代换。<br>可惜最后的积分不收敛。<br>我们期待它和(9)能一致，可是(9)对于时间是偶函数，而这里对于时间是奇函数。<br>&lt;!— 但我们知道正弦函数平均值为零，所以</p>
-<p><script type="math/tex">\Delta(x)=\frac{i\mathrm{sign}(t)}{\mathbf x^2}\int_0^\infty\frac{\mathrm du}{(2\pi)^2}\left[\frac{u}{\sqrt{u^2+m^2\mathbf x^2}}-1\right]\sin u</script> —&gt;</p>
+&=\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}e^{i\mathbf {k\cdot x}}\left[-\frac{\pi i}{\omega_\mathbf k-i\epsilon}\theta(t)+\frac{\pi i}{-\omega_\mathbf k+i\epsilon}\theta(-t)\right]\\
+&=-i\pi\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}\frac{e^{i\mathbf {k\cdot x}}}{\omega_\mathbf k-i\epsilon}\\
+&=-i\int_0^\infty\frac{k^2\mathrm dk}{(2\pi)^2}\frac{1}{\sqrt{k^2+m^2}-i\epsilon}\frac{\sin k|\mathbf x|}{k|\mathbf x|}\\
+&=-\frac i{|\mathbf x|}\int_0^\infty\frac{\mathrm dk}{(2\pi)^2}\frac{k\sin k|\mathbf x|}{\sqrt{k^2+m^2}}\\
+&=-\frac i{\mathbf x^2}\int_0^\infty\frac{\mathrm du}{(2\pi)^2}\frac{u\sin u}{\sqrt{u^2+m^2\mathbf x^2}}\\
+\end{aligned}</script><p>之所以能扔掉$\epsilon$，是因为即使是一阶项在$\epsilon\rightarrow0$时也趋于零。最后一个等号为变量代换。<br>可惜最后的积分不收敛。</p>
 ]]></content>
       <categories>
         <category>QFT</category>
@@ -662,6 +665,61 @@ C(x)&=\int\frac{\mathrm{d}^4k}{(2\pi)^4}e^{ik\cdot x}\tilde C(k)
 ]]></content>
       <tags>
         <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>相干态</title>
+    <url>/2020/10/23/%E7%9B%B8%E5%B9%B2%E6%80%81/</url>
+    <content><![CDATA[<p>（一维）相干态$|z\rangle$有两个重要特性：</p>
+<ol>
+<li>满足最小不确定性$\Delta x\Delta p=\hbar/2$</li>
+<li>是湮灭算符的本征值</li>
+</ol>
+<p>本文从特性1.出发“猜测”相干态的形式，再证明特性2.以及其他性质。</p>
+<ol>
+<li>[ ] 检验是否还有其它态满足最小不确定性</li>
+</ol>
+<a id="more"></a>
+<h3 id="简化的符号约定"><a href="#简化的符号约定" class="headerlink" title="简化的符号约定"></a>简化的符号约定</h3><p>Hamiltonian为</p>
+<script type="math/tex; mode=display">\hat H=\frac{\hat p^2}2+\frac{\hat x^2}2=\hat a^\dagger\hat a+\frac12\tag1</script><p>对易关系为</p>
+<script type="math/tex; mode=display">[\hat a,\hat a^\dagger]=1,[\hat x,\hat p]=i\tag2</script><p>容易检验，下式能够满足(1)(2)</p>
+<script type="math/tex; mode=display">\hat x=\frac{\hat a+\hat a^\dagger}{\sqrt2},\hat p=\frac{\hat a-\hat a^\dagger}{i\sqrt2}</script><p>定义辅助量复数$z$</p>
+<script type="math/tex; mode=display">z=\frac{x+ip}{\sqrt2}\Rightarrow \bar z=\frac{x-ip}{\sqrt2}</script><p>简单起见，记为</p>
+<script type="math/tex; mode=display">
+\left[\begin{array}{c}\hat x\\i\hat p\end{array}\right]=O\left[\begin{array}{c}\hat a\\\hat a^\dagger\end{array}\right],\quad
+\left[\begin{array}{c}z\\\bar z\end{array}\right]=O\left[\begin{array}{c}x\\ip\end{array}\right],\quad
+O=\frac1{\sqrt2}\left[\begin{array}{cc}1&1\\1&-1\end{array}\right]
+\tag3</script><h3 id="粒子数本征态的不确定性关系"><a href="#粒子数本征态的不确定性关系" class="headerlink" title="粒子数本征态的不确定性关系"></a>粒子数本征态的不确定性关系</h3><p>利用(3)可计算</p>
+<script type="math/tex; mode=display">\langle n|\hat x|n\rangle=0,\langle n|\hat x^2|n\rangle=\frac12+n\Rightarrow\Delta x=\sqrt{n+\frac12}</script><p>同理$\Delta p=\sqrt{n+\frac12}$，因此</p>
+<script type="math/tex; mode=display">\Delta x\Delta p=n+\frac12\ge|[\hat x,\hat p]|/2</script><p>当且仅当基态时不确定性最小。我们想要找到其他不确定性最小的态，一个充分条件是$|0\rangle$将坐标和动量中心平移至$(x_0,p_0)$；利用(3)也可等价地说移动$z_0$</p>
+<h3 id="平移算符"><a href="#平移算符" class="headerlink" title="平移算符"></a>平移算符</h3><p>平移算符的形式我们都很熟悉</p>
+<script type="math/tex; mode=display">W(a,b)=e^{i(b\hat x-a\hat p)}</script><p>利用Baker-Hausdorff恒等式（证明方法为$\hat A\rightarrow s\hat A$，在$s=0$处做Taylor展开）</p>
+<script type="math/tex; mode=display">e^{\hat A}\hat Be^{-\hat A}=\hat B+[\hat A,\hat B]+\frac1{2!}[\hat A,[\hat A,\hat B]]+\cdots\tag4</script><p>可以计算坐标平均值</p>
+<script type="math/tex; mode=display">\langle\hat x\rangle=\langle0|e^{-i(b\hat x-a\hat p)}\hat xe^{i(b\hat x-a\hat p)}|0\rangle=\langle0|\hat x+ai[\hat p,\hat x]|0\rangle=x+a</script><p>同理可得动量平均值$\langle\hat p\rangle=p+b$，所以</p>
+<script type="math/tex; mode=display">W(x_0,p_0)=\exp\left[i(p_0\hat x-x_0\hat p)\right]=\exp\left[z\hat a^\dagger-\bar z\hat a\right]</script><p>再利用(4)，在$[\hat A,\hat B]$为常数时（事实上只要和$\hat A,\hat B$均对易即可）有Glauber定理</p>
+<script type="math/tex; mode=display">e^{\hat A}e^{\hat B}=e^{\hat A+\hat B}e^{[\hat A,\hat B]/2}\tag5</script><blockquote>
+<p>具体证明为：先定义$f(s)=e^{s\hat A}e^{s\hat B}$</p>
+<script type="math/tex; mode=display">\begin{aligned}&e^{\hat A}\hat Be^{-\hat A}=\hat B+[\hat A,\hat B]+0\\
+f'(s)&=\hat Ae^{s\hat A}e^{s\hat B}+e^{s\hat A}\hat Be^{-s\hat A}e^{s\hat A}e^{s\hat B}\\
+&=(\hat A+\hat B+[\hat A,\hat B]s)f(s)
+\end{aligned}</script><p>所以 $f(s)=e^{(\hat A+\hat B+[\hat A,\hat B])s^2/2}$</p>
+</blockquote>
+<p>所以平移算符为</p>
+<script type="math/tex; mode=display">W(x_0,p_0)=e^{-|z_0|^2/2}e^{z_0\hat a^\dagger}e^{-\bar z_0\hat a}\tag6</script><p>因为湮灭算符作用在基态上给出零结果，所以相干态为</p>
+<script type="math/tex; mode=display">|z\rangle=W(x,p)|0\rangle=e^{-|z|^2/2}e^{z\hat a^\dagger}|0\rangle=e^{-|z|^2/2}\sum_{n=0}^\infty\frac{z^n}{\sqrt{n!}}|n\rangle\tag7</script><p>既然有了表达式，那很容易证明$\hat a|z_0\rangle=|z_0\rangle$</p>
+<h3 id="相干态的其他性质"><a href="#相干态的其他性质" class="headerlink" title="相干态的其他性质"></a>相干态的其他性质</h3><ol>
+<li>内积（不正交）<script type="math/tex; mode=display">\langle z|z'\rangle=e^{-(|z|^2+|z^*|^2)/2}\sum_{n=0}^\infty\frac{(z^*z')^n}{n!}=e^{-(|z|^2+|z^*|^2)/2}e^{z^*z'}</script>虽然不同相干态不正交，但是从平移算符得到的相干态是归一的。</li>
+<li>超完备性<script type="math/tex; mode=display">|z\rangle\langle z|=e^{-|z|^2}\sum_{m=0}^\infty\sum_{n=0}^\infty \frac{z^m(z^*)^n}{\sqrt{m!n!}}|m\rangle\langle n|</script>根据(3)$|z|^2=(x^2+p^2)/2$可得启发换元$re^{i\theta}$<script type="math/tex; mode=display">\int\mathrm dx\mathrm dp\ e^{-|z|^2}z^m(z^*)^n=\int_0^\infty 2r\mathrm dr\int_0^{2\pi}\mathrm d\theta\ e^{-r^2}r^{m+n}e^{i(m-n)\theta}=2\pi m!\delta_{m,n}</script>所以有<script type="math/tex; mode=display">\int\frac{\mathrm dx\mathrm dp}{2\pi}|z\rangle\langle z|=\hat 1</script></li>
+<li>概率分布为Possion分布$P_n\propto \frac{|z|^{2n}}{n!}\propto\frac{(p^2+x^2)^n}{2^nn!}$</li>
+<li>时间演化<script type="math/tex; mode=display">U(t,0)|z\rangle=e^{-iHt}|z\rangle=\sum_{n=0}^\infty\frac{z^n}{\sqrt{n!}}e^{-i(n+1/2)t}|n\rangle=e^{-it/2}\sum_{n=0}^\infty\frac{(ze^{-it})^n}{\sqrt{n!}}|n\rangle</script>所以随时间演化它仍然是相干态，只不过$z(t)=z(0)e^{-it}$。从(3)可以知道这意味着<script type="math/tex; mode=display">\begin{aligned}x(t)&=x(0)\cos t+p(0)\sin t\\
+p(t)&=-x(0)\sin t+p(0)\cos t\end{aligned}</script>这说明参数按照经典运动方程演化</li>
+</ol>
+]]></content>
+      <categories>
+        <category>AQM</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
       </tags>
   </entry>
 </search>

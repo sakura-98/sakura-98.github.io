@@ -22,21 +22,16 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":-1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="在之前的一篇文章里提到一个积分 [\phi(x),\phi(y)]&#x3D;c_+\int\frac{\mathrm d^4k}{(2\pi)^4}(2\pi)\left[e^{ik\cdot x}\theta(k^0)-e^{ik\cdot x}\theta(-k^0)\right]\delta(k^2+\omega_0^2)[\phi(x),\phi(y)]&#x3D;c_+\mathrm{sign}(x^0-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="一道积分证明">
-<meta property="og:url" content="https://github.com/sakura-98/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Sakura&#39;s Blog">
+<meta property="og:url" content="https://github.com/sakura-98/categories/AQM/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="在之前的一篇文章里提到一个积分 [\phi(x),\phi(y)]&#x3D;c_+\int\frac{\mathrm d^4k}{(2\pi)^4}(2\pi)\left[e^{ik\cdot x}\theta(k^0)-e^{ik\cdot x}\theta(-k^0)\right]\delta(k^2+\omega_0^2)[\phi(x),\phi(y)]&#x3D;c_+\mathrm{sign}(x^0-">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-15T08:56:40.056Z">
 <meta property="article:author" content="Sakura">
-<meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://github.com/sakura-98/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/">
+<link rel="canonical" href="https://github.com/sakura-98/categories/AQM/">
 
 
 <script data-pjax class="page-configurations">
@@ -44,12 +39,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'en'
   };
 </script>
 
-  <title>一道积分证明 | Sakura's Blog</title>
+  <title>Category: AQM | Sakura's Blog</title>
   
 
 
@@ -262,139 +257,54 @@
 </noscript>
 
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner category posts-collapse">
       
 
       
 
   
-
-
-<div class="post-block">
   
   
+  <div class="post-block">
+    <div class="post-content">
+      <div class="collection-title">
+        <h2 class="collection-header">AQM
+          <small>Category</small>
+        </h2>
+      </div>
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Sakura">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sakura's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          一道积分证明
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-10-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-08T00:00:00+08:00">2020-10-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/QFT/" itemprop="url" rel="index"><span itemprop="name">QFT</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>在<a href="/2020/09/29/Klein-Gordon场量子化">之前的一篇文章</a>里提到一个积分</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\int\frac{\mathrm d^4k}{(2\pi)^4}(2\pi)\left[e^{ik\cdot x}\theta(k^0)-e^{ik\cdot x}\theta(-k^0)\right]\delta(k^2+\omega_0^2)</script><script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]</script><p>本文用于证明此积分。<br><a id="more"></a></p>
-<p>先将$k^0$积掉，只计算第一项</p>
-<script type="math/tex; mode=display">\int_{-\infty}^\infty\mathrm dk^0\ e^{-ik^0x^0}\theta(k^0)\delta\left[-(k^0)^2+\vec k^2+\omega_0^2\right]=\frac{e^{-i\sqrt{\vec k^2+\omega_0^2}x^0}}{2\sqrt{\vec k^2+\omega_0^2}}</script><p>再将积分变换到球坐标，定义$|\vec x|=r,r^0=x^0-y^0$，那么 $\tau^2=(r^0)^2-r^2$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac1{c_+}[\phi(x),\phi(y)]\\
-=&\int\frac{k^2\sin\theta\mathrm{d}k\mathrm{d}\theta\mathrm{d}\phi}{(2\pi)^32\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)e^{ikr\cos\theta}\\
-=&\int_0^\infty\frac{k^2\mathrm{d}k}{(2\pi)^22\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{2\sin kr}{kr}\\
-=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
-=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left[\sum_{n=0}^\infty\frac{(r^0)^{2n+1}}{(2n+1)!}(-1)^{n+1}2i\sqrt{k^2+\omega_0^2}^{2n+1}\right]\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
-=&\sum_{n=0}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\int_0^\infty(k^2+\omega_0^2)^nk\sin kr\mathrm{d}k\\
-=&\sum_{n=0}^\infty\sum_{m=0}^n\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-=&\sum_{m=0}^\infty\sum_{n=m}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-\end{aligned}\tag{1}</script><p>求和变换 $(n,m)\rightarrow(l=n-m,m)$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac1{c_+}[\phi(x),\phi(y)]\\
-=&\sum_{m=0}^\infty\sum_{l=0}^\infty\frac{(r^0)^{2(l+m)+1}(-1)^{m+l+1}i}{(2m+2l+1)!2\pi^2r}\frac{(m+l)!}{m!l!}\int_0^\infty k^{2l+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
-\sum_{l=0}^\infty\frac{(-1)^l(m+l)!}{(2m+2l+1)!l!} (kr^0)^{2l+1}\sin kr\mathrm{d}k\\
-=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
-2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr\mathrm{d}k\\
-\end{aligned}\tag{2}</script><p>其中 $j_m$ 是球贝塞尔函数。简单起见，定义</p>
-<script type="math/tex; mode=display">I[m;r,\epsilon]=\int_0^\infty2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr e^{-k\epsilon}\mathrm{d}k\tag{3}</script><p>利用Mathematica，计算得</p>
-<script type="math/tex; mode=display">I[0;r,\epsilon]=\int_0^\infty\sin kr^0\sin kr e^{-k\epsilon}\mathrm{d}k=\frac{2\epsilon r^0r}{\epsilon^4+2\epsilon^2(r^2+(r^0)^2)+((r^0)^2-r^2)^2}</script><p>也就是</p>
-<script type="math/tex; mode=display">\begin{aligned}
-I[0;r,0^+]&=\pi rr^0\sqrt{\frac2{(r^0)^2+r^2}}\delta((r^0)^2-r^2)\\
-&=\pi r\mathrm{sign}(r^0)\delta((r^0)^2-r^2)\\
-&=\pi r\mathrm{sign}(r^0)\delta(\tau^2)
-\end{aligned}\tag{4}</script><p>再次利用Mathematica，有公式</p>
-<script type="math/tex; mode=display">\int_0^{\pm\infty}\mathrm{d}x\ x^{1-m}j_m(x)\sin xy=\pm2^{-m}\pi y\frac{(1-y^2)^{-1+m}}{\Gamma(m)}\theta(1-y^2)</script><p>令$x=kr^0,y=r/r^0$，得到</p>
-<script type="math/tex; mode=display">I[m;r,0]=2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\tag{5}</script><p>(4)(5)代入(2)</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac 1c_+[\phi(x),\phi(y)]=i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}I[m;r,0]\\
-=&i\frac{-1}{2\pi^2r}\pi r\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=1}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\\
-=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=1}^\infty\frac{(-1)^{m+1}}{2\pi m!(m-1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m}\theta(\tau^2)\mathrm{sign}(r^0)\\
-=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=0}^\infty\frac{(-1)^m}{2\pi m!(m+1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m+2}\theta(\tau^2)\mathrm{sign}(r^0)\\
-\end{aligned}\tag{6}</script><p>注意到</p>
-<script type="math/tex; mode=display">J_1(x)=\sum_{m=0}^\infty\frac{(-1)^m}{m!(m+1)!}\left(\frac x2\right)^{2m+1}</script><p>(6)式变为</p>
-<script type="math/tex; mode=display">\frac 1{c_+}[\phi(x),\phi(y)]=i\frac1{2\pi}\mathrm{sign}(r^0)\left[-\delta(\tau^2)+\frac{1}{\tau^2}\frac{\omega_0\tau}2J_1(\omega_0\tau)\theta(\tau^2)\right]</script><p>这正是我们要证明的</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(y)]=ic_+\mathrm{sign}(r^0)\left[\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac1{2\pi}\delta(\tau^2)\right]\tag{7}</script>
+      
+    <div class="collection-year">
+      <span class="collection-header">2020</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2020-10-23T00:00:00+08:00"
+              content="2020-10-23">
+          10-23
+        </time>
+      </div>
 
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/physics/" rel="tag"># physics</a>
-          </div>
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/10/23/%E7%9B%B8%E5%B9%B2%E6%80%81/" itemprop="url">
+            <span itemprop="name">相干态</span>
+          </a>
+      </div>
 
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2020/10/05/Heisenberg%E6%A8%A1%E5%9E%8B/" rel="prev" title="Heisenberg模型">
-                  <i class="fa fa-chevron-left"></i> Heisenberg模型
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/" rel="next" title="on-shell等价与LSZ约化">
-                  on-shell等价与LSZ约化 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
+      
+    </header>
   </article>
-</div>
 
+    </div>
+  </div>
+  
+  
+  
 
-
+  
 
 
 
@@ -518,50 +428,6 @@ document.addEventListener('pjax:success', () => {
   
 
   
-      <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              const target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    const script = document.createElement('script');
-    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
-    script.defer = true;
-    document.head.appendChild(script);
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.typesetClear();
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
