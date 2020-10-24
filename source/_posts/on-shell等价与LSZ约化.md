@@ -5,10 +5,11 @@ tags: physics
 categories: QFT
 mathjax: true
 ---
-
- LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。 
+ LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。
 <!--more-->
+
 ### on-shell等价函数
+
 设$m$是**相互作用**标量场$\phi$中单粒子的静质量。若有两个函数$\psi_1(x),\psi_2(x)$，它们的傅里叶变换$\tilde\psi_i(k)\equiv\int e^{-ik\cdot x}\psi_i(x)\mathrm dx$在on-shell条件$l^2+m^2=0$满足时均有
 $$\tilde\psi_1(l)=\tilde\psi_2(l)$$
 可以计算
@@ -32,6 +33,7 @@ $$\begin{aligned}
 on-shell意味着$k^0=\omega_{\vec k}$，因此(3)式与$T$无关。
 
 ### 入态$|in\rangle$与出态$|out\rangle$
+
 入态指的是$t\rightarrow-\infty$时有确定的、可分辨的轨迹和粒子数，$t\rightarrow+\infty$时粒子数、轨迹均不确定；
 出态指的是$t\rightarrow+\infty$时有确定的、可分辨的轨迹和粒子数，$t\rightarrow-\infty$时粒子数、轨迹均不确定。
 **我们要求出态和入态的所有粒子动量均不一样**，不然的话可以不考虑不散射的粒子。
@@ -66,7 +68,9 @@ $$\left\{\begin{aligned}
 因此两者的内积——转移振幅为
 $$\langle out|in\rangle=\langle0|\hat T[D_1^\dagger\cdots D_{n'}^\dagger C_1\cdots C_n]|0\rangle\tag9$$
 编时算符在此其实没有作用，因为出态之间对易，末态之间也对易，出态和末态本身已经编时。
+
 ### LSZ约化公式
+
 定义
 $$\overline C_\alpha=\int\mathrm d^4x_\alpha \bar u_\alpha(x_\alpha)\phi(x_\alpha),
 \bar u_\alpha(x_\alpha)=g_\alpha(t_\alpha-T_+)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f_\alpha(\mathbf k_\alpha)e^{ik\cdot x}

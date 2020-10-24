@@ -15,7 +15,9 @@ $$\lim_{\epsilon\rightarrow 0}\frac{\hat U_\epsilon(0,-\infty;g)|\Phi\rangle}{\l
 注意到定义了$|\Psi^g(\epsilon)\rangle$，而且并没有说$|\Psi^g(\epsilon)\rangle\xrightarrow{\epsilon\rightarrow0}|\Psi^g\rangle$。那么有
 $$\hat H(t=0)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}=E\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}\tag{3}$$
 <!--more-->
+
 ### 相互作用表象
+
 波函数和算符分别为
 $$|\Psi_I(t)\rangle\equiv e^{i\hat H_0t/\hbar}|\Psi_S(t)\rangle,\quad\hat O_I(t)\equiv e^{i\hat H_0t/\hbar}\hat O_Se^{-i\hat H_0t/\hbar}\tag{1.1}$$
 因此波函数运动方程为
@@ -33,7 +35,9 @@ $$\hat U(t,t_0)=\hat 1+\frac{1}{i\hbar}\int_{t_0}^t\hat H_I(t_1)\hat U(t_1,t_0)\
 继续迭代，最终得到
 $$\hat U(t,t_0)=\sum_{n=0}^\infty\left(\frac{1}{i\hbar}\right)^n\frac{1}{n!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ \hat T\left[\hat H_I(t_1)\cdots\hat H_I(t_n)\right]\tag{1.7}$$
 其中引入编时算符$\hat T$使得各个$t_i$等价。
+
 ### 求解哈密顿量和时间演化的对易
+
 这是证明过程中会遇到的一个问题，我们将其处理为引理。
 
 因为$\hat U$能表示为$\hat H_1$的函数，正如(1.7)所示，因此我们从这里开始计算。使用(1.3)
@@ -49,7 +53,9 @@ $$\begin{aligned}[]
 [\hat U(t,t_0),\hat H_0]&=\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
 &\times\frac{\partial}{\partial t_1}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]
 \end{aligned}\tag{2.5}$$
+
 ### 正式证明
+
 $$\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=\left(\hat H_0\hat U_\epsilon(0,-\infty;g)-\hat U_\epsilon(0,-\infty;g)E_0\right)|\Phi\rangle\tag{3.1}$$
 注意到右边是一个对易子，因为$\hat H_0|\Phi\rangle=E_0|\Phi\rangle$。所以可将(2.5)代入
 $$\begin{aligned}\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=&-\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
@@ -91,7 +97,9 @@ $$\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\ra
 因此令$g=1$即得到
 $$\hat H(t=0)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}=(E_0+\Delta E)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}$$
 即得证。
+
 ### 补充说明
+
 利用(1.7)式
 $$\hat U(-\infty,0)=\sum_{n=0}^\infty\left(\frac{g}{i\hbar}\right)^n\frac{1}{n!}\int_{-\infty}^0e^{\epsilon t_1}\mathrm dt_1\cdots e^{\epsilon t_n}\mathrm dt_n\ \hat H_1^n\tag{4.1}=\exp\left(\frac{g\hat H_1}{i\hbar\epsilon}\right)$$
 所以$\langle\Phi|\Psi^g(\epsilon)\rangle=\langle\Phi|\exp(-i\frac g{\hbar\epsilon}\hat H_1)|\Phi\rangle=A^g\exp(i\epsilon^{-1}\alpha^g)$，所以

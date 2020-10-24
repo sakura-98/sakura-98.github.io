@@ -17,7 +17,9 @@ $$\omega_{\vec k}=\sqrt{\vec k^2+\omega_0^2}\tag{3}$$
 $$[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]\tag{4}$$
 其中$\tau=\sqrt{-(x-y)^2}$。我们将从此处继续完成Klein-Gordon场的量子化。
 <!--more-->
+
 ### 计算$c_+$
+
 因为场算符是厄米的，所以（第二个等号用到厄米性）
 $$[\phi(x),\phi(y)]^*=[\phi^\dagger(y),\phi^\dagger(x)]=[\phi(y),\phi(x)]=-[\phi(x),\phi(y)]$$
 最后一步仅仅用到对易子的定义。所以
@@ -59,7 +61,7 @@ $$\begin{aligned}
 =&\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2]+\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),\omega_0^2\phi^2(\vec y)]\\
 =&\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2]+\frac1{c_+}\int\mathrm{d}^3\vec y\ [-ic_+\delta(\vec x-\vec y)]\omega^2_0\phi(\vec y)\\
 =&\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2]-i\omega^2_0\phi(\vec x)\\
-=&\frac1{2c_+}\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y)[\dot\phi(x),\nabla_{\vec y}\phi(\vec y)]\\
+=&\frac1{2c_+}\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y) [\dot\phi(x),\nabla_{\vec y}\phi(\vec y)]\\
  &+\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),\nabla_{\vec y}\phi(\vec y)]\nabla_{\vec y}\phi(\vec y)-i\omega_0^2\phi(\vec x)\\
 =&\frac1{c_+}\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y)\nabla_{\vec y}[-ic_+\delta(\vec x-\vec y)]-i\omega_0^2\phi(\vec x)\\
 =&-i\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y)\nabla_{\vec y}\delta(\vec x-\vec y)-i\omega_0^2\phi(\vec x)\\
@@ -72,6 +74,7 @@ $$\begin{aligned}
 > 不过可以将(11)式$\dot\phi\rightarrow\pi$认为是逻辑起点，正如大多数教材都从拉格朗日量出发。
 
 ### 哈密顿量的四矢量（4-动量）
+
 (9)式写成四矢量的形式为下式的$0$分量
 $$i\partial^\mu\phi(x)=[P^\mu,\phi(x)],i\partial^\mu\dot\phi(x)=[P^\mu,\dot\phi(x)]\tag{12}$$
 猜测
@@ -82,7 +85,9 @@ $$\begin{aligned}
 =&-\int\mathrm d^3\vec y\ [-i\delta(\vec x-\vec y)]\partial^\mathrm i_{\vec y}\phi(\vec y)\\
 =&i\partial^\mathrm i\phi(\vec x)
 \end{aligned}$$
+
 ### 二次量子化第一步：变换到动量空间
+
 定义
 $$\left\{\begin{aligned}
 &\tilde\phi(k)=\int\mathrm d^4x\ e^{-ik\cdot x}\phi(x)\\
@@ -111,6 +116,7 @@ $$\begin{aligned}
 \end{aligned}\tag{18}$$
 
 ### 二次量子化：探索$a,a^\dagger$的物理意义
+
 利用(17)式可将场算符写为
 $$\phi(x)=\int\frac{\mathrm d^4k}{(2\pi)^4}\ e^{ik\cdot x}2\pi\delta(k^2+\omega_0^2)\left[a(\vec k)\theta(k^0)+a^\dagger(-\vec k)\theta(-k^0)\right]$$
 同样对$k^0$积分后为
@@ -140,6 +146,7 @@ $$
 $$\tilde\phi(k)=\int\frac{\mathrm{d}^3\vec k}{(2\pi)^32\omega_{\vec k}}\left[a(\vec k)e^{ik\cdot x}+a^\dagger(\vec k)e^{-ik\cdot x}\right]\tag{22}$$
 
 ### 4-动量的二次量子化
+
 进一步，4-动量(11)式和(13)式用升降算符表示（即将(19)式代入）。为此，先计算其导数$\dot\phi,\nabla\phi$。简记$\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}=\tilde{\mathrm dk}$
 $$\left\{\begin{aligned}
 \phi(x)&=\int\tilde{\mathrm dk}\ \left[a(\vec k)e^{ik\cdot x}+a^\dagger(\vec k)e^{-ik\cdot x}\right]\\
