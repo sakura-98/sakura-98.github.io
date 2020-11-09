@@ -2,7 +2,7 @@
 title: flutter发布
 layout: post
 date: 2020-10-24
-tags: skill
+tags: flutter
 ---
 
 用flutter发布Android app 一般需要以下步骤（不包括发布到应用商店）
