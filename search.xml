@@ -274,7 +274,7 @@ S=\int\mathrm d^4x\ \mathcal L,\quad
 =&\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2]+\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),\omega_0^2\phi^2(\vec y)]\\
 =&\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2]+\frac1{c_+}\int\mathrm{d}^3\vec y\ [-ic_+\delta(\vec x-\vec y)]\omega^2_0\phi(\vec y)\\
 =&\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),(\nabla_{\vec y}\phi(\vec y))^2]-i\omega^2_0\phi(\vec x)\\
-=&\frac1{2c_+}\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y)[\dot\phi(x),\nabla_{\vec y}\phi(\vec y)]\\
+=&\frac1{2c_+}\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y) [\dot\phi(x),\nabla_{\vec y}\phi(\vec y)]\\
  &+\frac1{2c_+}\int\mathrm{d}^3\vec y\ [\dot\phi(x),\nabla_{\vec y}\phi(\vec y)]\nabla_{\vec y}\phi(\vec y)-i\omega_0^2\phi(\vec x)\\
 =&\frac1{c_+}\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y)\nabla_{\vec y}[-ic_+\delta(\vec x-\vec y)]-i\omega_0^2\phi(\vec x)\\
 =&-i\int\mathrm{d}^3\vec y\ \nabla_{\vec y}\phi(\vec y)\nabla_{\vec y}\delta(\vec x-\vec y)-i\omega_0^2\phi(\vec x)\\
@@ -492,7 +492,7 @@ I[0;r,0^+]&=\pi rr^0\sqrt{\frac2{(r^0)^2+r^2}}\delta((r^0)^2-r^2)\\
         <category>QFT</category>
       </categories>
       <tags>
-        <tag>physics</tag>
+        <tag>math</tag>
       </tags>
   </entry>
   <entry>
@@ -574,23 +574,41 @@ H(\phi,\Pi)&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\left[\Pi(-\vec k)\Pi
 <p><a href="https://nodejs.org">点击此处下载node.js</a></p>
 <p><a href="https://git-scm.com">点击此处下载git</a></p>
 <a id="more"></a>
-<h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><p>安装hexo<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save <span class="comment"># 安装git插件</span></span><br></pre></td></tr></table></figure></p>
-<p>修改_config.xml<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">&lt;your</span> <span class="string">url&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">depoly:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@&lt;your</span> <span class="string">repository&gt;</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<p>初始化git<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br></pre></td></tr></table></figure></p>
-<p>创建ssh秘钥<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line">cat /root/.ssh/id_rsa.pub <span class="comment"># for Linux</span></span><br><span class="line"><span class="built_in">type</span> C:\\Users\&lt;user<span class="string">&#x27;s name&gt;\.ssh\id_rsa.pub # for windows</span></span><br></pre></td></tr></table></figure><br>复制到github里的ssh密钥。</p>
-<p>备份源码至同一仓库（可选）<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;your repository&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;&lt;commit message&gt;&quot;</span></span><br><span class="line">git push --set-upstream origin origin/<span class="built_in">source</span></span><br></pre></td></tr></table></figure><br>简单命令<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo s <span class="comment"># server 创建本地服务器，打开https://localhost:4000即可查看</span></span><br><span class="line">hexo g <span class="comment"># generate 生成网页文件</span></span><br><span class="line">hexo d <span class="comment"># deploy 配置到github</span></span><br><span class="line">hexo clean <span class="comment"># 清理生成文件</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="主题相关"><a href="#主题相关" class="headerlink" title="主题相关"></a>主题相关</h3><p>更换主题，以Next为例<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<p>修改_config.xml<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Themes:</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><p>安装hexo</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save <span class="comment"># 安装git插件</span></span><br></pre></td></tr></table></figure>
+<p>修改_config.xml</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">&lt;your</span> <span class="string">url&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">depoly:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@&lt;your</span> <span class="string">repository&gt;</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>初始化git</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br></pre></td></tr></table></figure>
+<p>创建ssh秘钥</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line">cat /root/.ssh/id_rsa.pub <span class="comment"># for Linux</span></span><br><span class="line"><span class="built_in">type</span> C:\\Users\&lt;user<span class="string">&#x27;s name&gt;\.ssh\id_rsa.pub # for windows</span></span><br></pre></td></tr></table></figure>
+<p>复制到github里的ssh密钥。</p>
+<p>备份源码至同一仓库（可选）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;your repository&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;&lt;commit message&gt;&quot;</span></span><br><span class="line">git push --set-upstream origin origin/<span class="built_in">source</span></span><br></pre></td></tr></table></figure>
+<p>简单命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo s <span class="comment"># server 创建本地服务器，打开https://localhost:4000即可查看</span></span><br><span class="line">hexo g <span class="comment"># generate 生成网页文件</span></span><br><span class="line">hexo d <span class="comment"># deploy 配置到github</span></span><br><span class="line">hexo clean <span class="comment"># 清理生成文件</span></span><br></pre></td></tr></table></figure>
+<h3 id="主题相关"><a href="#主题相关" class="headerlink" title="主题相关"></a>主题相关</h3><p>更换主题，以Next为例</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>修改_config.xml</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Themes:</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
 <p>配置主题themes/next/_config.yml。参见文档内注释即可</p>
 <h3 id="创建tags界面-categories同理"><a href="#创建tags界面-categories同理" class="headerlink" title="创建tags界面(categories同理)"></a>创建tags界面(categories同理)</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在source/tags/index.md修改为<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<h3 id="数学模式"><a href="#数学模式" class="headerlink" title="数学模式"></a>数学模式</h3><p>需要更换markdown引擎<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></p>
-<p>在node_modules/kramed/lib/rules/inline.js中修改一些语义处理<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure></p>
+<p>在source/tags/index.md修改为</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="数学模式"><a href="#数学模式" class="headerlink" title="数学模式"></a>数学模式</h3><p>需要更换markdown引擎</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+<p>在node_modules/kramed/lib/rules/inline.js中修改一些语义处理</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
 <p>最后再在<strong>主题配置</strong>和<strong>文件头</strong>里打开mathjax即可</p>
-<h3 id="插图方式"><a href="#插图方式" class="headerlink" title="插图方式"></a>插图方式</h3><p>打开本地配置_config.yml的开关<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-<p>在source文件夹下建立images文件夹，将图片放于此文件夹下，引用时<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">&lt;name&gt;</span>](<span class="link">/images/&lt;pic-name&gt;</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="插图方式"><a href="#插图方式" class="headerlink" title="插图方式"></a>插图方式</h3><p>打开本地配置_config.yml的开关</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>在source文件夹下建立images文件夹，将图片放于此文件夹下，引用时</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">&lt;name&gt;</span>](<span class="link">/images/&lt;pic-name&gt;</span>)</span><br></pre></td></tr></table></figure>
 <p>或者放在创建文章时的同名文件夹下，引用时直接使用名字</p>
-<h3 id="引用其他博文"><a href="#引用其他博文" class="headerlink" title="引用其他博文"></a>引用其他博文</h3><p>将配置文件的永久链接修改为<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:category/:title/</span></span><br></pre></td></tr></table></figure><br>至此文件储存路径为”/目录/标题”，因此引用时可<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[](../<span class="xml"><span class="tag">&lt;<span class="name">同级目录下的文件</span>&gt;</span></span>)</span><br><span class="line">[](/<span class="xml"><span class="tag">&lt;<span class="name">绝对路径-目录</span>&gt;</span></span>/<span class="xml"><span class="tag">&lt;<span class="name">标题</span>&gt;</span></span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="引用其他博文"><a href="#引用其他博文" class="headerlink" title="引用其他博文"></a>引用其他博文</h3><p>将配置文件的永久链接修改为</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:category/:title/</span></span><br></pre></td></tr></table></figure>
+<p>至此文件储存路径为”/目录/标题”，因此引用时可</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[](../<span class="xml"><span class="tag">&lt;<span class="name">同级目录下的文件</span>&gt;</span></span>)</span><br><span class="line">[](/<span class="xml"><span class="tag">&lt;<span class="name">绝对路径-目录</span>&gt;</span></span>/<span class="xml"><span class="tag">&lt;<span class="name">标题</span>&gt;</span></span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
@@ -617,7 +635,7 @@ x\rightarrow\bar x=\Lambda x+a & (\bar x^\mu=\Lambda^\mu_{\ \ \nu} x^\nu+a^\mu)\
 &=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\nu\mu}x^\nu\partial^\mu\right)\phi(x)\\
 &=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\mu\nu}x^\mu\partial^\nu\right)\phi(x)
 \end{aligned}</script><p>定义线性变换</p>
-<script type="math/tex; mode=display">\mathscr L^{\mu\nu}=-i\left(x^\nu\partial^\mu-x^\mu\partial^\nu\right)</script><p><strong><font color="red" size=5>注意:</font></strong> 这个线性变换不是做在态矢量的Hilbert空间上，而是做在场算符组成的空间上<br>结论为：</p>
+<script type="math/tex; mode=display">\mathscr L^{\mu\nu}=-i\left(x^\nu\partial^\mu-x^\mu\partial^\nu\right)</script><p>$\color{red}{\mathbf{注意}}$ 这个线性变换不是做在态矢量的Hilbert空间上，而是做在场算符组成的空间上<br>结论为：</p>
 <script type="math/tex; mode=display">\begin{aligned}
 \delta\phi(x)=&\frac i2\theta_{\mu\nu}\mathscr L^{\mu\nu}\phi(x)\\
 =&i\left[\theta_{01}\mathscr L^{01}+\theta_{02}\mathscr L^{02}+\theta_{03}\mathscr L^{03}\right.\\
@@ -659,7 +677,11 @@ C(x)&=\int\frac{\mathrm{d}^4k}{(2\pi)^4}e^{ik\cdot x}\tilde C(k)
     <title>链接颜色变化</title>
     <url>/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/</url>
     <content><![CDATA[<p>本文用于改变超链接的参数。</p>
-<p>最简单的链接为<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.baidu.com&quot;</span>&gt;</span>点击进入百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><br>但是默认点击前为蓝色，点击后变为紫色。<br><a id="more"></a><br>想要更改颜色可在head内加入<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:black;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure><br>link是未点击时的样式，visited时点击后的样式。此外还有hover，active分别为悬停和点击。</p>
+<p>最简单的链接为</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.baidu.com&quot;</span>&gt;</span>点击进入百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>但是默认点击前为蓝色，点击后变为紫色。<br><a id="more"></a><br>想要更改颜色可在head内加入</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:black;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>link是未点击时的样式，visited时点击后的样式。此外还有hover，active分别为悬停和点击。</p>
 <p>当然不仅仅是改变颜色，还有其他操作，比如去掉下划线</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;<span class="attribute">text-decoration</span>:none;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:black;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -676,9 +698,9 @@ C(x)&=\int\frac{\mathrm{d}^4k}{(2\pi)^4}e^{ik\cdot x}\tilde C(k)
 <li>是湮灭算符的本征值</li>
 </ol>
 <p>本文从特性1.出发“猜测”相干态的形式，再证明特性2.以及其他性质。</p>
-<ol>
+<ul>
 <li>[ ] 检验是否还有其它态满足最小不确定性</li>
-</ol>
+</ul>
 <a id="more"></a>
 <h3 id="简化的符号约定"><a href="#简化的符号约定" class="headerlink" title="简化的符号约定"></a>简化的符号约定</h3><p>Hamiltonian为</p>
 <script type="math/tex; mode=display">\hat H=\frac{\hat p^2}2+\frac{\hat x^2}2=\hat a^\dagger\hat a+\frac12\tag1</script><p>对易关系为</p>
@@ -715,6 +737,135 @@ f'(s)&=\hat Ae^{s\hat A}e^{s\hat B}+e^{s\hat A}\hat Be^{-s\hat A}e^{s\hat A}e^{s
 p(t)&=-x(0)\sin t+p(0)\cos t\end{aligned}</script>这说明参数按照经典运动方程演化</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>AQM</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>flutter发布</title>
+    <url>/2020/10/24/flutter%E5%8F%91%E5%B8%83/</url>
+    <content><![CDATA[<p>用flutter发布Android app 一般需要以下步骤（不包括发布到应用商店）</p>
+<a id="more"></a>
+<ol>
+<li><p>将应用图标放入<code>&lt;app dir&gt;/android/app/src/main/res/</code>目录</p>
+</li>
+<li><p>检查<code>&lt;app dir&gt;/android/app/src/main/AndroidManifest.xml</code>，修改<code>package</code>，<code>application-android:label</code>，<code>application-android-icon</code></p>
+</li>
+<li><p>修改<code>&lt;app dir&gt;/android/app/src/main/kotlin</code>下文件结构，并将其下<code>MainActivity.kt</code>第一行修改为包名</p>
+</li>
+<li><p>把文件 <code>key.properties</code> 复制到<code>&lt;app dir&gt;/android</code>目录下</p>
+</li>
+<li><p>修改<code>&lt;app dir&gt;/android/app/build.gradle</code></p>
+<ol>
+<li><p>替换</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">android&#123;</span><br></pre></td></tr></table></figure>
+<p>为</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> keystorePropertiesFile = rootProject.file(<span class="string">&quot;key.properties&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> keystoreProperties = <span class="keyword">new</span> Properties()</span><br><span class="line">keystoreProperties.load(<span class="keyword">new</span> FileInputStream(keystorePropertiesFile))</span><br><span class="line"></span><br><span class="line">android&#123;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>替换</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        <span class="comment">// <span class="doctag">TODO:</span> Add your own signing config for the release build.</span></span><br><span class="line">        <span class="comment">// Signing with the debug keys for now, so `flutter run --release` works.</span></span><br><span class="line">        signingConfig signingConfigs.debug</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">signingConfigs &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        keyAlias keystoreProperties[<span class="string">&#x27;keyAlias&#x27;</span>]</span><br><span class="line">        keyPassword keystoreProperties[<span class="string">&#x27;keyPassword&#x27;</span>]</span><br><span class="line">        storeFile file(keystoreProperties[<span class="string">&#x27;storeFile&#x27;</span>])</span><br><span class="line">        storePassword keystoreProperties[<span class="string">&#x27;storePassword&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">buildTypes &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">        signingConfig signingConfigs.release</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改<code>defaultConfig</code>中<code>applicationId</code></p>
+</li>
+</ol>
+</li>
+<li><p>生成apk文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">flutter build apk --target-platform android-arm64</span><br></pre></td></tr></table></figure>
+<p>文件位于<code>&lt;app dir&gt;/build/app/outputs/apk/app-release.apk</code></p>
+</li>
+</ol>
+<p>未签名应用签名方式：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jarsigner -verbose -keystore C:\Users\yzsu0\key.jks -signedjar signed.apk no_sign.apk key</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>flutter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CG系数</title>
+    <url>/2020/11/07/CG%E7%B3%BB%E6%95%B0/</url>
+    <content><![CDATA[<p>Clebsch-Gordon(CG)系数是角动量求和$(j_1+j_2=j)$过程中出现的系数，定义为</p>
+<script type="math/tex; mode=display">
+\langle j_1m_1j_2m_2|j_1j_2;jm\rangle</script><p>显然，完整的CG系数应当是$(2j_1+1)(2j_2+1)$维的矩阵。<br><a id="more"></a></p>
+<h3 id="完备性"><a href="#完备性" class="headerlink" title="完备性"></a>完备性</h3><p>直积态的完备性是预先给定的，或者说通过和式左边两个角动量的完备性可以得到</p>
+<script type="math/tex; mode=display">\sum_{m_1,m_2}|j_1m_1j_2m_2\rangle\langle j_1m_1j_2m_2|=1\tag{1}</script><p>右边的正交性也有角动量理论给出，所以只需要维数正确，就有完备性关系。实际上</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$j$</th>
+<th>$j_1+j_2$</th>
+<th>$j_1+j_2-1$</th>
+<th>$\cdots$</th>
+<th>$j_1-j_2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$m$</td>
+<td>$2(j_1+j_2)+1$</td>
+<td>$2(j_1+j_2)-1$</td>
+<td>$\cdots$</td>
+<td>$2(j_1-j_2)+1$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>所以总共有$(2j_1+1)(2j_2+1)$维，因此也是完备的</p>
+<script type="math/tex; mode=display">\sum_{j=|j_1-j_2|}^{j_1+j_2}\sum_{m=-j}^j|j_1j_2;jm\rangle\langle j_1j_2;jm|\tag{2}</script><p>所以可以利用CG系数可以将耦合态和直积态互相转换</p>
+<script type="math/tex; mode=display">|j_1j_2;jm\rangle=\sum_{m_1,m_2}|j_1m_1j_2m_2\rangle\langle j_1m_1j_2m_2|j_1j_2;jm\rangle\tag3</script><script type="math/tex; mode=display">|j_1m_1j_2m_2\rangle=\sum_{j=|j_1-j_2|}^{j_1+j_2}\sum_{m=-j}^j|j_1j_2;jm\rangle\langle j_1j_2;jm|j_1m_1j_2m_2\rangle\tag4</script><h3 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h3><p>将角动量的升降算符作用在(3)上可以得到递推关系。具体而言，作用升算符</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\sqrt{(j-m)(j+m+1)}|j_1j_2;j,m+1\rangle\\
+=&\sum_{m_1,m_2}\sqrt{(j_1-m_1)(j_1+m_1+1)}|j_1,m_1+1,j_2m_2\rangle\langle j_1m_1j_2m_2|j_1j_2;jm\rangle\\
++&\sum_{m_1,m_2}\sqrt{(j_2-m_2)(j_2+m_2+1)}|j_1m_1j_2,m_2+1\rangle\langle j_1m_1j_2m_2|j_1j_2;jm\rangle\\
+\end{aligned}</script><p>左乘$\langle j_1m_1j_2m_2|$得</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\sqrt{(j-m)(j+m+1)}\langle j_1m_1j_2m_2|j_1j_2;j,m+1\rangle\\
+=&\sqrt{(j_1-m_1+1)(j_1+m_1)}\langle j_1,m_1-1,j_2m_2|j_1j_2;jm\rangle\\
++&\sqrt{(j_2-m_2+1)(j_2+m_2)}\langle j_1m_1j_2,m_2-1|j_1j_2;jm\rangle\\
+\end{aligned}\tag5</script><p>同理降算符可得</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\sqrt{(j+m)(j-m+1)}\langle j_1m_1j_2m_2|j_1j_2;j,m-1\rangle\\
+=&\sqrt{(j_1-m_1)(j_1+m_1+1)}\langle j_1,m_1+1,j_2m_2|j_1j_2;jm\rangle\\
++&\sqrt{(j_2-m_2)(j_2+m_2+1)}\langle j_1m_1j_2,m_2+1|j_1j_2;jm\rangle\\
+\end{aligned}\tag6</script><blockquote>
+<p>从递推式看出，可以将CG系数全部设为实数。<br>对(4)再进行一次操作可知，CG系数构成的矩阵是对称的<del>（没算过，有空补上）</del></p>
+</blockquote>
+<h3 id="计算方式"><a href="#计算方式" class="headerlink" title="计算方式"></a>计算方式</h3><p>利用(3)可知得归一化条件</p>
+<script type="math/tex; mode=display">\sum_{m_1,m_2}\langle j_1m_1j_2m_2|j_1j_2;jm\rangle^2=1</script><p>特殊的，取$m=j$</p>
+<script type="math/tex; mode=display">\sum_{m_1}\langle j_1m_1j_2,j-m_1|j_1j_2;jj\rangle^2=1\tag7</script><p>一般程序为</p>
+<ol>
+<li>利用(5)取$m=j$计算$\langle j_1m_1j_2,j-m_1|j_1j_2;jj\rangle$，假设$m_1=j_1$时大于零</li>
+<li>利用(7)归一化</li>
+<li>利用(4)递推计算$m\neq j$的情况</li>
+</ol>
+<p>因此可以自己写代码计算（🚩)</p>
+<h3 id="和D矩阵的关系"><a href="#和D矩阵的关系" class="headerlink" title="和D矩阵的关系"></a>和D矩阵的关系</h3><script type="math/tex; mode=display">\begin{aligned}
+D^{j}_{mm'}&=\langle jm|U|jm'\rangle=\langle jm|U_1U_2|jm'\rangle\\
+&=\sum_{m_1m_2}\langle jm|j_1m_1j_2m_2\rangle\langle j_1m_1j_2m_2|U_1U_2|jm'\rangle\\
+&=\sum_{m_1m_2}\langle jm|j_1m_1j_2m_2\rangle\left(\langle j_1m_1|U_1\otimes\langle j_2m_2|U_2\right)|jm'\rangle\\
+&=\sum_{m_1m_2}\sum_{m_1'm_2'}\langle jm|j_1m_1j_2m_2\rangle\left(D^{j_1}_{m_1m_1'} D^{j_2}_{m_2m_2'}\right)\langle j_1m_1'j_2m_2'|jm'\rangle\\
+\end{aligned}</script><p>其中第三个等号是对任意可能的$j_1j_2$固定后求和。我们并没有假定对于任意$j_1j_2$答案都是一样，但是从结果上来看确实如此。</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&D^{j_1}_{m_1m_1'}D^{j_2}_{m_2m_2'}=\langle j_1m_1|U_1|j_1m_1'\rangle\langle j_2m_2|U_2|j_2m_2'\rangle\\
+=&\langle j_1m_1j_2m_2|U_1U_2|j_1m_1'j_2m_2'\rangle\\
+=&\langle j_1m_1j_2m_2|U|j_1m_1'j_2m_2'\rangle\\
+=&\sum_{jm}\sum_{j'm'}\langle j_1m_1j_2m_2|jm\rangle\langle jm|U|j'm'\rangle\langle j'm'|j_1m_1'j_2m_2'\rangle\\
+=&\sum_{jmm'}\langle j_1m_1j_2m_2|jm\rangle D^{j}_{mm'}\langle jm'|j_1m_1'j_2m_2'\rangle\\
+\end{aligned}</script><h3 id="和球谐函数的关系"><a href="#和球谐函数的关系" class="headerlink" title="和球谐函数的关系"></a>和球谐函数的关系</h3><p>球谐函数有如下性质</p>
+<script type="math/tex; mode=display">Y_{lm}(\theta,\phi)=U(\alpha=\theta,\beta=\phi,\gamma=0)Y_{lm}(0,0)=U(R^{-1})\sqrt{\frac{2l+1}{4\pi}}\delta_{m0}</script><script type="math/tex; mode=display">\begin{aligned}
+&Y_{l_1m_1}(\theta,\phi)Y_{l_2m_2}(\theta,\phi)=\langle\theta,\phi|l_1m_1\rangle\langle\theta,\phi|l_2m_2\rangle\\
+=&\left(\langle\theta,\phi|\otimes\langle\theta,\phi|\right)\sum_{lm}|l_1l_2;lm\rangle\langle l_1l_2;lm|l_1m_1l_2m_2\rangle\\
+=&\left(\langle\theta,\phi|\otimes\langle\theta,\phi|\right)\sum_{lm}\sum_{l'=l,m'}|l'm'00\rangle\langle l'm'00|l0;lm\rangle\langle lm|l_1m_1l_2m_2\rangle\\
+=&\sum_{lm}Y_{lm}(\theta,\phi)Y_{00}(\theta,\phi)\langle lm00|lm\rangle\langle lm|l_1m_1l_2m_2\rangle\\
+=&\sum_l Y_{l,m_1+m_2}(\theta,\phi)\frac{1}{\sqrt{4\pi}}\langle lm|l_1m_1l_2m_2\rangle
+\end{aligned}</script><p>其中第二行的$|l_1l_2;lm\rangle$和第三行的$|l0;lm\rangle$均为$|lm\rangle$。第三行中插入完备性关系，只不过这个完备性$(2l+1)$项中只有一项有效。<br>进一步可得三个球谐函数的积分</p>
+<script type="math/tex; mode=display">\int\mathrm d\Omega\ Y^*_{l_3m_3}Y_{l_1m_1}Y_{l_2m_2}=\sqrt{\frac{(2l_1+1)(2l_2+1)}{4\pi(2l_3+1)}}\langle l_30|l_10l_20\rangle\langle l_1m_1l_2m_2|lm\rangle</script>]]></content>
       <categories>
         <category>AQM</category>
       </categories>

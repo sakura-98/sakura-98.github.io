@@ -22,21 +22,21 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":-1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="本文用于改变超链接的参数。 最简单的链接为 1&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baidu.com&quot;&gt;点击进入百度&lt;&#x2F;a&gt; 但是默认点击前为蓝色，点击后变为紫色。">
+  <meta name="description" content="Clebsch-Gordon(CG)系数是角动量求和$(j_1+j_2&#x3D;j)$过程中出现的系数，定义为  \langle j_1m_1j_2m_2|j_1j_2;jm\rangle显然，完整的CG系数应当是$(2j_1+1)(2j_2+1)$维的矩阵。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="链接颜色变化">
-<meta property="og:url" content="https://github.com/sakura-98/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/index.html">
+<meta property="og:title" content="CG系数">
+<meta property="og:url" content="https://github.com/sakura-98/2020/11/07/CG%E7%B3%BB%E6%95%B0/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="本文用于改变超链接的参数。 最简单的链接为 1&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baidu.com&quot;&gt;点击进入百度&lt;&#x2F;a&gt; 但是默认点击前为蓝色，点击后变为紫色。">
+<meta property="og:description" content="Clebsch-Gordon(CG)系数是角动量求和$(j_1+j_2&#x3D;j)$过程中出现的系数，定义为  \langle j_1m_1j_2m_2|j_1j_2;jm\rangle显然，完整的CG系数应当是$(2j_1+1)(2j_2+1)$维的矩阵。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-24T01:45:28.430Z">
+<meta property="article:published_time" content="2020-11-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-08T14:17:17.948Z">
 <meta property="article:author" content="Sakura">
-<meta property="article:tag" content="html">
+<meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://github.com/sakura-98/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/">
+<link rel="canonical" href="https://github.com/sakura-98/2020/11/07/CG%E7%B3%BB%E6%95%B0/">
 
 
 <script data-pjax class="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>链接颜色变化 | Sakura's Blog</title>
+  <title>CG系数 | Sakura's Blog</title>
   
 
 
@@ -187,7 +187,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -199,6 +199,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E5%A4%87%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">完备性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E6%8E%A8%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">递推关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">计算方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%92%8CD%E7%9F%A9%E9%98%B5%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">4.</span> <span class="nav-text">和D矩阵的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%92%8C%E7%90%83%E8%B0%90%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">5.</span> <span class="nav-text">和球谐函数的关系</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -275,7 +276,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/09/24/%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%8F%98%E5%8C%96/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/11/07/CG%E7%B3%BB%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -288,7 +289,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          链接颜色变化
+          CG系数
         </h1>
 
         <div class="post-meta-container">
@@ -299,7 +300,16 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-09-24 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-24T00:00:00+08:00">2020-09-24</time>
+      <time title="Created: 2020-11-07 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-07T00:00:00+08:00">2020-11-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AQM/" itemprop="url" rel="index"><span itemprop="name">AQM</span></a>
+        </span>
     </span>
 
   
@@ -312,15 +322,83 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本文用于改变超链接的参数。</p>
-<p>最简单的链接为</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.baidu.com&quot;</span>&gt;</span>点击进入百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>但是默认点击前为蓝色，点击后变为紫色。<br><a id="more"></a><br>想要更改颜色可在head内加入</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:black;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>link是未点击时的样式，visited时点击后的样式。此外还有hover，active分别为悬停和点击。</p>
-<p>当然不仅仅是改变颜色，还有其他操作，比如去掉下划线</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>:red;<span class="attribute">text-decoration</span>:none;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>:black;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+        <p>Clebsch-Gordon(CG)系数是角动量求和$(j_1+j_2=j)$过程中出现的系数，定义为</p>
+<script type="math/tex; mode=display">
+\langle j_1m_1j_2m_2|j_1j_2;jm\rangle</script><p>显然，完整的CG系数应当是$(2j_1+1)(2j_2+1)$维的矩阵。<br><a id="more"></a></p>
+<h3 id="完备性"><a href="#完备性" class="headerlink" title="完备性"></a>完备性</h3><p>直积态的完备性是预先给定的，或者说通过和式左边两个角动量的完备性可以得到</p>
+<script type="math/tex; mode=display">\sum_{m_1,m_2}|j_1m_1j_2m_2\rangle\langle j_1m_1j_2m_2|=1\tag{1}</script><p>右边的正交性也有角动量理论给出，所以只需要维数正确，就有完备性关系。实际上</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$j$</th>
+<th>$j_1+j_2$</th>
+<th>$j_1+j_2-1$</th>
+<th>$\cdots$</th>
+<th>$j_1-j_2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$m$</td>
+<td>$2(j_1+j_2)+1$</td>
+<td>$2(j_1+j_2)-1$</td>
+<td>$\cdots$</td>
+<td>$2(j_1-j_2)+1$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>所以总共有$(2j_1+1)(2j_2+1)$维，因此也是完备的</p>
+<script type="math/tex; mode=display">\sum_{j=|j_1-j_2|}^{j_1+j_2}\sum_{m=-j}^j|j_1j_2;jm\rangle\langle j_1j_2;jm|\tag{2}</script><p>所以可以利用CG系数可以将耦合态和直积态互相转换</p>
+<script type="math/tex; mode=display">|j_1j_2;jm\rangle=\sum_{m_1,m_2}|j_1m_1j_2m_2\rangle\langle j_1m_1j_2m_2|j_1j_2;jm\rangle\tag3</script><script type="math/tex; mode=display">|j_1m_1j_2m_2\rangle=\sum_{j=|j_1-j_2|}^{j_1+j_2}\sum_{m=-j}^j|j_1j_2;jm\rangle\langle j_1j_2;jm|j_1m_1j_2m_2\rangle\tag4</script><h3 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h3><p>将角动量的升降算符作用在(3)上可以得到递推关系。具体而言，作用升算符</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\sqrt{(j-m)(j+m+1)}|j_1j_2;j,m+1\rangle\\
+=&\sum_{m_1,m_2}\sqrt{(j_1-m_1)(j_1+m_1+1)}|j_1,m_1+1,j_2m_2\rangle\langle j_1m_1j_2m_2|j_1j_2;jm\rangle\\
++&\sum_{m_1,m_2}\sqrt{(j_2-m_2)(j_2+m_2+1)}|j_1m_1j_2,m_2+1\rangle\langle j_1m_1j_2m_2|j_1j_2;jm\rangle\\
+\end{aligned}</script><p>左乘$\langle j_1m_1j_2m_2|$得</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\sqrt{(j-m)(j+m+1)}\langle j_1m_1j_2m_2|j_1j_2;j,m+1\rangle\\
+=&\sqrt{(j_1-m_1+1)(j_1+m_1)}\langle j_1,m_1-1,j_2m_2|j_1j_2;jm\rangle\\
++&\sqrt{(j_2-m_2+1)(j_2+m_2)}\langle j_1m_1j_2,m_2-1|j_1j_2;jm\rangle\\
+\end{aligned}\tag5</script><p>同理降算符可得</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\sqrt{(j+m)(j-m+1)}\langle j_1m_1j_2m_2|j_1j_2;j,m-1\rangle\\
+=&\sqrt{(j_1-m_1)(j_1+m_1+1)}\langle j_1,m_1+1,j_2m_2|j_1j_2;jm\rangle\\
++&\sqrt{(j_2-m_2)(j_2+m_2+1)}\langle j_1m_1j_2,m_2+1|j_1j_2;jm\rangle\\
+\end{aligned}\tag6</script><blockquote>
+<p>从递推式看出，可以将CG系数全部设为实数。<br>对(4)再进行一次操作可知，CG系数构成的矩阵是对称的<del>（没算过，有空补上）</del></p>
+</blockquote>
+<h3 id="计算方式"><a href="#计算方式" class="headerlink" title="计算方式"></a>计算方式</h3><p>利用(3)可知得归一化条件</p>
+<script type="math/tex; mode=display">\sum_{m_1,m_2}\langle j_1m_1j_2m_2|j_1j_2;jm\rangle^2=1</script><p>特殊的，取$m=j$</p>
+<script type="math/tex; mode=display">\sum_{m_1}\langle j_1m_1j_2,j-m_1|j_1j_2;jj\rangle^2=1\tag7</script><p>一般程序为</p>
+<ol>
+<li>利用(5)取$m=j$计算$\langle j_1m_1j_2,j-m_1|j_1j_2;jj\rangle$，假设$m_1=j_1$时大于零</li>
+<li>利用(7)归一化</li>
+<li>利用(4)递推计算$m\neq j$的情况</li>
+</ol>
+<p>因此可以自己写代码计算（🚩)</p>
+<h3 id="和D矩阵的关系"><a href="#和D矩阵的关系" class="headerlink" title="和D矩阵的关系"></a>和D矩阵的关系</h3><script type="math/tex; mode=display">\begin{aligned}
+D^{j}_{mm'}&=\langle jm|U|jm'\rangle=\langle jm|U_1U_2|jm'\rangle\\
+&=\sum_{m_1m_2}\langle jm|j_1m_1j_2m_2\rangle\langle j_1m_1j_2m_2|U_1U_2|jm'\rangle\\
+&=\sum_{m_1m_2}\langle jm|j_1m_1j_2m_2\rangle\left(\langle j_1m_1|U_1\otimes\langle j_2m_2|U_2\right)|jm'\rangle\\
+&=\sum_{m_1m_2}\sum_{m_1'm_2'}\langle jm|j_1m_1j_2m_2\rangle\left(D^{j_1}_{m_1m_1'} D^{j_2}_{m_2m_2'}\right)\langle j_1m_1'j_2m_2'|jm'\rangle\\
+\end{aligned}</script><p>其中第三个等号是对任意可能的$j_1j_2$固定后求和。我们并没有假定对于任意$j_1j_2$答案都是一样，但是从结果上来看确实如此。</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&D^{j_1}_{m_1m_1'}D^{j_2}_{m_2m_2'}=\langle j_1m_1|U_1|j_1m_1'\rangle\langle j_2m_2|U_2|j_2m_2'\rangle\\
+=&\langle j_1m_1j_2m_2|U_1U_2|j_1m_1'j_2m_2'\rangle\\
+=&\langle j_1m_1j_2m_2|U|j_1m_1'j_2m_2'\rangle\\
+=&\sum_{jm}\sum_{j'm'}\langle j_1m_1j_2m_2|jm\rangle\langle jm|U|j'm'\rangle\langle j'm'|j_1m_1'j_2m_2'\rangle\\
+=&\sum_{jmm'}\langle j_1m_1j_2m_2|jm\rangle D^{j}_{mm'}\langle jm'|j_1m_1'j_2m_2'\rangle\\
+\end{aligned}</script><h3 id="和球谐函数的关系"><a href="#和球谐函数的关系" class="headerlink" title="和球谐函数的关系"></a>和球谐函数的关系</h3><p>球谐函数有如下性质</p>
+<script type="math/tex; mode=display">Y_{lm}(\theta,\phi)=U(\alpha=\theta,\beta=\phi,\gamma=0)Y_{lm}(0,0)=U(R^{-1})\sqrt{\frac{2l+1}{4\pi}}\delta_{m0}</script><script type="math/tex; mode=display">\begin{aligned}
+&Y_{l_1m_1}(\theta,\phi)Y_{l_2m_2}(\theta,\phi)=\langle\theta,\phi|l_1m_1\rangle\langle\theta,\phi|l_2m_2\rangle\\
+=&\left(\langle\theta,\phi|\otimes\langle\theta,\phi|\right)\sum_{lm}|l_1l_2;lm\rangle\langle l_1l_2;lm|l_1m_1l_2m_2\rangle\\
+=&\left(\langle\theta,\phi|\otimes\langle\theta,\phi|\right)\sum_{lm}\sum_{l'=l,m'}|l'm'00\rangle\langle l'm'00|l0;lm\rangle\langle lm|l_1m_1l_2m_2\rangle\\
+=&\sum_{lm}Y_{lm}(\theta,\phi)Y_{00}(\theta,\phi)\langle lm00|lm\rangle\langle lm|l_1m_1l_2m_2\rangle\\
+=&\sum_l Y_{l,m_1+m_2}(\theta,\phi)\frac{1}{\sqrt{4\pi}}\langle lm|l_1m_1l_2m_2\rangle
+\end{aligned}</script><p>其中第二行的$|l_1l_2;lm\rangle$和第三行的$|l0;lm\rangle$均为$|lm\rangle$。第三行中插入完备性关系，只不过这个完备性$(2l+1)$项中只有一项有效。<br>进一步可得三个球谐函数的积分</p>
+<script type="math/tex; mode=display">\int\mathrm d\Omega\ Y^*_{l_3m_3}Y_{l_1m_1}Y_{l_2m_2}=\sqrt{\frac{(2l_1+1)(2l_2+1)}{4\pi(2l_3+1)}}\langle l_30|l_10l_20\rangle\langle l_1m_1l_2m_2|lm\rangle</script>
     </div>
 
     
@@ -329,18 +407,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/html/" rel="tag"># html</a>
+              <a href="/tags/physics/" rel="tag"># physics</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2020/10/24/flutter%E5%8F%91%E5%B8%83/" rel="prev" title="flutter发布">
+                  <i class="fa fa-chevron-left"></i> flutter发布
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/" rel="next" title="场的量子化">
-                  场的量子化 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -472,6 +550,50 @@ document.addEventListener('pjax:success', () => {
   
 
   
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
