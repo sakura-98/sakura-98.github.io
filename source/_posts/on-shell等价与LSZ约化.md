@@ -104,8 +104,8 @@ $$
 $$\begin{aligned}
 &\langle out|in\rangle=i^{n+n'}\\
 \times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
-\times&\int\tilde{\mathrm dp'_1}f'_1(\mathbf p'_1)\cdots\int\tilde{\mathrm dp'_{n'}}f'_{n'}(\mathbf p'_{n'})\\
-\times&\int\mathrm d^4x_1(m^2-\partial^2_1)\cdots\int\mathrm d^4x_n(m^2-\partial^2_n)\\
-\times&\int\mathrm d^4x'_1(m^2-\partial'^2_1)\cdots\int\mathrm d^4x'_{n'}(m^2-\partial'^2_{n'})\\
+\times&\int\tilde{\mathrm dp'_1}f'^*_1(\mathbf p_1')\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*(\mathbf p_{n'}')\\
+\times&\int\mathrm d^4x_1e^{ik_1\cdot x_1}(m^2-\partial^2_1)\cdots\int\mathrm d^4x_ne^{ik_n\cdot x_n}(m^2-\partial^2_n)\\
+\times&\int\mathrm d^4x'_1e^{-ik_1'\cdot x_1'}(m^2-\partial'^2_1)\cdots\int\mathrm d^4x_{n'}'e^{-ik_{n'}'\cdot x_{n'}'}(m^2-\partial'^2_{n'})\\
 \times&\langle0|\hat T[\phi(x_1')\cdots\phi'(x_{n'})]|0\rangle
 \end{aligned}\tag{12}$$

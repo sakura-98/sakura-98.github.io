@@ -64,34 +64,34 @@ $$\sum_{m_1}\langle j_1m_1j_2,j-m_1|j_1j_2;jj\rangle^2=1\tag7$$
 
 因此可以自己写代码计算（🚩)
 
-### 和D矩阵的关系
+### 和$\mathscr D$矩阵的关系
 
 $$\begin{aligned}
-D^{j}_{mm'}&=\langle jm|U|jm'\rangle=\langle jm|U_1U_2|jm'\rangle\\
+\mathscr D^{j}_{mm'}&=\langle jm|U|jm'\rangle=\langle jm|U_1U_2|jm'\rangle\\
 &=\sum_{m_1m_2}\langle jm|j_1m_1j_2m_2\rangle\langle j_1m_1j_2m_2|U_1U_2|jm'\rangle\\
 &=\sum_{m_1m_2}\langle jm|j_1m_1j_2m_2\rangle\left(\langle j_1m_1|U_1\otimes\langle j_2m_2|U_2\right)|jm'\rangle\\
-&=\sum_{m_1m_2}\sum_{m_1'm_2'}\langle jm|j_1m_1j_2m_2\rangle\left(D^{j_1}_{m_1m_1'} D^{j_2}_{m_2m_2'}\right)\langle j_1m_1'j_2m_2'|jm'\rangle\\
-\end{aligned}$$
+&=\sum_{m_1m_2}\sum_{m_1'm_2'}\langle jm|j_1m_1j_2m_2\rangle\left(\mathscr D^{j_1}_{m_1m_1'} \mathscr D^{j_2}_{m_2m_2'}\right)\langle j_1m_1'j_2m_2'|jm'\rangle\\
+\end{aligned}\tag9$$
 其中第三个等号是对任意可能的$j_1j_2$固定后求和。我们并没有假定对于任意$j_1j_2$答案都是一样，但是从结果上来看确实如此。
 $$\begin{aligned}
-&D^{j_1}_{m_1m_1'}D^{j_2}_{m_2m_2'}=\langle j_1m_1|U_1|j_1m_1'\rangle\langle j_2m_2|U_2|j_2m_2'\rangle\\
+&\mathscr D^{j_1}_{m_1m_1'}\mathscr D^{j_2}_{m_2m_2'}=\langle j_1m_1|U_1|j_1m_1'\rangle\langle j_2m_2|U_2|j_2m_2'\rangle\\
 =&\langle j_1m_1j_2m_2|U_1U_2|j_1m_1'j_2m_2'\rangle\\
 =&\langle j_1m_1j_2m_2|U|j_1m_1'j_2m_2'\rangle\\
 =&\sum_{jm}\sum_{j'm'}\langle j_1m_1j_2m_2|jm\rangle\langle jm|U|j'm'\rangle\langle j'm'|j_1m_1'j_2m_2'\rangle\\
-=&\sum_{jmm'}\langle j_1m_1j_2m_2|jm\rangle D^{j}_{mm'}\langle jm'|j_1m_1'j_2m_2'\rangle\\
-\end{aligned}$$
+=&\sum_{jmm'}\langle j_1m_1j_2m_2|jm\rangle \mathscr D^{j}_{mm'}\langle jm'|j_1m_1'j_2m_2'\rangle\\
+\end{aligned}\tag{10}$$
 
 ### 和球谐函数的关系
 
 球谐函数有如下性质
-$$Y_{lm}(\theta,\phi)=U(\alpha=\theta,\beta=\phi,\gamma=0)Y_{lm}(0,0)=U(R^{-1})\sqrt{\frac{2l+1}{4\pi}}\delta_{m0}$$
-
+$$Y_{lm}(\theta,\phi)=\langle\hat n|lm\rangle=\langle\hat z|U|lm\rangle=\sum_{m'}\langle \hat z|lm'\rangle \mathscr D^l_{m'm}$$
+其中$U$为欧拉角$\alpha=\theta,\beta=\phi,\gamma=0$的转动的算符。利用$Y_{lm}(0,0)=\sqrt{\frac{2l+1}{4\pi}}\delta_{m0}$可得
+$$Y_{lm}(\theta,\phi)=\sqrt{\frac{2l+1}{4\pi}}\mathscr D_{0m}^l$$
+因此(10)取$m_1=m_2=0$（进而$m=0$）可得
 $$\begin{aligned}
-&Y_{l_1m_1}(\theta,\phi)Y_{l_2m_2}(\theta,\phi)=\langle\theta,\phi|l_1m_1\rangle\langle\theta,\phi|l_2m_2\rangle\\
-=&\left(\langle\theta,\phi|\otimes\langle\theta,\phi|\right)\sum_{lm}|l_1l_2;lm\rangle\langle l_1l_2;lm|l_1m_1l_2m_2\rangle\\
-=&\left(\langle\theta,\phi|\otimes\langle\theta,\phi|\right)\sum_{lm}\sum_{l'=l,m'}|l'm'00\rangle\langle l'm'00|l0;lm\rangle\langle lm|l_1m_1l_2m_2\rangle\\
-=&\sum_{lm}Y_{lm}(\theta,\phi)Y_{00}(\theta,\phi)\langle lm00|lm\rangle\langle lm|l_1m_1l_2m_2\rangle\\
-=&\sum_l Y_{l,m_1+m_2}(\theta,\phi)\frac{1}{\sqrt{4\pi}}\langle lm|l_1m_1l_2m_2\rangle
+&Y_{l_1m_1}(\theta,\phi)Y_{l_2m_2}(\theta,\phi)=\sqrt{\frac{2l_1+1}{4\pi}}\sqrt{\frac{2l_2+1}{4\pi}}\mathscr D_{0m_1}^{l_1}\mathscr D_{0m_2}^{l_2}\\
+=&\sqrt{\frac{2l_1+1}{4\pi}}\sqrt{\frac{2l_2+1}{4\pi}}\sum_{lm}\langle l_10l_20|l0\rangle\mathscr D^l_{0m}\langle lm|l_1m_1l_2m_2\rangle\\
+=&\sum_{lm}\sqrt{\frac{(2l_1+1)(2l_2+1)}{4\pi(2l+1)}}Y_l^m(\theta,\phi)\langle l_10l_20|l0\rangle\langle lm|l_1m_1l_2m_2\rangle\\
 \end{aligned}$$
 其中第二行的$|l_1l_2;lm\rangle$和第三行的$|l0;lm\rangle$均为$|lm\rangle$。第三行中插入完备性关系，只不过这个完备性$(2l+1)$项中只有一项有效。
 进一步可得三个球谐函数的积分
