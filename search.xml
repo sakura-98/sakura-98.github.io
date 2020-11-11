@@ -430,9 +430,9 @@ C-\overline C=\int\mathrm d^4x\tilde{dk}\ ie^{ik\cdot x}\tilde g(0)f(\mathbf k)(
 <script type="math/tex; mode=display">\begin{aligned}
 &\langle out|in\rangle=i^{n+n'}\\
 \times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
-\times&\int\tilde{\mathrm dp'_1}f'_1(\mathbf p'_1)\cdots\int\tilde{\mathrm dp'_{n'}}f'_{n'}(\mathbf p'_{n'})\\
-\times&\int\mathrm d^4x_1(m^2-\partial^2_1)\cdots\int\mathrm d^4x_n(m^2-\partial^2_n)\\
-\times&\int\mathrm d^4x'_1(m^2-\partial'^2_1)\cdots\int\mathrm d^4x'_{n'}(m^2-\partial'^2_{n'})\\
+\times&\int\tilde{\mathrm dp'_1}f'^*_1(\mathbf p_1')\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*(\mathbf p_{n'}')\\
+\times&\int\mathrm d^4x_1e^{ik_1\cdot x_1}(m^2-\partial^2_1)\cdots\int\mathrm d^4x_ne^{ik_n\cdot x_n}(m^2-\partial^2_n)\\
+\times&\int\mathrm d^4x'_1e^{-ik_1'\cdot x_1'}(m^2-\partial'^2_1)\cdots\int\mathrm d^4x_{n'}'e^{-ik_{n'}'\cdot x_{n'}'}(m^2-\partial'^2_{n'})\\
 \times&\langle0|\hat T[\phi(x_1')\cdots\phi'(x_{n'})]|0\rangle
 \end{aligned}\tag{12}</script>]]></content>
       <categories>
@@ -868,6 +868,74 @@ p(t)&=-x(0)\sin t+p(0)\cos t\end{aligned}</script>这说明参数按照经典运
 <script type="math/tex; mode=display">\int\mathrm d\Omega\ Y^*_{l_3m_3}Y_{l_1m_1}Y_{l_2m_2}=\sqrt{\frac{(2l_1+1)(2l_2+1)}{4\pi(2l_3+1)}}\langle l_30|l_10l_20\rangle\langle l_1m_1l_2m_2|lm\rangle</script>]]></content>
       <categories>
         <category>AQM</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>散射与衰变</title>
+    <url>/2020/11/06/%E6%95%A3%E5%B0%84%E4%B8%8E%E8%A1%B0%E5%8F%98/</url>
+    <content><![CDATA[<p>本文可以视为LSZ约化公式的应用。</p>
+<a id="more"></a>
+<h3 id="回顾LSZ公式"><a href="#回顾LSZ公式" class="headerlink" title="回顾LSZ公式"></a>回顾LSZ公式</h3><p>入态由$f_1(\mathbf p),\cdots f_n(\mathbf p)$描述，它们为中心在$\mathbf k_1,\cdots \mathbf k_n$的窄峰；出态由$f_1’(\mathbf p),\cdots f’_{n’}(\mathbf p)$描述，它们为中心在$\mathbf k’_1,\cdots\mathbf k’_{n’}$的窄峰。On-shell方案下</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\langle out|in\rangle=i^{n+n'}\\
+\times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
+\times&\int\tilde{\mathrm dp'_1}f'^*_1(\mathbf p_1')\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*(\mathbf p_{n'}')\\
+\times&\int\mathrm d^4x_1e^{ik_1\cdot x_1}(m^2-\partial^2_1)\cdots\int\mathrm d^4x_ne^{ik_n\cdot x_n}(m^2-\partial^2_n)\\
+\times&\int\mathrm d^4x'_1e^{-ik_1'\cdot x_1'}(m^2-\partial'^2_1)\cdots\int\mathrm d^4x_{n'}'e^{-ik_{n'}'\cdot x_{n'}'}(m^2-\partial'^2_{n'})\\
+\times&\langle0|\hat T[\phi(x_1')\cdots\phi'(x_{n'})]|0\rangle
+\end{aligned}</script><p>根据平移不变性，$k_1+\cdots+k_n=k_1’+\cdots+k_{n’}’$，所以可以写成$\delta$函数的形式</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\langle out|in\rangle=i^{n+n'}\\
+\times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
+\times&\int\tilde{\mathrm dp'_1}f'^*_1(\mathbf p_1')\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*(\mathbf p_{n'}')\\
+\times&\mathcal T_{\mathbf k'\leftarrow\mathbf k}(2\pi)^d\delta^d(k_1+\cdots+k_n-k_1'-\cdots-k_{n'}')
+\end{aligned}</script><p>此外出入态自身内积为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\langle in|in\rangle=\int\tilde{\mathrm dp_1}|f_1(\mathbf p_1)|^2\cdots\int\tilde{\mathrm dp_n}|f_n(\mathbf p_n)|^2\\
+&\langle out|out\rangle=\int\tilde{\mathrm dp'_1}|f'^*_1(\mathbf p_1')|^2\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*|(\mathbf p_{n'}')|^2
+\end{aligned}</script><h3 id="波函数和散射概率"><a href="#波函数和散射概率" class="headerlink" title="波函数和散射概率"></a>波函数和散射概率</h3><p>标准（反）对称化波函数的操作为：构造置换P，对所有置换求和。不赘述。结论为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\langle in|in\rangle=&\frac{1}{n!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n}|\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)|^2\\
+\langle out|out\rangle=&\frac{1}{n'!}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}|\psi_{out}(\mathbf p_1',\cdots\mathbf p_{n'}')|^2\\
+\langle out|in\rangle=&\frac{1}{n!n'!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}\psi_{out}^*(\mathbf p_1',\cdots\mathbf p_{n'}')\\
+\times&i\mathcal T_{\mathbf p'\leftarrow\mathbf p}(2\pi)^d\delta^d(p-p')\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)
+\end{aligned}</script><p>需要注意的是:</p>
+<ol>
+<li>上式中认为所有粒子都是相同的，否则$n!,n’!$应换为每种类型粒子数阶乘的乘积。</li>
+<li>做了近似，不同的$f$无交叠。</li>
+</ol>
+<p>对任意两粒子数相同的出态做内积</p>
+<script type="math/tex; mode=display">\langle out|out'\rangle=\frac{1}{n'!}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}\psi_{out}^*\mathbf p_1',\cdots\mathbf p_{n'}')\psi_{out'}(\mathbf p_1',\cdots\mathbf p_{n'}')</script><p>将入态写为各种粒子数配型的出态之和，则对于固定粒子数的出态</p>
+<script type="math/tex; mode=display">\psi_c(\mathbf p_1',\cdots\mathbf p_{n'}')=\frac{1}{n!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n} i\mathcal T_{\mathbf p'\leftarrow\mathbf p}(2\pi)^d\delta^d(p-p')\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)</script><p>所以概率为</p>
+<script type="math/tex; mode=display">P_n=\frac{\langle out|out\rangle}{\langle in|in\rangle}=\frac{\frac{1}{n'!}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}|\psi_c(\mathbf p_1',\cdots\mathbf p_{n'}')|^2}{\frac{1}{n!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n}|\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)|^2}</script><p>方便起见，取$\int|f(\mathbf p)|^2\tilde{\mathrm dp}=1$，则$\langle in|in\rangle=1$，概率简化为</p>
+<script type="math/tex; mode=display">P_n=\frac{1}{n'!n!n!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\pi)^{2d}\delta^d(p-p')\delta^d(q-p')\mathcal T^*_{p'\leftarrow p}\mathcal T_{p'\leftarrow q}\psi_{in}^*(p)\psi_{in}(q)</script><p>为了进一步化简，引入$k_{in}=(p_1,\cdots,p_n)$，假设$\mathcal T$随动量变化缓慢。并把波函数拆开得</p>
+<script type="math/tex; mode=display">\begin{aligned}
+P_n&=\frac{1}{n'!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\pi)^{d}\delta^d(k_{in}-p')(2\pi)^d\delta^d(q-p)\\
+&\times|\mathcal T_{p'\leftarrow p}|^2f^*(\mathbf p_1)f(\mathbf q_1)\cdots f^*(\mathbf p_n)f(\mathbf q_{n'})\\
+&\approx\frac{1}{n'!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\pi)^d\delta^d(k_{in}-p')\int\mathrm d^da e^{i(p-q)\cdot a}\\
+&\times|\mathcal T_{p'\leftarrow k_{in}}|^2f^*(\mathbf p_1)f(\mathbf q_1)\cdots f^*(\mathbf p_n)f(\mathbf q_{n'})\\
+&=\frac{1}{n'!}\int\tilde{\mathrm dp'}\int\mathrm d^da |\mathcal T_{p'\leftarrow k_{in}}|^2(2\pi)^d\delta^d(k_{in}-p')\prod_{j=0}^n\int\tilde{\mathrm dp_j}\tilde{\mathrm dq_j}f^*(\mathbf p_j)f(\mathbf q_j)e^{i(p_j-q_j)\cdot a}
+\end{aligned}</script><p>定义</p>
+<script type="math/tex; mode=display">g_j(a)=\int f_j(\mathbf q)e^{iq\cdot a}\tilde{\mathrm dq}</script><p>则</p>
+<script type="math/tex; mode=display">P_n=\frac{1}{n'!}\int\tilde{\mathrm dp'}|\mathcal T_{p'\leftarrow k_{in}}|^2(2\pi)^d\delta^d(k_{in}-p')\int\mathrm d^da|g_1(a)|^2\cdots|g_n(a)|^2</script><hr>
+<p>对于固定的$a^0$，对剩下$(d-1)$个分量做积分。根据定义</p>
+<script type="math/tex; mode=display">\int\mathrm d^{d-1}\mathbf a|g_j(a)|^2=\int\tilde{\mathrm dp}\frac{\mathrm d^{d-1}\mathbf q}{2\omega_{\mathbf q}}f_j^*(\mathbf p)f_j(\mathbf q)e^{i(\omega_{\mathbf p}-\omega_{\mathbf q})a^0}\delta^{d-1}(\mathbf{p-q})=\int\frac{\tilde{\mathrm dp}}{2\omega_{\mathbf p}}|f_j(\mathbf p)|^2</script><p>由于函数为窄峰，所以近似为</p>
+<script type="math/tex; mode=display">\int\mathrm d^{d-1}\mathbf a|g_j(a)|^2=\frac1{2k_j^0}=\frac{1}{2E_j}\Rightarrow |g_j(x)|^2=\frac{\rho_j(x)}{2E_j}</script><p>在静止系中$E_j\rightarrow M_j,\rho\rightarrow\rho^{(0)}$。利用能量和速度的关系可以直到静止系密度最小。最终概率</p>
+<script type="math/tex; mode=display">P_n=\frac{1}{n'!}\int\tilde{\mathrm dp'}|\mathcal T_{p'\leftarrow k_{in}}|^2(2\pi)^d\delta^d(k_{in}-p')\int\mathrm d^dx\frac{\rho_1^{(0)}(x)\cdots\rho^{(0)}_n(x)}{2M_1\cdots 2M_n}\tag1</script><h3 id="散射截面"><a href="#散射截面" class="headerlink" title="散射截面"></a>散射截面</h3><p>两粒子入射，固定靶系（FT）中，入射流为</p>
+<script type="math/tex; mode=display">j_1=\rho_1(x)v_1=\frac{\rho_1^{(0)}(x)v_1}{\sqrt{1-v_1^2}}</script><p>(1)式中对最后一个积分为</p>
+<script type="math/tex; mode=display">\int\mathrm d^dx\frac{j_1\sqrt{1-v_1^2}/v_1}{4M_1M_2}\rho^{(0)}_2(x)=\frac{j_1}{4|\mathbf k_1|M_2}\int\mathrm d^dx\rho_2^{(0)}(x)</script><p>后面那个积分对空间积分为1，再对时间积分为总时间。所以微分散射截面</p>
+<script type="math/tex; mode=display">\mathrm d\sigma=\frac{\mathrm dP}{j_1T}=\frac{|\mathcal T_{p'\leftarrow k_{in}}|^2}{4|\mathbf k_1|M_2}\tilde{\mathrm dp'}(2\pi)^d\delta^d(k_{in}-p')</script><hr>
+<p>我们想找到$|\mathbf k_1|M_2$对应的Lorentz标量。先给结论</p>
+<script type="math/tex; mode=display">|\mathbf k_1|_{CM}\sqrt s,s=-(k_1+k_2)^2</script><p>显然，因为$s=-(k_1+k_2)^2$是Lorentz矢量的内积，所以是标量，进而整体是洛伦兹标量。</p>
+<p>设CM（零动量系）中$k_2=(k_2^0,k_2^1,0,0),k_1=(k_1^0,-k_2^1,0,0)$。设FT系相对CM速度为$u$。由于固定2号粒子</p>
+<script type="math/tex; mode=display">0=\frac{k_2^1-uk_2^0}{\sqrt{1-u^2}}\Rightarrow u=\frac{k_2^1}{k_2^0}=\frac{k_2^1}{\sqrt{(k_2^1)^2+M_2^2}}</script><p>因此</p>
+<script type="math/tex; mode=display">|\mathbf k_1|M_2=\left|\frac{-k_2^1-uk_1^0}{\sqrt{1-u^2}}\right|M_2=\frac{k_2^1+u\sqrt{(k_2^1)^2+M_1^2}}{\sqrt{1-u^2}}M_2=k_2^1\left(k_2^0+k_1^0\right)</script><p>所以其正好等于$|\mathbf k_1|_{CM}\sqrt s$</p>
+<h3 id="衰变率"><a href="#衰变率" class="headerlink" title="衰变率"></a>衰变率</h3><script type="math/tex; mode=display">P=\frac{\Delta t}{2E_1}\frac1S\int|\mathcal T_{\mathbf p\leftarrow\mathbf k_1}|^2(2\pi)^d\delta^d(p-k_1)\tilde {\mathrm dp}</script>]]></content>
+      <categories>
+        <category>QFT</category>
       </categories>
       <tags>
         <tag>physics</tag>

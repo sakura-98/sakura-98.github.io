@@ -22,21 +22,21 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":-1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。">
+  <meta name="description" content="本文可以视为LSZ约化公式的应用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="on-shell等价与LSZ约化">
-<meta property="og:url" content="https://github.com/sakura-98/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/index.html">
+<meta property="og:title" content="散射与衰变">
+<meta property="og:url" content="https://github.com/sakura-98/2020/11/06/%E6%95%A3%E5%B0%84%E4%B8%8E%E8%A1%B0%E5%8F%98/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。">
+<meta property="og:description" content="本文可以视为LSZ约化公式的应用。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-10T10:39:34.269Z">
+<meta property="article:published_time" content="2020-11-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-10T15:42:59.968Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://github.com/sakura-98/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/">
+<link rel="canonical" href="https://github.com/sakura-98/2020/11/06/%E6%95%A3%E5%B0%84%E4%B8%8E%E8%A1%B0%E5%8F%98/">
 
 
 <script data-pjax class="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>on-shell等价与LSZ约化 | Sakura's Blog</title>
+  <title>散射与衰变 | Sakura's Blog</title>
   
 
 
@@ -199,7 +199,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#on-shell%E7%AD%89%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">on-shell等价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A5%E6%80%81-in-rangle-%E4%B8%8E%E5%87%BA%E6%80%81-out-rangle"><span class="nav-number">2.</span> <span class="nav-text">入态$|in\rangle$与出态$|out\rangle$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSZ%E7%BA%A6%E5%8C%96%E5%85%AC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">LSZ约化公式</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BELSZ%E5%85%AC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">回顾LSZ公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E5%92%8C%E6%95%A3%E5%B0%84%E6%A6%82%E7%8E%87"><span class="nav-number">2.</span> <span class="nav-text">波函数和散射概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%B0%84%E6%88%AA%E9%9D%A2"><span class="nav-number">3.</span> <span class="nav-text">散射截面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%B0%E5%8F%98%E7%8E%87"><span class="nav-number">4.</span> <span class="nav-text">衰变率</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -276,7 +276,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/11/06/%E6%95%A3%E5%B0%84%E4%B8%8E%E8%A1%B0%E5%8F%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -289,7 +289,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          on-shell等价与LSZ约化
+          散射与衰变
         </h1>
 
         <div class="post-meta-container">
@@ -300,7 +300,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-10-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-13T00:00:00+08:00">2020-10-13</time>
+      <time title="Created: 2020-11-06 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-06T00:00:00+08:00">2020-11-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -322,60 +322,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p> LSZ约化公式是属于量子场论中十分重要的公式。它是考虑相互作用以后求解场的演化性质，将散射振幅和关联函数联系起来。<br><a id="more"></a></p>
-<h3 id="on-shell等价函数"><a href="#on-shell等价函数" class="headerlink" title="on-shell等价函数"></a>on-shell等价函数</h3><p>设$m$是<strong>相互作用</strong>标量场$\phi$中单粒子的静质量。若有两个函数$\psi_1(x),\psi_2(x)$，它们的傅里叶变换$\tilde\psi_i(k)\equiv\int e^{-ik\cdot x}\psi_i(x)\mathrm dx$在on-shell条件$l^2+m^2=0$满足时均有</p>
-<script type="math/tex; mode=display">\tilde\psi_1(l)=\tilde\psi_2(l)</script><p>可以计算</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\int\mathrm d^4x\ \psi(x)\phi(x)|0\rangle=&\int\mathrm d^4x\frac{\mathrm d^4k}{(2\pi)^4}\frac{\mathrm d^4l}{(2\pi)^4}e^{-i(k-l)\cdot x}\tilde\psi(k)\tilde\phi(-l)|0\rangle\\
-=&\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{\mathrm d^4l}{(2\pi)^4}(2\pi)^4\delta(k-l)\tilde\psi(k)\tilde\phi(-l)|0\rangle\\
-=&\int\frac{\mathrm d^4k}{(2\pi)^4}\tilde\psi(k)\tilde\phi(-k)|0\rangle\\
-\end{aligned}</script><p>因为不满足on-shell条件时$\tilde\phi(-k)|0\rangle=0$，所以</p>
-<script type="math/tex; mode=display">\int\mathrm d^4x\ \psi_1(x)\phi(x)|0\rangle=\int\mathrm d^4x\ \psi_2(x)\phi(x)|0\rangle\tag{1}</script><p>假设$F(x)$具有相对论性波函数的形式</p>
-<script type="math/tex; mode=display">F(x)=\int\frac{\mathrm d^3\vec l}{(2\pi)^3}\ f(\vec l)e^{-i\omega_{\vec l}t+i\vec l\cdot x}\tag2</script><p>我们想要证明，对于所有的$T$，$F(x)g(t-T)$都是on-shell等价的。这是因为</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\int\mathrm d^4x\ e^{-ik\cdot x}F(x)g(t-T)\\
-=&\int\mathrm d^4x\frac{\mathrm d^3\vec l}{(2\pi)^3}\frac{\mathrm d\omega}{2\pi}\ e^{ik\cdot x}f(\vec l)e^{-i\omega_{\vec l}t+i\vec l\cdot x}\tilde g(\omega)e^{-i\omega (t-T)}\\
-=&\int\frac{\mathrm d^3\vec l}{(2\pi)^3}\frac{\mathrm d\omega}{2\pi}\ f(\vec l)\tilde g(\omega)(2\pi)\delta(k^0-\omega_{\vec l}-\omega)(2\pi)^3\delta(-\vec k+\vec l)e^{i\omega T}\\
-=&f(\vec k)\tilde g(k^0-\omega_{\vec k})e^{i(k^0-\omega_{\vec k})T}\\
-\end{aligned}\tag3</script><p>on-shell意味着$k^0=\omega_{\vec k}$，因此(3)式与$T$无关。</p>
-<h3 id="入态-in-rangle-与出态-out-rangle"><a href="#入态-in-rangle-与出态-out-rangle" class="headerlink" title="入态$|in\rangle$与出态$|out\rangle$"></a>入态$|in\rangle$与出态$|out\rangle$</h3><p>入态指的是$t\rightarrow-\infty$时有确定的、可分辨的轨迹和粒子数，$t\rightarrow+\infty$时粒子数、轨迹均不确定；<br>出态指的是$t\rightarrow+\infty$时有确定的、可分辨的轨迹和粒子数，$t\rightarrow-\infty$时粒子数、轨迹均不确定。<br><strong>我们要求出态和入态的所有粒子动量均不一样</strong>，不然的话可以不考虑不散射的粒子。</p>
-<p>先考虑入态，设</p>
-<script type="math/tex; mode=display">
-C_\alpha=\int\mathrm d^4x_\alpha\ u_\alpha(x_\alpha)\phi_\alpha(x_\alpha)=\int\frac{\mathrm d^4k}{(2\pi)^4}\ \tilde u(k)\tilde\phi(-k)\tag4</script><p>其中$\alpha$标记粒子，$u_\alpha$为一个小窗。这个小窗时间方向为$g_\alpha(t-T_-),T_-\rightarrow-\infty$，空间（动量）方向为$f_\alpha(\mathbf k_\alpha)$——所以当$|T_-|$足够大时，只需每个粒子的$\mathbf p_\alpha$不相等，就能将它们完全分开。这样，</p>
-<script type="math/tex; mode=display">
-u_\alpha(x)=g_\alpha(t-T_-)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f_\alpha(\mathbf k_\alpha)e^{-i\omega_{\mathbf k}t+i\mathbf{k\cdot x}}\tag{5}</script><p>显然这是$F(x)g(t-T)$的形式，因此on-shell等价，之后会用到该结论。<br>可以变换到$k$空间，为</p>
-<script type="math/tex; mode=display">
-\tilde u_\alpha(k)=\tilde g(k^0-\omega_{\mathbf k})f_\alpha(\mathbf k)e^{i(k^0-\omega_\mathbf k)T_-}
-\tag6</script><p>因此(4)中只有$k=(\omega_\mathbf k,\mathbf k)$附近的值被提取出来，即为产生算符。</p>
-<blockquote>
-<p>一个极端的取法是$\delta$函数</p>
-<script type="math/tex; mode=display">g_\alpha(t-T_-)=\delta(t_\alpha-T_-),f_\alpha(\mathbf k_\alpha)=(2\pi)^32\omega_\mathbf k\delta^3(\mathbf{k-p}_\alpha)</script></blockquote>
-<p>因此，单粒子被限制在$(T_-,\mathbf x(t=0)+\mathbf p_\alpha T_-)$附近，单粒子态为$C_\alpha|0\rangle$。而且各个粒子时间几乎相等，空间互不重叠，所以是类空的，因此所有的粒子算符对易</p>
-<script type="math/tex; mode=display">|in\rangle=C_1C_2\cdots C_n|0\rangle\tag7</script><p>同理定义出态，直接写出</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&D_{\alpha'}=\int\mathrm d^4x'_{\alpha'}\ u'_{\alpha'}(x'_{\alpha'})\phi(x'_{\alpha'})\\
-&u'_{\alpha'}(x)=g'_{\alpha'}(t-T_+)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f'_{\alpha'}(\mathbf k)e^{-i\omega_{\mathbf k}t+i\mathbf{k\cdot x}}\\
-&T_+\rightarrow+\infty\\
-&|out\rangle=D_1D_2\cdots D_{n'}|0\rangle
-\end{aligned}\right.\tag8</script><p>因此两者的内积——转移振幅为</p>
-<script type="math/tex; mode=display">\langle out|in\rangle=\langle0|\hat T[D_1^\dagger\cdots D_{n'}^\dagger C_1\cdots C_n]|0\rangle\tag9</script><p>编时算符在此其实没有作用，因为出态之间对易，末态之间也对易，出态和末态本身已经编时。</p>
-<h3 id="LSZ约化公式"><a href="#LSZ约化公式" class="headerlink" title="LSZ约化公式"></a>LSZ约化公式</h3><p>定义</p>
-<script type="math/tex; mode=display">\overline C_\alpha=\int\mathrm d^4x_\alpha \bar u_\alpha(x_\alpha)\phi(x_\alpha),
-\bar u_\alpha(x_\alpha)=g_\alpha(t_\alpha-T_+)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\ f_\alpha(\mathbf k_\alpha)e^{ik\cdot x}</script><p>可以证明，$C_\alpha\rightarrow\overline C_\alpha$后，(9)的右边变成零，这是因为编时算符要求它移到所有$C$算符左方，类空性质（因为动量均不相等）允许它移到所有$D$算符左方。因此会出现$\langle 0|\overline C_\alpha$。因为$\bar u_\alpha$和$\bar u$ on-shell 等价，所以同(6)可知提取出了产生部分，即$\overline C_\alpha$为产生算符。于是(9)可以改写为</p>
-<script type="math/tex; mode=display">\langle out|in\rangle=\langle0|\hat T[(\overline D_1-D_1)^\dagger\cdots (\overline D_{n'}-D_{n'})^\dagger (C_1-\overline C_1)\cdots (C_n-\overline C_n)]|0\rangle\tag{10}</script><p>略去下标，计算 $C-\overline C$，首先将时间变换到频率</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-&C-\overline C=\int\mathrm d^4 x\int\frac{\mathrm d\nu}{2\pi}\tilde g(\nu)\left(e^{-i\nu(t-T_-)}-e^{i\nu (t-T_+)}\right)\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}f(\mathbf k)e^{ik\cdot x}\phi(x)\\
-&=\int\frac{\mathrm d^4x\mathrm d\nu\mathrm d^3\mathbf k}{(2\pi)^4}\tilde g(\nu)\left(e^{i\nu T_-}-e^{-i\nu T_+}\right)f(\mathbf k)e^{-i(\omega_\mathbf k+\nu)t+i\mathbf{k\cdot x}}\phi(x)
-\end{aligned}</script><p>我们知道Klein-Gordon场无相互作用，因此若$\phi$满足$(-\partial^2+m^2)\phi=0$，上式应当为$0$；而对于又相互作用的场则为有限值。方便起见，先作用在指数项上，变为</p>
-<script type="math/tex; mode=display">
-\int\frac{\mathrm d^4x\mathrm d\nu\mathrm d^3\mathbf k}{(2\pi)^4}\tilde g(\nu)\frac{e^{i\nu T_-}-e^{-i\nu T_+}}{-2\omega_\mathbf k\nu-\nu^2}f(\mathbf k)(-\partial^2+m^2)\left[e^{-i(\omega_\mathbf k+\nu)t+i\mathbf{k\cdot x}}\right]\phi(x)</script><p>其中用到了$\omega_\mathbf k^2=m^2+\mathbf k^2$。利用分部积分可以将偏导挪到$\phi$上</p>
-<script type="math/tex; mode=display">
-\int\frac{\mathrm d^4x\mathrm d\nu\mathrm d^3\mathbf k}{(2\pi)^4}\tilde g(\nu)\frac{e^{i\nu T_-}-e^{-i\nu T_+}}{-2\omega_\mathbf k\nu-\nu^2}f(\mathbf k)e^{-i(\omega_\mathbf k+\nu)t+i\mathbf{k\cdot x}}(-\partial^2+m^2)\phi(x)</script><p>由于$|T_\pm|\rightarrow\infty$，所以对于任何变化“缓慢”的函数$f(\nu)$，$0\notin[a,b]$，都有$\int_a^bf(\nu)e^{i\nu T_\pm}\mathrm d\nu=0$。而对于$0\in[a,b]$，因为有效的只有$0$附近的值，所以可以将$\nu^2$项丢弃</p>
-<script type="math/tex; mode=display">
-\int_{-\infty}^\infty\frac{e^{i\nu T}}{\nu}\mathrm d\nu=i\int_{\nu=-\infty}^\infty\frac{\sin\nu T}{\nu T}\mathrm d(\nu T)=i\pi\mathrm{sign}(T)</script><p>因此</p>
-<script type="math/tex; mode=display">
-C-\overline C=\int\mathrm d^4x\tilde{dk}\ ie^{ik\cdot x}\tilde g(0)f(\mathbf k)(\partial^2-m^2)\phi(x)\tag{11}</script><p>取$\tilde g(0)=1$，则</p>
+        <p>本文可以视为LSZ约化公式的应用。</p>
+<a id="more"></a>
+<h3 id="回顾LSZ公式"><a href="#回顾LSZ公式" class="headerlink" title="回顾LSZ公式"></a>回顾LSZ公式</h3><p>入态由$f_1(\mathbf p),\cdots f_n(\mathbf p)$描述，它们为中心在$\mathbf k_1,\cdots \mathbf k_n$的窄峰；出态由$f_1’(\mathbf p),\cdots f’_{n’}(\mathbf p)$描述，它们为中心在$\mathbf k’_1,\cdots\mathbf k’_{n’}$的窄峰。On-shell方案下</p>
 <script type="math/tex; mode=display">\begin{aligned}
 &\langle out|in\rangle=i^{n+n'}\\
 \times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
@@ -383,7 +332,54 @@ C-\overline C=\int\mathrm d^4x\tilde{dk}\ ie^{ik\cdot x}\tilde g(0)f(\mathbf k)(
 \times&\int\mathrm d^4x_1e^{ik_1\cdot x_1}(m^2-\partial^2_1)\cdots\int\mathrm d^4x_ne^{ik_n\cdot x_n}(m^2-\partial^2_n)\\
 \times&\int\mathrm d^4x'_1e^{-ik_1'\cdot x_1'}(m^2-\partial'^2_1)\cdots\int\mathrm d^4x_{n'}'e^{-ik_{n'}'\cdot x_{n'}'}(m^2-\partial'^2_{n'})\\
 \times&\langle0|\hat T[\phi(x_1')\cdots\phi'(x_{n'})]|0\rangle
-\end{aligned}\tag{12}</script>
+\end{aligned}</script><p>根据平移不变性，$k_1+\cdots+k_n=k_1’+\cdots+k_{n’}’$，所以可以写成$\delta$函数的形式</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\langle out|in\rangle=i^{n+n'}\\
+\times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
+\times&\int\tilde{\mathrm dp'_1}f'^*_1(\mathbf p_1')\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*(\mathbf p_{n'}')\\
+\times&\mathcal T_{\mathbf k'\leftarrow\mathbf k}(2\pi)^d\delta^d(k_1+\cdots+k_n-k_1'-\cdots-k_{n'}')
+\end{aligned}</script><p>此外出入态自身内积为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\langle in|in\rangle=\int\tilde{\mathrm dp_1}|f_1(\mathbf p_1)|^2\cdots\int\tilde{\mathrm dp_n}|f_n(\mathbf p_n)|^2\\
+&\langle out|out\rangle=\int\tilde{\mathrm dp'_1}|f'^*_1(\mathbf p_1')|^2\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*|(\mathbf p_{n'}')|^2
+\end{aligned}</script><h3 id="波函数和散射概率"><a href="#波函数和散射概率" class="headerlink" title="波函数和散射概率"></a>波函数和散射概率</h3><p>标准（反）对称化波函数的操作为：构造置换P，对所有置换求和。不赘述。结论为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\langle in|in\rangle=&\frac{1}{n!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n}|\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)|^2\\
+\langle out|out\rangle=&\frac{1}{n'!}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}|\psi_{out}(\mathbf p_1',\cdots\mathbf p_{n'}')|^2\\
+\langle out|in\rangle=&\frac{1}{n!n'!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}\psi_{out}^*(\mathbf p_1',\cdots\mathbf p_{n'}')\\
+\times&i\mathcal T_{\mathbf p'\leftarrow\mathbf p}(2\pi)^d\delta^d(p-p')\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)
+\end{aligned}</script><p>需要注意的是:</p>
+<ol>
+<li>上式中认为所有粒子都是相同的，否则$n!,n’!$应换为每种类型粒子数阶乘的乘积。</li>
+<li>做了近似，不同的$f$无交叠。</li>
+</ol>
+<p>对任意两粒子数相同的出态做内积</p>
+<script type="math/tex; mode=display">\langle out|out'\rangle=\frac{1}{n'!}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}\psi_{out}^*\mathbf p_1',\cdots\mathbf p_{n'}')\psi_{out'}(\mathbf p_1',\cdots\mathbf p_{n'}')</script><p>将入态写为各种粒子数配型的出态之和，则对于固定粒子数的出态</p>
+<script type="math/tex; mode=display">\psi_c(\mathbf p_1',\cdots\mathbf p_{n'}')=\frac{1}{n!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n} i\mathcal T_{\mathbf p'\leftarrow\mathbf p}(2\pi)^d\delta^d(p-p')\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)</script><p>所以概率为</p>
+<script type="math/tex; mode=display">P_n=\frac{\langle out|out\rangle}{\langle in|in\rangle}=\frac{\frac{1}{n'!}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}|\psi_c(\mathbf p_1',\cdots\mathbf p_{n'}')|^2}{\frac{1}{n!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n}|\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)|^2}</script><p>方便起见，取$\int|f(\mathbf p)|^2\tilde{\mathrm dp}=1$，则$\langle in|in\rangle=1$，概率简化为</p>
+<script type="math/tex; mode=display">P_n=\frac{1}{n'!n!n!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\pi)^{2d}\delta^d(p-p')\delta^d(q-p')\mathcal T^*_{p'\leftarrow p}\mathcal T_{p'\leftarrow q}\psi_{in}^*(p)\psi_{in}(q)</script><p>为了进一步化简，引入$k_{in}=(p_1,\cdots,p_n)$，假设$\mathcal T$随动量变化缓慢。并把波函数拆开得</p>
+<script type="math/tex; mode=display">\begin{aligned}
+P_n&=\frac{1}{n'!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\pi)^{d}\delta^d(k_{in}-p')(2\pi)^d\delta^d(q-p)\\
+&\times|\mathcal T_{p'\leftarrow p}|^2f^*(\mathbf p_1)f(\mathbf q_1)\cdots f^*(\mathbf p_n)f(\mathbf q_{n'})\\
+&\approx\frac{1}{n'!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\pi)^d\delta^d(k_{in}-p')\int\mathrm d^da e^{i(p-q)\cdot a}\\
+&\times|\mathcal T_{p'\leftarrow k_{in}}|^2f^*(\mathbf p_1)f(\mathbf q_1)\cdots f^*(\mathbf p_n)f(\mathbf q_{n'})\\
+&=\frac{1}{n'!}\int\tilde{\mathrm dp'}\int\mathrm d^da |\mathcal T_{p'\leftarrow k_{in}}|^2(2\pi)^d\delta^d(k_{in}-p')\prod_{j=0}^n\int\tilde{\mathrm dp_j}\tilde{\mathrm dq_j}f^*(\mathbf p_j)f(\mathbf q_j)e^{i(p_j-q_j)\cdot a}
+\end{aligned}</script><p>定义</p>
+<script type="math/tex; mode=display">g_j(a)=\int f_j(\mathbf q)e^{iq\cdot a}\tilde{\mathrm dq}</script><p>则</p>
+<script type="math/tex; mode=display">P_n=\frac{1}{n'!}\int\tilde{\mathrm dp'}|\mathcal T_{p'\leftarrow k_{in}}|^2(2\pi)^d\delta^d(k_{in}-p')\int\mathrm d^da|g_1(a)|^2\cdots|g_n(a)|^2</script><hr>
+<p>对于固定的$a^0$，对剩下$(d-1)$个分量做积分。根据定义</p>
+<script type="math/tex; mode=display">\int\mathrm d^{d-1}\mathbf a|g_j(a)|^2=\int\tilde{\mathrm dp}\frac{\mathrm d^{d-1}\mathbf q}{2\omega_{\mathbf q}}f_j^*(\mathbf p)f_j(\mathbf q)e^{i(\omega_{\mathbf p}-\omega_{\mathbf q})a^0}\delta^{d-1}(\mathbf{p-q})=\int\frac{\tilde{\mathrm dp}}{2\omega_{\mathbf p}}|f_j(\mathbf p)|^2</script><p>由于函数为窄峰，所以近似为</p>
+<script type="math/tex; mode=display">\int\mathrm d^{d-1}\mathbf a|g_j(a)|^2=\frac1{2k_j^0}=\frac{1}{2E_j}\Rightarrow |g_j(x)|^2=\frac{\rho_j(x)}{2E_j}</script><p>在静止系中$E_j\rightarrow M_j,\rho\rightarrow\rho^{(0)}$。利用能量和速度的关系可以直到静止系密度最小。最终概率</p>
+<script type="math/tex; mode=display">P_n=\frac{1}{n'!}\int\tilde{\mathrm dp'}|\mathcal T_{p'\leftarrow k_{in}}|^2(2\pi)^d\delta^d(k_{in}-p')\int\mathrm d^dx\frac{\rho_1^{(0)}(x)\cdots\rho^{(0)}_n(x)}{2M_1\cdots 2M_n}\tag1</script><h3 id="散射截面"><a href="#散射截面" class="headerlink" title="散射截面"></a>散射截面</h3><p>两粒子入射，固定靶系（FT）中，入射流为</p>
+<script type="math/tex; mode=display">j_1=\rho_1(x)v_1=\frac{\rho_1^{(0)}(x)v_1}{\sqrt{1-v_1^2}}</script><p>(1)式中对最后一个积分为</p>
+<script type="math/tex; mode=display">\int\mathrm d^dx\frac{j_1\sqrt{1-v_1^2}/v_1}{4M_1M_2}\rho^{(0)}_2(x)=\frac{j_1}{4|\mathbf k_1|M_2}\int\mathrm d^dx\rho_2^{(0)}(x)</script><p>后面那个积分对空间积分为1，再对时间积分为总时间。所以微分散射截面</p>
+<script type="math/tex; mode=display">\mathrm d\sigma=\frac{\mathrm dP}{j_1T}=\frac{|\mathcal T_{p'\leftarrow k_{in}}|^2}{4|\mathbf k_1|M_2}\tilde{\mathrm dp'}(2\pi)^d\delta^d(k_{in}-p')</script><hr>
+<p>我们想找到$|\mathbf k_1|M_2$对应的Lorentz标量。先给结论</p>
+<script type="math/tex; mode=display">|\mathbf k_1|_{CM}\sqrt s,s=-(k_1+k_2)^2</script><p>显然，因为$s=-(k_1+k_2)^2$是Lorentz矢量的内积，所以是标量，进而整体是洛伦兹标量。</p>
+<p>设CM（零动量系）中$k_2=(k_2^0,k_2^1,0,0),k_1=(k_1^0,-k_2^1,0,0)$。设FT系相对CM速度为$u$。由于固定2号粒子</p>
+<script type="math/tex; mode=display">0=\frac{k_2^1-uk_2^0}{\sqrt{1-u^2}}\Rightarrow u=\frac{k_2^1}{k_2^0}=\frac{k_2^1}{\sqrt{(k_2^1)^2+M_2^2}}</script><p>因此</p>
+<script type="math/tex; mode=display">|\mathbf k_1|M_2=\left|\frac{-k_2^1-uk_1^0}{\sqrt{1-u^2}}\right|M_2=\frac{k_2^1+u\sqrt{(k_2^1)^2+M_1^2}}{\sqrt{1-u^2}}M_2=k_2^1\left(k_2^0+k_1^0\right)</script><p>所以其正好等于$|\mathbf k_1|_{CM}\sqrt s$</p>
+<h3 id="衰变率"><a href="#衰变率" class="headerlink" title="衰变率"></a>衰变率</h3><script type="math/tex; mode=display">P=\frac{\Delta t}{2E_1}\frac1S\int|\mathcal T_{\mathbf p\leftarrow\mathbf k_1}|^2(2\pi)^d\delta^d(p-k_1)\tilde {\mathrm dp}</script>
     </div>
 
     
@@ -399,13 +395,13 @@ C-\overline C=\int\mathrm d^4x\tilde{dk}\ ie^{ik\cdot x}\tilde g(0)f(\mathbf k)(
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/" rel="prev" title="一道积分证明">
-                  <i class="fa fa-chevron-left"></i> 一道积分证明
+                <a href="/2020/10/24/flutter%E5%8F%91%E5%B8%83/" rel="prev" title="flutter发布">
+                  <i class="fa fa-chevron-left"></i> flutter发布
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/15/Gell-Mann&Low%E5%AE%9A%E7%90%86/" rel="next" title="Gell-Mann&Low 定理">
-                  Gell-Mann&Low 定理 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/11/07/CG%E7%B3%BB%E6%95%B0/" rel="next" title="CG系数">
+                  CG系数 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
