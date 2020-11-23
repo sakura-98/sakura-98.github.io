@@ -24,21 +24,22 @@
     var CONFIG = {"hostname":"github.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Gell-Mann Low 定理说的是，在绝热引入相互作用的方法下计算出的本征态就是相互作用系统的本征态。即系统的哈密顿量为 \hat H&#x3D;\hat H_0+\hat H_I&#x3D;\hat H_0+ge^{-\epsilon|t|}\hat H_1\tag{1}非相互作用部分本征态$|\Phi\rangle$，则若 \lim_{\epsilon\rightarrow 0}\frac{\hat U_\e">
+  <meta name="description" content="在圈近似中，我们会遇到一类由单圈和相互作用组成的图。事实上，写为代数形式为 \int\frac{\mathrm d^4q}{(2\pi)^4}\left[\Pi_0(q)V(q)\right]^n\tag1其中 \Pi(q)&#x3D;\frac{2}{i\hbar}\int\frac{\mathrm d^4k}{(2\pi)^4}\ G^0(k)G^0(k+q)\tag2本文在费米海的模型下计算(2)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gell-Mann&amp;Low 定理">
-<meta property="og:url" content="https://github.com/sakura-98/2020/10/15/Gell-Mann&Low%E5%AE%9A%E7%90%86/index.html">
+<meta property="og:title" content="单圈费曼图">
+<meta property="og:url" content="https://github.com/sakura-98/2020/11/23/%E5%8D%95%E5%9C%88%E8%B4%B9%E6%9B%BC%E5%9B%BE/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="Gell-Mann Low 定理说的是，在绝热引入相互作用的方法下计算出的本征态就是相互作用系统的本征态。即系统的哈密顿量为 \hat H&#x3D;\hat H_0+\hat H_I&#x3D;\hat H_0+ge^{-\epsilon|t|}\hat H_1\tag{1}非相互作用部分本征态$|\Phi\rangle$，则若 \lim_{\epsilon\rightarrow 0}\frac{\hat U_\e">
+<meta property="og:description" content="在圈近似中，我们会遇到一类由单圈和相互作用组成的图。事实上，写为代数形式为 \int\frac{\mathrm d^4q}{(2\pi)^4}\left[\Pi_0(q)V(q)\right]^n\tag1其中 \Pi(q)&#x3D;\frac{2}{i\hbar}\int\frac{\mathrm d^4k}{(2\pi)^4}\ G^0(k)G^0(k+q)\tag2本文在费米海的模型下计算(2)">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-24T01:50:50.264Z">
+<meta property="article:published_time" content="2020-11-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-23T12:45:09.652Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
+<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://github.com/sakura-98/2020/10/15/Gell-Mann&Low%E5%AE%9A%E7%90%86/">
+<link rel="canonical" href="https://github.com/sakura-98/2020/11/23/%E5%8D%95%E5%9C%88%E8%B4%B9%E6%9B%BC%E5%9B%BE/">
 
 
 <script data-pjax class="page-configurations">
@@ -51,7 +52,7 @@
   };
 </script>
 
-  <title>Gell-Mann&Low 定理 | Sakura's Blog</title>
+  <title>单圈费曼图 | Sakura's Blog</title>
   
 
 
@@ -202,7 +203,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E8%A1%A8%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">相互作用表象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E5%92%8C%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96%E7%9A%84%E5%AF%B9%E6%98%93"><span class="nav-number">2.</span> <span class="nav-text">求解哈密顿量和时间演化的对易</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E8%AF%81%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">正式证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">补充说明</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%B9%E7%B1%B3%E6%B5%B7%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">费米海模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%99%9A%E9%83%A8"><span class="nav-number">1.2.</span> <span class="nav-text">虚部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%83%A8"><span class="nav-number">1.3.</span> <span class="nav-text">实部</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%84%8F%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">物理意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%9C%BA%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">标量场模型</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -280,7 +281,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/10/15/Gell-Mann&Low%E5%AE%9A%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/11/23/%E5%8D%95%E5%9C%88%E8%B4%B9%E6%9B%BC%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -293,7 +294,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Gell-Mann&Low 定理
+          单圈费曼图
         </h1>
 
         <div class="post-meta-container">
@@ -304,7 +305,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-10-15 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-15T00:00:00+08:00">2020-10-15</time>
+      <time title="Created: 2020-11-23 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-23T00:00:00+08:00">2020-11-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -326,65 +327,68 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Gell-Mann Low 定理说的是，在绝热引入相互作用的方法下计算出的本征态就是相互作用系统的本征态。即系统的哈密顿量为</p>
-<script type="math/tex; mode=display">\hat H=\hat H_0+\hat H_I=\hat H_0+ge^{-\epsilon|t|}\hat H_1\tag{1}</script><p>非相互作用部分本征态$|\Phi\rangle$，则若</p>
-<script type="math/tex; mode=display">\lim_{\epsilon\rightarrow 0}\frac{\hat U_\epsilon(0,-\infty;g)|\Phi\rangle}{\langle\Phi|\hat U_\epsilon(0,-\infty;g)|\Phi\rangle}\equiv
-\lim_{\epsilon\rightarrow 0}\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}
-=\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}\tag{2}</script><p>注意到定义了$|\Psi^g(\epsilon)\rangle$，而且并没有说$|\Psi^g(\epsilon)\rangle\xrightarrow{\epsilon\rightarrow0}|\Psi^g\rangle$。那么有</p>
-<script type="math/tex; mode=display">\hat H(t=0)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}=E\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}\tag{3}</script><a id="more"></a>
-<h3 id="相互作用表象"><a href="#相互作用表象" class="headerlink" title="相互作用表象"></a>相互作用表象</h3><p>波函数和算符分别为</p>
-<script type="math/tex; mode=display">|\Psi_I(t)\rangle\equiv e^{i\hat H_0t/\hbar}|\Psi_S(t)\rangle,\quad\hat O_I(t)\equiv e^{i\hat H_0t/\hbar}\hat O_Se^{-i\hat H_0t/\hbar}\tag{1.1}</script><p>因此波函数运动方程为</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}|\Psi_I(t)\rangle=\hat H_I|\Psi_I(t)\rangle\tag{1.2}</script><p>算符运动方程为</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat O_I(t)=\left[\hat O_I(t),\hat H_0\right]\tag{1.3}</script><p>根据(1.1)可得时间演化算符$\hat U(t,t_0)$为</p>
-<script type="math/tex; mode=display">\hat U(t,t_0)=e^{i\hat H_0t/\hbar}e^{-i\hat H(t-t_0)/\hbar}e^{-i\hat H_0t_0/\hbar}\tag{1.4}</script><p>之所以不从(1.2)式出发，是因为$\hat H_I(t)$之间不一定对易，导致得不到简单的结果。但从(1.2)出发能得到时间演化算符的运动方程，通过迭代也能得到其表达式</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat U(t,t_0)=\hat H_I(t)\hat U(t,t_0)\tag{1.5}</script><p>当然，作为“算符”，它也应当满足(1.3)式，只不过用处不太大。</p>
-<p>对(1.5)式积分，考虑到$\hat U(t_0,t_0)=\hat 1$</p>
-<script type="math/tex; mode=display">\hat U(t,t_0)=\hat 1+\frac{1}{i\hbar}\int_{t_0}^t\hat H_I(t_1)\hat U(t_1,t_0)\mathrm dt_1\tag{1.6}</script><p>继续迭代，最终得到</p>
-<script type="math/tex; mode=display">\hat U(t,t_0)=\sum_{n=0}^\infty\left(\frac{1}{i\hbar}\right)^n\frac{1}{n!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ \hat T\left[\hat H_I(t_1)\cdots\hat H_I(t_n)\right]\tag{1.7}</script><p>其中引入编时算符$\hat T$使得各个$t_i$等价。</p>
-<h3 id="求解哈密顿量和时间演化的对易"><a href="#求解哈密顿量和时间演化的对易" class="headerlink" title="求解哈密顿量和时间演化的对易"></a>求解哈密顿量和时间演化的对易</h3><p>这是证明过程中会遇到的一个问题，我们将其处理为引理。</p>
-<p>因为$\hat U$能表示为$\hat H_1$的函数，正如(1.7)所示，因此我们从这里开始计算。使用(1.3)</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat H_1(t)=[\hat H_1,\hat H_0]\tag{2.1}</script><p>因此$n$个$\hat H_1$的乘积有</p>
-<script type="math/tex; mode=display">[\hat H_1(t_1)\cdots\hat H_1(t_n),\hat H_0]=i\hbar\left(\frac{\partial}{\partial t_1}+\cdots+\frac{\partial}{\partial t_n}\right)\hat H_1(t_1)\cdots\hat H_1(t_n)\tag{2.2}</script><p>为了引入编时算符，我们能够证明（直接计算即可）</p>
-<script type="math/tex; mode=display">\sum_{j=1}^n\frac{\partial}{\partial t_j}\theta(t_{P(1)}-t_{P(2)})\cdots\theta(t_{P(n-1)}-t_{P(n)})=0\tag{2.3}</script><p>所以(2.2)式可直接套上编时算符，此时$t_1,\cdots t_n$完全等价，于是</p>
-<script type="math/tex; mode=display">[\hat T[\hat H_1(t_1)\cdots\hat H_1(t_n)],\hat H_0]=in\hbar\frac{\partial}{\partial t_1}\hat T[\hat H_1(t_1)\cdots\hat H_1(t_n)]\tag{2.4}</script><p>和(1)代回(1.7)得</p>
-<script type="math/tex; mode=display">\begin{aligned}[]
-[\hat U(t,t_0),\hat H_0]&=\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
-&\times\frac{\partial}{\partial t_1}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]
-\end{aligned}\tag{2.5}</script><h3 id="正式证明"><a href="#正式证明" class="headerlink" title="正式证明"></a>正式证明</h3><script type="math/tex; mode=display">\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=\left(\hat H_0\hat U_\epsilon(0,-\infty;g)-\hat U_\epsilon(0,-\infty;g)E_0\right)|\Phi\rangle\tag{3.1}</script><p>注意到右边是一个对易子，因为$\hat H_0|\Phi\rangle=E_0|\Phi\rangle$。所以可将(2.5)代入</p>
-<script type="math/tex; mode=display">\begin{aligned}\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=&-\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
-&\times\frac{\partial}{\partial t_1}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]|\Phi\rangle
-\end{aligned}\tag{3.2}</script><p>对$t_1$做分部积分，注意到积分下限有因子$e^{-\epsilon\infty}=0$，上限有$t_1=0&gt;t_j$，所以为</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&-\hat H_1\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{-\infty}^0\mathrm dt_2\cdots\mathrm dt_n\ e^{\epsilon(t_2+\cdots+t_n)}\hat T\left[\hat H_1(t_2)\cdots\hat H_1(t_n)\right]|\Phi\rangle\\
-&+\epsilon\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{-\infty}^0\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]|\Phi\rangle
-\end{aligned}</script><p>对于第一项，可以重新编号$2\rightarrow1,3\rightarrow2,\cdots n\rightarrow(n-1)$得到$-g\hat H_1\hat U_\epsilon(0,-\infty;g)|\Phi\rangle$；</p>
-<p>对于第二项，也可通过简单的算符与$\hat U_\epsilon(0,-\infty;g)$联系起来。两者结合得</p>
-<script type="math/tex; mode=display">\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=-g\hat H_1|\Psi^g(\epsilon)\rangle+\epsilon i\hbar g\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle</script><p>移项后得到</p>
-<script type="math/tex; mode=display">\left(\hat H_0+g\hat H_1-E_0\right)|\Psi^g(\epsilon)\rangle=\epsilon i\hbar g\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle\tag{3.3}</script><p>但是不能直接取极限$\epsilon\rightarrow 0$得到$|\Psi^g\rangle$是$\hat H=\hat H_0+\hat H_1$的本征态，因为</p>
+        <p>在圈近似中，我们会遇到一类由单圈和相互作用组成的图。事实上，写为代数形式为</p>
+<script type="math/tex; mode=display">\int\frac{\mathrm d^4q}{(2\pi)^4}\left[\Pi_0(q)V(q)\right]^n\tag1</script><p>其中</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac{2}{i\hbar}\int\frac{\mathrm d^4k}{(2\pi)^4}\ G^0(k)G^0(k+q)\tag2</script><p>本文在费米海的模型下计算(2)</p>
+<a id="more"></a>
+<h3 id="费米海模型"><a href="#费米海模型" class="headerlink" title="费米海模型"></a>费米海模型</h3><h4 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h4><p>对于费米海，自由格林函数为</p>
+<script type="math/tex; mode=display">G^0(\mathbf k,\epsilon)=\frac{\theta(|\mathbf k|-k_F)}{\epsilon-\omega_{\mathbf k}+i\eta}+\frac{\theta(k_F-|\mathbf k|)}{\epsilon-\omega_{\mathbf k}-i\eta}\tag{1.1}</script><p>代入(2)式，取$k=(\mathbf k,\epsilon),q=(\mathbf q,\omega)$得</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac2{i\hbar}\int\frac{\mathrm d^3\mathbf k\mathrm d\epsilon}{(2\pi)^4}
+\left[\frac{\theta(|\mathbf k|-k_F)}{\epsilon-\omega_{\mathbf k}+i\eta}+\frac{\theta(k_F-|\mathbf k|)}{\epsilon-\omega_{\mathbf k}-i\eta}\right]
+\left[\frac{\theta(|\mathbf{k+q}|-k_F)}{\epsilon+\omega-\omega_{\mathbf{k+q}}+i\eta}+\frac{\theta(k_F-|\mathbf{k+q}|)}{\epsilon+\omega-\omega_{\mathbf{k+q}}-i\eta}\right]</script><p>对$\epsilon$积分，乘积本应有四项，但只有两项能在上半平面（格林函数应含有一个$e^{i\omega 0^+}$部分）积分后非零，即</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac2\hbar\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
+\frac{\theta(k_F-|\mathbf k|)\theta(|\mathbf{k+q}|-k_F)}{\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}}+i\eta}+
+\frac{\theta(|\mathbf k|-k_F)\theta(k_F-|\mathbf{k+q}|)}{-\omega-\omega_{\mathbf k}+\omega_{\mathbf{k+q}}+i\eta}
+\right]</script><p>取$\mathbf k\rightarrow-\mathbf{k+q}$，可以将两项的阶梯函数变为相同</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac2\hbar\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
+\frac{1}{\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}}+i\eta}-
+\frac{1}{\omega+\omega_{\mathbf{k+q}}-\omega_{\mathbf k}-i\eta}
+\right]</script><p>其中积分区域$D=\theta(1-|\mathbf k|)\theta(|\mathbf{k+q}|-1)$。并且可以看出关于频率是奇函数，所以只须考虑$\omega\ge0$部分。</p>
+<p>实部和虚部分别为</p>
+<script type="math/tex; mode=display">\Re\Pi(q)=\frac2\hbar\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
+\frac{\mathscr P}{\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}}}-
+\frac{\mathscr P}{\omega+\omega_{\mathbf{k+q}}-\omega_{\mathbf k}}
+\right]</script><script type="math/tex; mode=display">\Im\Pi(q)=-\frac1\hbar\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^2}\left[
+\delta(\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}})+
+\delta(\omega+\omega_{\mathbf{k+q}}-\omega_{\mathbf k})
+\right]</script><p>方便起见，做参数化$\mathbf k\rightarrow \mathbf kk_F,\mathbf q\rightarrow \mathbf qk_F,\omega\rightarrow\nu\frac{\hbar k_F^2}m$，并利用色散关系$\hbar\omega_{\mathbf k}=\frac{\hbar^2\mathbf k^2}{2m}$得</p>
+<script type="math/tex; mode=display">\Re\Pi(q)=\frac{2mk_F}{\hbar^2}\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
+\frac{\mathscr P}{\nu-\mathbf{k\cdot q}-\frac{\mathbf q^2}2}-
+\frac{\mathscr P}{\nu+\mathbf{k\cdot q}+\frac{\mathbf q^2}2}
+\right]\tag{1.2}</script><script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{\hbar^2}\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^2}\left[
+\delta(\nu-\mathbf{k\cdot q}-\frac{\mathbf q^2}2)+
+\delta(\nu+\mathbf{k\cdot q}+\frac{\mathbf q^2}2)
+\right]\tag{1.3}</script><p>重申两点。</p>
 <ol>
-<li>我们并不知道$|\Psi^g(\epsilon)\rangle$随$g$的变化关系</li>
-<li>我们并不知道$|\Psi^g(\epsilon\rightarrow0)\rangle$是否就是$|\Psi^g\rangle$</li>
-<li>倘若右边为零，说明相互作用不会改变本征能量，只会改变本征矢，这是荒谬的</li>
+<li>$\nu\ge0$，否则可利用奇函数性质计算</li>
+<li>积分区域$D=\theta(1-|\mathbf k|)\theta(|\mathbf{k+q}|-1)$，几何上看为一个在原点的单位球内，扣除另一个不在原点的单位球。因此可自然地根据$|\mathbf q|-2$的正负性分类</li>
 </ol>
-<p>受Gell-Mann&amp;Low定理的条件(2)启发，我们去凑相应的形式，计算</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle=\frac{\partial}{\partial g}\left[\langle\Phi|\Psi^g(\epsilon)\rangle\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]\\
-=&\langle\Phi|\Psi^g(\epsilon)\rangle\frac{\partial}{\partial g}\left[\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]+\frac{\partial}{\partial g}\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\\
-\end{aligned}\tag{3.4}</script><p>代入(3.3)得</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\\
-=&i\epsilon\hbar g\frac{\partial}{\partial g}\left[\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]\\
-+&i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}
-\end{aligned}\tag{3.5}</script><p>利用(2)可知，上式取$\epsilon\rightarrow0$时，第一项的括号内为常数，所以可以使用极限公式$\lim AB=\lim A\times\lim B$得到值$0$。第二项要能取极限是有要求的，即$\lim_{\epsilon\rightarrow0}i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]$极限存在，设为$\Delta E^g$。假设满足要求（具体见补充说明），则上式为</p>
-<script type="math/tex; mode=display">\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}
-=\lim_{\epsilon\rightarrow0}\left\{i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\right\}\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}
-\tag{3.6}</script><p>因此令$g=1$即得到</p>
-<script type="math/tex; mode=display">\hat H(t=0)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}=(E_0+\Delta E)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}</script><p>即得证。</p>
-<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><p>利用(1.7)式</p>
-<script type="math/tex; mode=display">\hat U(-\infty,0)=\sum_{n=0}^\infty\left(\frac{g}{i\hbar}\right)^n\frac{1}{n!}\int_{-\infty}^0e^{\epsilon t_1}\mathrm dt_1\cdots e^{\epsilon t_n}\mathrm dt_n\ \hat H_1^n\tag{4.1}=\exp\left(\frac{g\hat H_1}{i\hbar\epsilon}\right)</script><p>所以$\langle\Phi|\Psi^g(\epsilon)\rangle=\langle\Phi|\exp(-i\frac g{\hbar\epsilon}\hat H_1)|\Phi\rangle=A^g\exp(i\epsilon^{-1}\alpha^g)$，所以</p>
-<script type="math/tex; mode=display">
-\lim_{\epsilon\rightarrow0}i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]=\hbar g\frac{\partial\alpha^g}{\partial g}</script><p>因此证明中(3.6)式成立</p>
-
+<h4 id="虚部"><a href="#虚部" class="headerlink" title="虚部"></a>虚部</h4><p>根据(1.3)，以$\mathbf q$为$z$轴，只有$k_z=-\frac{|\mathbf q|}2\pm\frac\nu{|\mathbf q|}$时被积函数不为零。画出积分区域便能发现，只有取正号的时候才可能落在积分区域内。并可分为四类讨论</p>
+<ol>
+<li>$|\mathbf q|&gt;2$时，要求$-1\le-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\le1\Leftrightarrow\frac{\mathbf q^2}2-|\mathbf q|\le\nu\le\frac{\mathbf q^2}2+|\mathbf q|$<script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{(2\pi\hbar)^2|\mathbf q|}\pi\left[1-\left(-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2\right]</script></li>
+<li>$|\mathbf q|&lt;2$，且$1\ge-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\ge1-|\mathbf q|\Leftrightarrow|\mathbf q|-\frac{\mathbf q^2}2\le\nu\le|\mathbf q|+\frac{\mathbf q^2}2$时<script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{(2\pi\hbar)^2|\mathbf q|}\pi\left[1-\left(-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2\right]</script></li>
+<li>$|\mathbf q|&lt;2$，且$-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}&lt;1-|\mathbf q|\Leftrightarrow\nu&lt;|\mathbf q|-\frac{\mathbf q^2}2$时<script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{(2\pi\hbar)^2|\mathbf q|}\left[\left(\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2-\left(-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2\right]
+=-\frac{mk_F\nu}{2\pi\hbar^2|\mathbf q|}</script></li>
+<li>尚未讨论到的区域，积分值恒为零</li>
+</ol>
+<p>据说，重要的是虚部不为零的区域形状。</p>
+<h4 id="实部"><a href="#实部" class="headerlink" title="实部"></a>实部</h4><h3 id="物理意义"><a href="#物理意义" class="headerlink" title="物理意义"></a>物理意义</h3><h3 id="标量场模型"><a href="#标量场模型" class="headerlink" title="标量场模型"></a>标量场模型</h3><p>出于好玩（以及练习量子场论的重整化），再算算标量场下的情况。相应的，格林函数为</p>
+<script type="math/tex; mode=display">G(k)=\frac1{k^2+m^2-i\epsilon}</script><p>所以代入(2)</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac2{i\hbar}\int\frac{\mathrm d^4k}{(2\pi)^4}\frac1{[k^2+m^2-i\epsilon][(k+q)^2+m^2-i\epsilon]}</script><p>频率部分Wick转动至虚轴，并做相应变量替换</p>
+<script type="math/tex; mode=display">\Pi(q_E)=\frac2\hbar\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac1{[k_E^2+m^2][(k_E+q_E)^2+m^2]}</script><p>做Feynman参数积分得</p>
+<script type="math/tex; mode=display">\begin{aligned}\Pi(q_E)
+=&\frac2\hbar\int\frac{\mathrm d^4k_E}{(2\pi)^4}\int_0^1\frac{\mathrm dx}{\left[(1-x)(k_E^2+m^2)+x[(k_E+q_E)^2+m^2]\right]^2}\\
+=&\frac2\hbar\int\frac{\mathrm d^4k_E}{(2\pi)^4}\int_0^1\frac{\mathrm dx}{\left[(k_E+xq_E)^2+x(1-x)q_E^2+m^2\right]^2}\\
+=&\frac2\hbar\int_0^1\mathrm dx\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac1{\left[k_E^2+x(1-x)q_E^2+m^2\right]^2}\\
+\end{aligned}</script><p>变换到四维球坐标得</p>
+<script type="math/tex; mode=display">\begin{aligned}\Pi(q_E)
+=&\frac2\hbar\int_0^1\mathrm dx\int_0^\infty\frac{\mathrm dk_E}{(2\pi)^4}\frac{8\pi}3\frac{k_E^3}{\left[k_E^2+x(1-x)q_E^2+m^2\right]^2}\\
+=&\frac2\hbar\frac{1}{(2\pi)^4}\frac{8\pi}3\int_0^1\mathrm dx\left[-\frac12\frac{Q^2}{x(1-x)q_E^2+m^2+Q^2}+\ln\sqrt{x(1-x)q_E^2+m^2+Q^2}\right.\\
+&\left.-\ln\sqrt{x(1-x)q_E^2+m^2}+\int_Q^\infty\frac{k_E^3\mathrm dk_E}{\left[k_E^2+x(1-x)q_E^2+m^2\right]^2}\right]\\
+\end{aligned}</script><p>取$Q\rightarrow\infty$，尚未积出的积分与$-\ln Q$只差一个常数，尽管这个常数是无穷大，因此恰好与最后一个等号的第一行抵消</p>
+<script type="math/tex; mode=display">\Pi(q_E)=\frac1{3\pi^3\hbar}\int_0^1\mathrm dx\left[c_1-\ln\sqrt{x(1-x)q_E^2+m^2}\right]</script><p>当$2m&gt;q_E$时</p>
+<script type="math/tex; mode=display">\Pi(q_E)=\frac1{3\pi^3\hbar}\left[c_2-\sqrt{\frac{4m^2}{q^2_E}+1}\ \mathrm{arccosh}\sqrt{\frac{q_E^2}{4m^2}+1}\right]</script><p>所以变量替换回去得到下式，对其做解析延拓是复杂的，但没有原则性困难</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac1{3\pi^3\hbar}\left[c_2-\sqrt{\frac{4m^2}{q^2}+1}\ \mathrm{arccosh}\sqrt{\frac{q^2}{4m^2}+1}\right]</script>
     </div>
 
     
@@ -394,20 +398,18 @@
     <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/physics/" rel="tag"># physics</a>
+              <a href="/tags/math/" rel="tag"># math</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/" rel="prev" title="on-shell等价与LSZ约化">
-                  <i class="fa fa-chevron-left"></i> on-shell等价与LSZ约化
+                <a href="/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/" rel="prev" title="一种正规化方案">
+                  <i class="fa fa-chevron-left"></i> 一种正规化方案
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/22/KG%E5%9C%BA%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/" rel="next" title="KG场的路径积分">
-                  KG场的路径积分 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

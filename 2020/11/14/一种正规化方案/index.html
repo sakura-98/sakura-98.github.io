@@ -24,21 +24,21 @@
     var CONFIG = {"hostname":"github.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Gell-Mann Low 定理说的是，在绝热引入相互作用的方法下计算出的本征态就是相互作用系统的本征态。即系统的哈密顿量为 \hat H&#x3D;\hat H_0+\hat H_I&#x3D;\hat H_0+ge^{-\epsilon|t|}\hat H_1\tag{1}非相互作用部分本征态$|\Phi\rangle$，则若 \lim_{\epsilon\rightarrow 0}\frac{\hat U_\e">
+  <meta name="description" content="正规化是用于处理无穷大的一种技术手段，常见的方式有  维数正规化 Pauli-Villars正规化 晶格正规化 $\zeta$函数正规化 Hadamard正规化 点分裂正规化  至今为止，我对正规化一无所知。北京大学檀时钠《量子场论》课上给出一种正规化方案，本文用于重现这种方案。将来可能会将其与正常做法作比较。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gell-Mann&amp;Low 定理">
-<meta property="og:url" content="https://github.com/sakura-98/2020/10/15/Gell-Mann&Low%E5%AE%9A%E7%90%86/index.html">
+<meta property="og:title" content="一种正规化方案">
+<meta property="og:url" content="https://github.com/sakura-98/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="Gell-Mann Low 定理说的是，在绝热引入相互作用的方法下计算出的本征态就是相互作用系统的本征态。即系统的哈密顿量为 \hat H&#x3D;\hat H_0+\hat H_I&#x3D;\hat H_0+ge^{-\epsilon|t|}\hat H_1\tag{1}非相互作用部分本征态$|\Phi\rangle$，则若 \lim_{\epsilon\rightarrow 0}\frac{\hat U_\e">
+<meta property="og:description" content="正规化是用于处理无穷大的一种技术手段，常见的方式有  维数正规化 Pauli-Villars正规化 晶格正规化 $\zeta$函数正规化 Hadamard正规化 点分裂正规化  至今为止，我对正规化一无所知。北京大学檀时钠《量子场论》课上给出一种正规化方案，本文用于重现这种方案。将来可能会将其与正常做法作比较。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-24T01:50:50.264Z">
+<meta property="article:published_time" content="2020-11-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-14T11:02:16.340Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://github.com/sakura-98/2020/10/15/Gell-Mann&Low%E5%AE%9A%E7%90%86/">
+<link rel="canonical" href="https://github.com/sakura-98/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/">
 
 
 <script data-pjax class="page-configurations">
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>Gell-Mann&Low 定理 | Sakura's Blog</title>
+  <title>一种正规化方案 | Sakura's Blog</title>
   
 
 
@@ -202,7 +202,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E8%A1%A8%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">相互作用表象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E5%92%8C%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96%E7%9A%84%E5%AF%B9%E6%98%93"><span class="nav-number">2.</span> <span class="nav-text">求解哈密顿量和时间演化的对易</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E8%AF%81%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">正式证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">补充说明</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%90%86%E4%B8%80%EF%BC%9A%E9%AB%98%E7%BB%B4%E7%90%83%E4%BD%93%E7%A7%AF"><span class="nav-number">1.</span> <span class="nav-text">引理一：高维球体积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%90%86%E4%BA%8C%EF%BC%9AFeynman%E5%8F%82%E6%95%B0%E7%A7%AF%E5%88%86"><span class="nav-number">2.</span> <span class="nav-text">引理二：Feynman参数积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%E4%B8%80%EF%BC%9A%E5%85%AD%E7%BB%B4%E6%97%B6%E7%A9%BA-varphi-3-%E7%90%86%E8%AE%BA%E8%87%AA%E8%83%BD%E9%A1%B9"><span class="nav-number">3.</span> <span class="nav-text">例子一：六维时空$\varphi^3$理论自能项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E6%8D%A2%E5%88%B0%E6%AC%A7%E6%B0%8F%E7%A9%BA%E9%97%B4"><span class="nav-number">3.1.</span> <span class="nav-text">变换到欧氏空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%80%83%E5%AF%9F%E5%8F%91%E6%95%A3%E6%80%A7%E8%B4%A8"><span class="nav-number">3.2.</span> <span class="nav-text">考察发散性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E7%A7%AF%E5%88%86"><span class="nav-number">3.3.</span> <span class="nav-text">实际积分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E6%8D%A2%E5%9B%9E%E9%97%B5%E6%B0%8F%E7%A9%BA%E9%97%B4"><span class="nav-number">3.4.</span> <span class="nav-text">变换回闵氏空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%E4%BA%8C%EF%BC%9A%E9%A1%B6%E7%82%B9%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">例子二：顶点函数</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -280,7 +280,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/10/15/Gell-Mann&Low%E5%AE%9A%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -293,7 +293,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Gell-Mann&Low 定理
+          一种正规化方案
         </h1>
 
         <div class="post-meta-container">
@@ -304,7 +304,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-10-15 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-15T00:00:00+08:00">2020-10-15</time>
+      <time title="Created: 2020-11-14 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-14T00:00:00+08:00">2020-11-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -312,7 +312,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/QSP/" itemprop="url" rel="index"><span itemprop="name">QSP</span></a>
+          <a href="/categories/QFT/" itemprop="url" rel="index"><span itemprop="name">QFT</span></a>
         </span>
     </span>
 
@@ -326,65 +326,58 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Gell-Mann Low 定理说的是，在绝热引入相互作用的方法下计算出的本征态就是相互作用系统的本征态。即系统的哈密顿量为</p>
-<script type="math/tex; mode=display">\hat H=\hat H_0+\hat H_I=\hat H_0+ge^{-\epsilon|t|}\hat H_1\tag{1}</script><p>非相互作用部分本征态$|\Phi\rangle$，则若</p>
-<script type="math/tex; mode=display">\lim_{\epsilon\rightarrow 0}\frac{\hat U_\epsilon(0,-\infty;g)|\Phi\rangle}{\langle\Phi|\hat U_\epsilon(0,-\infty;g)|\Phi\rangle}\equiv
-\lim_{\epsilon\rightarrow 0}\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}
-=\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}\tag{2}</script><p>注意到定义了$|\Psi^g(\epsilon)\rangle$，而且并没有说$|\Psi^g(\epsilon)\rangle\xrightarrow{\epsilon\rightarrow0}|\Psi^g\rangle$。那么有</p>
-<script type="math/tex; mode=display">\hat H(t=0)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}=E\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}\tag{3}</script><a id="more"></a>
-<h3 id="相互作用表象"><a href="#相互作用表象" class="headerlink" title="相互作用表象"></a>相互作用表象</h3><p>波函数和算符分别为</p>
-<script type="math/tex; mode=display">|\Psi_I(t)\rangle\equiv e^{i\hat H_0t/\hbar}|\Psi_S(t)\rangle,\quad\hat O_I(t)\equiv e^{i\hat H_0t/\hbar}\hat O_Se^{-i\hat H_0t/\hbar}\tag{1.1}</script><p>因此波函数运动方程为</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}|\Psi_I(t)\rangle=\hat H_I|\Psi_I(t)\rangle\tag{1.2}</script><p>算符运动方程为</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat O_I(t)=\left[\hat O_I(t),\hat H_0\right]\tag{1.3}</script><p>根据(1.1)可得时间演化算符$\hat U(t,t_0)$为</p>
-<script type="math/tex; mode=display">\hat U(t,t_0)=e^{i\hat H_0t/\hbar}e^{-i\hat H(t-t_0)/\hbar}e^{-i\hat H_0t_0/\hbar}\tag{1.4}</script><p>之所以不从(1.2)式出发，是因为$\hat H_I(t)$之间不一定对易，导致得不到简单的结果。但从(1.2)出发能得到时间演化算符的运动方程，通过迭代也能得到其表达式</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat U(t,t_0)=\hat H_I(t)\hat U(t,t_0)\tag{1.5}</script><p>当然，作为“算符”，它也应当满足(1.3)式，只不过用处不太大。</p>
-<p>对(1.5)式积分，考虑到$\hat U(t_0,t_0)=\hat 1$</p>
-<script type="math/tex; mode=display">\hat U(t,t_0)=\hat 1+\frac{1}{i\hbar}\int_{t_0}^t\hat H_I(t_1)\hat U(t_1,t_0)\mathrm dt_1\tag{1.6}</script><p>继续迭代，最终得到</p>
-<script type="math/tex; mode=display">\hat U(t,t_0)=\sum_{n=0}^\infty\left(\frac{1}{i\hbar}\right)^n\frac{1}{n!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ \hat T\left[\hat H_I(t_1)\cdots\hat H_I(t_n)\right]\tag{1.7}</script><p>其中引入编时算符$\hat T$使得各个$t_i$等价。</p>
-<h3 id="求解哈密顿量和时间演化的对易"><a href="#求解哈密顿量和时间演化的对易" class="headerlink" title="求解哈密顿量和时间演化的对易"></a>求解哈密顿量和时间演化的对易</h3><p>这是证明过程中会遇到的一个问题，我们将其处理为引理。</p>
-<p>因为$\hat U$能表示为$\hat H_1$的函数，正如(1.7)所示，因此我们从这里开始计算。使用(1.3)</p>
-<script type="math/tex; mode=display">i\hbar\frac{\partial}{\partial t}\hat H_1(t)=[\hat H_1,\hat H_0]\tag{2.1}</script><p>因此$n$个$\hat H_1$的乘积有</p>
-<script type="math/tex; mode=display">[\hat H_1(t_1)\cdots\hat H_1(t_n),\hat H_0]=i\hbar\left(\frac{\partial}{\partial t_1}+\cdots+\frac{\partial}{\partial t_n}\right)\hat H_1(t_1)\cdots\hat H_1(t_n)\tag{2.2}</script><p>为了引入编时算符，我们能够证明（直接计算即可）</p>
-<script type="math/tex; mode=display">\sum_{j=1}^n\frac{\partial}{\partial t_j}\theta(t_{P(1)}-t_{P(2)})\cdots\theta(t_{P(n-1)}-t_{P(n)})=0\tag{2.3}</script><p>所以(2.2)式可直接套上编时算符，此时$t_1,\cdots t_n$完全等价，于是</p>
-<script type="math/tex; mode=display">[\hat T[\hat H_1(t_1)\cdots\hat H_1(t_n)],\hat H_0]=in\hbar\frac{\partial}{\partial t_1}\hat T[\hat H_1(t_1)\cdots\hat H_1(t_n)]\tag{2.4}</script><p>和(1)代回(1.7)得</p>
-<script type="math/tex; mode=display">\begin{aligned}[]
-[\hat U(t,t_0),\hat H_0]&=\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
-&\times\frac{\partial}{\partial t_1}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]
-\end{aligned}\tag{2.5}</script><h3 id="正式证明"><a href="#正式证明" class="headerlink" title="正式证明"></a>正式证明</h3><script type="math/tex; mode=display">\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=\left(\hat H_0\hat U_\epsilon(0,-\infty;g)-\hat U_\epsilon(0,-\infty;g)E_0\right)|\Phi\rangle\tag{3.1}</script><p>注意到右边是一个对易子，因为$\hat H_0|\Phi\rangle=E_0|\Phi\rangle$。所以可将(2.5)代入</p>
-<script type="math/tex; mode=display">\begin{aligned}\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=&-\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{t_0}^t\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\\
-&\times\frac{\partial}{\partial t_1}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]|\Phi\rangle
-\end{aligned}\tag{3.2}</script><p>对$t_1$做分部积分，注意到积分下限有因子$e^{-\epsilon\infty}=0$，上限有$t_1=0&gt;t_j$，所以为</p>
+        <p>正规化是用于处理无穷大的一种技术手段，常见的方式有</p>
+<ul>
+<li>维数正规化</li>
+<li>Pauli-Villars正规化</li>
+<li>晶格正规化</li>
+<li>$\zeta$函数正规化</li>
+<li>Hadamard正规化</li>
+<li>点分裂正规化</li>
+</ul>
+<p>至今为止，我对正规化一无所知。北京大学檀时钠《量子场论》课上给出一种正规化方案，本文用于重现这种方案。将来可能会将其与正常做法作比较。</p>
+<a id="more"></a>
+<h3 id="引理一：高维球体积"><a href="#引理一：高维球体积" class="headerlink" title="引理一：高维球体积"></a>引理一：高维球体积</h3><script type="math/tex; mode=display">V^{(d)}=\frac{\pi^{d/2}}{\Gamma\left(\frac d2+1\right)},\quad S^{(d)}=\frac{2\pi^{d/2}}{\Gamma\left(\frac d2\right)}\tag1</script><p>证明很直接，利用数学归纳法即可，关键一步为</p>
+<script type="math/tex; mode=display">V^{(d)}=\int_{-1}^1\frac{\pi^{(d-1)/2}}{\Gamma\left(\frac{d-1}2+1\right)}(1-x^2)^{\frac{d-1}2}\mathrm dx
+=\frac{\pi^{(d-1)/2}}{\Gamma\left(\frac{d-1}2+1\right)}\int_{-\pi/2}^{\pi/2}\cos^d\theta\mathrm d\theta
+=\frac{\pi^{d/2}}{\Gamma\left(\frac d2+1\right)}</script><p>而表面积为体积对半径的微商，那就很显然了。</p>
+<h3 id="引理二：Feynman参数积分"><a href="#引理二：Feynman参数积分" class="headerlink" title="引理二：Feynman参数积分"></a>引理二：Feynman参数积分</h3><script type="math/tex; mode=display">\begin{aligned}
+&\frac{1}{(A_1+i\eta_1)\cdots(A_n+i\eta_n)}=\int\mathrm dF_n\left(x_1A_1+\cdots+x_nA_n\right)^{-n}\\
+&\int\mathrm dF_n=(n-1)!\int\mathrm dx_1\cdots\mathrm dx_n\ \delta\left(x_1+\cdots+x_n-1\right)\end{aligned}\tag2</script><p>对于单个而言，我们有</p>
+<script type="math/tex; mode=display">\frac1{A+i\eta}=-i\int_0^\infty\mathrm dt\ e^{(-\eta+iA)t}</script><p>可以看到正数 $\eta_j$ 使积分收敛。所以 $n$ 项积分为</p>
+<script type="math/tex; mode=display">LHS=(-i)^n\int_0^\infty\mathrm dt_1\cdots\mathrm dt_n\ e^{i(A_1t_1+\cdots A_nt_n)-0}</script><p>再引入一个辅助量$\lambda$</p>
+<script type="math/tex; mode=display">\int_0^\infty\frac{\mathrm d\lambda}{\lambda}\delta\left(1-\frac1\lambda\sum_{j=1}^nt_j\right)=\int_0^\infty\frac{\mathrm d\lambda}\lambda\frac{\delta(\lambda-\sum_{j=1}^nt_j)}{1/\lambda}=1</script><p>插入上式，并换元 $x_j=t_j/\lambda$</p>
+<script type="math/tex; mode=display">LHS=(-i)^n\int_0^\infty\mathrm dx_1\cdots\mathrm dx_n\mathrm d\lambda\ \lambda^{n-1}\delta(\lambda-\lambda\sum_{j=1}^nx_j)e^{i\lambda(A_1x_1+\cdots+A_nx_n)-0\lambda}</script><p>对$\lambda$积分是个Gamma函数，因此可以求解，最终得到(2)式</p>
+<h3 id="例子一：六维时空-varphi-3-理论自能项"><a href="#例子一：六维时空-varphi-3-理论自能项" class="headerlink" title="例子一：六维时空$\varphi^3$理论自能项"></a>例子一：六维时空$\varphi^3$理论自能项</h3><h4 id="变换到欧氏空间"><a href="#变换到欧氏空间" class="headerlink" title="变换到欧氏空间"></a>变换到欧氏空间</h4><script type="math/tex; mode=display">\mathcal L=-\frac12\partial_\mu\varphi\partial^\mu\varphi-\frac{m^2}2\varphi^2+\frac g{3!}\varphi^3</script><p>拉氏量和场算符的维数分别是$d,d/2-1$，所以当时空维数$d=6$时$g$无量纲。自能最低阶为</p>
+<script type="math/tex; mode=display">\Pi(k^2)\approx \frac{g^2}{2}\int\frac{-i\mathrm d^dl}{(2\pi)^d}\Delta(l)\Delta(k+l)=\frac{g^2}2\int\frac{-i\mathrm d^dl}{(2\pi)^d}\frac{1}{\left[l^2+m^2-i\epsilon\right]\left[(l+k)^2+m^2-i\epsilon\right]}</script><p>变换到欧氏空间</p>
+<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{1}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]}</script><h4 id="考察发散性质"><a href="#考察发散性质" class="headerlink" title="考察发散性质"></a>考察发散性质</h4><p>对$k_E$求导，符号记为$\partial_k^2=g^{\mu\nu}\frac{\partial}{\partial k^\mu}\frac{\partial}{\partial k^\nu}$</p>
+<script type="math/tex; mode=display">\partial_k^2\Pi(k_E^2)=-\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{8}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]^2}</script><p>仍然发散</p>
+<script type="math/tex; mode=display">\partial_k^2\partial_k^2\Pi(k_E^2)=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{128}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]^3}</script><p>收敛，所以$\Pi(k_E^2)=\Pi^{\text{特解}}(k_E^2)+c_1+c_2k_E^2$</p>
+<h4 id="实际积分"><a href="#实际积分" class="headerlink" title="实际积分"></a>实际积分</h4><p>利用(2)</p>
+<script type="math/tex; mode=display">\begin{aligned}\Pi(k_E^2)&=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\int_0^1\mathrm dx\left\{(1-x)(l_E^2+m^2)+x\left[(l_E+k_E)^2+m^2\right]\right\}^{-2}\\
+&=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\int_0^1\mathrm dx\left\{(l_E+xk_E)^2+(x-x^2)k_E^2+m^2\right\}^{-2}\\
+&=\frac{g^2}2\int_0^1\mathrm dx\int\frac{\mathrm d^dl_E}{(2\pi)^d}\left\{l_E^2+(x-x^2)k_E^2+m^2\right\}^{-2}\\
+\end{aligned}</script><p>最后一步做了个平移，因为是对全空间积分，所以不影响结果。可以看到，当$d\ge3$时积分发散，</p>
+<p>分为在半径为$Q$的球内外两部分积分，球内部分需要用到(1)，球外部分直接写为$f(k_E^2;Q)$。并设$D=(x-x^2)k_E^2+m^2$</p>
 <script type="math/tex; mode=display">\begin{aligned}
-&-\hat H_1\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{-\infty}^0\mathrm dt_2\cdots\mathrm dt_n\ e^{\epsilon(t_2+\cdots+t_n)}\hat T\left[\hat H_1(t_2)\cdots\hat H_1(t_n)\right]|\Phi\rangle\\
-&+\epsilon\sum_{n=1}^\infty\left(\frac{1}{i\hbar}\right)^{n-1}\frac{g^n}{(n-1)!}\int_{-\infty}^0\mathrm dt_1\cdots\mathrm dt_n\ e^{\epsilon(t_1+\cdots+t_n)}\hat T\left[\hat H_1(t_1)\cdots\hat H_1(t_n)\right]|\Phi\rangle
-\end{aligned}</script><p>对于第一项，可以重新编号$2\rightarrow1,3\rightarrow2,\cdots n\rightarrow(n-1)$得到$-g\hat H_1\hat U_\epsilon(0,-\infty;g)|\Phi\rangle$；</p>
-<p>对于第二项，也可通过简单的算符与$\hat U_\epsilon(0,-\infty;g)$联系起来。两者结合得</p>
-<script type="math/tex; mode=display">\left(\hat H_0-E_0\right)|\Psi^g(\epsilon)\rangle=-g\hat H_1|\Psi^g(\epsilon)\rangle+\epsilon i\hbar g\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle</script><p>移项后得到</p>
-<script type="math/tex; mode=display">\left(\hat H_0+g\hat H_1-E_0\right)|\Psi^g(\epsilon)\rangle=\epsilon i\hbar g\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle\tag{3.3}</script><p>但是不能直接取极限$\epsilon\rightarrow 0$得到$|\Psi^g\rangle$是$\hat H=\hat H_0+\hat H_1$的本征态，因为</p>
-<ol>
-<li>我们并不知道$|\Psi^g(\epsilon)\rangle$随$g$的变化关系</li>
-<li>我们并不知道$|\Psi^g(\epsilon\rightarrow0)\rangle$是否就是$|\Psi^g\rangle$</li>
-<li>倘若右边为零，说明相互作用不会改变本征能量，只会改变本征矢，这是荒谬的</li>
-</ol>
-<p>受Gell-Mann&amp;Low定理的条件(2)启发，我们去凑相应的形式，计算</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac{\partial}{\partial g}|\Psi^g(\epsilon)\rangle=\frac{\partial}{\partial g}\left[\langle\Phi|\Psi^g(\epsilon)\rangle\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]\\
-=&\langle\Phi|\Psi^g(\epsilon)\rangle\frac{\partial}{\partial g}\left[\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]+\frac{\partial}{\partial g}\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\\
-\end{aligned}\tag{3.4}</script><p>代入(3.3)得</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\\
-=&i\epsilon\hbar g\frac{\partial}{\partial g}\left[\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}\right]\\
-+&i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\frac{|\Psi^g(\epsilon)\rangle}{\langle\Phi|\Psi^g(\epsilon)\rangle}
-\end{aligned}\tag{3.5}</script><p>利用(2)可知，上式取$\epsilon\rightarrow0$时，第一项的括号内为常数，所以可以使用极限公式$\lim AB=\lim A\times\lim B$得到值$0$。第二项要能取极限是有要求的，即$\lim_{\epsilon\rightarrow0}i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]$极限存在，设为$\Delta E^g$。假设满足要求（具体见补充说明），则上式为</p>
-<script type="math/tex; mode=display">\left(\hat H_0+g\hat H_1-E_0\right)\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}
-=\lim_{\epsilon\rightarrow0}\left\{i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]\right\}\frac{|\Psi^g\rangle}{\langle\Phi|\Psi^g\rangle}
-\tag{3.6}</script><p>因此令$g=1$即得到</p>
-<script type="math/tex; mode=display">\hat H(t=0)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}=(E_0+\Delta E)\frac{|\Psi\rangle}{\langle\Phi|\Psi\rangle}</script><p>即得证。</p>
-<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><p>利用(1.7)式</p>
-<script type="math/tex; mode=display">\hat U(-\infty,0)=\sum_{n=0}^\infty\left(\frac{g}{i\hbar}\right)^n\frac{1}{n!}\int_{-\infty}^0e^{\epsilon t_1}\mathrm dt_1\cdots e^{\epsilon t_n}\mathrm dt_n\ \hat H_1^n\tag{4.1}=\exp\left(\frac{g\hat H_1}{i\hbar\epsilon}\right)</script><p>所以$\langle\Phi|\Psi^g(\epsilon)\rangle=\langle\Phi|\exp(-i\frac g{\hbar\epsilon}\hat H_1)|\Phi\rangle=A^g\exp(i\epsilon^{-1}\alpha^g)$，所以</p>
+\Pi(k_E^2)&=\frac{g^2}2\int_0^1\mathrm dx\left[\int_0^Q\frac{\pi^3r^5\mathrm dr}{2(2\pi)^6}\left\{r^2+D\right\}^{-2}+f(k_E^2;Q)\right]\\
+&=\frac{g^2}2\int_0^1\mathrm dx\left[\frac{1}{64\pi^3}\left(\frac{(2D+Q^2)Q^2}{2(D+Q^2)}+D\ln\frac{D}{D+Q^2}\right)+f(k_E^2;Q)\right]\\
+&=\frac{g^2}2\int_0^1\mathrm dx\left[\frac{1}{64\pi^3}\left(\frac D2+D\ln D+\frac{Q^2}2-2D\ln Q\right)+f(k_E^2;Q)+\mathcal O(Q^{-2})\right]\\
+\end{aligned}</script><p>因为总的积分值与$Q$无关，所以根据之前考察的发散性质可知</p>
+<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{g^2}{128\pi^2}\int_0^1\mathrm dx\left(\frac D2+D\ln D\right)+c_1+c_2k_E^2</script><p>积分的最终结果为（下式中的$c_1,c_2$与上式不同。注意到第一项积分只会出现常数项和二次项，所以可以吸收进待定系数）</p>
 <script type="math/tex; mode=display">
-\lim_{\epsilon\rightarrow0}i\epsilon\hbar g\frac{\partial}{\partial g}\ln\left[\langle\Phi|\Psi^g(\epsilon)\rangle\right]=\hbar g\frac{\partial\alpha^g}{\partial g}</script><p>因此证明中(3.6)式成立</p>
-
+\Pi(k_E^2)=\frac{g^2}{768\pi^2}\left[(k_E^2+4m^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k_E^2}}{2m}}{\sqrt{k_E^2}}
++c_1+c_2k_E^2\right]\tag4</script><p><strong>在on-shell方案下</strong> $\Pi(-m^2)=\Pi’(-m^2)=0$，因此定出$c_1,c_2$</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\sqrt3\pi m^2+c_1-c_2m^2=0\\
+&\sqrt3\pi-3+c_2=0
+\end{aligned}\right.</script><p>所以令$\alpha=g^2/(4\pi)^3$</p>
+<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{\alpha}{12}\left[(k_E^2+4m^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k_E^2}}{2m}}{\sqrt{k_E^2}}
++(3-2\sqrt3\pi)m^2+(3-\sqrt3\pi)k_E^2\right]</script><h4 id="变换回闵氏空间"><a href="#变换回闵氏空间" class="headerlink" title="变换回闵氏空间"></a>变换回闵氏空间</h4><p>根据(4)，$k^2\gg m^2$时</p>
+<script type="math/tex; mode=display">\frac{\Pi(k^2)}{k^2+m^2}\approx\frac\alpha{12}\left[\ln\frac{k^2}{m^2}+c_2\right]</script><p>当$-k^2\gg m^2$时</p>
+<script type="math/tex; mode=display">\frac{\Pi(k^2)}{k^2+m^2}\approx\frac\alpha{12}\left[-i\pi+\ln\frac{|k^2|}{m^2}+c_2\right]</script><p>由Dyson方程可得</p>
+<script type="math/tex; mode=display">\mathbf\Delta(k)=\left[1-\Delta(k)\Pi(k^2)\right]^{-1}\Delta(k)=\frac{1}{\left[1-\frac{\Pi(k^2)}{k^2+m^2}\right]\left(k^2+m^2-i\epsilon\right)}</script><p>因此在$k^2\gg m^2$时</p>
+<script type="math/tex; mode=display">\mathbf\Delta(k)\approx\frac1{k^2+m^2-i\epsilon}\underline{\left(1+\frac\alpha{12}\ln\frac{k^2}{m^2}\right)}\approx\frac{1}{k^2}\underline{\left(\frac{k^2}{m^2}\right)^{\alpha/12}}</script><h3 id="例子二：顶点函数"><a href="#例子二：顶点函数" class="headerlink" title="例子二：顶点函数"></a>例子二：顶点函数</h3>
     </div>
 
     
@@ -400,13 +393,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/13/on-shell%E7%AD%89%E4%BB%B7%E4%B8%8ELSZ%E7%BA%A6%E5%8C%96/" rel="prev" title="on-shell等价与LSZ约化">
-                  <i class="fa fa-chevron-left"></i> on-shell等价与LSZ约化
+                <a href="/2020/11/13/%E9%9B%B6%E6%B8%A9%E5%9C%BA%E8%AE%BA/" rel="prev" title="零温场论">
+                  <i class="fa fa-chevron-left"></i> 零温场论
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/22/KG%E5%9C%BA%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/" rel="next" title="KG场的路径积分">
-                  KG场的路径积分 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/11/23/%E5%8D%95%E5%9C%88%E8%B4%B9%E6%9B%BC%E5%9B%BE/" rel="next" title="单圈费曼图">
+                  单圈费曼图 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
