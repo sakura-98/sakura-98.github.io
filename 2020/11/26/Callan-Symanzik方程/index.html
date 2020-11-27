@@ -24,21 +24,21 @@
     var CONFIG = {"hostname":"github.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="本文可以视为LSZ约化公式的应用。">
+  <meta name="description" content="费曼图的积分中经常会出现发散，重整化的思想为将发散项根据有限个实验数值或理论假设替代为有限。不同的替代方案从物理上来讲应该是等价的。它们之间由Callan-Symanzik方程相连接。 本文仍然以六维时空的$\varphi^3$理论为例。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="散射与衰变">
-<meta property="og:url" content="https://github.com/sakura-98/2020/11/06/%E6%95%A3%E5%B0%84%E4%B8%8E%E8%A1%B0%E5%8F%98/index.html">
+<meta property="og:title" content="Callan-Symanzik方程">
+<meta property="og:url" content="https://github.com/sakura-98/2020/11/26/Callan-Symanzik%E6%96%B9%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="本文可以视为LSZ约化公式的应用。">
+<meta property="og:description" content="费曼图的积分中经常会出现发散，重整化的思想为将发散项根据有限个实验数值或理论假设替代为有限。不同的替代方案从物理上来讲应该是等价的。它们之间由Callan-Symanzik方程相连接。 本文仍然以六维时空的$\varphi^3$理论为例。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-10T15:42:59.968Z">
+<meta property="article:published_time" content="2020-11-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-27T06:18:53.824Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://github.com/sakura-98/2020/11/06/%E6%95%A3%E5%B0%84%E4%B8%8E%E8%A1%B0%E5%8F%98/">
+<link rel="canonical" href="https://github.com/sakura-98/2020/11/26/Callan-Symanzik%E6%96%B9%E7%A8%8B/">
 
 
 <script data-pjax class="page-configurations">
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>散射与衰变 | Sakura's Blog</title>
+  <title>Callan-Symanzik方程 | Sakura's Blog</title>
   
 
 
@@ -202,7 +202,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BELSZ%E5%85%AC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">回顾LSZ公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E5%92%8C%E6%95%A3%E5%B0%84%E6%A6%82%E7%8E%87"><span class="nav-number">2.</span> <span class="nav-text">波函数和散射概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%B0%84%E6%88%AA%E9%9D%A2"><span class="nav-number">3.</span> <span class="nav-text">散射截面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%B0%E5%8F%98%E7%8E%87"><span class="nav-number">4.</span> <span class="nav-text">衰变率</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#on-shell%E6%96%B9%E6%A1%88%E4%B8%8E-mu-%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">on-shell方案与$\mu$-方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E8%B4%A8%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">物理质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">波函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Callan-Symanzik%E6%96%B9%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">Callan-Symanzik方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">参数的计算过程</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -280,7 +280,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/11/06/%E6%95%A3%E5%B0%84%E4%B8%8E%E8%A1%B0%E5%8F%98/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/11/26/Callan-Symanzik%E6%96%B9%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -293,7 +293,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          散射与衰变
+          Callan-Symanzik方程
         </h1>
 
         <div class="post-meta-container">
@@ -304,7 +304,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-11-06 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-06T00:00:00+08:00">2020-11-06</time>
+      <time title="Created: 2020-11-26 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-26T00:00:00+08:00">2020-11-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -326,64 +326,63 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本文可以视为LSZ约化公式的应用。</p>
+        <p>费曼图的积分中经常会出现发散，重整化的思想为将发散项根据有限个实验数值或理论假设替代为有限。不同的替代方案从物理上来讲应该是等价的。它们之间由Callan-Symanzik方程相连接。</p>
+<p>本文仍然以六维时空的$\varphi^3$理论为例。</p>
 <a id="more"></a>
-<h3 id="回顾LSZ公式"><a href="#回顾LSZ公式" class="headerlink" title="回顾LSZ公式"></a>回顾LSZ公式</h3><p>入态由$f_1(\mathbf p),\cdots f_n(\mathbf p)$描述，它们为中心在$\mathbf k_1,\cdots \mathbf k_n$的窄峰；出态由$f_1’(\mathbf p),\cdots f’_{n’}(\mathbf p)$描述，它们为中心在$\mathbf k’_1,\cdots\mathbf k’_{n’}$的窄峰。On-shell方案下</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\langle out|in\rangle=i^{n+n'}\\
-\times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
-\times&\int\tilde{\mathrm dp'_1}f'^*_1(\mathbf p_1')\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*(\mathbf p_{n'}')\\
-\times&\int\mathrm d^4x_1e^{ik_1\cdot x_1}(m^2-\partial^2_1)\cdots\int\mathrm d^4x_ne^{ik_n\cdot x_n}(m^2-\partial^2_n)\\
-\times&\int\mathrm d^4x'_1e^{-ik_1'\cdot x_1'}(m^2-\partial'^2_1)\cdots\int\mathrm d^4x_{n'}'e^{-ik_{n'}'\cdot x_{n'}'}(m^2-\partial'^2_{n'})\\
-\times&\langle0|\hat T[\phi(x_1')\cdots\phi'(x_{n'})]|0\rangle
-\end{aligned}</script><p>根据平移不变性，$k_1+\cdots+k_n=k_1’+\cdots+k_{n’}’$，所以可以写成$\delta$函数的形式</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\langle out|in\rangle=i^{n+n'}\\
-\times&\int\tilde{\mathrm dp_1}f_1(\mathbf p_1)\cdots\int\tilde{\mathrm dp_n}f_n(\mathbf p_n)\\
-\times&\int\tilde{\mathrm dp'_1}f'^*_1(\mathbf p_1')\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*(\mathbf p_{n'}')\\
-\times&\mathcal T_{\mathbf k'\leftarrow\mathbf k}(2\pi)^d\delta^d(k_1+\cdots+k_n-k_1'-\cdots-k_{n'}')
-\end{aligned}</script><p>此外出入态自身内积为</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\langle in|in\rangle=\int\tilde{\mathrm dp_1}|f_1(\mathbf p_1)|^2\cdots\int\tilde{\mathrm dp_n}|f_n(\mathbf p_n)|^2\\
-&\langle out|out\rangle=\int\tilde{\mathrm dp'_1}|f'^*_1(\mathbf p_1')|^2\cdots\int\tilde{\mathrm dp_{n'}'}f_{n'}'^*|(\mathbf p_{n'}')|^2
-\end{aligned}</script><h3 id="波函数和散射概率"><a href="#波函数和散射概率" class="headerlink" title="波函数和散射概率"></a>波函数和散射概率</h3><p>标准（反）对称化波函数的操作为：构造置换P，对所有置换求和。不赘述。结论为</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\langle in|in\rangle=&\frac{1}{n!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n}|\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)|^2\\
-\langle out|out\rangle=&\frac{1}{n'!}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}|\psi_{out}(\mathbf p_1',\cdots\mathbf p_{n'}')|^2\\
-\langle out|in\rangle=&\frac{1}{n!n'!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}\psi_{out}^*(\mathbf p_1',\cdots\mathbf p_{n'}')\\
-\times&i\mathcal T_{\mathbf p'\leftarrow\mathbf p}(2\pi)^d\delta^d(p-p')\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)
-\end{aligned}</script><p>需要注意的是:</p>
-<ol>
-<li>上式中认为所有粒子都是相同的，否则$n!,n’!$应换为每种类型粒子数阶乘的乘积。</li>
-<li>做了近似，不同的$f$无交叠。</li>
-</ol>
-<p>对任意两粒子数相同的出态做内积</p>
-<script type="math/tex; mode=display">\langle out|out'\rangle=\frac{1}{n'!}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}\psi_{out}^*\mathbf p_1',\cdots\mathbf p_{n'}')\psi_{out'}(\mathbf p_1',\cdots\mathbf p_{n'}')</script><p>将入态写为各种粒子数配型的出态之和，则对于固定粒子数的出态</p>
-<script type="math/tex; mode=display">\psi_c(\mathbf p_1',\cdots\mathbf p_{n'}')=\frac{1}{n!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n} i\mathcal T_{\mathbf p'\leftarrow\mathbf p}(2\pi)^d\delta^d(p-p')\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)</script><p>所以概率为</p>
-<script type="math/tex; mode=display">P_n=\frac{\langle out|out\rangle}{\langle in|in\rangle}=\frac{\frac{1}{n'!}\int\tilde{\mathrm dp_1'}\cdots\int\tilde{\mathrm dp_{n'}'}|\psi_c(\mathbf p_1',\cdots\mathbf p_{n'}')|^2}{\frac{1}{n!}\int\tilde{\mathrm dp_1}\cdots\int\tilde{\mathrm dp_n}|\psi_{in}(\mathbf p_1,\cdots\mathbf p_n)|^2}</script><p>方便起见，取$\int|f(\mathbf p)|^2\tilde{\mathrm dp}=1$，则$\langle in|in\rangle=1$，概率简化为</p>
-<script type="math/tex; mode=display">P_n=\frac{1}{n'!n!n!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\pi)^{2d}\delta^d(p-p')\delta^d(q-p')\mathcal T^*_{p'\leftarrow p}\mathcal T_{p'\leftarrow q}\psi_{in}^*(p)\psi_{in}(q)</script><p>为了进一步化简，引入$k_{in}=(p_1,\cdots,p_n)$，假设$\mathcal T$随动量变化缓慢。并把波函数拆开得</p>
-<script type="math/tex; mode=display">\begin{aligned}
-P_n&=\frac{1}{n'!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\pi)^{d}\delta^d(k_{in}-p')(2\pi)^d\delta^d(q-p)\\
-&\times|\mathcal T_{p'\leftarrow p}|^2f^*(\mathbf p_1)f(\mathbf q_1)\cdots f^*(\mathbf p_n)f(\mathbf q_{n'})\\
-&\approx\frac{1}{n'!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\pi)^d\delta^d(k_{in}-p')\int\mathrm d^da e^{i(p-q)\cdot a}\\
-&\times|\mathcal T_{p'\leftarrow k_{in}}|^2f^*(\mathbf p_1)f(\mathbf q_1)\cdots f^*(\mathbf p_n)f(\mathbf q_{n'})\\
-&=\frac{1}{n'!}\int\tilde{\mathrm dp'}\int\mathrm d^da |\mathcal T_{p'\leftarrow k_{in}}|^2(2\pi)^d\delta^d(k_{in}-p')\prod_{j=0}^n\int\tilde{\mathrm dp_j}\tilde{\mathrm dq_j}f^*(\mathbf p_j)f(\mathbf q_j)e^{i(p_j-q_j)\cdot a}
-\end{aligned}</script><p>定义</p>
-<script type="math/tex; mode=display">g_j(a)=\int f_j(\mathbf q)e^{iq\cdot a}\tilde{\mathrm dq}</script><p>则</p>
-<script type="math/tex; mode=display">P_n=\frac{1}{n'!}\int\tilde{\mathrm dp'}|\mathcal T_{p'\leftarrow k_{in}}|^2(2\pi)^d\delta^d(k_{in}-p')\int\mathrm d^da|g_1(a)|^2\cdots|g_n(a)|^2</script><hr>
-<p>对于固定的$a^0$，对剩下$(d-1)$个分量做积分。根据定义</p>
-<script type="math/tex; mode=display">\int\mathrm d^{d-1}\mathbf a|g_j(a)|^2=\int\tilde{\mathrm dp}\frac{\mathrm d^{d-1}\mathbf q}{2\omega_{\mathbf q}}f_j^*(\mathbf p)f_j(\mathbf q)e^{i(\omega_{\mathbf p}-\omega_{\mathbf q})a^0}\delta^{d-1}(\mathbf{p-q})=\int\frac{\tilde{\mathrm dp}}{2\omega_{\mathbf p}}|f_j(\mathbf p)|^2</script><p>由于函数为窄峰，所以近似为</p>
-<script type="math/tex; mode=display">\int\mathrm d^{d-1}\mathbf a|g_j(a)|^2=\frac1{2k_j^0}=\frac{1}{2E_j}\Rightarrow |g_j(x)|^2=\frac{\rho_j(x)}{2E_j}</script><p>在静止系中$E_j\rightarrow M_j,\rho\rightarrow\rho^{(0)}$。利用能量和速度的关系可以直到静止系密度最小。最终概率</p>
-<script type="math/tex; mode=display">P_n=\frac{1}{n'!}\int\tilde{\mathrm dp'}|\mathcal T_{p'\leftarrow k_{in}}|^2(2\pi)^d\delta^d(k_{in}-p')\int\mathrm d^dx\frac{\rho_1^{(0)}(x)\cdots\rho^{(0)}_n(x)}{2M_1\cdots 2M_n}\tag1</script><h3 id="散射截面"><a href="#散射截面" class="headerlink" title="散射截面"></a>散射截面</h3><p>两粒子入射，固定靶系（FT）中，入射流为</p>
-<script type="math/tex; mode=display">j_1=\rho_1(x)v_1=\frac{\rho_1^{(0)}(x)v_1}{\sqrt{1-v_1^2}}</script><p>(1)式中对最后一个积分为</p>
-<script type="math/tex; mode=display">\int\mathrm d^dx\frac{j_1\sqrt{1-v_1^2}/v_1}{4M_1M_2}\rho^{(0)}_2(x)=\frac{j_1}{4|\mathbf k_1|M_2}\int\mathrm d^dx\rho_2^{(0)}(x)</script><p>后面那个积分对空间积分为1，再对时间积分为总时间。所以微分散射截面</p>
-<script type="math/tex; mode=display">\mathrm d\sigma=\frac{\mathrm dP}{j_1T}=\frac{|\mathcal T_{p'\leftarrow k_{in}}|^2}{4|\mathbf k_1|M_2}\tilde{\mathrm dp'}(2\pi)^d\delta^d(k_{in}-p')</script><hr>
-<p>我们想找到$|\mathbf k_1|M_2$对应的Lorentz标量。先给结论</p>
-<script type="math/tex; mode=display">|\mathbf k_1|_{CM}\sqrt s,s=-(k_1+k_2)^2</script><p>显然，因为$s=-(k_1+k_2)^2$是Lorentz矢量的内积，所以是标量，进而整体是洛伦兹标量。</p>
-<p>设CM（零动量系）中$k_2=(k_2^0,k_2^1,0,0),k_1=(k_1^0,-k_2^1,0,0)$。设FT系相对CM速度为$u$。由于固定2号粒子</p>
-<script type="math/tex; mode=display">0=\frac{k_2^1-uk_2^0}{\sqrt{1-u^2}}\Rightarrow u=\frac{k_2^1}{k_2^0}=\frac{k_2^1}{\sqrt{(k_2^1)^2+M_2^2}}</script><p>因此</p>
-<script type="math/tex; mode=display">|\mathbf k_1|M_2=\left|\frac{-k_2^1-uk_1^0}{\sqrt{1-u^2}}\right|M_2=\frac{k_2^1+u\sqrt{(k_2^1)^2+M_1^2}}{\sqrt{1-u^2}}M_2=k_2^1\left(k_2^0+k_1^0\right)</script><p>所以其正好等于$|\mathbf k_1|_{CM}\sqrt s$</p>
-<h3 id="衰变率"><a href="#衰变率" class="headerlink" title="衰变率"></a>衰变率</h3><script type="math/tex; mode=display">P=\frac{\Delta t}{2E_1}\frac1S\int|\mathcal T_{\mathbf p\leftarrow\mathbf k_1}|^2(2\pi)^d\delta^d(p-k_1)\tilde {\mathrm dp}</script>
+<h3 id="on-shell方案与-mu-方案"><a href="#on-shell方案与-mu-方案" class="headerlink" title="on-shell方案与$\mu$-方案"></a>on-shell方案与$\mu$-方案</h3><p>我们在<a href="/2020/11/14/一种正规化方案/">一种正规化方案</a>中计算过自能和三点顶角为</p>
+<script type="math/tex; mode=display">\Pi(k^2)=\frac\alpha2\left[\int_0^1\mathrm dx\ D\ln D+c_1+c_2k^2\right]</script><script type="math/tex; mode=display">V_3(k_1,k_2,k_3)=g\left[1-\frac\alpha2\left(\int\mathrm dF_3\ \ln D_3+c_3\right)\right]</script><p>其中</p>
+<script type="math/tex; mode=display">D=x(1-x)k^2+\omega_0^2,\quad D_3=x_1x_2k_3^2+x_2x_3k_1^2+x_3x_1k_2^2+\omega_0^2</script><p>当时取的是<strong>on-shell方案</strong>，即$\Pi(-\omega_0^2)=\Pi’(-\omega_0^2)=0,V_3(0,0,0)=g$，结果为</p>
+<script type="math/tex; mode=display">\Pi(k^2)=\frac\alpha{12}\left[(k^2+4\omega_0^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k^2}}{2m}}{\sqrt{k^2}}+(3-2\pi\sqrt3)\omega_0^2+(3-\pi\sqrt3)k^2\right]</script><script type="math/tex; mode=display">V_3(k_1,k_2,k_3)=g\left[1-\frac\alpha2\int\mathrm dF_3\ \ln \frac{D_3}{\omega_0^2}\right]</script><p>所谓的 <strong>$\mu$-方案</strong>指的是</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}&\Pi(\mu^2)=\Pi'(\mu^2)=0\\ &V_3(k_1,k_2,k_3)=g,\quad k_1^2=k_2^2=k_3^2=\mu^2\end{aligned}\right.</script><p>解得</p>
+<script type="math/tex; mode=display">\Pi(k^2)=\frac\alpha2\left[-\frac16(k^2-\mu^2)+\int_0^1\mathrm dx\ D\ln \frac D{x(1-x)\mu^2+\omega_0^2}\right]\tag1</script><script type="math/tex; mode=display">V_3(k_1,k_2,k_3)=g\left[1-\frac\alpha2\int\mathrm dF_3\ \ln \frac{D_3}{(x_1x_2+x_2x_3+x_3x_1)\mu^2+\omega_0^2}\right]\tag2</script><p>假设此时的拉氏量为</p>
+<script type="math/tex; mode=display">\mathcal L=-\frac12\partial_\mu\varphi\partial^\mu\varphi-\frac12\omega_0^2\varphi^2+\frac g{3!}\varphi^3\tag3</script><p>其中$\omega_0,g$都是$\mu$的函数，他们的限制为物理质量$m$和。</p>
+<h3 id="物理质量"><a href="#物理质量" class="headerlink" title="物理质量"></a>物理质量</h3><p>物理质量为传播子的极点，而传播子为</p>
+<script type="math/tex; mode=display">\hat{\mathbf\Delta}(k)=\frac1{k^2+\omega_0^2-\Pi(k^2)}</script><p>所以物理质量$m$满足如下方程</p>
+<script type="math/tex; mode=display">-m^2+\omega_0^2-\frac\alpha2\left[\frac16(m^2+\mu^2)+\int_0^1\mathrm dx\ (-{x(1-x)m^2+\omega_0^2})\ln \frac {-x(1-x)m^2+\omega_0^2}{x(1-x)\mu^2+\omega_0^2}\right]=0</script><p>也可理解为关于$\omega_0,\mu$的隐函数。</p>
+<h3 id="波函数"><a href="#波函数" class="headerlink" title="波函数"></a>波函数</h3><p>二阶关联函数为传播子，三阶关联函数除了传播子外还有一个顶点</p>
+<script type="math/tex; mode=display">\langle T\varphi\varphi\rangle=\Delta,\quad\langle T\varphi\varphi\varphi\rangle=\Delta\Delta\Delta V_3</script><p>所以可以得到三阶顶点的量纲，更一般地还能得到高阶顶点的量纲</p>
+<script type="math/tex; mode=display">V_3\propto\varphi^{-3}\rightarrow V_n\propto\varphi^{-n}</script><h3 id="Callan-Symanzik方程"><a href="#Callan-Symanzik方程" class="headerlink" title="Callan-Symanzik方程"></a>Callan-Symanzik方程</h3><p>假设方案$\mu\rightarrow\mu(1+\epsilon)$时波函数也改变了一个小量</p>
+<script type="math/tex; mode=display">\left.\varphi(x)\right|_{\mu(1+\epsilon)}=(1-\gamma_\varphi\epsilon)\left.\varphi(x)\right|_\mu</script><p>根据上一小节，可以得到传播子和顶点的变换关系</p>
+<script type="math/tex; mode=display">\left.\mathbf\Delta(k)^{-1}\right|_{\mu(1+\epsilon)}=(1+2\gamma_\varphi\epsilon)\left.\mathbf\Delta(k)^{-1}\right|_\mu\tag5</script><script type="math/tex; mode=display">\left.V_3\right|_{\mu(1+\epsilon)}=(1+3\gamma_\varphi\epsilon)\left.V_3\right|_\mu\tag6</script><p>(4)可以得到微分方程</p>
+<script type="math/tex; mode=display">\mu\epsilon\frac{\mathrm d}{\mathrm d\mu}\mathbf\Delta(k)^{-1}=2\gamma_\varphi\epsilon\mathbf\Delta(k)^{-1}</script><p>在(3)式的讨论中可知，按链式法则展开</p>
+<script type="math/tex; mode=display">\left(\frac{\partial}{\partial\ln\mu}
++\frac{\mathrm d\alpha}{\mathrm d\ln\mu}\frac{\partial}{\partial\alpha}
++\frac{\mathrm d\omega_0}{\mathrm d\ln\mu}\frac{\partial}{\partial\omega_0}
+-2\gamma_\varphi\right)\mathbf\Delta(k)^{-1}=0\tag7</script><p>同理</p>
+<script type="math/tex; mode=display">\left(\frac{\partial}{\partial\ln\mu}
++\frac{\mathrm d\alpha}{\mathrm d\ln\mu}\frac{\partial}{\partial\alpha}
++\frac{\mathrm d\omega_0}{\mathrm d\ln\mu}\frac{\partial}{\partial\omega_0}
+-3\gamma_\varphi\right)V_3=0\tag8</script><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>先给出结论</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\gamma_\varphi=\frac14f\left(\frac{\omega_0}\mu\right)\alpha+\mathcal O(\alpha^2)\\
+&\gamma_{\omega_0}\equiv\frac{\mathrm d\omega_0}{\mathrm d\ln\mu}=\frac14\left(1+\frac{\mu^2}{\omega_0^2}\right)f\left(\frac{\omega_0}{\mu}\right)\alpha\\
+&\gamma_\alpha\equiv\frac{\mathrm d\alpha}{\mathrm d\ln\mu}=\left(\frac32f\left(\frac{\omega_0}{\mu}\right)-2h\left(\frac{\omega_0}{\mu}\right)\right)\alpha^2+\mathcal O(\alpha^3)
+\end{aligned}\right.</script><p>其中</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+f(\xi)&=\frac13-2\xi^2+\frac{8\xi^4}{\sqrt{1+4\xi^2}}\mathrm{arcsinh}\frac1{2\xi}\\
+h(\xi)&=\int\mathrm dF_3\frac{x_1x_2+x_2x_3+x_3x_1}{x_1x_2+x_2x_3+x_3x_1+\xi^2}
+\end{aligned}\right.</script><p>可以看到，$\mu\gg\omega_0$时</p>
+<script type="math/tex; mode=display">f(\xi)\rightarrow\frac13-2\xi^2,\quad h(\xi)\rightarrow 1-4.68781\xi^2</script><p>所以根据第三条方程，耦合常数$\alpha$可解为</p>
+<script type="math/tex; mode=display">\alpha=\alpha_0\left/\left[1+\frac32\alpha_0\ln\frac\mu{\mu_0}\right]\right.</script><p>当$\mu$趋于无穷时，耦合常数趋于零，即所谓的渐近自由。</p>
+<p>此外，$\gamma_\varphi=\frac1{12}\alpha+\mathcal O(\alpha^2)$</p>
+<h3 id="参数的计算过程"><a href="#参数的计算过程" class="headerlink" title="参数的计算过程"></a>参数的计算过程</h3><p>利用微扰计算，方便起见，记$\xi=\omega_0/\mu$。</p>
+<p>利用(1)取$k^2=\mu^2$得,</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\frac{\partial}{\partial\mu}\left.\Pi(k^2)\right|_{k^2=\mu^2}=\frac\alpha2\left[\frac\mu3-\int_0^1\ 2x(1-x)\mu\right]=0\\
+&\frac{\partial}{\partial\alpha}\left.\Pi(k^2)\right|_{k^2=\mu^2}=\frac{\partial}{\partial\omega_0}\left.\Pi(k^2)\right|_{k^2=\mu^2}=0\\
+\end{aligned}\right.</script><p>代入(7)得到</p>
+<script type="math/tex; mode=display">2\omega_0\gamma_{\omega_0}-2\gamma_\varphi(\mu^2+\omega_0^2)=0\tag{*.1}</script><p>同理利用(2)取$k_1^2=k_2^2=k_3^2=\mu^2$得</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\frac{\partial}{\partial\mu}\left. V_3(k_j^2)\right|_{k_j^2=\mu^2}=g\alpha\int\mathrm dF_3\ \frac{(x_1x_2+x_2x_3+x_3x_2)\mu}{(x_1x_2+x_2x_3+x_3x_2)\mu^2+\omega_0^2}=g\alpha h(\xi)/\mu\\
+&\frac{\partial}{\partial\alpha}\left. V_3(k_j^2)\right|_{k^2_j=\mu^2}=\frac{\partial}{\partial\omega_0}\left. V_3(k_j^2)\right|_{k_j^2=\mu^2}=0\\
+\end{aligned}\right.</script><p>代入(8)得到</p>
+<script type="math/tex; mode=display">\alpha h(\xi)-3\gamma_\varphi=0\tag{*.2}</script><p>最后(1)取$k^2=0$</p>
+<script type="math/tex; mode=display">\Pi(0)=\frac\alpha2\left[\frac16\mu^2+\omega_0^2\int_0^1\mathrm dx\ \ln\frac{\omega_0^2}{x(1-x)\mu^2+\omega_0^2}\right]</script><script type="math/tex; mode=display">\left\{\begin{aligned}
+\frac{\partial}{\partial\mu}\left.\Pi(k^2)\right|_{k^2=0}&=\frac\alpha2\left[\frac\mu3-\omega_0^2\int_0^1\mathrm dx\ \frac{2x(1-x)\mu}{x(1-x)\mu^2+\omega_0^2}\right]=\frac\alpha2\mu f(\xi)\\
+\frac{\partial}{\partial\alpha}\left.\Pi(k^2)\right|_{k^2=0}&=\frac12\left[\frac16\mu^2+\omega_0^2\int_0^1\mathrm dx\ \ln\frac{\omega_0^2}{x(1-x)\mu^2+\omega_0^2}\right]\\
+&=\\
+\frac{\partial}{\partial\omega_0}\left.\Pi(k^2)\right|_{k^2=0}&=\alpha\omega_0\int_0^1\mathrm dx\left[\ln\frac{\omega_0^2}{x(1-x)\mu^2+\omega_0^2}+\frac{x(1-x)\mu^2}{x(1-x)\mu^2+\omega_0^2}\right]\\
+\end{aligned}\right.</script>
     </div>
 
     
@@ -399,14 +398,11 @@ P_n&=\frac{1}{n'!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/24/flutter%E5%8F%91%E5%B8%83/" rel="prev" title="flutter发布">
-                  <i class="fa fa-chevron-left"></i> flutter发布
+                <a href="/2020/11/24/%E5%8D%95%E5%9C%88%E4%BF%AE%E6%AD%A3/" rel="prev" title="单圈修正">
+                  <i class="fa fa-chevron-left"></i> 单圈修正
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/11/07/CG%E7%B3%BB%E6%95%B0/" rel="next" title="CG系数">
-                  CG系数 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
