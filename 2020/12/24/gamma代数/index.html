@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="（一维）相干态$|z\rangle$有两个重要特性：  满足最小不确定性$\Delta x\Delta p&#x3D;\hbar&#x2F;2$ 是湮灭算符的本征值  本文从特性1.出发“猜测”相干态的形式，再证明特性2.以及其他性质。  [ ] 检验是否还有其它态满足最小不确定性">
+  <meta name="description" content="在Dirac场中，$\gamma$矩阵起到很重要的作用，因此有必要考察它们的性质。 通常，选用以下16个矩阵为基 1,\gamma^\mu,\gamma_5\equiv i\gamma^0\gamma^1\gamma^2\gamma^3,i\gamma^5\gamma^\mu,\sigma^{\mu\nu}\equiv\frac i2\left[\gamma^\mu,\gamma^\nu\righ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="相干态">
-<meta property="og:url" content="https://github.com/sakura-98/2020/10/23/%E7%9B%B8%E5%B9%B2%E6%80%81/index.html">
+<meta property="og:title" content="$\gamma$代数">
+<meta property="og:url" content="https://github.com/sakura-98/2020/12/24/gamma%E4%BB%A3%E6%95%B0/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="（一维）相干态$|z\rangle$有两个重要特性：  满足最小不确定性$\Delta x\Delta p&#x3D;\hbar&#x2F;2$ 是湮灭算符的本征值  本文从特性1.出发“猜测”相干态的形式，再证明特性2.以及其他性质。  [ ] 检验是否还有其它态满足最小不确定性">
+<meta property="og:description" content="在Dirac场中，$\gamma$矩阵起到很重要的作用，因此有必要考察它们的性质。 通常，选用以下16个矩阵为基 1,\gamma^\mu,\gamma_5\equiv i\gamma^0\gamma^1\gamma^2\gamma^3,i\gamma^5\gamma^\mu,\sigma^{\mu\nu}\equiv\frac i2\left[\gamma^\mu,\gamma^\nu\righ">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-23T11:22:24.865Z">
+<meta property="article:published_time" content="2020-12-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-24T12:09:15.884Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/sakura-98/2020/10/23/%E7%9B%B8%E5%B9%B2%E6%80%81/">
+<link rel="canonical" href="https://github.com/sakura-98/2020/12/24/gamma%E4%BB%A3%E6%95%B0/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>相干态 | Sakura's Blog</title>
+  <title>$\gamma$代数 | Sakura's Blog</title>
   
 
 
@@ -187,7 +187,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/10/23/%E7%9B%B8%E5%B9%B2%E6%80%81/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/12/24/gamma%E4%BB%A3%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -200,7 +200,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          相干态
+          $\gamma$代数
         </h1>
 
         <div class="post-meta">
@@ -211,7 +211,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-10-23 00:00:00 / Modified: 19:22:24" itemprop="dateCreated datePublished" datetime="2020-10-23T00:00:00+08:00">2020-10-23</time>
+              <time title="Created: 2020-12-24 00:00:00 / Modified: 20:09:15" itemprop="dateCreated datePublished" datetime="2020-12-24T00:00:00+08:00">2020-12-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -219,7 +219,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AQM/" itemprop="url" rel="index"><span itemprop="name">AQM</span></a>
+                  <a href="/categories/QFT/" itemprop="url" rel="index"><span itemprop="name">QFT</span></a>
                 </span>
             </span>
 
@@ -234,51 +234,175 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>（一维）相干态$|z\rangle$有两个重要特性：</p>
-<ol>
-<li>满足最小不确定性$\Delta x\Delta p=\hbar/2$</li>
-<li>是湮灭算符的本征值</li>
-</ol>
-<p>本文从特性1.出发“猜测”相干态的形式，再证明特性2.以及其他性质。</p>
-<ul>
-<li>[ ] 检验是否还有其它态满足最小不确定性</li>
-</ul>
+        <p>在Dirac场中，$\gamma$矩阵起到很重要的作用，因此有必要考察它们的性质。</p>
+<p>通常，选用以下16个矩阵为基</p>
+<script type="math/tex; mode=display">1,\gamma^\mu,\gamma_5\equiv i\gamma^0\gamma^1\gamma^2\gamma^3,i\gamma^5\gamma^\mu,\sigma^{\mu\nu}\equiv\frac i2\left[\gamma^\mu,\gamma^\nu\right]</script><p>本文先采用另一套记号计算，然后给出两套记号的关系，最后写出$\gamma$矩阵之间的关系。</p>
 <a id="more"></a>
-<h3 id="简化的符号约定"><a href="#简化的符号约定" class="headerlink" title="简化的符号约定"></a>简化的符号约定</h3><p>Hamiltonian为</p>
-<script type="math/tex; mode=display">\hat H=\frac{\hat p^2}2+\frac{\hat x^2}2=\hat a^\dagger\hat a+\frac12\tag1</script><p>对易关系为</p>
-<script type="math/tex; mode=display">[\hat a,\hat a^\dagger]=1,[\hat x,\hat p]=i\tag2</script><p>容易检验，下式能够满足(1)(2)</p>
-<script type="math/tex; mode=display">\hat x=\frac{\hat a+\hat a^\dagger}{\sqrt2},\hat p=\frac{\hat a-\hat a^\dagger}{i\sqrt2}</script><p>定义辅助量复数$z$</p>
-<script type="math/tex; mode=display">z=\frac{x+ip}{\sqrt2}\Rightarrow \bar z=\frac{x-ip}{\sqrt2}</script><p>简单起见，记为</p>
+<h3 id="C矩阵"><a href="#C矩阵" class="headerlink" title="C矩阵"></a>C矩阵</h3><h4 id="矩阵形式"><a href="#矩阵形式" class="headerlink" title="矩阵形式"></a>矩阵形式</h4><script type="math/tex; mode=display">
+1=\left[\begin{array}{cccc}
++1 & 0 & 0 & 0 \\
+0 & +1 & 0 & 0 \\
+0 & 0 & +1 & 0 \\
+0 & 0 & 0 & +1
+\end{array}\right]</script><p>$C^\mu$:</p>
 <script type="math/tex; mode=display">
-\left[\begin{array}{c}\hat x\\i\hat p\end{array}\right]=O\left[\begin{array}{c}\hat a\\\hat a^\dagger\end{array}\right],\quad
-\left[\begin{array}{c}z\\\bar z\end{array}\right]=O\left[\begin{array}{c}x\\ip\end{array}\right],\quad
-O=\frac1{\sqrt2}\left[\begin{array}{cc}1&1\\1&-1\end{array}\right]
-\tag3</script><h3 id="粒子数本征态的不确定性关系"><a href="#粒子数本征态的不确定性关系" class="headerlink" title="粒子数本征态的不确定性关系"></a>粒子数本征态的不确定性关系</h3><p>利用(3)可计算</p>
-<script type="math/tex; mode=display">\langle n|\hat x|n\rangle=0,\langle n|\hat x^2|n\rangle=\frac12+n\Rightarrow\Delta x=\sqrt{n+\frac12}</script><p>同理$\Delta p=\sqrt{n+\frac12}$，因此</p>
-<script type="math/tex; mode=display">\Delta x\Delta p=n+\frac12\ge|[\hat x,\hat p]|/2</script><p>当且仅当基态时不确定性最小。我们想要找到其他不确定性最小的态，一个充分条件是$|0\rangle$将坐标和动量中心平移至$(x_0,p_0)$；利用(3)也可等价地说移动$z_0$</p>
-<h3 id="平移算符"><a href="#平移算符" class="headerlink" title="平移算符"></a>平移算符</h3><p>平移算符的形式我们都很熟悉</p>
-<script type="math/tex; mode=display">W(a,b)=e^{i(b\hat x-a\hat p)}</script><p>利用Baker-Hausdorff恒等式（证明方法为$\hat A\rightarrow s\hat A$，在$s=0$处做Taylor展开）</p>
-<script type="math/tex; mode=display">e^{\hat A}\hat Be^{-\hat A}=\hat B+[\hat A,\hat B]+\frac1{2!}[\hat A,[\hat A,\hat B]]+\cdots\tag4</script><p>可以计算坐标平均值</p>
-<script type="math/tex; mode=display">\langle\hat x\rangle=\langle0|e^{-i(b\hat x-a\hat p)}\hat xe^{i(b\hat x-a\hat p)}|0\rangle=\langle0|\hat x+ai[\hat p,\hat x]|0\rangle=x+a</script><p>同理可得动量平均值$\langle\hat p\rangle=p+b$，所以</p>
-<script type="math/tex; mode=display">W(x_0,p_0)=\exp\left[i(p_0\hat x-x_0\hat p)\right]=\exp\left[z\hat a^\dagger-\bar z\hat a\right]</script><p>再利用(4)，在$[\hat A,\hat B]$为常数时（事实上只要和$\hat A,\hat B$均对易即可）有Glauber定理</p>
-<script type="math/tex; mode=display">e^{\hat A}e^{\hat B}=e^{\hat A+\hat B}e^{[\hat A,\hat B]/2}\tag5</script><blockquote>
-<p>具体证明为：先定义$f(s)=e^{s\hat A}e^{s\hat B}$</p>
-<script type="math/tex; mode=display">\begin{aligned}&e^{\hat A}\hat Be^{-\hat A}=\hat B+[\hat A,\hat B]+0\\
-f'(s)&=\hat Ae^{s\hat A}e^{s\hat B}+e^{s\hat A}\hat Be^{-s\hat A}e^{s\hat A}e^{s\hat B}\\
-&=(\hat A+\hat B+[\hat A,\hat B]s)f(s)
-\end{aligned}</script><p>所以 $f(s)=e^{(\hat A+\hat B+[\hat A,\hat B])s^2/2}$</p>
-</blockquote>
-<p>所以平移算符为</p>
-<script type="math/tex; mode=display">W(x_0,p_0)=e^{-|z_0|^2/2}e^{z_0\hat a^\dagger}e^{-\bar z_0\hat a}\tag6</script><p>因为湮灭算符作用在基态上给出零结果，所以相干态为</p>
-<script type="math/tex; mode=display">|z\rangle=W(x,p)|0\rangle=e^{-|z|^2/2}e^{z\hat a^\dagger}|0\rangle=e^{-|z|^2/2}\sum_{n=0}^\infty\frac{z^n}{\sqrt{n!}}|n\rangle\tag7</script><p>既然有了表达式，那很容易证明$\hat a|z_0\rangle=|z_0\rangle$</p>
-<h3 id="相干态的其他性质"><a href="#相干态的其他性质" class="headerlink" title="相干态的其他性质"></a>相干态的其他性质</h3><ol>
-<li>内积（不正交）<script type="math/tex; mode=display">\langle z|z'\rangle=e^{-(|z|^2+|z^*|^2)/2}\sum_{n=0}^\infty\frac{(z^*z')^n}{n!}=e^{-(|z|^2+|z^*|^2)/2}e^{z^*z'}</script>虽然不同相干态不正交，但是从平移算符得到的相干态是归一的。</li>
-<li>超完备性<script type="math/tex; mode=display">|z\rangle\langle z|=e^{-|z|^2}\sum_{m=0}^\infty\sum_{n=0}^\infty \frac{z^m(z^*)^n}{\sqrt{m!n!}}|m\rangle\langle n|</script>根据(3)$|z|^2=(x^2+p^2)/2$可得启发换元$re^{i\theta}$<script type="math/tex; mode=display">\int\mathrm dx\mathrm dp\ e^{-|z|^2}z^m(z^*)^n=\int_0^\infty 2r\mathrm dr\int_0^{2\pi}\mathrm d\theta\ e^{-r^2}r^{m+n}e^{i(m-n)\theta}=2\pi m!\delta_{m,n}</script>所以有<script type="math/tex; mode=display">\int\frac{\mathrm dx\mathrm dp}{2\pi}|z\rangle\langle z|=\hat 1</script></li>
-<li>概率分布为Possion分布$P_n\propto \frac{|z|^{2n}}{n!}\propto\frac{(p^2+x^2)^n}{2^nn!}$</li>
-<li>时间演化<script type="math/tex; mode=display">U(t,0)|z\rangle=e^{-iHt}|z\rangle=\sum_{n=0}^\infty\frac{z^n}{\sqrt{n!}}e^{-i(n+1/2)t}|n\rangle=e^{-it/2}\sum_{n=0}^\infty\frac{(ze^{-it})^n}{\sqrt{n!}}|n\rangle</script>所以随时间演化它仍然是相干态，只不过$z(t)=z(0)e^{-it}$。从(3)可以知道这意味着<script type="math/tex; mode=display">\begin{aligned}x(t)&=x(0)\cos t+p(0)\sin t\\
-p(t)&=-x(0)\sin t+p(0)\cos t\end{aligned}</script>这说明参数按照经典运动方程演化</li>
-</ol>
-
+\left[\begin{array}{cccc}
+0 & 0 & 0 & -1 \\
+0 & 0 & -1 & 0 \\
+0 & +1 & 0 & 0 \\
++1 & 0 & 0 & 0
+\end{array}\right],
+\left[\begin{array}{cccc}
+0 & +1 & 0 & 0 \\
++1 & 0 & 0 & 0 \\
+0 & 0 & 0 & -1 \\
+0 & 0 & -1 & 0
+\end{array}\right],
+\left[\begin{array}{cccc}
++1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & +1 & 0 \\
+0 & 0 & 0 & -1
+\end{array}\right],
+\left[\begin{array}{cccc}
+0 & 0 & 0 & -1 \\
+0 & 0 & -1 & 0 \\
+0 & -1 & 0 & 0 \\
+-1 & 0 & 0 & 0
+\end{array}\right]</script><script type="math/tex; mode=display">C^5\equiv C^0C^1C^2C^3=\left[\begin{array}{cccc}
+0 & -1 & 0 & 0 \\
++1 & 0 & 0 & 0 \\
+0 & 0 & 0 & -1 \\
+0 & 0 & +1 & 0
+\end{array}\right]</script><p>$C^5C^\mu$:</p>
+<script type="math/tex; mode=display">
+\left[\begin{array}{cccc}
+0 & 0 & +1 & 0 \\
+0 & 0 & 0 & -1 \\
+-1 & 0 & 0 & 0 \\
+0 & +1 & 0 & 0
+\end{array}\right],
+\left[\begin{array}{cccc}
+-1 & 0 & 0 & 0 \\
+0 & +1 & 0 & 0 \\
+0 & 0 & +1 & 0 \\
+0 & 0 & 0 & -1
+\end{array}\right],
+\left[\begin{array}{cccc}
+0 & +1 & 0 & 0 \\
++1 & 0 & 0 & 0 \\
+0 & 0 & 0 & +1 \\
+0 & 0 & +1 & 0
+\end{array}\right],
+\left[\begin{array}{cccc}
+0 & 0 & +1 & 0 \\
+0 & 0 & 0 & -1 \\
++1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0
+\end{array}\right]</script><p>$\sigma^{\mu\nu}=\frac12\left[C^\mu,C^\nu\right]:$</p>
+<script type="math/tex; mode=display">
+\mu=0:\left[\begin{array}{cccc}
+0 & 0 & +1 & 0 \\
+0 & 0 & 0 & +1 \\
++1 & 0 & 0 & 0 \\
+0 & +1 & 0 & 0
+\end{array}\right],
+\left[\begin{array}{cccc}
+0 & 0 & 0 & +1 \\
+0 & 0 & -1 & 0 \\
+0 & -1 & 0 & 0 \\
++1 & 0 & 0 & 0
+\end{array}\right],
+\left[\begin{array}{cccc}
++1 & 0 & 0 & 0 \\
+0 & +1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{array}\right]</script><script type="math/tex; mode=display">
+\mu=1:\left[\begin{array}{cccc}
+0 & -1 & 0 & 0 \\
++1 & 0 & 0 & 0 \\
+0 & 0 & 0 & +1 \\
+0 & 0 & -1 & 0
+\end{array}\right],
+\left[\begin{array}{cccc}
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1 \\
++1 & 0 & 0 & 0 \\
+0 & +1 & 0 & 0
+\end{array}\right]</script><script type="math/tex; mode=display">
+\mu=2:\left[\begin{array}{cccc}
+0 & 0 & 0 & -1 \\
+0 & 0 & +1 & 0 \\
+0 & -1 & 0 & 0 \\
++1 & 0 & 0 & 0
+\end{array}\right]</script><h4 id="线性无关性、完备性"><a href="#线性无关性、完备性" class="headerlink" title="线性无关性、完备性"></a>线性无关性、完备性</h4><p>根据第一个非零元素的列坐标和对称性分为八类</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">列坐标</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">对称</td>
+<td style="text-align:center">$1,C^2,C^5C^1,\sigma^{03}$</td>
+<td style="text-align:center">$C^1,C^5C^2$</td>
+<td style="text-align:center">$C^5C^3,\sigma^{01}$</td>
+<td style="text-align:center">$C^3,\sigma^{02}$</td>
+</tr>
+<tr>
+<td style="text-align:center">反称</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$C^5,\sigma^{12}$</td>
+<td style="text-align:center">$C^5C^0,\sigma^{13}$</td>
+<td style="text-align:center">$C^0,\sigma^{23}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>因此很容易看出这16个矩阵构成一组线性无关的完备基。</p>
+<h4 id="反对易关系"><a href="#反对易关系" class="headerlink" title="反对易关系"></a>反对易关系</h4><p>排列顺序$1,C^5,C^\mu,C^5C^\mu,\sigma^{\mu\nu}$，逐个计算。有下划线的为直接代入矩阵形式，否则可以根据已有信息计算出来</p>
+<p>单位矩阵和任意矩阵的反对易关系是平凡的</p>
+<script type="math/tex; mode=display">\{1,1\}=2,\{1,C^5\}=2C^5,\{1,C^\mu\}=2C^\mu,\{1,C^5C^\mu\}=2C^6C^\mu,\{1,\sigma^{\mu\nu}\}=2\sigma^{\mu\nu}</script><p>一个个计算过来可得，$C^5$和其他矩阵的反对易关系为</p>
+<script type="math/tex; mode=display">\underline{\{C^5,C^5\}=-2},\underline{\{C^5,C^\mu\}=0},\{C^5,C^5C^\mu\}=0,
+\underline{\{C^5,\sigma^{\mu\nu}\}=2\epsilon_{\mu\nu\rho\sigma}\sigma^{\rho\sigma}}</script><p>$C^\mu$之间的反对易关系是简单的，或者说，正是取合适的基使得满足如下简单的关系</p>
+<script type="math/tex; mode=display">\underline{\{C^\mu,C^\nu\}=2g^{\mu\nu}=\mathrm{diag}\{-1,1,1,1\}}</script><p>此外还有</p>
+<script type="math/tex; mode=display">\{C^\mu,C^5C^\nu\}=-2\epsilon_{\mu\nu\rho\sigma}\sigma^{\rho\sigma},
+\{C^\mu,\sigma^{\nu\rho}\}=2\epsilon_{\mu\nu\rho\sigma}C^5C^\sigma</script><p>最后一式为将$C_5^{-1}=-C^5$左乘之，再利用$\{C^5,\sigma^{\mu\nu}\}=2\epsilon_{\mu\nu\rho\sigma}\sigma^{\rho\sigma}$即可</p>
+<p>最后还有三类反对易关系</p>
+<script type="math/tex; mode=display">\{C^5C^\mu,C^5C^\nu\}=2g^{\mu\nu},\{C^5C^\mu,\sigma^{\nu\rho}\}=0,\{\sigma^{\mu\nu},\sigma^{\rho\sigma}\}=-2\epsilon_{\mu\nu\rho\sigma}C^5</script><h4 id="对易关系"><a href="#对易关系" class="headerlink" title="对易关系"></a>对易关系</h4><p>单位矩阵和任意矩阵对易，即</p>
+<script type="math/tex; mode=display">\left[1,C^\mu\right]=\left[1,C^5\right]=\left[1,C^5C^\mu\right]=\left[1,\sigma^{\mu\nu}\right]=0</script><p>$C^\mu$之间对易关系根据定义即可得到（假设前者指标小于后者：若相等，则显然为0；若大于，则仅差一个负号）</p>
+<script type="math/tex; mode=display">\left[C^\mu,C^\nu\right]=2\sigma^{\mu\nu}</script><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>比较常用的为</p>
+<script type="math/tex; mode=display">\{C^\mu,C^\nu\}=2g^{\mu\nu},\{C^5,C^\mu\}=0,\{C^5,C^5\}=-2</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">$C^0$</th>
+<th style="text-align:center">$C^i$</th>
+<th style="text-align:center">$C^5$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">对易</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">反对易</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="两套记号"><a href="#两套记号" class="headerlink" title="两套记号"></a>两套记号</h3><h3 id="gamma-矩阵"><a href="#gamma-矩阵" class="headerlink" title="$\gamma$矩阵"></a>$\gamma$矩阵</h3>
     </div>
 
     
@@ -296,13 +420,10 @@ p(t)&=-x(0)\sin t+p(0)\cos t\end{aligned}</script>这说明参数按照经典运
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/22/KG%E5%9C%BA%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/" rel="prev" title="KG场的路径积分">
-      <i class="fa fa-chevron-left"></i> KG场的路径积分
+    <a href="/2020/12/17/%E6%9C%89%E9%99%90%E6%B8%A9%E5%9C%BA%E8%AE%BA/" rel="prev" title="有限温场论">
+      <i class="fa fa-chevron-left"></i> 有限温场论
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/10/24/flutter%E5%8F%91%E5%B8%83/" rel="next" title="flutter发布">
-      flutter发布 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -361,7 +482,7 @@ p(t)&=-x(0)\sin t+p(0)\cos t\end{aligned}</script>这说明参数按照经典运
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8C%96%E7%9A%84%E7%AC%A6%E5%8F%B7%E7%BA%A6%E5%AE%9A"><span class="nav-number">1.</span> <span class="nav-text">简化的符号约定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%92%E5%AD%90%E6%95%B0%E6%9C%AC%E5%BE%81%E6%80%81%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E5%85%B3%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">粒子数本征态的不确定性关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E7%A7%BB%E7%AE%97%E7%AC%A6"><span class="nav-number">3.</span> <span class="nav-text">平移算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%B9%B2%E6%80%81%E7%9A%84%E5%85%B6%E4%BB%96%E6%80%A7%E8%B4%A8"><span class="nav-number">4.</span> <span class="nav-text">相干态的其他性质</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E7%9F%A9%E9%98%B5"><span class="nav-number">1.</span> <span class="nav-text">C矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">矩阵形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3%E6%80%A7%E3%80%81%E5%AE%8C%E5%A4%87%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">线性无关性、完备性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E5%AF%B9%E6%98%93%E5%85%B3%E7%B3%BB"><span class="nav-number">1.3.</span> <span class="nav-text">反对易关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E6%98%93%E5%85%B3%E7%B3%BB"><span class="nav-number">1.4.</span> <span class="nav-text">对易关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.5.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E5%A5%97%E8%AE%B0%E5%8F%B7"><span class="nav-number">2.</span> <span class="nav-text">两套记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gamma-%E7%9F%A9%E9%98%B5"><span class="nav-number">3.</span> <span class="nav-text">$\gamma$矩阵</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
