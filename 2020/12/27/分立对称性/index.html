@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="分立对称性通常指的是空间反演、时间反演和电荷共轭，即$\mathcal{P,T,C}$。对于具体的拉氏量可能会有其他对称性。 此外有个重要定理CPT定理，主旨是作用量在三者的联合作用下不变。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分立对称性">
+<meta property="og:url" content="https://github.com/sakura-98/2020/12/27/%E5%88%86%E7%AB%8B%E5%AF%B9%E7%A7%B0%E6%80%A7/index.html">
+<meta property="og:site_name" content="Sakura&#39;s Blog">
+<meta property="og:description" content="分立对称性通常指的是空间反演、时间反演和电荷共轭，即$\mathcal{P,T,C}$。对于具体的拉氏量可能会有其他对称性。 此外有个重要定理CPT定理，主旨是作用量在三者的联合作用下不变。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-28T10:35:47.590Z">
+<meta property="article:author" content="Sakura">
+<meta property="article:tag" content="physics">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/sakura-98/2020/12/27/%E5%88%86%E7%AB%8B%E5%AF%B9%E7%A7%B0%E6%80%A7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>分立对称性 | Sakura's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Sakura's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/sakura-98" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/12/27/%E5%88%86%E7%AB%8B%E5%AF%B9%E7%A7%B0%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sakura">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sakura's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          分立对称性
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-27 00:00:00" itemprop="dateCreated datePublished" datetime="2020-12-27T00:00:00+08:00">2020-12-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-28 18:35:47" itemprop="dateModified" datetime="2020-12-28T18:35:47+08:00">2020-12-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/QFT/" itemprop="url" rel="index"><span itemprop="name">QFT</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>分立对称性通常指的是空间反演、时间反演和电荷共轭，即$\mathcal{P,T,C}$。对于具体的拉氏量可能会有其他对称性。</p>
+<p>此外有个重要定理CPT定理，主旨是作用量在三者的联合作用下不变。</p>
+<a id="more"></a>
+<h3 id="空间反演"><a href="#空间反演" class="headerlink" title="空间反演"></a>空间反演</h3><h4 id="标量场"><a href="#标量场" class="headerlink" title="标量场"></a>标量场</h4><script type="math/tex; mode=display">
+U(\mathcal P)^{-1}\varphi(x)U(\mathcal P)=L(\mathcal P)\varphi(\mathcal P^{-1}x)</script><p>一维的线性变换只能是常数，又根据两次变换回到自身的性质可知$L(\mathcal P)^2=1\Rightarrow L(\mathcal P)=\pm1$。所以</p>
+<script type="math/tex; mode=display">
+U(\mathcal P)^{-1}\varphi(x)U(\mathcal P)=\pm\varphi(\mathcal Px)</script><p>其中正号为普通标量场，负号为赝(pseudo)标量场</p>
+<h4 id="旋量场"><a href="#旋量场" class="headerlink" title="旋量场"></a>旋量场</h4><p>旋量场的运动方程为</p>
+<script type="math/tex; mode=display">
+(C^\mu\partial_\mu+m)\varphi(x)=0</script><p>做空间反演变换$x\rightarrow y=\mathcal Px,\varphi(x)\rightarrow L(\mathcal P)\varphi(y)$，则</p>
+<script type="math/tex; mode=display">
+0=\left(C^\mu\frac{\partial}{\partial \mathcal P^\mu_\nu y^\nu}+m\right)L(\mathcal P)\varphi(y)=L(\mathcal P)\left(L(\mathcal P)^{-1}C^\mu (P^{-1})^\nu_\mu L(\mathcal P)\frac{\partial}{\partial y^\nu}+m\right)\varphi(y)</script><p>这说明</p>
+<script type="math/tex; mode=display">
+L(\mathcal P)^{-1}C^0L(\mathcal P)=C^0,L(\mathcal P)^{-1}C^iL(\mathcal P)=-C^i</script><p>解得$L(\mathcal P)=\sigma_PC^0$. 作用量为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+S=&-\frac i2\int\mathrm d^4x\ \varphi^T(x)C^0|(C^\mu\partial_\mu+m)\varphi(x)\\
+=&-\frac i2\int\mathrm d^4y|\det(\mathcal P)|\ \varphi^T(y)L(\mathcal P)^TC^0 |L(\mathcal P)(C^\mu\partial_\mu+m)\varphi(y)\\
+=&-\frac i2\int\mathrm d^4y\ \varphi^T(y)\sigma^2_P(C^0)^TC^0C^0(C^\mu\partial_\mu+m)\varphi(y)\\
+=&-\frac i2\sigma_P^2\int\mathrm d^4y\ \varphi^T(y)C^0(C^\mu\partial_\mu+m)\varphi(y)
+=\sigma_P^2 S
+\end{aligned}\Rightarrow\sigma_P^2=1</script><p>注意一个有趣的事，两次变换后$\varphi(x)\rightarrow\sigma_PC^0\varphi(y)\rightarrow\sigma_P^2(C^0)^2\varphi(x)=-\varphi(x)$并不回到自身</p>
+<p>旋量场的算符都是双线性的，即$\bar\varphi X\varphi,X=1,C^\mu,\cdots$ 形式，计算第一个的变换关系</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+U(\mathcal P)^{-1}\bar\varphi(x)\varphi(x)U(\mathcal P)
+=&U(\mathcal P)^{-1}\varphi^\dagger(x)U(\mathcal P)iC^0U(\mathcal P)^{-1}\varphi(x)U(\mathcal P)\\
+=&[\varphi^\dagger(\mathcal Px)\sigma_P(C^0)^T]iC^0[\sigma_PC^0\varphi(\mathcal Px)]\\
+=&\varphi^\dagger(\mathcal Px)iC^0\varphi(\mathcal Px)=\bar\varphi(y)\varphi(y)
+\end{aligned}</script><p>同样我们可以得到$X\rightarrow(iC^0)^{-1}(C^0)^TiC^0XC^0=-C^0XC^0$，即</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\bar\varphi(x)X\varphi(x)$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$C_5=C^0C^1C^2C^3$</th>
+<th style="text-align:center">$iC^\mu$</th>
+<th style="text-align:center">$C^\mu C^5$</th>
+<th style="text-align:center">$S^{\mu\nu}=-\frac i4\left[C^\mu,C^\nu\right]$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\bar\varphi(y)Y\varphi(y)$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$-C^5$</td>
+<td style="text-align:center">$\mathcal P^\mu_\nu iC^\nu$</td>
+<td style="text-align:center">$-\mathcal P^\mu_\nu C^\nu C^5$</td>
+<td style="text-align:center">$\mathcal P^\mu_\rho\mathcal P^\nu_\sigma S^{\rho\sigma}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意$g^\mu_\nu=\{-1,1,1,1\}=-\mathcal P^\mu_\nu$ ，以及最后一项的系数为$2(g^{\mu0}+g^{\nu0})+1$，当其中一者为零时为负.</p>
+<h4 id="电磁场"><a href="#电磁场" class="headerlink" title="电磁场"></a>电磁场</h4><p>矢量变换规律为</p>
+<script type="math/tex; mode=display">
+U(\mathcal P)^{-1}A^\mu(x)U(\mathcal P)=\mathcal P^\mu_\nu A^\nu(\mathcal P^{-1}x)</script><p>所以电磁张量变换规律为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+U(\mathcal P)^{-1}F^{\mu\nu}(x)U(\mathcal P)=&U(\mathcal P)^{-1}\left(\frac{\partial}{\partial x^\mu}A^\nu(x)-\frac{\partial}{\partial x^\nu}A^\mu(x)\right)U(\mathcal P)\\
+=&\frac{\partial}{\partial x^\mu}\mathcal P^\nu_\sigma A^\sigma(\mathcal P^{-1}x)-\frac{\partial}{\partial x^\nu}\mathcal P^\mu_\rho A^\rho(\mathcal P^{-1}x)\\
+=&\mathcal P^\nu_\sigma(\mathcal P^{-1})^\mu_\rho\partial^\rho A^\sigma(y)-\mathcal P^\mu_\rho(\mathcal P^{-1})^\nu_\sigma\partial^\sigma A^\rho(y)\\
+=&\mathcal P^\mu_\rho\mathcal P^\nu_\sigma F^{\rho\sigma}(y)
+\end{aligned}</script><h3 id="时间反演"><a href="#时间反演" class="headerlink" title="时间反演"></a>时间反演</h3><h4 id="标量场-1"><a href="#标量场-1" class="headerlink" title="标量场"></a>标量场</h4><script type="math/tex; mode=display">
+U(\mathcal T)^{-1}\varphi(x)U(\mathcal T)=\pm\varphi^*(\mathcal Tx)</script><h4 id="旋量场-1"><a href="#旋量场-1" class="headerlink" title="旋量场"></a>旋量场</h4><p>和空间反演类似，我们可以得到</p>
+<script type="math/tex; mode=display">
+L(\mathcal T)^{-1}C^0L(\mathcal T)=-C^0,L(\mathcal T)^{-1}C^iL(\mathcal T)=C^i\quad\Rightarrow L(\mathcal T)=\sigma_TC^0C_5</script><p>再根据作用量不变得到$\sigma_T^2=1$.</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+U(\mathcal T)^{-1}\bar\varphi(x)X\varphi(x)U(\mathcal T)
+=&\varphi^\dagger(y)L(\mathcal T)^T(-iC^0)X^*L(\mathcal T)\varphi(y)\\
+=&\varphi^\dagger(y)(C^0C_5)^T(-iC^0)X^*(C^0C_5)\varphi(y)\\
+=&\bar\varphi(y)iC^0C_5^T(C^0)^T(-iC^0)X^*(C^0C_5)\varphi(y)\\
+=&\bar\varphi(y)C_5C^0X^*C^0C_5\varphi(y)
+\end{aligned}</script><p>因此</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\bar\varphi(x)X\varphi(x)$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$C_5$</th>
+<th style="text-align:center">$iC^\mu$</th>
+<th style="text-align:center">$C^\mu C^5$</th>
+<th style="text-align:center">$S^{\mu\nu}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\bar\varphi(y)Y\varphi(y)$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$-C^5$</td>
+<td style="text-align:center">$-\mathcal T^\mu_\nu iC^\nu$</td>
+<td style="text-align:center">$-\mathcal T^\mu_\nu C^\nu C^5$</td>
+<td style="text-align:center">$-\mathcal T^\mu_\rho\mathcal T^\nu_\sigma S^{\rho\sigma}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>作为例子，守恒荷$Q=-\int\mathrm d^3\vec x\ \bar\varphi(x)iC^0\varphi(x)$，变换为$-\int\mathrm d^3\vec x\ \bar\varphi(y)iC^0\varphi(y)=Q$</p>
+<p>流$J=\int\mathrm d^3\vec x\ \bar\varphi(x)iC^i\varphi(x)$，变换为$-J$。</p>
+<h4 id="电磁场-1"><a href="#电磁场-1" class="headerlink" title="电磁场"></a>电磁场</h4><p>为了使$J_\mu A^\mu$为Lorentz标量，电磁势的变换为</p>
+<script type="math/tex; mode=display">
+U(\mathcal T)^{-1}A^\mu(x)U(\mathcal T)=-\mathcal T^\mu_\nu A^\nu(\mathcal x)</script><h3 id="电荷共轭"><a href="#电荷共轭" class="headerlink" title="电荷共轭"></a>电荷共轭</h3><h4 id="复标量场"><a href="#复标量场" class="headerlink" title="复标量场"></a>复标量场</h4><p>对于复标量场，根据$U(1)$对称性，取$\varphi(x)\rightarrow e^{+i\alpha(x)}\varphi(x),\alpha\in\mathbb R$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal L
+=&-\partial_\mu(e^{-i\alpha(x)}\varphi^\dagger(x))\partial^\mu(e^{+i\alpha(x)}\varphi(x))-m^2\varphi^\dagger(x)\varphi(x)\\
+=&-(\partial_\mu-i\partial_\mu\alpha(x))\varphi^\dagger(x)(\partial^\mu+i\partial^\mu\alpha(x))\varphi(x)-m^2\varphi^\dagger(x)\varphi(x)
+\end{aligned}</script><p>设$eA^\mu=i\partial^\mu\alpha(x)$，则</p>
+<script type="math/tex; mode=display">
+\mathcal L=-(\partial_\mu-eA_\mu)\varphi^\dagger(x)(\partial^\mu+eA^\mu)\varphi(x)-m^2\varphi^\dagger(x)\varphi(x)</script><p>当$e\rightarrow-e$时可知</p>
+<script type="math/tex; mode=display">
+U(\mathcal C)^{-1}\varphi(x)U(\mathcal C)=\pm\varphi^\dagger(x),\quad
+U(\mathcal C^{-1})\varphi^\dagger U(\mathcal C)=\pm\varphi(x)</script><h4 id="旋量场-2"><a href="#旋量场-2" class="headerlink" title="旋量场"></a>旋量场</h4><p>即便我们不知道具体形式，我们希望仍然是取共轭</p>
+<script type="math/tex; mode=display">
+U(\mathcal C)^{-1}\varphi_a(x)U(\mathcal C)=\varphi_a^*(x)</script><p>则对于$\bar\varphi(x)X\varphi(x)$变换为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\rightarrow &U(\mathcal C)^{-1}\varphi^\dagger(x)iC^0X\varphi(x)U(\mathcal C)
+=\varphi^T(x)iC^0X\varphi^*(x)\\
+=&\varphi_a iC^0_{ab}X_{bc}\varphi^*_c
+=iC^0_{ab}X_{bc}(-\varphi^*_c\varphi_a+\{\varphi_a,\varphi_c^*\})\\
+=&-\varphi^\dagger X^T(iC^0)^T\varphi+\sum_{a,b,c}iC^0_{ab}X_{bc}\{\varphi_a,\varphi^*_c\}\\
+=&-\bar\varphi(x)C^0X^TC^0\varphi(x)+\mathrm{Tr}[iC^0X]\delta^3(0)
+\end{aligned}</script><p>因此</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\bar\varphi(x)X\varphi(x)$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$C_5$</th>
+<th style="text-align:center">$iC^\mu$</th>
+<th style="text-align:center">$C^\mu C^5$</th>
+<th style="text-align:center">$S^{\mu\nu}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\bar\varphi(x)Y\varphi(x)$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$C^5$</td>
+<td style="text-align:center">$-iC^\mu$</td>
+<td style="text-align:center">$C^\mu C^5$</td>
+<td style="text-align:center">$-S^{\mu\nu}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>特殊的在于$X=iC^0$时，变换为$-\bar\varphi(x)iC^0\varphi(x)+4\delta^3(0)$</p>
+<h4 id="电磁场-2"><a href="#电磁场-2" class="headerlink" title="电磁场"></a>电磁场</h4><p>为了使$J_\mu A^\mu$ 为标量</p>
+<script type="math/tex; mode=display">
+U(\mathcal C)^{-1}A^\mu(x)U(\mathcal C)=-A^\mu(x)\quad\Rightarrow\quad
+U(\mathcal C)^{-1}F^{\mu\nu}(x)U(\mathcal C)=-F^{\mu\nu}(x)</script><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">标量场$\varphi(x)$</th>
+<th style="text-align:center">旋量场$\varphi(x)$</th>
+<th style="text-align:center">$\bar\varphi(x)X\varphi(x)$</th>
+<th style="text-align:center">电磁势$A^\mu(x)$</th>
+<th style="text-align:center">电磁张量$F^{\mu\nu}(x)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\mathcal P$</td>
+<td style="text-align:center">$\varphi(\mathcal Px)$</td>
+<td style="text-align:center">$C^0\varphi(\mathcal Px)$</td>
+<td style="text-align:center">$-\bar\varphi(y)C^0XC^0\varphi(y)$</td>
+<td style="text-align:center">$\mathcal P^\mu_\rho A^\rho(y)$</td>
+<td style="text-align:center">$\mathcal P^\mu_\rho\mathcal P^\nu_\sigma F^{\rho\sigma}(y)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal T$</td>
+<td style="text-align:center">$\varphi(\mathcal Tx)$</td>
+<td style="text-align:center">$C^0C_5\varphi(\mathcal Tx)$</td>
+<td style="text-align:center">$\bar\varphi(y)C_5C^0X^*C^0C_5\varphi(y)$</td>
+<td style="text-align:center">$-\mathcal T^\mu_\rho A^\rho(y)$</td>
+<td style="text-align:center">$-\mathcal T^\mu_\rho\mathcal T^\nu_\sigma F^{\rho\sigma}(y)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal C$</td>
+<td style="text-align:center">$\varphi^*(x)$</td>
+<td style="text-align:center">$\varphi^*(x)$</td>
+<td style="text-align:center">$-\bar\varphi(x)C^0X^TC^0\varphi(x)+\mathrm{Tr}[iC^0X]\delta^3(0)$</td>
+<td style="text-align:center">$-A^\mu(x)$</td>
+<td style="text-align:center">$-F^{\mu\nu}(x)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>Dirac流为$J^\mu(x)=\bar\varphi(x)iC^\mu\varphi(x)$</li>
+<li>对于标量场变换后均有个$\pm$，对于空间反演区分了标量场和赝标量场</li>
+<li>旋量场变换后符号也未定，但因为物理量都是双线性的，所以就不重要了</li>
+</ol>
+<h3 id="CPT定理"><a href="#CPT定理" class="headerlink" title="CPT定理"></a>CPT定理</h3><p>既然$\mathcal{C,P,T}$作用下都能使作用量保持不变，那么其联合作用自然也能保持不变。</p>
+<p>更一般的，如今已知的所有过程都满足联合作用不变，但对于单一过程可能有变化。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/physics/" rel="tag"># physics</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/17/%E6%9C%89%E9%99%90%E6%B8%A9%E5%9C%BA%E8%AE%BA/" rel="prev" title="有限温场论">
+      <i class="fa fa-chevron-left"></i> 有限温场论
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%8F%8D%E6%BC%94"><span class="nav-number">1.</span> <span class="nav-text">空间反演</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">标量场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA"><span class="nav-number">1.2.</span> <span class="nav-text">旋量场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="nav-number">1.3.</span> <span class="nav-text">电磁场</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%8F%8D%E6%BC%94"><span class="nav-number">2.</span> <span class="nav-text">时间反演</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E5%9C%BA-1"><span class="nav-number">2.1.</span> <span class="nav-text">标量场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA-1"><span class="nav-number">2.2.</span> <span class="nav-text">旋量场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA-1"><span class="nav-number">2.3.</span> <span class="nav-text">电磁场</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E8%8D%B7%E5%85%B1%E8%BD%AD"><span class="nav-number">3.</span> <span class="nav-text">电荷共轭</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E6%A0%87%E9%87%8F%E5%9C%BA"><span class="nav-number">3.1.</span> <span class="nav-text">复标量场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%8B%E9%87%8F%E5%9C%BA-2"><span class="nav-number">3.2.</span> <span class="nav-text">旋量场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA-2"><span class="nav-number">3.3.</span> <span class="nav-text">电磁场</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPT%E5%AE%9A%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">CPT定理</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sakura</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sakura-98" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sakura-98"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yzsu@pku.edu.cn" title="E-Mail → mailto:yzsu@pku.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sakura</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+    </div>
+</body>
+</html>
