@@ -1780,4 +1780,266 @@ U(\mathcal C)^{-1}F^{\mu\nu}(x)U(\mathcal C)=-F^{\mu\nu}(x)</script><h3 id="总�
         <tag>physics</tag>
       </tags>
   </entry>
+  <entry>
+    <title>QED单圈重整化</title>
+    <url>/2020/11/14/QED%E5%8D%95%E5%9C%88%E9%87%8D%E6%95%B4%E5%8C%96%20/</url>
+    <content><![CDATA[<p>这篇将会写比较长时间吧。一来因为计算量确实不小，二来……算了，也不要二来了。</p>
+<p>高维球的体积和表面积公式直接给出吧。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$d$</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">$\cdots$</th>
+<th style="text-align:center">$d$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$V^d$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$\pi$</td>
+<td style="text-align:center">$\frac{4\pi}3$</td>
+<td style="text-align:center">$\frac{\pi^2}4$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$\pi^{d/2}/\Gamma\left(\frac d2+1\right)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$S^d$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$2\pi$</td>
+<td style="text-align:center">$4\pi$</td>
+<td style="text-align:center">$2\pi^2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$2\pi^{d/2}/\Gamma\left(\frac d2\right)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>以及所谓的”积木“</p>
+<script type="math/tex; mode=display">
+S(k)=\frac{m-ip\!\!\!\backslash}{p^2+m^2-i\epsilon},\Delta^{\mu\nu}(k)=\frac1{k^2-i\epsilon}\left[g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right]</script><a id="more"></a>
+<h3 id="光子自能"><a href="#光子自能" class="headerlink" title="光子自能"></a>光子自能</h3><p>光子自能图为</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=(-1)\int\frac{-i\mathrm d^4l}{(2\pi)^4}\ \mathrm{Tr}\left[S(l+k)ieC^\mu S(l)ieC^\nu\right]=e^2\int\frac{\mathrm d^4l}{(2\pi)^4}\mathrm{Tr}\left[\frac{m-i(l\!\!\backslash+k\!\!\!\backslash)}{(l+k)^2+m^2}C^\mu\frac{m-il\!\!\backslash}{l^2+m^2}C^\nu\right]</script><p>求迹这种东西嘛，主要就是用$\{C^\mu,C^\nu\}=2g^{\mu\nu}\Rightarrow\mathrm{Tr}[C^\mu C^\nu]=4g^{\mu\nu}$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\mathrm{Tr}[C^\rho C^\mu C^\sigma C^\nu]
+=\mathrm{Tr}[C^\rho C^\mu(2g^{\sigma\nu}-C^\nu C^\sigma)]\\
+=&8g^{\rho\mu}g^{\sigma\nu}-\mathrm{Tr}[C^\rho C^\mu C^\nu C^\sigma]=8g^{\rho\mu}g^{\sigma\nu}-\mathrm{Tr}[C^\rho(2g^{\mu\nu}-C^\nu C^\mu)C^\sigma]\\
+=&8g^{\rho\mu}g^{\sigma\nu}-8g^{\mu\nu}g^{\rho\sigma}+\mathrm{Tr}[C^\rho C^\nu C^\mu C^\sigma]\\
+=&8(g^{\rho\mu}g^{\sigma\nu}-g^{\mu\nu}g^{\rho\sigma}+g^{\nu\rho}g^{\mu\sigma})-\mathrm{Tr}[C^\nu C^\rho C^\mu C^\sigma]
+\end{aligned}</script><p>所以$\mathrm{Tr}[C^\rho C^\mu C^\sigma C^\nu]=4(g^{\rho\mu}g^{\sigma\nu}-g^{\mu\nu}g^{\rho\sigma}+g^{\nu\rho}g^{\mu\sigma})$，因此</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=4e^2\int\frac{-i\mathrm d^4l}{(2\pi)^4}\frac{[m^2+(l+k)_\rho l_\sigma g^{\rho\sigma}]g^{\mu\nu}-[(l+k)^\mu l^\nu+(l+k)^\nu l^\mu]g^{\mu\mu}g^{\nu\nu}}{[(l+k)^2+m^2][l^2+m^2]}</script><p>做完Wick转动$l^0=il^4,k^0=ik^4$</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=4e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{[m^2+(l+k)\cdot l]\delta^{ij}-[(l+k)^\mu l^\nu+(l+k)^j l^i]}{[(l+k)^2+m^2][l^2+m^2]}</script><p>做Feynman参数化</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=4e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{[m^2+(l+k)\cdot l]\delta^{ij}-[(l+k)^il^j+(l+k)^jl^i]}{[(l+xk)^2+x(1-x)k^2+m^2]^2}</script><p>设$q=l+xk,D=x(1-x)k^2+m^2$。略去一次项</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=4e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-2q^iq^j+2x(1-x)k^ik^j}{[q^2+x(1-x)k^2+m^2]^2}</script><p>利用$\int\mathrm d^4q\ q^iq^jf(q^2)=\frac14\delta^{ij}\int\mathrm d^4q\ q^2f(q^2)$得</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Pi^{ij}(k_E)
+=&4e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2 q^3\mathrm dq}{(2\pi)^4}\frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-\frac12\delta^{ij}q^2+2x(1-x)k^ik^j}{[q^2+D]^2}\\
+=&\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\int_0^\infty q^2\mathrm dq^2\ \frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-\frac12\delta^{ij}q^2+2x(1-x)k^ik^j}{[q^2+D]^2}\\
+=&\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\int_0^\infty \mathrm dt\ \frac{[m^2\delta^{ij}-x(1-x)(k^2\delta^{ij}-2k^ik^j)]t+\frac12\delta^{ij}t^2}{[t+D]^2}\\
+\end{aligned}</script><p>分别计算两项</p>
+<script type="math/tex; mode=display">
+\int_0^\infty\mathrm dt\frac t{(t+D)^2}=\int_0^Q\frac{t}{(t+D)^2}\mathrm dt+\int_Q^\infty\frac{\mathrm dt}t=-\frac{Q}{D+Q}+\ln\frac{D+Q}D-\ln\frac{\infty}{Q}=-\ln D+c_1</script><script type="math/tex; mode=display">
+\int_0^\infty\frac{t^2\mathrm dt}{(t+D)^2}=\left[\frac{Q(2D+Q)}{D+Q}+2D\ln\frac{D}{D+Q}\right]+\infty-Q-2D\ln\frac{\infty}{Q}=2D\ln D+c_2+c_3D</script><p>所以</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\ \left\{[m^2\delta^{ij}-x(1-x)(k^2\delta^{ij}-2k^ik^j)](-\ln D+c_1)+\delta^{ij}(D\ln D+\frac12c_2+\frac12c_3D)\right\}</script><p>整理得</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\ \left\{2x(1-x)\ln D[k^2\delta^{ij}-k^ik^j]+2b_1k^ik^j+2(b_2+b_3k^2)\delta^{ij}\right\}</script><p>上式用到了$D=x(1-x)k^2+m^2$。变换回闵氏空间</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}\int_0^1\mathrm dx[x(1-x)\ln D (k^2g^{\mu\nu}-k^\mu k^\nu)+b_1k^\mu k^\nu+(b_2+b_3k^2)g^{\mu\nu}]</script><p>On-shell 条件要求$k^2=0$时$\Pi^{\mu\nu}(k)=0,\partial\Pi^{\mu\nu}(k)=0$</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}(k^2g^{\mu\nu}-k^\mu k^\nu)\int_0^1x(1-x)\ln \frac{x(1-x)k^2+m^2}{m^2}\mathrm dx</script><p>当$k^2\gg m^2$时</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}\left[-\frac5{18}+\frac16\ln\frac{k^2}{m^2}\right]</script><h3 id="电子自能"><a href="#电子自能" class="headerlink" title="电子自能"></a>电子自能</h3><script type="math/tex; mode=display">
+\Sigma(p)=\int\frac{-i\mathrm d^4l}{(2\pi)^4}ieC^\nu S(l)ieC^\mu\Delta_{\mu\nu}(p-l)
+=-e^2\int\frac{-i\mathrm d^4l}{(2\pi)^4}\frac{C^\nu(m-iC^\rho l_\rho)C^\mu}{l^2+m^2-i\epsilon}\frac{g_{\mu\nu}}{(p-l)^2-i\epsilon}</script><p>做Wick转动和变量代换</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Sigma(p)=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{C^i(m-iC^al_a)C^j\delta_{ij}}{(l^2+m^2)(p-l)^2}\\
+=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{m-i\sum_jC^jC^aC^jl_a}{(l^2+m^2)(p-l)^2}\\
+=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{m+2iC^al_a}{(l^2+m^2)(p-l)^2}\\
+\end{aligned}</script><p>做Feynman参数化</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Sigma(p)=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{m+2iC^al_a}
+{[(l-xp)^2+(1-x)m^2+x(1-x)p^2]^2}\\
+=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{m+2xiC^ap_a}
+{[q^2+D]^2}\\
+=&-e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2q^3\mathrm dq}{(2\pi)^4}\frac{m+2xiC^ap_a}
+{[q^2+D]^2}\\
+=&-\frac{e^2}{16\pi^2}\int_0^1\mathrm dx\int_0^\infty t\mathrm dt\frac{m+2xiC^ap_a}
+{[t+D]^2}\\
+=&-\frac{e^2}{16\pi^2}\int_0^1\mathrm dx\left[-\frac{Q}{D+Q}+\ln\frac{D+Q}D+\ln\frac{\infty}{Q}\right](m+2xiC^ap_a)\\
+=&-\frac{e^2}{16\pi^2}\int_0^1\mathrm dx\left[-\ln D+c\right](m+2xiC^ap_a)\\
+\end{aligned}</script><p>当$p^2+m^2=0$时$\Sigma(p)=0$</p>
+<script type="math/tex; mode=display">
+\Sigma(p)=\frac{e^2}{16\pi^2}\int_0^1(m+2xip\!\!\!\backslash)\left[\ln\frac{(1-x)m^2+x(1-x)p^2}{m^2}+2\right]\mathrm dx</script><p>同样，$p^2\gg m^2$时</p>
+<script type="math/tex; mode=display">
+\Sigma(p)=\frac{e^2}{16\pi^2}\int(m+2xip\!\!\!\backslash)\left[\ln x(1-x)+2+\ln\frac{p^2}{m^2}\right]\mathrm dx
+=\frac{e^2}{16\pi^2}(m+ip\!\!\!\backslash)\ln\frac{p^2}{m^2}</script><h3 id="顶点"><a href="#顶点" class="headerlink" title="顶点"></a>顶点</h3><script type="math/tex; mode=display">
+\mathbf V(p,p',k)=\int\frac{-i\mathrm d^4l}{(2\pi)^4} ieC^\rho S(p'-l)ieC^\nu S(p-l)ieC^\mu \Delta_{\mu\rho}(l)</script><p>Wick转动和变量代换</p>
+<script type="math/tex; mode=display">
+\mathbf V(p,p',(k,\mu))=-i\frac{e^3}{(2\pi)^4}\int\mathrm d^4l_E\ \frac{C^\rho(m-i(p\!\!\!\backslash'-l\!\!\backslash))C^\mu(m-i(p\!\!\!\backslash-l\!\!\backslash))C^\nu\delta_{\nu\rho}}{[(p'-l)^2+m^2][(p-l)^2+m^2]l^2}</script><script type="math/tex; mode=display">
+\mathbf V(p,p',(k,\mu))=-i\frac{e^3}{(2\pi)^4}\int\mathrm d^4l_E\ \frac{-2C^\mu m^2-i8m(p^\mu+p'^\mu-2l^\mu)+(p\!\!\!\backslash-l\!\!\backslash)C^\mu(p\!\!\!\backslash'-l\!\!\backslash)}{[(p'-l)^2+m^2][(p-l)^2+m^2]l^2}</script>]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Majorana</title>
+    <url>/2020/12/31/Majorana%E5%9C%BA%E9%87%8F%E5%AD%90%E5%8C%96/</url>
+    <content><![CDATA[<p>我发现自己连Majorana场的量子化都不会了，所以需要整理一下。顺便，新年快乐！</p>
+<p>和<a href="/2020/09/29/Klein-Gordon场量子化/">Klein-Gordon场</a>相似，先从运动方程计算（反）对易关系。他俩为</p>
+<script type="math/tex; mode=display">
+(C^\mu\partial_\mu+m)\phi(x)=0,[\phi_a(x),\phi_b(y)]_\sigma=f_{ab}(x-y)</script><a id="more"></a>
+<h3 id="计算（反）对易关系"><a href="#计算（反）对易关系" class="headerlink" title="计算（反）对易关系"></a>计算（反）对易关系</h3><p>定义变换到动量空间为</p>
+<script type="math/tex; mode=display">
+\phi(k)\equiv\int\mathrm d^4x\ e^{-ikx}\phi(x),f_{ab}(k)\equiv\int\mathrm d^4x\ e^{-ikx}f_{ab}(x)\tag{1.1}</script><h4 id="Lorentz变换寻找各点的关系"><a href="#Lorentz变换寻找各点的关系" class="headerlink" title="Lorentz变换寻找各点的关系"></a>Lorentz变换寻找各点的关系</h4><script type="math/tex; mode=display">
+f_{ab}(x)=[\phi_a(x),\phi_b(0)]=L(\Lambda)_{ac}L(\Lambda)_{bd}[\phi_c(\Lambda^{-1}x),\phi_d(\Lambda^{-1}0)]=L(\Lambda)_{ac}L(\Lambda)_{bd}f_{cd}(\Lambda^{-1}x)</script><p>变换到动量空间，注意到$(\Lambda k)\cdot(\Lambda x)=k\cdot x$</p>
+<script type="math/tex; mode=display">
+f_{ab}(\Lambda k)=L(\Lambda)_{ac}L(\Lambda)_{bd}\int\mathrm d^4x\ e^{-i(\Lambda k)x}f_{cd}(\Lambda^{-1}x)
+=L(\Lambda)_{ac}L(\Lambda)_{bd}f_{cd}(k)\tag{1.2}</script><p>这说明能通过Lorentz变换联系起来的两个点，值并不独立。</p>
+<h4 id="根据运动方程寻找非零点"><a href="#根据运动方程寻找非零点" class="headerlink" title="根据运动方程寻找非零点"></a>根据运动方程寻找非零点</h4><script type="math/tex; mode=display">
+0=(C^\mu\partial_\mu+m)\left[\phi(x),\phi(0)\right]_\sigma=(C^\mu\partial_\mu+m)f(x)=\int\frac{\mathrm d^4k}{(2\pi)^4}e^{ikx}(iC^\mu k_\mu+m)f(k)</script><p>这说明只有$\det(iC^\mu k_\mu+m)=(k^2+m^2)^2\neq0$时才有非零值。因此只有两个独立值$f(\pm m,0,0,0)$</p>
+<p>因为此时$k$没有空间分量，所以空间纯转动不会有任何影响，即由(1.2)式得$f_{ab}(k)=L(\Lambda)_{ac}L(\Lambda)_{bd}f_{cd}(k)$。</p>
+<blockquote>
+<p>从运动方程可以推出</p>
+<script type="math/tex; mode=display">
+0=\left(C^\mu\frac{\partial}{\partial x^\mu}+m\right)L(\Lambda)\phi(\Lambda^{-1}x)=L(\Lambda)\left(L(\Lambda)^{-1}C^\mu(\Lambda^{-1})^\nu_\mu L(\Lambda)\partial_\nu+m\right)\phi(y)</script><p>对于无限小变换$\Lambda=1+\theta J^{ij},L(\Lambda)=1+\theta S^{ij}$，根据$L(\Lambda)^{-1}C^\mu(\Lambda^{-1})^\nu_\mu L(\Lambda)=C^\nu$保留一阶</p>
+<script type="math/tex; mode=display">
+[C^\nu,S^{ij}]=C^\mu (J^{ij})^\nu_\mu=C^j\delta^{\nu i}-C^i\delta^{\nu j}\Rightarrow S^{ij}=\frac12 C^iC^j</script></blockquote>
+<script type="math/tex; mode=display">
+f_{ab}(k)=\left(\delta_{ac}+\theta\frac12(C^iC^j)_{ac}\right)\left(\delta_{bd}+\theta\frac12(C^iC^j)_{bd}\right)f_{cd}(k)\Rightarrow C^iC^jf+f(C^iC^j)^T=0</script><p>解得</p>
+<script type="math/tex; mode=display">
+f(k)=\left(\begin{array}{cccc}a11& a12& a13& a14\\
+-a12& a11& a14& -a13\\
+-a13& -a14& a11& a12\\
+-a14& a13& -a12& a11
+\end{array}\right)=a_{11}1-a_{12}C^5+a_{13}C^1C^2C^3-a_{14}C^0</script><p>利用$(iC^\mu k_\mu+m)f=0$可得每列都应该是$(1,0,0,\mp i)(0,1,\mp i,0)$的线性组合，所以</p>
+<script type="math/tex; mode=display">
+f(\pm m,0,0,0)=A(1\mp iC^0)+B(1\pm iC^0)C^5=\left(\begin{array}{cccc}
+A& -B& \pm iB& \pm iA\\
+B& A& \pm iA& \mp iB\\
+\mp iB& \mp iA& A& -B\\
+\mp iA& \pm iB& B& A
+\end{array}\right)</script><h4 id="共轭、反演"><a href="#共轭、反演" class="headerlink" title="共轭、反演"></a>共轭、反演</h4><script type="math/tex; mode=display">
+\begin{aligned}
+f^*_{ab}(k)=&\left[\int\mathrm d^4x\ e^{-ikx}[\phi_a(x),\phi_b(0)]_\sigma\right]^*=\int\mathrm d^4x\ e^{ikx}[\phi_a(x),\phi_b(0)]_\sigma\left(=f_{ab}(-k)\right)\\
+=&\int\mathrm d^4(-y)\ e^{-iky}[\phi_a(-y)\phi_b(0)-\sigma\phi_b(0)\phi_a(-y)]\\
+=&\int\mathrm d^4y\ e^{-iky}(-\sigma)[\phi_b(0)\phi_a(-y)-\sigma\phi_a(-y)\phi_b(0)]\\
+=&\int\mathrm d^4y\ e^{-iky}(-\sigma)f_{ba}(y)=-\sigma f_{ba}(k)
+\end{aligned}\tag{1.4}</script><p>因为共轭等于负宗量，所以$A,B\in\R$</p>
+<script type="math/tex; mode=display">
+f(\pm m,0,0,0)=\left(\begin{array}{cccc}
+A& -B& \pm iB& \pm iA\\
+B& A& \pm iA& \mp iB\\
+\mp iB& \mp iA& A& -B\\
+\mp iA& \pm iB& B& A
+\end{array}\right),f^\dagger=\left(\begin{array}{cccc}
+A& B& \pm iB& \pm iA\\
+-B& A& \pm iA& \mp iB\\
+\mp iB& \mp iA& A& B\\
+\mp iA& \pm iB& -B& A
+\end{array}\right)</script><p>所以$B=0,\sigma=-1$。因此</p>
+<script type="math/tex; mode=display">
+f(k_0,0,0,0)=2\pi\delta(k^2+m^2)\left[\beta\theta(k_0)(1-iC^0)+\alpha\theta(-k_0)(1+iC^0)\right]</script><h4 id="具体表达式，因果律"><a href="#具体表达式，因果律" class="headerlink" title="具体表达式，因果律"></a>具体表达式，因果律</h4><p>进而一般地，根据$f_{ab}(\Lambda k)=L(\Lambda)_{ac}L(\Lambda)_{bd}f_{cd}(k)$得</p>
+<script type="math/tex; mode=display">
+f(k)=2\pi\delta(k^2+m^2)\left[\alpha\theta(k^0)L(\Lambda)(1+iC^0)L(\Lambda)^T+\beta\theta(-k^0)L(\Lambda)(1-iC^0)L(\Lambda)^T\right]</script><p>其中$L(1+\theta K^{0i})=1+\frac\theta4[C^0,C^i]$. 若考虑$(k,0,0,0)\stackrel\Lambda\rightarrow(k^0,k^1,0,0)$，则boost为</p>
+<script type="math/tex; mode=display">
+\Lambda=\lim_{\theta_0\rightarrow0}\left(\begin{array}{cc}1 & \theta_0 \\\theta_0 & 1\end{array}\right)^{\theta/\theta_0}=\left(\begin{array}{cc}\cosh\theta & \sinh\theta \\\sinh\theta & \cosh\theta\end{array}\right),L=\left(\begin{array}{cccc}
+\cosh\frac\theta2&0&-\sinh\frac\theta2&0\\
+0&\cosh\frac\theta2&0&-\sinh\frac\theta2\\
+-\sinh\frac\theta2&0&\cosh\frac\theta2&0\\
+0&-\sinh\frac\theta2&0&\cosh\frac\theta2
+\end{array}\right)=\sqrt{\frac{k^0+k}{2k}}-\frac{k^1}{\sqrt{2k(k^0+k)}}C^0C^1</script><p>此时为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(k)=&2\pi\delta(k^2+m^2)\left\{\left[\alpha\theta(k^0)+\beta\theta(-k^0)\right]LL^T+\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]LiC^0L^T\right\}\\
+=&2\pi\delta(k^2+m^2)\left\{\frac1{k}\left[\alpha\theta(k^0)+\beta\theta(-k^0)\right](k^0-k^1C^0C^1)+i\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]C^0\right\}\\
+=&2\pi\delta(k^2+m^2)\left\{\frac1{k}\left[\alpha\theta(k^0)+\beta\theta(-k^0)\right](-k^0C^0+k^1C^1)C^0+i\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]C^0\right\}\\
+\end{aligned}</script><p>由于$\delta$函数的存在，要求$k=\pm m$，即</p>
+<script type="math/tex; mode=display">
+f(k)=2\pi\delta(k^2+m^2)\left\{\frac1{m}\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right](-k^0C^0+k^1C^1)C^0+i\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]C^0\right\}</script><p>提出公因子，容易推广到其他boost，最终为</p>
+<script type="math/tex; mode=display">
+f(k)=2\pi\delta(k^2+m^2)\frac{\alpha\theta(k^0)-\beta\theta(-k^0)}{m}(k\!\!\!\backslash+im)C^0\tag{1.5}</script><p>那么变换回坐标空间</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(x)=&\int\frac{\mathrm d^4k}{(2\pi)^3}e^{ikx}\delta(k^2+m^2)\frac{\alpha\theta(k^0)-\beta\theta(-k^0)}{m}(k\!\!\!\backslash+im)C^0\\
+=&\int\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}e^{-i\omega_{\vec k}t}e^{i\vec k\cdot\vec x}\frac{\alpha}{m}(-\omega_{\vec k}C^0+k^iC^i+im)C^0\\
+-&\int\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}e^{i\omega_{\vec k}t}e^{i\vec k\cdot\vec x}\frac{\beta}{m}(\omega_{\vec k}C^0+k^iC^i+im)C^0\\
+\end{aligned}</script><p>类空时$f(x)\equiv0$，所以不妨计算如下式子，第二项把$\vec k\rightarrow -\vec k$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(0,\vec x)+f(0,-\vec x)=&\int\frac{e^{i\vec k\cdot\vec x}\mathrm d^3\vec k}{(2\pi)^3\omega_{\vec k}m}\left[\alpha(\omega_{\vec k}+imC^0)-\beta(-\omega_{\vec k}+imC^0)\right]\\
+=&\frac{\alpha+\beta}m\delta^3(\vec x)+i(\alpha-\beta)\int\frac{e^{i\vec k\cdot\vec x}\mathrm d^3\vec k}{(2\pi)^3\omega_{\vec k}}C^0\\
+\end{aligned}</script><p>第二项和$\vec x$有关，所以要求$\alpha=\beta$，进而</p>
+<script type="math/tex; mode=display">
+f(k)=\frac\alpha m(2\pi)\delta(k^2+m^2)\mathrm{sgn}(k^0)(k\!\!\!\backslash+im)C^0\tag{1.6}</script><h4 id="尚待解决的问题"><a href="#尚待解决的问题" class="headerlink" title="尚待解决的问题"></a>尚待解决的问题</h4><ol>
+<li>$\alpha$现在只知道是实数，通过波函数的伸缩可以自由变大变小，但尚未知道其正负性</li>
+<li>从动量空间变换回坐标空间。具体表达式要用到很怪的数理技巧，下节计算等时情形</li>
+</ol>
+<p>这两个问题都将在下一节中（部分）解决</p>
+<h3 id="等时特例"><a href="#等时特例" class="headerlink" title="等时特例"></a>等时特例</h3><script type="math/tex; mode=display">
+f(0,\vec x)=\int\frac{\mathrm d^4k}{(2\pi)^4}e^{ikx}f(k)
+=\frac\alpha m\int\frac{\mathrm d^3\vec k}{(2\pi)^32\omega_{\vec k}}e^{i\vec k\cdot\vec x}(-2\omega_{\vec k}C^0)C^0=\frac\alpha m\delta^3(\vec x)</script><p>也就是说</p>
+<script type="math/tex; mode=display">
+\{\phi_a(t,\vec x),\phi_b(t,\vec y)\}=\frac\alpha m\delta^3(\vec x-\vec y)\delta_{ab}</script><p>因为场算符（波函数）是厄米的，所以其平方应当非负，即$\alpha&gt;0$。通过伸缩我们可以要求</p>
+<script type="math/tex; mode=display">
+\{\phi_a(t,\vec x),\phi_b(t,\vec y)\}=\delta^3(\vec x-\vec y)\delta_{ab}\tag2</script><h3 id="4-动量"><a href="#4-动量" class="headerlink" title="4-动量"></a>4-动量</h3><h4 id="积木"><a href="#积木" class="headerlink" title="积木"></a>积木</h4><p>哈密顿量应当满足</p>
+<script type="math/tex; mode=display">
+\left[P_\mu,\phi_a(t,\vec x)\right]=i\partial_\mu\phi_a(t,\vec x)\tag{3.1}</script><p>我们能用的“积木”为(2)式及其导数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\int\mathrm d^3\vec y\ [\phi_i(t,\vec y)\phi_j(t,\vec y),\phi_a(t,\vec x)]
+=\int\mathrm d^3\vec y\ \left(\phi_i\phi_j\phi_a-\phi_a\phi_i\phi_j\right)\\
+=&\int\mathrm d^3\vec y\left(\phi_i\phi_j\phi_a-\delta_{ia}\delta^3(\vec x-\vec y)\phi_j+\phi_i\phi_a\phi_j\right)
+=\int\mathrm d^3\vec y\left(-\delta_{ia}\delta^3(\vec x-\vec y)\phi_j+\phi_i\delta_{aj}\delta^3(\vec x-\vec y)\right)\\
+=&\delta_{ja}\phi_i(t,\vec x)-\delta_{ia}\phi_j(t,\vec x)
+\end{aligned}\tag{3.2}</script><script type="math/tex; mode=display">
+\begin{aligned}
+&\int\mathrm d^3\vec y\ [\phi_i(t,\vec y)\partial_k\phi_j(t,\vec y),\phi_a(t,\vec x)]=\int\mathrm d^3\vec y\ (\phi_i(\partial_k\phi_j)\phi_a-\phi_a\phi_i(\partial_k\phi_j))\\
+=&\int\mathrm d^3\vec y\ (\phi_i\partial_k(\phi_j\phi_a)-(\delta_{ai}\delta^3(\vec x-\vec y)-\phi_i\phi_a)\partial_k\phi_j)\\
+=&\int\mathrm d\vec y\ (\phi_i\partial_k(\phi_j\phi_a+\phi_a\phi_j)-\delta_{ai}\delta^3(\vec x-\vec y)\partial_k\phi_j)\\
+=&\int\mathrm d^3\vec y\ \phi_i\partial_k(\delta_{ja}\delta^3(\vec y-\vec x))-\delta_{ai}\partial_k\phi_j(t,\vec x)\\
+=&-\int\mathrm d^3\vec y\ \delta_{ja}\delta^3(\vec y-\vec x)\partial_k\phi_i-\delta_{ai}\partial_k\phi_j(t,\vec x)
+=-\delta_{aj}\partial_k\phi_i(t,\vec x)-\delta_{ai}\partial_k\phi_j(t,\vec x)
+\end{aligned}\tag{3.3}</script><h4 id="动量"><a href="#动量" class="headerlink" title="动量"></a>动量</h4><p>(3.1)告诉我们$[P_k,\phi_a(t,\vec x)]=i\partial_k\phi_a(t,\vec x)$，利用(3.3)得到</p>
+<script type="math/tex; mode=display">
+P_k=-\frac i2\sum_{i=1}^4\int\mathrm d^3\vec y\ \phi_i(t,\vec y)\partial_k\phi_i(t,\vec y)</script><h4 id="哈密顿量"><a href="#哈密顿量" class="headerlink" title="哈密顿量"></a>哈密顿量</h4><p>(3.1)告诉我们$-[H,\phi_a(t,\vec x)]=i\partial_0\phi_a(t,x)$，再利用运动方程</p>
+<script type="math/tex; mode=display">
+[H,\phi_a(t,\vec x)]=-i\partial_0\phi_a(t,\vec x)=-i(C^0C^k\partial_k+C^0m)\phi_a(t,\vec x)</script><p>利用(3.3)凑出第一项，利用(3.2)凑出第二项</p>
+<script type="math/tex; mode=display">
+H=\int\mathrm d^3\vec y\left\{\frac i2\phi^T(t,\vec y)C^0C^k\partial_k\phi(t,\vec y)+\frac i2\phi^T(t,\vec y)C^0m\phi(t,\vec y)\right\}=\frac i2\int\mathrm d^3\vec y\ \phi^TC^0(C^k\partial_k+m)\phi</script><h3 id="波函数"><a href="#波函数" class="headerlink" title="波函数"></a>波函数</h3><p>我们希望将波函数以4-动量的本征态展开</p>
+<script type="math/tex; mode=display">
+0=(iC^\mu k_\mu+m)u(\vec k)</script><p>因为$\det(iC^\mu k_\mu+m)=(k^2+m^2)^2$，所以有两个特解$u_+(\vec k),u_-(\vec k)$。考虑到$k^0=\pm\omega_{\vec k}$，对于一个3-动量存在四个特解，剩下两个可以根据下式直接写出为$u_\pm^*(-\vec k)$。</p>
+<script type="math/tex; mode=display">
+0=\left[(iC^\mu k_\mu+m)u(\vec k)\right]^*=(-iC^\mu k_\mu+m)u^*(\vec k)=(iC^\mu k_\mu+m)u^*(-\vec k)</script><p>利用厄米性可推出$\phi^*(p)=\phi(-p)$，则波函数可以写为</p>
+<script type="math/tex; mode=display">
+\phi(p)=2\pi\delta(p^2+m^2)\sum_{s=\pm}(b(\vec p)u_s(\vec p)\theta(p^0)+b^\dagger(-\vec p)u_s^*(-\vec p)\theta(-p^0))</script><p>变换回坐标空间</p>
+<script type="math/tex; mode=display">
+\phi(x)=\int\frac{\mathrm d^4p}{(2\pi)^4}e^{ikx}\phi(p)=\sum_{s=\pm}\int\tilde{dp}\left[b(\vec p)u_s(\vec p)e^{ipx}+b^\dagger(-\vec p)u_s(-\vec p)e^{-ipx}\right]</script><h4 id="u-b-的性质"><a href="#u-b-的性质" class="headerlink" title="$u,b$的性质"></a>$u,b$的性质</h4><h4 id="重新审查4-动量"><a href="#重新审查4-动量" class="headerlink" title="重新审查4-动量"></a>重新审查4-动量</h4>]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
 </search>
