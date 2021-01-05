@@ -116,30 +116,29 @@ $$
 $$
 f(k)=2\pi\delta(k^2+m^2)\left[\alpha\theta(k^0)L(\Lambda)(1+iC^0)L(\Lambda)^T+\beta\theta(-k^0)L(\Lambda)(1-iC^0)L(\Lambda)^T\right]
 $$
-其中$L(1+\theta K^{0i})=1+\frac\theta4[C^0,C^i]$. 若考虑$k=(k^0,k^1,0,0)$，则boost为
+其中$L(1+\theta K^{0i})=1+\frac\theta4[C^0,C^i]$. 若考虑$(k,0,0,0)\stackrel\Lambda\rightarrow(k^0,k^1,0,0)$，则boost为
 $$
 \Lambda=\lim_{\theta_0\rightarrow0}\left(\begin{array}{cc}1 & \theta_0 \\\theta_0 & 1\end{array}\right)^{\theta/\theta_0}=\left(\begin{array}{cc}\cosh\theta & \sinh\theta \\\sinh\theta & \cosh\theta\end{array}\right),L=\left(\begin{array}{cccc}
-\cosh\theta&0&\sinh\theta&0\\
-0&\cosh\theta&0&\sinh\theta\\
-\sinh\theta&0&\cosh\theta&0\\
-0&\sinh\theta&0&\cosh\theta
-\end{array}\right)=\frac{k^0+k^1C^0C^1}m
+\cosh\frac\theta2&0&-\sinh\frac\theta2&0\\
+0&\cosh\frac\theta2&0&-\sinh\frac\theta2\\
+-\sinh\frac\theta2&0&\cosh\frac\theta2&0\\
+0&-\sinh\frac\theta2&0&\cosh\frac\theta2
+\end{array}\right)=\sqrt{\frac{k^0+k}{2k}}-\frac{k^1}{\sqrt{2k(k^0+k)}}C^0C^1
 $$
-因此一般的为$mL(\Lambda)=k^0+k^1C^0C^1+k^2C^0C^2+k^3C^0C^3=C^0C^\mu k_\mu$
+此时为
 $$
 \begin{aligned}
 f(k)=&2\pi\delta(k^2+m^2)\left\{\left[\alpha\theta(k^0)+\beta\theta(-k^0)\right]LL^T+\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]LiC^0L^T\right\}\\
-=&2\pi\delta(k^2+m^2)\left\{\frac1{m^2}\left[\alpha\theta(k^0)+\beta\theta(-k^0)\right](k_0^2+\vec k^2+2k_0k_iC^0C^i)+i\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]C^0\right\}\\
-=&2\pi\delta(k^2+m^2)\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]\left\{\frac1{m^2}\mathrm{sign}(k^0)(k_0^2+\vec k^2+2k_0k_iC^0C^i)+iC^0\right\}\\
+=&2\pi\delta(k^2+m^2)\left\{\frac1{k}\left[\alpha\theta(k^0)+\beta\theta(-k^0)\right](k^0-k^1C^0C^1)+i\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]C^0\right\}\\
+=&2\pi\delta(k^2+m^2)\left\{\frac1{k}\left[\alpha\theta(k^0)+\beta\theta(-k^0)\right](-k^0C^0+k^1C^1)C^0+i\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]C^0\right\}\\
 \end{aligned}
 $$
-花括号里当$k^0>0$时为
-$$
-\frac1{m^2}(k_0^2+\vec k^2-2k_0^2-2k^0k^iC^0C^i)+iC^0=-1+iC^0-\frac2{m^2}k^0k^iC^0C^i
-$$
-当$k^0<0$时为$1+iC^0+\frac2{m^2}k^0k^iC^0C^i$。
 
-**算了，姑且相信**
+由于$\delta$函数的存在，要求$k=\pm m$，即
+$$
+f(k)=2\pi\delta(k^2+m^2)\left\{\frac1{m}\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right](-k^0C^0+k^1C^1)C^0+i\left[\alpha\theta(k^0)-\beta\theta(-k^0)\right]C^0\right\}
+$$
+提出公因子，容易推广到其他boost，最终为
 $$
 f(k)=2\pi\delta(k^2+m^2)\frac{\alpha\theta(k^0)-\beta\theta(-k^0)}{m}(k\!\!\!\backslash+im)C^0\tag{1.5}
 $$
@@ -168,7 +167,8 @@ $$
 
 1. $\alpha$现在只知道是实数，通过波函数的伸缩可以自由变大变小，但尚未知道其正负性
 2. 从动量空间变换回坐标空间。具体表达式要用到很怪的数理技巧，下节计算等时情形
-3. (1.5)式不会算
+
+这两个问题都将在下一节中（部分）解决
 
 ### 等时特例
 
@@ -248,13 +248,32 @@ $$
 $$
 利用厄米性可推出$\phi^*(p)=\phi(-p)$，则波函数可以写为
 $$
-\phi(p)=2\pi\delta(p^2+m^2)\sum_{s=\pm}(b(\vec p)u_s(\vec p)\theta(p^0)+b^\dagger(-\vec p)u_s^*(-\vec p)\theta(-p^0))
+\phi(p)=2\pi\delta(p^2+m^2)\sum_{s=\pm}(b(\vec p)u_s(\vec p)\theta(p^0)+b^\dagger(\vec p)u_s^*(\vec p)\theta(-p^0))
 $$
 变换回坐标空间
 $$
-\phi(x)=\int\frac{\mathrm d^4p}{(2\pi)^4}e^{ikx}\phi(p)=\sum_{s=\pm}\int\tilde{dp}\left[b(\vec p)u_s(\vec p)e^{ipx}+b^\dagger(-\vec p)u_s(-\vec p)e^{-ipx}\right]
+\phi(x)=\int\frac{\mathrm d^4p}{(2\pi)^4}e^{ikx}\phi(p)=\sum_{s=\pm}\int\tilde{dp}\left[b(\vec p)u_s(\vec p)e^{ipx}+b^\dagger(\vec p)u^*_s(\vec p)e^{-ipx}\right]
 $$
 
 #### $u,b$的性质
 
+当$\vec k=\vec 0$时， $k_0=\mp m$，取正半支为$(1-iC^0)u(\vec 0)=0$，我们希望它是角动量$z$分量的本征态，即$\frac i4\left[C^1,C^2\right]$的本征态
+$$
+u_+(\vec 0)=(1,-i,1,i)^T,u_-(\vec 0)=(1,i,-1,i)^T
+$$
+诚然，我们可以通过变换$u(\vec k)=L(\Lambda)u(\vec 0)L(\Lambda)^T$
+
 #### 重新审查4-动量
+
+$$
+\begin{aligned}
+H=&\frac i2\int\mathrm d^3\vec y\ \phi^TC^0(C^k\partial_k+m)\phi\\
+=&\frac i2\int\mathrm d^3\vec y\ \sum_{s=\pm}\int\tilde{dp}\left[b(\vec p)u^T_s(\vec p)e^{ipy}+b^\dagger(-\vec p)u^T_s(-\vec p)e^{-ipy}\right]\times\\
+&C^0(C^k\partial_k+m)\sum_{s'=\pm}\int\tilde{dp'}\left[b(\vec p')u_{s'}(\vec p')e^{ip'y}+b^\dagger(-\vec p')u_{s'}(-\vec p')e^{-ip'y}\right]\\
+=&\frac i2\int\mathrm d^3\vec y\ \sum_{s=\pm}\int\tilde{dp}\left[b(\vec p)u^T_s(\vec p)e^{ipy}+b^\dagger(-\vec p)u^T_s(-\vec p)e^{-ipy}\right]\times\\
+&C^0\sum_{s'=\pm}\int\tilde{dp'}\left[(iC^kp'_k+m)b(\vec p')u_{s'}(\vec p')e^{ip'y}+(-iC^kp'_k+m)b^\dagger(-\vec p')u_{s'}(-\vec p')e^{-ip'y}\right]\\
+=&\frac i2\sum_{s,s'=\pm}\int\frac{\tilde{dp}}{2\omega_{\vec p}}\left[b(\vec p)u_s^T(\vec p)C^0(-iC^kp_k+m)u_{s'}(-\vec p)\left(b(-\vec p)+b^\dagger(-\vec p)\right)\right]\\
++&\frac i2\sum_{s,s'=\pm}\int\frac{\tilde{dp}}{2\omega_{\vec p}}\left[b^\dagger(-\vec p)u_s^T(-\vec p)C^0(iC^kp_k+m)u_{s'}(\vec p)\left(b(\vec p)+b^\dagger(\vec p)\right)\right]\\
+\end{aligned}
+$$
+

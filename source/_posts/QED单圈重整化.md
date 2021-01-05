@@ -106,28 +106,28 @@ $$
 $$
 \begin{aligned}
 \Sigma(p)=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{C^i(m-iC^al_a)C^j\delta_{ij}}{(l^2+m^2)(p-l)^2}\\
-=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{m-i\sum_jC^jC^aC^jl_a}{(l^2+m^2)(p-l)^2}\\
-=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{m+2iC^al_a}{(l^2+m^2)(p-l)^2}\\
+=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m-i\sum_jC^jC^aC^jl_a}{(l^2+m^2)(p-l)^2}\\
+=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m+2iC^al_a}{(l^2+m^2)(p-l)^2}\\
 \end{aligned}
 $$
 做Feynman参数化
 $$
 \begin{aligned}
-\Sigma(p)=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{m+2iC^al_a}
+\Sigma(p)=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m+2iC^al_a}
 {[(l-xp)^2+(1-x)m^2+x(1-x)p^2]^2}\\
-=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{m+2xiC^ap_a}
+=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{4m+2xiC^ap_a}
 {[q^2+D]^2}\\
-=&-e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2q^3\mathrm dq}{(2\pi)^4}\frac{m+2xiC^ap_a}
+=&-e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2q^3\mathrm dq}{(2\pi)^4}\frac{4m+2xiC^ap_a}
 {[q^2+D]^2}\\
-=&-\frac{e^2}{16\pi^2}\int_0^1\mathrm dx\int_0^\infty t\mathrm dt\frac{m+2xiC^ap_a}
+=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\int_0^\infty t\mathrm dt\frac{4m+2xiC^ap_a}
 {[t+D]^2}\\
-=&-\frac{e^2}{16\pi^2}\int_0^1\mathrm dx\left[-\frac{Q}{D+Q}+\ln\frac{D+Q}D+\ln\frac{\infty}{Q}\right](m+2xiC^ap_a)\\
-=&-\frac{e^2}{16\pi^2}\int_0^1\mathrm dx\left[-\ln D+c\right](m+2xiC^ap_a)\\
+=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\left[-\frac{Q}{D+Q}+\ln\frac{D+Q}D+\ln\frac{\infty}{Q}\right](4m+2xiC^ap_a)\\
+=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\left[-\ln D+c\right](4m+2xiC^ap_a)\\
 \end{aligned}
 $$
 当$p^2+m^2=0$时$\Sigma(p)=0$
 $$
-\Sigma(p)=\frac{e^2}{16\pi^2}\int_0^1(m+2xip\!\!\!\backslash)\left[\ln\frac{(1-x)m^2+x(1-x)p^2}{m^2}+2\right]\mathrm dx
+\Sigma(p)=\frac{e^2}{16\pi^2}\int_0^1(4m+2xip\!\!\!\backslash)\left[\ln\frac{(1-x)m^2+x(1-x)p^2}{m^2}+2\right]\mathrm dx
 $$
 同样，$p^2\gg m^2$时
 $$
