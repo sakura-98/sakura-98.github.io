@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="正规化是用于处理无穷大的一种技术手段，常见的方式有  维数正规化 Pauli-Villars正规化 晶格正规化 $\zeta$函数正规化 Hadamard正规化 点分裂正规化  至今为止，我对正规化一无所知。北京大学檀时钠《量子场论》课上给出一种正规化方案，本文用于重现这种方案。将来可能会将其与正常做法作比较。">
+  <meta name="description" content="这篇将会写比较长时间吧。一来因为计算量确实不小，二来……算了，也不要二来了。 高维球的体积和表面积公式直接给出吧。     $d$ 0 1 2 3 4 $\cdots$ $d$     $V^d$ $1$ $2$ $\pi$ $\frac{4\pi}3$ $\frac{\pi^2}4$  $\pi^{d&#x2F;2}&#x2F;\Gamma\left(\frac d2+1\right)$   $S^d$ $0$ $">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一种正规化方案">
-<meta property="og:url" content="https://github.com/sakura-98/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/index.html">
+<meta property="og:title" content="QED单圈重整化">
+<meta property="og:url" content="https://github.com/sakura-98/2020/11/14/QED%E5%8D%95%E5%9C%88%E9%87%8D%E6%95%B4%E5%8C%96/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="正规化是用于处理无穷大的一种技术手段，常见的方式有  维数正规化 Pauli-Villars正规化 晶格正规化 $\zeta$函数正规化 Hadamard正规化 点分裂正规化  至今为止，我对正规化一无所知。北京大学檀时钠《量子场论》课上给出一种正规化方案，本文用于重现这种方案。将来可能会将其与正常做法作比较。">
+<meta property="og:description" content="这篇将会写比较长时间吧。一来因为计算量确实不小，二来……算了，也不要二来了。 高维球的体积和表面积公式直接给出吧。     $d$ 0 1 2 3 4 $\cdots$ $d$     $V^d$ $1$ $2$ $\pi$ $\frac{4\pi}3$ $\frac{\pi^2}4$  $\pi^{d&#x2F;2}&#x2F;\Gamma\left(\frac d2+1\right)$   $S^d$ $0$ $">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-13T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-24T04:46:53.460Z">
+<meta property="article:modified_time" content="2021-01-05T08:09:00.684Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/sakura-98/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/">
+<link rel="canonical" href="https://github.com/sakura-98/2020/11/14/QED%E5%8D%95%E5%9C%88%E9%87%8D%E6%95%B4%E5%8C%96/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>一种正规化方案 | Sakura's Blog</title>
+  <title>QED单圈重整化 | Sakura's Blog</title>
   
 
 
@@ -187,7 +187,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2020/11/14/QED%E5%8D%95%E5%9C%88%E9%87%8D%E6%95%B4%E5%8C%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -200,7 +200,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          一种正规化方案
+          QED单圈重整化
         </h1>
 
         <div class="post-meta">
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-24 12:46:53" itemprop="dateModified" datetime="2020-11-24T12:46:53+08:00">2020-11-24</time>
+                <time title="Modified: 2021-01-05 16:09:00" itemprop="dateModified" datetime="2021-01-05T16:09:00+08:00">2021-01-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,59 +240,118 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>正规化是用于处理无穷大的一种技术手段，常见的方式有</p>
-<ul>
-<li>维数正规化</li>
-<li>Pauli-Villars正规化</li>
-<li>晶格正规化</li>
-<li>$\zeta$函数正规化</li>
-<li>Hadamard正规化</li>
-<li>点分裂正规化</li>
-</ul>
-<p>至今为止，我对正规化一无所知。北京大学檀时钠《量子场论》课上给出一种正规化方案，本文用于重现这种方案。将来可能会将其与正常做法作比较。</p>
-<a id="more"></a>
-<h3 id="引理一：高维球体积"><a href="#引理一：高维球体积" class="headerlink" title="引理一：高维球体积"></a>引理一：高维球体积</h3><script type="math/tex; mode=display">V^{(d)}=\frac{\pi^{d/2}}{\Gamma\left(\frac d2+1\right)},\quad S^{(d)}=\frac{2\pi^{d/2}}{\Gamma\left(\frac d2\right)}\tag1</script><p>证明很直接，利用数学归纳法即可，关键一步为</p>
-<script type="math/tex; mode=display">V^{(d)}=\int_{-1}^1\frac{\pi^{(d-1)/2}}{\Gamma\left(\frac{d-1}2+1\right)}(1-x^2)^{\frac{d-1}2}\mathrm dx
-=\frac{\pi^{(d-1)/2}}{\Gamma\left(\frac{d-1}2+1\right)}\int_{-\pi/2}^{\pi/2}\cos^d\theta\mathrm d\theta
-=\frac{\pi^{d/2}}{\Gamma\left(\frac d2+1\right)}</script><p>而表面积为体积对半径的微商，那就很显然了。</p>
-<h3 id="引理二：Feynman参数积分"><a href="#引理二：Feynman参数积分" class="headerlink" title="引理二：Feynman参数积分"></a>引理二：Feynman参数积分</h3><script type="math/tex; mode=display">\begin{aligned}
-&\frac{1}{(A_1+i\eta_1)\cdots(A_n+i\eta_n)}=\int\mathrm dF_n\left(x_1A_1+\cdots+x_nA_n\right)^{-n}\\
-&\int\mathrm dF_n=(n-1)!\int\mathrm dx_1\cdots\mathrm dx_n\ \delta\left(x_1+\cdots+x_n-1\right)\end{aligned}\tag2</script><p>对于单个而言，我们有</p>
-<script type="math/tex; mode=display">\frac1{A+i\eta}=-i\int_0^\infty\mathrm dt\ e^{(-\eta+iA)t}</script><p>可以看到正数 $\eta_j$ 使积分收敛。所以 $n$ 项积分为</p>
-<script type="math/tex; mode=display">LHS=(-i)^n\int_0^\infty\mathrm dt_1\cdots\mathrm dt_n\ e^{i(A_1t_1+\cdots A_nt_n)-0}</script><p>再引入一个辅助量$\lambda$</p>
-<script type="math/tex; mode=display">\int_0^\infty\frac{\mathrm d\lambda}{\lambda}\delta\left(1-\frac1\lambda\sum_{j=1}^nt_j\right)=\int_0^\infty\frac{\mathrm d\lambda}\lambda\frac{\delta(\lambda-\sum_{j=1}^nt_j)}{1/\lambda}=1</script><p>插入上式，并换元 $x_j=t_j/\lambda$</p>
-<script type="math/tex; mode=display">LHS=(-i)^n\int_0^\infty\mathrm dx_1\cdots\mathrm dx_n\mathrm d\lambda\ \lambda^{n-1}\delta(\lambda-\lambda\sum_{j=1}^nx_j)e^{i\lambda(A_1x_1+\cdots+A_nx_n)-0\lambda}</script><p>对$\lambda$积分是个Gamma函数，因此可以求解，最终得到(2)式</p>
-<h3 id="例子一：六维时空-varphi-3-理论自能项"><a href="#例子一：六维时空-varphi-3-理论自能项" class="headerlink" title="例子一：六维时空$\varphi^3$理论自能项"></a>例子一：六维时空$\varphi^3$理论自能项</h3><h4 id="变换到欧氏空间"><a href="#变换到欧氏空间" class="headerlink" title="变换到欧氏空间"></a>变换到欧氏空间</h4><script type="math/tex; mode=display">\mathcal L=-\frac12\partial_\mu\varphi\partial^\mu\varphi-\frac{m^2}2\varphi^2+\frac g{3!}\varphi^3</script><p>拉氏量和场算符的维数分别是$d,d/2-1$，所以当时空维数$d=6$时$g$无量纲。自能最低阶为</p>
-<script type="math/tex; mode=display">\Pi(k^2)\approx \frac{g^2}{2}\int\frac{-i\mathrm d^dl}{(2\pi)^d}\Delta(l)\Delta(k+l)=\frac{g^2}2\int\frac{-i\mathrm d^dl}{(2\pi)^d}\frac{1}{\left[l^2+m^2-i\epsilon\right]\left[(l+k)^2+m^2-i\epsilon\right]}</script><p>变换到欧氏空间</p>
-<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{1}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]}</script><h4 id="考察发散性质"><a href="#考察发散性质" class="headerlink" title="考察发散性质"></a>考察发散性质</h4><p>对$k_E$求导，符号记为$\partial_k^2=g^{\mu\nu}\frac{\partial}{\partial k^\mu}\frac{\partial}{\partial k^\nu}$</p>
-<script type="math/tex; mode=display">\partial_k^2\Pi(k_E^2)=-\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{8}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]^2}</script><p>仍然发散</p>
-<script type="math/tex; mode=display">\partial_k^2\partial_k^2\Pi(k_E^2)=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{128}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]^3}</script><p>收敛，所以$\Pi(k_E^2)=\Pi^{\text{特解}}(k_E^2)+c_1+c_2k_E^2$</p>
-<h4 id="实际积分"><a href="#实际积分" class="headerlink" title="实际积分"></a>实际积分</h4><p>利用(2)</p>
-<script type="math/tex; mode=display">\begin{aligned}\Pi(k_E^2)&=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\int_0^1\mathrm dx\left\{(1-x)(l_E^2+m^2)+x\left[(l_E+k_E)^2+m^2\right]\right\}^{-2}\\
-&=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\int_0^1\mathrm dx\left\{(l_E+xk_E)^2+(x-x^2)k_E^2+m^2\right\}^{-2}\\
-&=\frac{g^2}2\int_0^1\mathrm dx\int\frac{\mathrm d^dl_E}{(2\pi)^d}\left\{l_E^2+(x-x^2)k_E^2+m^2\right\}^{-2}\\
-\end{aligned}</script><p>最后一步做了个平移，因为是对全空间积分，所以不影响结果。可以看到，当$d\ge3$时积分发散，</p>
-<p>分为在半径为$Q$的球内外两部分积分，球内部分需要用到(1)，球外部分直接写为$f(k_E^2;Q)$。并设$D=(x-x^2)k_E^2+m^2$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\Pi(k_E^2)&=\frac{g^2}2\int_0^1\mathrm dx\left[\int_0^Q\frac{\pi^3r^5\mathrm dr}{2(2\pi)^6}\left\{r^2+D\right\}^{-2}+f(k_E^2;Q)\right]\\
-&=\frac{g^2}2\int_0^1\mathrm dx\left[\frac{1}{64\pi^3}\left(\frac{(2D+Q^2)Q^2}{2(D+Q^2)}+D\ln\frac{D}{D+Q^2}\right)+f(k_E^2;Q)\right]\\
-&=\frac{g^2}2\int_0^1\mathrm dx\left[\frac{1}{64\pi^3}\left(\frac D2+D\ln D+\frac{Q^2}2-2D\ln Q\right)+f(k_E^2;Q)+\mathcal O(Q^{-2})\right]\\
-\end{aligned}</script><p>因为总的积分值与$Q$无关，所以根据之前考察的发散性质可知</p>
-<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{g^2}{128\pi^2}\int_0^1\mathrm dx\left(\frac D2+D\ln D\right)+c_1+c_2k_E^2</script><p>积分的最终结果为（下式中的$c_1,c_2$与上式不同。注意到第一项积分只会出现常数项和二次项，所以可以吸收进待定系数）</p>
+        <p>这篇将会写比较长时间吧。一来因为计算量确实不小，二来……算了，也不要二来了。</p>
+<p>高维球的体积和表面积公式直接给出吧。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$d$</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">$\cdots$</th>
+<th style="text-align:center">$d$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$V^d$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$\pi$</td>
+<td style="text-align:center">$\frac{4\pi}3$</td>
+<td style="text-align:center">$\frac{\pi^2}4$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$\pi^{d/2}/\Gamma\left(\frac d2+1\right)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$S^d$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$2\pi$</td>
+<td style="text-align:center">$4\pi$</td>
+<td style="text-align:center">$2\pi^2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$2\pi^{d/2}/\Gamma\left(\frac d2\right)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>以及所谓的”积木“</p>
 <script type="math/tex; mode=display">
-\Pi(k_E^2)=\frac{g^2}{768\pi^2}\left[(k_E^2+4m^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k_E^2}}{2m}}{\sqrt{k_E^2}}
-+c_1+c_2k_E^2\right]\tag4</script><p><strong>在on-shell方案下</strong> $\Pi(-m^2)=\Pi’(-m^2)=0$，因此定出$c_1,c_2$</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&\sqrt3\pi m^2+c_1-c_2m^2=0\\
-&\sqrt3\pi-3+c_2=0
-\end{aligned}\right.</script><p>所以令$\alpha=g^2/(4\pi)^3$</p>
-<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{\alpha}{12}\left[(k_E^2+4m^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k_E^2}}{2m}}{\sqrt{k_E^2}}
-+(3-2\sqrt3\pi)m^2+(3-\sqrt3\pi)k_E^2\right]</script><h4 id="变换回闵氏空间"><a href="#变换回闵氏空间" class="headerlink" title="变换回闵氏空间"></a>变换回闵氏空间</h4><p>根据(4)，$k^2\gg m^2$时</p>
-<script type="math/tex; mode=display">\frac{\Pi(k^2)}{k^2+m^2}\approx\frac\alpha{12}\left[\ln\frac{k^2}{m^2}+c_2\right]</script><p>当$-k^2\gg m^2$时</p>
-<script type="math/tex; mode=display">\frac{\Pi(k^2)}{k^2+m^2}\approx\frac\alpha{12}\left[-i\pi+\ln\frac{|k^2|}{m^2}+c_2\right]</script><p>由Dyson方程可得</p>
-<script type="math/tex; mode=display">\mathbf\Delta(k)=\left[1-\Delta(k)\Pi(k^2)\right]^{-1}\Delta(k)=\frac{1}{\left[1-\frac{\Pi(k^2)}{k^2+m^2}\right]\left(k^2+m^2-i\epsilon\right)}</script><p>因此在$k^2\gg m^2$时</p>
-<script type="math/tex; mode=display">\mathbf\Delta(k)\approx\frac1{k^2+m^2-i\epsilon}\underline{\left(1+\frac\alpha{12}\ln\frac{k^2}{m^2}\right)}\approx\frac{1}{k^2}\underline{\left(\frac{k^2}{m^2}\right)^{\alpha/12}}</script><h3 id="其他例子"><a href="#其他例子" class="headerlink" title="其他例子"></a>其他例子</h3><p>见<a href="/2020/11/24/单圈修正/">单圈修正</a></p>
-
+S(k)=\frac{m-ip\!\!\!\backslash}{p^2+m^2-i\epsilon},\Delta^{\mu\nu}(k)=\frac1{k^2-i\epsilon}\left[g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right]</script><a id="more"></a>
+<h3 id="光子自能"><a href="#光子自能" class="headerlink" title="光子自能"></a>光子自能</h3><p>光子自能图为</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=(-1)\int\frac{-i\mathrm d^4l}{(2\pi)^4}\ \mathrm{Tr}\left[S(l+k)ieC^\mu S(l)ieC^\nu\right]=e^2\int\frac{\mathrm d^4l}{(2\pi)^4}\mathrm{Tr}\left[\frac{m-i(l\!\!\backslash+k\!\!\!\backslash)}{(l+k)^2+m^2}C^\mu\frac{m-il\!\!\backslash}{l^2+m^2}C^\nu\right]</script><p>求迹这种东西嘛，主要就是用$\{C^\mu,C^\nu\}=2g^{\mu\nu}\Rightarrow\mathrm{Tr}[C^\mu C^\nu]=4g^{\mu\nu}$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\mathrm{Tr}[C^\rho C^\mu C^\sigma C^\nu]
+=\mathrm{Tr}[C^\rho C^\mu(2g^{\sigma\nu}-C^\nu C^\sigma)]\\
+=&8g^{\rho\mu}g^{\sigma\nu}-\mathrm{Tr}[C^\rho C^\mu C^\nu C^\sigma]=8g^{\rho\mu}g^{\sigma\nu}-\mathrm{Tr}[C^\rho(2g^{\mu\nu}-C^\nu C^\mu)C^\sigma]\\
+=&8g^{\rho\mu}g^{\sigma\nu}-8g^{\mu\nu}g^{\rho\sigma}+\mathrm{Tr}[C^\rho C^\nu C^\mu C^\sigma]\\
+=&8(g^{\rho\mu}g^{\sigma\nu}-g^{\mu\nu}g^{\rho\sigma}+g^{\nu\rho}g^{\mu\sigma})-\mathrm{Tr}[C^\nu C^\rho C^\mu C^\sigma]
+\end{aligned}</script><p>所以$\mathrm{Tr}[C^\rho C^\mu C^\sigma C^\nu]=4(g^{\rho\mu}g^{\sigma\nu}-g^{\mu\nu}g^{\rho\sigma}+g^{\nu\rho}g^{\mu\sigma})$，因此</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=4e^2\int\frac{-i\mathrm d^4l}{(2\pi)^4}\frac{[m^2+(l+k)_\rho l_\sigma g^{\rho\sigma}]g^{\mu\nu}-[(l+k)^\mu l^\nu+(l+k)^\nu l^\mu]g^{\mu\mu}g^{\nu\nu}}{[(l+k)^2+m^2][l^2+m^2]}</script><p>做完Wick转动$l^0=il^4,k^0=ik^4$</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=4e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{[m^2+(l+k)\cdot l]\delta^{ij}-[(l+k)^\mu l^\nu+(l+k)^j l^i]}{[(l+k)^2+m^2][l^2+m^2]}</script><p>做Feynman参数化</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=4e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{[m^2+(l+k)\cdot l]\delta^{ij}-[(l+k)^il^j+(l+k)^jl^i]}{[(l+xk)^2+x(1-x)k^2+m^2]^2}</script><p>设$q=l+xk,D=x(1-x)k^2+m^2$。略去一次项</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=4e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-2q^iq^j+2x(1-x)k^ik^j}{[q^2+x(1-x)k^2+m^2]^2}</script><p>利用$\int\mathrm d^4q\ q^iq^jf(q^2)=\frac14\delta^{ij}\int\mathrm d^4q\ q^2f(q^2)$得</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Pi^{ij}(k_E)
+=&4e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2 q^3\mathrm dq}{(2\pi)^4}\frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-\frac12\delta^{ij}q^2+2x(1-x)k^ik^j}{[q^2+D]^2}\\
+=&\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\int_0^\infty q^2\mathrm dq^2\ \frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-\frac12\delta^{ij}q^2+2x(1-x)k^ik^j}{[q^2+D]^2}\\
+=&\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\int_0^\infty \mathrm dt\ \frac{[m^2\delta^{ij}-x(1-x)(k^2\delta^{ij}-2k^ik^j)]t+\frac12\delta^{ij}t^2}{[t+D]^2}\\
+\end{aligned}</script><p>分别计算两项</p>
+<script type="math/tex; mode=display">
+\int_0^\infty\mathrm dt\frac t{(t+D)^2}=\int_0^Q\frac{t}{(t+D)^2}\mathrm dt+\int_Q^\infty\frac{\mathrm dt}t=-\frac{Q}{D+Q}+\ln\frac{D+Q}D-\ln\frac{\infty}{Q}=-\ln D+c_1</script><script type="math/tex; mode=display">
+\int_0^\infty\frac{t^2\mathrm dt}{(t+D)^2}=\left[\frac{Q(2D+Q)}{D+Q}+2D\ln\frac{D}{D+Q}\right]+\infty-Q-2D\ln\frac{\infty}{Q}=2D\ln D+c_2+c_3D</script><p>所以</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\ \left\{[m^2\delta^{ij}-x(1-x)(k^2\delta^{ij}-2k^ik^j)](-\ln D+c_1)+\delta^{ij}(D\ln D+\frac12c_2+\frac12c_3D)\right\}</script><p>整理得</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\ \left\{2x(1-x)\ln D[k^2\delta^{ij}-k^ik^j]+2b_1k^ik^j+2(b_2+b_3k^2)\delta^{ij}\right\}</script><p>上式用到了$D=x(1-x)k^2+m^2$。变换回闵氏空间</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}\int_0^1\mathrm dx[x(1-x)\ln D (k^2g^{\mu\nu}-k^\mu k^\nu)+b_1k^\mu k^\nu+(b_2+b_3k^2)g^{\mu\nu}]</script><p>On-shell 条件要求$k^2=0$时$\Pi^{\mu\nu}(k)=0,\partial\Pi^{\mu\nu}(k)=0$</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}(k^2g^{\mu\nu}-k^\mu k^\nu)\int_0^1x(1-x)\ln \frac{x(1-x)k^2+m^2}{m^2}\mathrm dx</script><p>当$k^2\gg m^2$时</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}\left[-\frac5{18}+\frac16\ln\frac{k^2}{m^2}\right]</script><h3 id="电子自能"><a href="#电子自能" class="headerlink" title="电子自能"></a>电子自能</h3><script type="math/tex; mode=display">
+\Sigma(p)=\int\frac{-i\mathrm d^4l}{(2\pi)^4}ieC^\nu S(l)ieC^\mu\Delta_{\mu\nu}(p-l)
+=-e^2\int\frac{-i\mathrm d^4l}{(2\pi)^4}\frac{C^\nu(m-iC^\rho l_\rho)C^\mu}{l^2+m^2-i\epsilon}\frac{g_{\mu\nu}}{(p-l)^2-i\epsilon}</script><p>做Wick转动和变量代换</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Sigma(p)=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{C^i(m-iC^al_a)C^j\delta_{ij}}{(l^2+m^2)(p-l)^2}\\
+=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m-i\sum_jC^jC^aC^jl_a}{(l^2+m^2)(p-l)^2}\\
+=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m+2iC^al_a}{(l^2+m^2)(p-l)^2}\\
+\end{aligned}</script><p>做Feynman参数化</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Sigma(p)=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m+2iC^al_a}
+{[(l-xp)^2+(1-x)m^2+x(1-x)p^2]^2}\\
+=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{4m+2xiC^ap_a}
+{[q^2+D]^2}\\
+=&-e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2q^3\mathrm dq}{(2\pi)^4}\frac{4m+2xiC^ap_a}
+{[q^2+D]^2}\\
+=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\int_0^\infty t\mathrm dt\frac{4m+2xiC^ap_a}
+{[t+D]^2}\\
+=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\left[-\frac{Q}{D+Q}+\ln\frac{D+Q}D+\ln\frac{\infty}{Q}\right](4m+2xiC^ap_a)\\
+=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\left[-\ln D+c\right](4m+2xiC^ap_a)\\
+\end{aligned}</script><p>当$p^2+m^2=0$时$\Sigma(p)=0$</p>
+<script type="math/tex; mode=display">
+\Sigma(p)=\frac{e^2}{16\pi^2}\int_0^1(4m+2xip\!\!\!\backslash)\left[\ln\frac{(1-x)m^2+x(1-x)p^2}{m^2}+2\right]\mathrm dx</script><p>同样，$p^2\gg m^2$时</p>
+<script type="math/tex; mode=display">
+\Sigma(p)=\frac{e^2}{16\pi^2}\int(m+2xip\!\!\!\backslash)\left[\ln x(1-x)+2+\ln\frac{p^2}{m^2}\right]\mathrm dx
+=\frac{e^2}{16\pi^2}(m+ip\!\!\!\backslash)\ln\frac{p^2}{m^2}</script><h3 id="顶点"><a href="#顶点" class="headerlink" title="顶点"></a>顶点</h3><script type="math/tex; mode=display">
+\mathbf V(p,p',k)=\int\frac{-i\mathrm d^4l}{(2\pi)^4} ieC^\rho S(p'-l)ieC^\nu S(p-l)ieC^\mu \Delta_{\mu\rho}(l)</script><p>Wick转动和变量代换</p>
+<script type="math/tex; mode=display">
+\mathbf V(p,p',(k,\mu))=-i\frac{e^3}{(2\pi)^4}\int\mathrm d^4l_E\ \frac{C^\rho(m-i(p\!\!\!\backslash'-l\!\!\backslash))C^\mu(m-i(p\!\!\!\backslash-l\!\!\backslash))C^\nu\delta_{\nu\rho}}{[(p'-l)^2+m^2][(p-l)^2+m^2]l^2}</script><script type="math/tex; mode=display">
+\mathbf V(p,p',(k,\mu))=-i\frac{e^3}{(2\pi)^4}\int\mathrm d^4l_E\ \frac{-2C^\mu m^2-i8m(p^\mu+p'^\mu-2l^\mu)+(p\!\!\!\backslash-l\!\!\backslash)C^\mu(p\!\!\!\backslash'-l\!\!\backslash)}{[(p'-l)^2+m^2][(p-l)^2+m^2]l^2}</script>
     </div>
 
     
@@ -310,12 +369,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/14/QED%E5%8D%95%E5%9C%88%E9%87%8D%E6%95%B4%E5%8C%96/" rel="prev" title="QED单圈重整化">
-      <i class="fa fa-chevron-left"></i> QED单圈重整化
+    <a href="/2020/11/13/%E9%9B%B6%E6%B8%A9%E5%9C%BA%E8%AE%BA/" rel="prev" title="零温场论">
+      <i class="fa fa-chevron-left"></i> 零温场论
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/11/23/%E5%8D%95%E5%9C%88%E8%B4%B9%E6%9B%BC%E5%9B%BE/" rel="next" title="单圈费曼图">
-      单圈费曼图 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/" rel="next" title="一种正规化方案">
+      一种正规化方案 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -375,7 +434,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%90%86%E4%B8%80%EF%BC%9A%E9%AB%98%E7%BB%B4%E7%90%83%E4%BD%93%E7%A7%AF"><span class="nav-number">1.</span> <span class="nav-text">引理一：高维球体积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%90%86%E4%BA%8C%EF%BC%9AFeynman%E5%8F%82%E6%95%B0%E7%A7%AF%E5%88%86"><span class="nav-number">2.</span> <span class="nav-text">引理二：Feynman参数积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%E4%B8%80%EF%BC%9A%E5%85%AD%E7%BB%B4%E6%97%B6%E7%A9%BA-varphi-3-%E7%90%86%E8%AE%BA%E8%87%AA%E8%83%BD%E9%A1%B9"><span class="nav-number">3.</span> <span class="nav-text">例子一：六维时空$\varphi^3$理论自能项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E6%8D%A2%E5%88%B0%E6%AC%A7%E6%B0%8F%E7%A9%BA%E9%97%B4"><span class="nav-number">3.1.</span> <span class="nav-text">变换到欧氏空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%80%83%E5%AF%9F%E5%8F%91%E6%95%A3%E6%80%A7%E8%B4%A8"><span class="nav-number">3.2.</span> <span class="nav-text">考察发散性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E7%A7%AF%E5%88%86"><span class="nav-number">3.3.</span> <span class="nav-text">实际积分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E6%8D%A2%E5%9B%9E%E9%97%B5%E6%B0%8F%E7%A9%BA%E9%97%B4"><span class="nav-number">3.4.</span> <span class="nav-text">变换回闵氏空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E4%BE%8B%E5%AD%90"><span class="nav-number">4.</span> <span class="nav-text">其他例子</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%89%E5%AD%90%E8%87%AA%E8%83%BD"><span class="nav-number">1.</span> <span class="nav-text">光子自能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E8%87%AA%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">电子自能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">顶点</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

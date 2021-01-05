@@ -28,7 +28,7 @@
 <meta property="og:description" content="我发现自己连Majorana场的量子化都不会了，所以需要整理一下。顺便，新年快乐！ 和Klein-Gordon场相似，先从运动方程计算（反）对易关系。他俩为  (C^\mu\partial_\mu+m)\phi(x)&#x3D;0,[\phi_a(x),\phi_b(y)]_\sigma&#x3D;f_{ab}(x-y)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-02T04:57:15.469Z">
+<meta property="article:modified_time" content="2021-01-03T11:07:02.989Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-02 12:57:15" itemprop="dateModified" datetime="2021-01-02T12:57:15+08:00">2021-01-02</time>
+                <time title="Modified: 2021-01-03 19:07:02" itemprop="dateModified" datetime="2021-01-03T19:07:02+08:00">2021-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -367,9 +367,21 @@ H=\int\mathrm d^3\vec y\left\{\frac i2\phi^T(t,\vec y)C^0C^k\partial_k\phi(t,\ve
 <script type="math/tex; mode=display">
 0=\left[(iC^\mu k_\mu+m)u(\vec k)\right]^*=(-iC^\mu k_\mu+m)u^*(\vec k)=(iC^\mu k_\mu+m)u^*(-\vec k)</script><p>利用厄米性可推出$\phi^*(p)=\phi(-p)$，则波函数可以写为</p>
 <script type="math/tex; mode=display">
-\phi(p)=2\pi\delta(p^2+m^2)\sum_{s=\pm}(b(\vec p)u_s(\vec p)\theta(p^0)+b^\dagger(-\vec p)u_s^*(-\vec p)\theta(-p^0))</script><p>变换回坐标空间</p>
+\phi(p)=2\pi\delta(p^2+m^2)\sum_{s=\pm}(b(\vec p)u_s(\vec p)\theta(p^0)+b^\dagger(\vec p)u_s^*(\vec p)\theta(-p^0))</script><p>变换回坐标空间</p>
 <script type="math/tex; mode=display">
-\phi(x)=\int\frac{\mathrm d^4p}{(2\pi)^4}e^{ikx}\phi(p)=\sum_{s=\pm}\int\tilde{dp}\left[b(\vec p)u_s(\vec p)e^{ipx}+b^\dagger(-\vec p)u_s(-\vec p)e^{-ipx}\right]</script><h4 id="u-b-的性质"><a href="#u-b-的性质" class="headerlink" title="$u,b$的性质"></a>$u,b$的性质</h4><h4 id="重新审查4-动量"><a href="#重新审查4-动量" class="headerlink" title="重新审查4-动量"></a>重新审查4-动量</h4>
+\phi(x)=\int\frac{\mathrm d^4p}{(2\pi)^4}e^{ikx}\phi(p)=\sum_{s=\pm}\int\tilde{dp}\left[b(\vec p)u_s(\vec p)e^{ipx}+b^\dagger(\vec p)u^*_s(\vec p)e^{-ipx}\right]</script><h4 id="u-b-的性质"><a href="#u-b-的性质" class="headerlink" title="$u,b$的性质"></a>$u,b$的性质</h4><p>当$\vec k=\vec 0$时， $k_0=\mp m$，取正半支为$(1-iC^0)u(\vec 0)=0$，我们希望它是角动量$z$分量的本征态，即$\frac i4\left[C^1,C^2\right]$的本征态</p>
+<script type="math/tex; mode=display">
+u_+(\vec 0)=(1,-i,1,i)^T,u_-(\vec 0)=(1,i,-1,i)^T</script><p>诚然，我们可以通过变换$u(\vec k)=L(\Lambda)u(\vec 0)L(\Lambda)^T$</p>
+<h4 id="重新审查4-动量"><a href="#重新审查4-动量" class="headerlink" title="重新审查4-动量"></a>重新审查4-动量</h4><script type="math/tex; mode=display">
+\begin{aligned}
+H=&\frac i2\int\mathrm d^3\vec y\ \phi^TC^0(C^k\partial_k+m)\phi\\
+=&\frac i2\int\mathrm d^3\vec y\ \sum_{s=\pm}\int\tilde{dp}\left[b(\vec p)u^T_s(\vec p)e^{ipy}+b^\dagger(-\vec p)u^T_s(-\vec p)e^{-ipy}\right]\times\\
+&C^0(C^k\partial_k+m)\sum_{s'=\pm}\int\tilde{dp'}\left[b(\vec p')u_{s'}(\vec p')e^{ip'y}+b^\dagger(-\vec p')u_{s'}(-\vec p')e^{-ip'y}\right]\\
+=&\frac i2\int\mathrm d^3\vec y\ \sum_{s=\pm}\int\tilde{dp}\left[b(\vec p)u^T_s(\vec p)e^{ipy}+b^\dagger(-\vec p)u^T_s(-\vec p)e^{-ipy}\right]\times\\
+&C^0\sum_{s'=\pm}\int\tilde{dp'}\left[(iC^kp'_k+m)b(\vec p')u_{s'}(\vec p')e^{ip'y}+(-iC^kp'_k+m)b^\dagger(-\vec p')u_{s'}(-\vec p')e^{-ip'y}\right]\\
+=&\frac i2\sum_{s,s'=\pm}\int\frac{\tilde{dp}}{2\omega_{\vec p}}\left[b(\vec p)u_s^T(\vec p)C^0(-iC^kp_k+m)u_{s'}(-\vec p)\left(b(-\vec p)+b^\dagger(-\vec p)\right)\right]\\
++&\frac i2\sum_{s,s'=\pm}\int\frac{\tilde{dp}}{2\omega_{\vec p}}\left[b^\dagger(-\vec p)u_s^T(-\vec p)C^0(iC^kp_k+m)u_{s'}(\vec p)\left(b(\vec p)+b^\dagger(\vec p)\right)\right]\\
+\end{aligned}</script>
     </div>
 
     
