@@ -20,20 +20,22 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="固体在低温下的热容。也许能得到  C_V&#x3D;\alpha T+\beta T^3+higher">
+  <meta name="description" content="本文在路径积分框架下讨论Dyson-Schwinger方程和Ward-Takahashi恒等式，以及其部分应用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="低温热容">
-<meta property="og:url" content="https://github.com/sakura-98/2021/01/07/%E4%BD%8E%E6%B8%A9%E7%83%AD%E5%AE%B9/index.html">
+<meta property="og:title" content="量子场论对称性">
+<meta property="og:url" content="https://github.com/sakura-98/2021/01/09/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA%E5%AF%B9%E7%A7%B0%E6%80%A7/index.html">
 <meta property="og:site_name" content="Sakura&#39;s Blog">
-<meta property="og:description" content="固体在低温下的热容。也许能得到  C_V&#x3D;\alpha T+\beta T^3+higher">
+<meta property="og:description" content="本文在路径积分框架下讨论Dyson-Schwinger方程和Ward-Takahashi恒等式，以及其部分应用。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-08T01:14:21.712Z">
+<meta property="og:image" content="https://github.com/images/jmu.png">
+<meta property="article:published_time" content="2021-01-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-09T05:58:05.112Z">
 <meta property="article:author" content="Sakura">
 <meta property="article:tag" content="physics">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/images/jmu.png">
 
-<link rel="canonical" href="https://github.com/sakura-98/2021/01/07/%E4%BD%8E%E6%B8%A9%E7%83%AD%E5%AE%B9/">
+<link rel="canonical" href="https://github.com/sakura-98/2021/01/09/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA%E5%AF%B9%E7%A7%B0%E6%80%A7/">
 
 
 <script id="page-configurations">
@@ -46,7 +48,7 @@
   };
 </script>
 
-  <title>低温热容 | Sakura's Blog</title>
+  <title>量子场论对称性 | Sakura's Blog</title>
   
 
 
@@ -187,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2021/01/07/%E4%BD%8E%E6%B8%A9%E7%83%AD%E5%AE%B9/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/sakura-98/2021/01/09/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA%E5%AF%B9%E7%A7%B0%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -200,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          低温热容
+          量子场论对称性
         </h1>
 
         <div class="post-meta">
@@ -209,16 +211,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-01-07 00:00:00" itemprop="dateCreated datePublished" datetime="2021-01-07T00:00:00+08:00">2021-01-07</time>
+              <time title="Created: 2021-01-09 00:00:00 / Modified: 13:58:05" itemprop="dateCreated datePublished" datetime="2021-01-09T00:00:00+08:00">2021-01-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-08 09:14:21" itemprop="dateModified" datetime="2021-01-08T09:14:21+08:00">2021-01-08</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -240,44 +236,66 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>固体在低温下的热容。也许能得到</p>
+        <p>本文在路径积分框架下讨论Dyson-Schwinger方程和Ward-Takahashi恒等式，以及其部分应用。</p>
+<a id="more"></a>
+<h3 id="Dyson-Schwinger方程"><a href="#Dyson-Schwinger方程" class="headerlink" title="Dyson-Schwinger方程"></a>Dyson-Schwinger方程</h3><h4 id="一般形式"><a href="#一般形式" class="headerlink" title="一般形式"></a>一般形式</h4><p>假设作用量为$S=S[\varphi_1(x),\varphi_2(x),\cdots,\varphi_N(x)]$，做微小平移$\varphi_a(x)\rightarrow\varphi_a(x)+\eta_a(x)$，应当有</p>
 <script type="math/tex; mode=display">
-C_V=\alpha T+\beta T^3+higher</script><a id="more"></a>
-<h3 id="电子热容"><a href="#电子热容" class="headerlink" title="电子热容"></a>电子热容</h3><p>色散关系为</p>
+\int\mathrm D\varphi\ e^{iS[\varphi]}\varphi_{a_1}(x_1)\cdots\varphi_{a_n}(x_n)=\int\mathrm D[\varphi+\eta]\ e^{iS[\varphi+\eta]}[\varphi_{a_1}(x_1)+\eta_{a_1}(x_1)]\cdots[\varphi_{a_n}(x_n)+\eta_{a_n}(x_n)]</script><p>其中$a_1,a_2,\cdots a_n$可以重复。由于$\eta$可以任取，选定$\eta_a\neq0$，其他均为零，保留一阶项</p>
 <script type="math/tex; mode=display">
-\epsilon(\vec k)=\frac{\hbar^2}{2m}\vec k^2,\quad k_1,k_2,k_3=n\frac{2\pi}a</script><p>所以态密度为</p>
+\int\mathrm D\varphi\ e^{iS[\varphi]}\left[\left(\int i\frac{\delta S}{\delta\varphi_a(x)}\eta_a(x)\mathrm dx\right)\varphi_{a_1}(x_1)\cdots\varphi_{a_n}(x_n)+\sum_{j=1}^n\varphi_{a_1}(x_1)\cdots\delta_{aa_j}\eta_a(x_j)\cdots\varphi_{a_n}(x_n)\right]=0</script><p>这意味着</p>
 <script type="math/tex; mode=display">
-\mathcal D(\epsilon)=\frac{\mathrm d}{\mathrm d\epsilon}\int_{\epsilon(\vec k)<\epsilon}\frac V{(2\pi)^3}\mathrm d^3\vec k=\frac V{(2\pi)^3}\frac{\mathrm d}{\mathrm d\epsilon}\left[\frac43\pi\sqrt{\frac{2m\epsilon}{\hbar^2}}^3\right]=V\frac{2\pi(2m)^{3/2}}{(2\pi\hbar)^3}\epsilon^{1/2}\equiv\alpha V\epsilon^{1/2}</script><p>因此粒子数和能量为</p>
+i\left\langle T\frac{\delta S}{\delta\varphi_a(x)}\varphi_{a_1}(x_1)\cdots\varphi_{a_n}(x_n)\right\rangle+\sum_{j=1}^n\left\langle T\varphi_{a_1}(x_1)\cdots\delta_{aa_j}\delta^4(x-x_j)\cdots\varphi_{a_n}(x_n)\right\rangle=0\tag{1.1}</script><p>利用$S=\int\mathrm d^4x\ \mathcal L(\varphi,\partial_\mu\varphi)$可得</p>
 <script type="math/tex; mode=display">
-N=\int_0^\infty\frac{\mathcal D(\epsilon)}{e^{(\epsilon-\epsilon_F)/k_BT}+1}\mathrm d\epsilon,\quad 
-U=\int_0^\infty\frac{\epsilon \mathcal D(\epsilon)}{e^{(\epsilon-\epsilon_F)/k_BT}+1}\mathrm d\epsilon</script><p>当$T=0$时计算得</p>
+\frac{\delta S}{\delta\varphi_a(x)}=\frac{\partial\mathcal L}{\partial\varphi_a(x)}-\partial_\mu\frac{\partial\mathcal L}{\partial(\partial_\mu\varphi_a(x))}\tag{1.2}</script><p>所以Dyson-Schwinger方程为(1.1)(1.2)</p>
+<h4 id="例子：标量场"><a href="#例子：标量场" class="headerlink" title="例子：标量场"></a>例子：标量场</h4><script type="math/tex; mode=display">
+\mathcal L=-\frac12\partial_\mu\varphi\partial^\mu\varphi-\frac12m^2\varphi^2+\frac{g}{4!}\varphi^4</script><p>因此</p>
 <script type="math/tex; mode=display">
-N=\frac32\alpha V\epsilon_F^{3/2},\quad U=\frac52\alpha V\epsilon_F^{5/2}</script><p>假设费米能不变，计算随时间的导数</p>
+\frac{\delta S}{\delta\varphi(x)}=-m^2\varphi+\frac{g}{3!}\varphi^3+\partial^2\varphi</script><p>当$n=0,1,2$时，(1.1)变为</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&(\partial^2-m^2)\langle\varphi(x)\rangle+\frac g6\langle\varphi^3(x)\rangle=0\\
+&(\partial^2-m^2)\langle T\varphi(x)\varphi(y)\rangle+\frac g6\langle T\varphi^3(x)\varphi(y)\rangle=i\delta^4(x-y)\\
+&(\partial^2-m^2)\langle T\varphi(x)\varphi(y)\varphi(z)\rangle+\frac g6\langle T\varphi^3(x)\varphi(y)\varphi(z)\rangle=i\left[\delta^4(x-y)+\delta^4(x-z)\right]\langle\varphi(x)\rangle
+\end{aligned}\right.</script><p>$n=0,2$时左右都为零，显然成立。$n=1$时，按耦合系数展开，应该有</p>
+<script type="math/tex; mode=display">\begin{aligned}
+(\partial^2-m^2)&\Delta(x-y)=i\delta^4(x-y)\\
+(\partial^2-m^2)&\int\mathrm{id}^4z\ \Delta(x-z)\Delta(z-y)\Delta(z-z)=0\\
+(\partial^2-m^2)&\int\mathrm{id}^4z_1\mathrm{id}^4z_2\left[\Delta(x-z_1)\Delta(z_1-z_2)\Delta(z_2-y)\Delta^2(0)+\right.\\
+&\left.\frac16\Delta(x-z_1)\Delta^3(z_1-z_2)\Delta(z_2-y)+\frac12\Delta(x-z_1)\Delta(z_1-y)\Delta(z_1-z_2)^2\Delta(0)\right]\\
+&+\frac 16\int\mathrm{id}^4z\ \Delta^3(x-z)\Delta(z-y)=0
+\end{aligned}</script><p>第一项根据$\Delta(x)=\int\frac{-i\mathrm{id}^4k}{(2\pi)^4}\frac{e^{ikx}}{k^2+m^2-i\epsilon}$即可得到。第二项利用$\Delta(0)\equiv0$的重整化方案可证。第三项由以上分析化为</p>
+<script type="math/tex; mode=display">
+\int\mathrm{id}^4z_1\mathrm{id}^4z_2\ \frac16i\delta^4(x-z_1)\Delta^3(z_1-z_2)\Delta(z_2-y)+\frac16\int\cdots=0</script><p>因此也成立。更高阶的不再验证</p>
+<h4 id="例子：QED"><a href="#例子：QED" class="headerlink" title="例子：QED"></a>例子：QED</h4><script type="math/tex; mode=display">
+\mathcal L=-\bar\psi(\partial\!\!\!\backslash+m)\psi-\frac14 F_{\mu\nu}F^{\mu\nu}+ieA_\mu\bar\psi C^\mu\psi</script><p>因此</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\frac{\partial U}{\partial T}=&\int_0^\infty\frac{\epsilon\mathcal D(\epsilon)}{e^{(\epsilon-\epsilon_F)/k_BT}+e^{-(\epsilon-\epsilon_F)/k_BT}+2}\frac{\epsilon-\epsilon_F}{k_BT^2}\mathrm d\epsilon\\
-=&\int_{-\epsilon_F/k_BT}^\infty\frac{\alpha V(k_BTu+\epsilon_F)^{3/2}}{e^u+e^{-u}+2}\frac{u}Tk_BT\mathrm du
-\end{aligned}</script><p>低温下积分下限可以改写为$-\infty$，而且从分母看只有接近零的部分有贡献</p>
+&\frac{\delta S}{\delta\psi_a(x)}=-\bar\psi_am+ieA_\mu\bar\psi_a C^\mu-\partial_\mu(\bar\psi_a C^\mu)=-[C^\mu(\partial_\mu-ieA_\mu)+m]\bar\psi_a(x)\\
+&\frac{\delta S}{\delta\bar\psi_a(x)}=-(\partial\!\!\!\backslash+m-ieA_\mu C^\mu)\psi_a(x)-[C^\mu(\partial_\mu-ieA_\mu)+m]\psi_a(x)\\
+&\frac{\delta S}{\delta A_\mu(x)}=ie\bar\psi C^\mu\psi-\partial_\nu F^{\mu\nu}(x)
+\end{aligned}</script><h3 id="Ward-Takahashi-恒等式"><a href="#Ward-Takahashi-恒等式" class="headerlink" title="Ward-Takahashi 恒等式"></a>Ward-Takahashi 恒等式</h3><h4 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h4><p>假设存在某个对称操作$\varphi(x)\rightarrow\varphi(x)+\delta\varphi(x)$，对应Nother流$j^\mu(x)=\delta\varphi_a(x)\frac{\partial\mathcal L}{\partial(\partial_\mu\varphi_a(x))}-K^\mu(x)$</p>
+<p>(1.1)左乘$\delta\varphi_a(x)$并求和得</p>
 <script type="math/tex; mode=display">
-\frac{\partial U}{\partial T}\approx\alpha V\epsilon_F^{3/2}k_B\int_{-\infty}^{+\infty}\frac{u+\frac{k_BT}{\epsilon_F}u^2}{e^u+e^{-u}+2}+\mathcal O\left[\left(\frac{k_BT}{\epsilon_F}\right)^2\right]\mathrm du=\alpha V\epsilon_F^{3/2}k_B\frac{k_BT}{\epsilon_F}\frac{\pi^2}3</script><p>将其写为与体积无关的形式</p>
+-i\partial_\mu\left\langle Tj^\mu(x)\varphi_{a_1}(x_1)\cdots\varphi_{a_n}(x_n)\right\rangle+\sum_{j=1}^n\delta^4(x-x_j)\left\langle T\varphi_{a_1}(x_1)\cdots\delta\varphi_{a_j}(x_j)\cdots\varphi_{a_n}(x_n)\right\rangle=0\tag{2.1}</script><h4 id="QED中的应用"><a href="#QED中的应用" class="headerlink" title="QED中的应用"></a>QED中的应用</h4><p>U(1)对称性下</p>
 <script type="math/tex; mode=display">
-C_V=\frac{2\pi^2}{9}N\frac{k_B^2T}{\epsilon_F}=\frac{2\pi^2m}9N\frac{k_B^2T}{\hbar^2k_F^2}</script><h3 id="晶格热容"><a href="#晶格热容" class="headerlink" title="晶格热容"></a>晶格热容</h3><p>弹性波色散关系为</p>
+\psi(x)\rightarrow e^{-ie\epsilon}\psi(x),\bar\psi(x)\rightarrow e^{+ie\epsilon}\bar\psi(x)</script><p>所以</p>
 <script type="math/tex; mode=display">
-\epsilon(\vec k)=c|\vec k|,\quad k_1,k_2,k_3=n\frac{2\pi}a</script><p>态密度为</p>
+\delta\psi(x)=-ie\psi(x),\delta\bar\psi(x)=+ie\psi(x),j^\mu=\sum_a(-ie\psi_a)(\bar\psi_aC^\mu)=ie\bar\psi C^\mu\psi</script><p>$n=2$时</p>
 <script type="math/tex; mode=display">
-\mathcal D(\epsilon)=\frac{\mathrm d}{\mathrm d\epsilon}\int_{\epsilon(\vec k)<\epsilon}\frac V{(2\pi)^3}\mathrm d^3\vec k
-=\frac V{(2\pi)^3}\frac{\mathrm d}{\mathrm d\epsilon}\left[\frac43\left(\frac{\epsilon}{c}\right)^3\right]=\frac{1}{2\pi^3 c^3}V\epsilon^2</script><p>总共有$3N$种振动模式，所以</p>
+-i\partial_\mu\langle Tj^\mu(x)\psi_a(y)\bar\psi_b(z)\rangle+\delta^4(x-y)\langle T\delta\psi_a(y)\bar\psi_b(z)\rangle+\delta^4(x-z)\langle T\psi_a(y)\delta\bar\psi_b(z)\rangle=0</script><p>即为</p>
 <script type="math/tex; mode=display">
-3N=\int_0^{k_BT_D}\mathcal D(\epsilon)\mathrm d\epsilon=\frac{Vk_B^3T_D^3}{6\pi^3c^3}</script><p>内能为</p>
+-i\partial_\mu\langle Tj^\mu(x)\psi_a(y)\bar\psi_b(z)\rangle+ie\left[-\delta^4(x-y)+\delta^4(x-z)\right]\langle T\psi_a(y)\bar\psi_b(z)\rangle=0</script><p>第一项绘图为<br><img data-src="/images/jmu.png" alt="含有Nother流的图解"></p>
+<p>做Fourier变换</p>
 <script type="math/tex; mode=display">
-U=\int_0^{k_BT_D}\mathcal D(\epsilon)\frac\epsilon{e^{\epsilon/k_BT}-1}\mathrm d\epsilon
-=\frac{V}{2\pi^3c^3}(k_BT)^4\int_0^{T_D/T}\frac{x^3}{e^x-1}\mathrm dx</script><p>低温极限将积分上限改为$+\infty$</p>
+k_\mu\langle j^\mu(k)\psi_a(k_y)\bar\psi_b(k_z)\rangle-ie\langle\psi_a(k+k_y)\bar\psi_b(k_z)\rangle+ie\langle\psi_a(k_y)\bar\psi_b(k_z-k)\rangle=0</script><p>因此$k+k_y=k_z$，所以</p>
 <script type="math/tex; mode=display">
-U=\frac{V}{2\pi^3c^3}(k_BT)^4\frac{\pi^4}{15}=\frac{3N}{5T_D^3}\pi^4k_BT^4\Rightarrow 
-C_V=\frac{12\pi^4}{5}k_B\left(T/T_D\right)^3</script><p>高温极限</p>
+(k_2-k_1)_\mu\langle j^\mu(k_2-k_1)\psi_a(k_1)\bar\psi_b(k_2)\rangle=ie\left[\langle\psi_1(k_2)\bar\psi_b(k_2)\rangle-\langle\psi_1(k_1)\bar\psi_b(k_1)\rangle\right]</script><p>左式为$(k_2-k_1)_\mu\mathbf S(k_2)\mathbf V^\mu(k_2,k_1)\mathbf S(k_1)$，右式为$ie\left[\mathbf S(k_2)-\mathbf S(k_1)\right]$，所以</p>
 <script type="math/tex; mode=display">
-U=\frac{V}{2\pi^3c^3}(k_BT)^4\frac13(T_D/T)^3=\frac{V}{6\pi^3c^3}k_B^4T_D^3T\Rightarrow
-C_V=\frac{V}{6\pi^3c^3}k_B^4T_D^3=3Nk_B</script>
+(k_2-k_1)_\mu\mathbf V^\mu(k_2,k_1)=ie\left[\mathbf S(k_1)^{-1}-\mathbf S(k_2)^{-1}\right]</script><hr>
+<p>若$y=z$，则</p>
+<script type="math/tex; mode=display">
+-i\partial_\mu\langle T j^\mu(x)\psi_a(y)\bar\psi_b(y)\rangle=0\Rightarrow
+\partial_\mu\langle Tj^\mu(x)j^\nu(y)\rangle=0\Rightarrow
+k_\mu\Pi^{\mu\nu}(k)=0</script>
     </div>
 
     
@@ -295,13 +313,10 @@ C_V=\frac{V}{6\pi^3c^3}k_B^4T_D^3=3Nk_B</script>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/12/31/Majorana%E5%9C%BA%E9%87%8F%E5%AD%90%E5%8C%96/" rel="prev" title="Majorana">
-      <i class="fa fa-chevron-left"></i> Majorana
+    <a href="/2021/01/08/%E7%A3%81%E8%87%B4%E8%87%AA%E6%97%8B/" rel="prev" title="磁致自旋">
+      <i class="fa fa-chevron-left"></i> 磁致自旋
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/01/08/%E7%A3%81%E8%87%B4%E8%87%AA%E6%97%8B/" rel="next" title="磁致自旋">
-      磁致自旋 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -360,7 +375,7 @@ C_V=\frac{V}{6\pi^3c^3}k_B^4T_D^3=3Nk_B</script>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E7%83%AD%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">电子热容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%B6%E6%A0%BC%E7%83%AD%E5%AE%B9"><span class="nav-number">2.</span> <span class="nav-text">晶格热容</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dyson-Schwinger%E6%96%B9%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">Dyson-Schwinger方程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">一般形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E6%A0%87%E9%87%8F%E5%9C%BA"><span class="nav-number">1.2.</span> <span class="nav-text">例子：标量场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9AQED"><span class="nav-number">1.3.</span> <span class="nav-text">例子：QED</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ward-Takahashi-%E6%81%92%E7%AD%89%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">Ward-Takahashi 恒等式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%83%85%E5%86%B5"><span class="nav-number">2.1.</span> <span class="nav-text">一般情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QED%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">2.2.</span> <span class="nav-text">QED中的应用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

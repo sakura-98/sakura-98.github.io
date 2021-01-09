@@ -1,67 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Callan-Symanzik方程</title>
-    <url>/2020/11/26/Callan-Symanzik%E6%96%B9%E7%A8%8B/</url>
-    <content><![CDATA[<p>费曼图的积分中经常会出现发散，重整化的思想为将发散项根据有限个实验数值或理论假设替代为有限。不同的替代方案从物理上来讲应该是等价的。它们之间由Callan-Symanzik方程相连接。</p>
-<p>本文仍然以六维时空的$\varphi^3$理论为例。</p>
-<a id="more"></a>
-<h3 id="on-shell方案与-mu-方案"><a href="#on-shell方案与-mu-方案" class="headerlink" title="on-shell方案与$\mu$-方案"></a>on-shell方案与$\mu$-方案</h3><p>我们在<a href="/2020/11/14/一种正规化方案/">一种正规化方案</a>中计算过自能和三点顶角为</p>
-<script type="math/tex; mode=display">\Pi(k^2)=\frac\alpha2\left[\int_0^1\mathrm dx\ D\ln D+c_1+c_2k^2\right]</script><script type="math/tex; mode=display">V_3(k_1,k_2,k_3)=g\left[1-\frac\alpha2\left(\int\mathrm dF_3\ \ln D_3+c_3\right)\right]</script><p>其中</p>
-<script type="math/tex; mode=display">D=x(1-x)k^2+\omega_0^2,\quad D_3=x_1x_2k_3^2+x_2x_3k_1^2+x_3x_1k_2^2+\omega_0^2</script><p>当时取的是<strong>on-shell方案</strong>，即$\Pi(-\omega_0^2)=\Pi’(-\omega_0^2)=0,V_3(0,0,0)=g$，结果为</p>
-<script type="math/tex; mode=display">\Pi(k^2)=\frac\alpha{12}\left[(k^2+4\omega_0^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k^2}}{2m}}{\sqrt{k^2}}+(3-2\pi\sqrt3)\omega_0^2+(3-\pi\sqrt3)k^2\right]</script><script type="math/tex; mode=display">V_3(k_1,k_2,k_3)=g\left[1-\frac\alpha2\int\mathrm dF_3\ \ln \frac{D_3}{\omega_0^2}\right]</script><p>所谓的 <strong>$\mu$-方案</strong>指的是</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}&\Pi(\mu^2)=\Pi'(\mu^2)=0\\ &V_3(k_1,k_2,k_3)=g,\quad k_1^2=k_2^2=k_3^2=\mu^2\end{aligned}\right.</script><p>解得</p>
-<script type="math/tex; mode=display">\Pi(k^2)=\frac\alpha2\left[-\frac16(k^2-\mu^2)+\int_0^1\mathrm dx\ D\ln \frac D{x(1-x)\mu^2+\omega_0^2}\right]\tag1</script><script type="math/tex; mode=display">V_3(k_1,k_2,k_3)=g\left[1-\frac\alpha2\int\mathrm dF_3\ \ln \frac{D_3}{(x_1x_2+x_2x_3+x_3x_1)\mu^2+\omega_0^2}\right]\tag2</script><p>假设此时的拉氏量为</p>
-<script type="math/tex; mode=display">\mathcal L=-\frac12\partial_\mu\varphi\partial^\mu\varphi-\frac12\omega_0^2\varphi^2+\frac g{3!}\varphi^3\tag3</script><p>其中$\omega_0,g$都是$\mu$的函数，他们的限制为物理质量$m$和。</p>
-<h3 id="物理质量"><a href="#物理质量" class="headerlink" title="物理质量"></a>物理质量</h3><p>物理质量为传播子的极点，而传播子为</p>
-<script type="math/tex; mode=display">\hat{\mathbf\Delta}(k)=\frac1{k^2+\omega_0^2-\Pi(k^2)}</script><p>所以物理质量$m$满足如下方程</p>
-<script type="math/tex; mode=display">-m^2+\omega_0^2-\frac\alpha2\left[\frac16(m^2+\mu^2)+\int_0^1\mathrm dx\ (-{x(1-x)m^2+\omega_0^2})\ln \frac {-x(1-x)m^2+\omega_0^2}{x(1-x)\mu^2+\omega_0^2}\right]=0</script><p>也可理解为关于$\omega_0,\mu$的隐函数。</p>
-<h3 id="波函数"><a href="#波函数" class="headerlink" title="波函数"></a>波函数</h3><p>二阶关联函数为传播子，三阶关联函数除了传播子外还有一个顶点</p>
-<script type="math/tex; mode=display">\langle T\varphi\varphi\rangle=\Delta,\quad\langle T\varphi\varphi\varphi\rangle=\Delta\Delta\Delta V_3</script><p>所以可以得到三阶顶点的量纲，更一般地还能得到高阶顶点的量纲</p>
-<script type="math/tex; mode=display">V_3\propto\varphi^{-3}\rightarrow V_n\propto\varphi^{-n}</script><h3 id="Callan-Symanzik方程"><a href="#Callan-Symanzik方程" class="headerlink" title="Callan-Symanzik方程"></a>Callan-Symanzik方程</h3><p>假设方案$\mu\rightarrow\mu(1+\epsilon)$时波函数也改变了一个小量</p>
-<script type="math/tex; mode=display">\left.\varphi(x)\right|_{\mu(1+\epsilon)}=(1-\gamma_\varphi\epsilon)\left.\varphi(x)\right|_\mu</script><p>根据上一小节，可以得到传播子和顶点的变换关系</p>
-<script type="math/tex; mode=display">\left.\mathbf\Delta(k)^{-1}\right|_{\mu(1+\epsilon)}=(1+2\gamma_\varphi\epsilon)\left.\mathbf\Delta(k)^{-1}\right|_\mu\tag5</script><script type="math/tex; mode=display">\left.V_3\right|_{\mu(1+\epsilon)}=(1+3\gamma_\varphi\epsilon)\left.V_3\right|_\mu\tag6</script><p>(4)可以得到微分方程</p>
-<script type="math/tex; mode=display">\mu\epsilon\frac{\mathrm d}{\mathrm d\mu}\mathbf\Delta(k)^{-1}=2\gamma_\varphi\epsilon\mathbf\Delta(k)^{-1}</script><p>在(3)式的讨论中可知，按链式法则展开</p>
-<script type="math/tex; mode=display">\left(\frac{\partial}{\partial\ln\mu}
-+\frac{\mathrm d\alpha}{\mathrm d\ln\mu}\frac{\partial}{\partial\alpha}
-+\frac{\mathrm d\omega_0}{\mathrm d\ln\mu}\frac{\partial}{\partial\omega_0}
--2\gamma_\varphi\right)\mathbf\Delta(k)^{-1}=0\tag7</script><p>同理</p>
-<script type="math/tex; mode=display">\left(\frac{\partial}{\partial\ln\mu}
-+\frac{\mathrm d\alpha}{\mathrm d\ln\mu}\frac{\partial}{\partial\alpha}
-+\frac{\mathrm d\omega_0}{\mathrm d\ln\mu}\frac{\partial}{\partial\omega_0}
--3\gamma_\varphi\right)V_3=0\tag8</script><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>先给出结论</p>
+    <title>Heisenberg模型</title>
+    <url>/2020/10/05/Heisenberg%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p>根据北京大学shindou开设的《量子统计物理》第一次作业第二题整理。</p>
+<p>Heisenberg模型是描述铁磁性的最简单的模型。考虑一个$N\times N\times N$，晶格常数为$a$的立方晶体，在每个格点上都有自旋算符$\hat{\vec s}_{\vec j}=(\hat s_{\vec j,x},\hat s_{\vec j,y},\hat s_{\vec j,z})$。哈密顿量为</p>
+<script type="math/tex; mode=display">\hat H=-J\sum_{\langle\vec i,\vec j\rangle}\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}</script><p>其中$\langle\vec i,\vec j\rangle$表示近邻原子，相互作用$J&gt;0$。<br><a id="more"></a></p>
+<h3 id="基态-full-rangle-z"><a href="#基态-full-rangle-z" class="headerlink" title="基态$|full\rangle_z$"></a>基态$|full\rangle_z$</h3><p>显然当所有格点上自旋均同向时能量最低，定义此时为基态$|full\rangle_z$。当然，要求它是哈密顿算符的本征态。</p>
+<script type="math/tex; mode=display">|full\rangle_z\equiv\prod_{\vec j}|s(s+1),s\rangle_{\vec j,z}\tag{1}</script><p>其中$|s(s+1),s\rangle_{\vec j,z}$是$\hat{\vec s}_{\vec j}^2,\hat s_{\vec j,z}$的共同本征态，本征值为$s(s+1),s$。为了证明它是哈密顿量的本征态，先计算$\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}$（不要求近邻）作用其上的结果。<br>定义升降算符</p>
 <script type="math/tex; mode=display">\left\{\begin{aligned}
-&\gamma_\varphi=\frac14f\left(\frac{\omega_0}\mu\right)\alpha+\mathcal O(\alpha^2)\\
-&\gamma_{\omega_0}\equiv\frac{\mathrm d\omega_0}{\mathrm d\ln\mu}=\frac14\left(1+\frac{\mu^2}{\omega_0^2}\right)f\left(\frac{\omega_0}{\mu}\right)\alpha\\
-&\gamma_\alpha\equiv\frac{\mathrm d\alpha}{\mathrm d\ln\mu}=\left(\frac32f\left(\frac{\omega_0}{\mu}\right)-2h\left(\frac{\omega_0}{\mu}\right)\right)\alpha^2+\mathcal O(\alpha^3)
-\end{aligned}\right.</script><p>其中</p>
+\hat s_{\vec j,+}&=\hat s_{\vec j,x}+i\hat s_{\vec j,y}\\
+\hat s_{\vec j,-}&=\hat s_{\vec j,x}-i\hat s_{\vec j,y}\\
+\end{aligned}\right.\tag{2}</script><p>略去下标$\vec j$，容易证明$[\hat s_z,\hat s_+]=i\hat s_j+\hat s_x=\hat s_+,[\hat s_z,\hat s_-]=-\hat s_-$，因此物理意义为升降算符。这样的话</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}=\hat s_{\vec i,x}\hat s_{\vec j,x}+\hat s_{\vec i,y}\hat s_{\vec j,y}+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
+=&\frac14\left(\hat s_{\vec i,+}+\hat s_{\vec i,-}\right)\left(\hat s_{\vec j,+}+\hat s_{\vec j,-}\right)
+-\frac14\left(\hat s_{\vec i,+}-\hat s_{\vec i,-}\right)\left(\hat s_{\vec j,+}-\hat s_{\vec j,-}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
+=&\frac12\left(\hat s_{\vec i,+}\hat s_{\vec j,-}+\hat s_{\vec i,-}\hat s_{\vec j,+}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
+\end{aligned}\tag3</script><p>根据升降算符的性质$\hat s_{\vec i,+}|s(s+1),s\rangle_{\vec i,z}=0$，所以</p>
+<script type="math/tex; mode=display">\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}|full\rangle=\hat s_{\vec i,z}\hat s_{\vec j,z}|full\rangle=s^2|full\rangle</script><p>对所有近邻自旋求和得</p>
+<script type="math/tex; mode=display">\hat H|full\rangle=-3JN^3s^2|full\rangle\tag4</script><h3 id="较低激发态-准玻色子"><a href="#较低激发态-准玻色子" class="headerlink" title="较低激发态-准玻色子"></a>较低激发态-准玻色子</h3><p>使用Holstein-Primakoff变换，玻色子$[\hat b,\hat b^\dagger]=1$</p>
 <script type="math/tex; mode=display">\left\{\begin{aligned}
-f(\xi)&=\frac13-2\xi^2+\frac{8\xi^4}{\sqrt{1+4\xi^2}}\mathrm{arcsinh}\frac1{2\xi}\\
-h(\xi)&=\int\mathrm dF_3\frac{x_1x_2+x_2x_3+x_3x_1}{x_1x_2+x_2x_3+x_3x_1+\xi^2}
-\end{aligned}\right.</script><p>可以看到，$\mu\gg\omega_0$时</p>
-<script type="math/tex; mode=display">f(\xi)\rightarrow\frac13-2\xi^2,\quad h(\xi)\rightarrow 1-4.68781\xi^2</script><p>所以根据第三条方程，耦合常数$\alpha$可解为</p>
-<script type="math/tex; mode=display">\alpha=\alpha_0\left/\left[1+\frac32\alpha_0\ln\frac\mu{\mu_0}\right]\right.</script><p>当$\mu$趋于无穷时，耦合常数趋于零，即所谓的渐近自由。</p>
-<p>此外，$\gamma_\varphi=\frac1{12}\alpha+\mathcal O(\alpha^2)$</p>
-<h3 id="参数的计算过程"><a href="#参数的计算过程" class="headerlink" title="参数的计算过程"></a>参数的计算过程</h3><p>利用微扰计算，方便起见，记$\xi=\omega_0/\mu$。</p>
-<p>利用(1)取$k^2=\mu^2$得,</p>
+&\hat s_z=s-\hat b^\dagger\hat b\\
+&\hat s_+=\sqrt{2s}\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\hat b\\
+&\hat s_-=\sqrt{2s}\hat b^\dagger\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\\
+\end{aligned}\right.\tag5</script><p>验证对易关系</p>
 <script type="math/tex; mode=display">\left\{\begin{aligned}
-&\frac{\partial}{\partial\mu}\left.\Pi(k^2)\right|_{k^2=\mu^2}=\frac\alpha2\left[\frac\mu3-\int_0^1\ 2x(1-x)\mu\right]=0\\
-&\frac{\partial}{\partial\alpha}\left.\Pi(k^2)\right|_{k^2=\mu^2}=\frac{\partial}{\partial\omega_0}\left.\Pi(k^2)\right|_{k^2=\mu^2}=0\\
-\end{aligned}\right.</script><p>代入(7)得到</p>
-<script type="math/tex; mode=display">2\omega_0\gamma_{\omega_0}-2\gamma_\varphi(\mu^2+\omega_0^2)=0\tag{*.1}</script><p>同理利用(2)取$k_1^2=k_2^2=k_3^2=\mu^2$得</p>
+&[\hat s_x,\hat s_y]=i\hat s_z\\
+&[\hat s_z,\hat s_x]=i\hat s_y\\
+&[\hat s_z,\hat s_y]=-i\hat s_x\\
+\end{aligned}\right.\Leftrightarrow
+\left\{\begin{aligned}
+&[\hat s_+,\hat s_-]=2\hat s_z\\
+&[\hat s_z,\hat s_+]=\hat s_+\\
+&[\hat s_z,\hat s_-]=-\hat s_-\\
+\end{aligned}\right.
+\tag6</script><p>右边三项都是极其容易证明的。<br>考虑$\hat b^\dagger\hat b$的本征态$|n\rangle$，则根据(5)式得</p>
 <script type="math/tex; mode=display">\left\{\begin{aligned}
-&\frac{\partial}{\partial\mu}\left. V_3(k_j^2)\right|_{k_j^2=\mu^2}=g\alpha\int\mathrm dF_3\ \frac{(x_1x_2+x_2x_3+x_3x_2)\mu}{(x_1x_2+x_2x_3+x_3x_2)\mu^2+\omega_0^2}=g\alpha h(\xi)/\mu\\
-&\frac{\partial}{\partial\alpha}\left. V_3(k_j^2)\right|_{k^2_j=\mu^2}=\frac{\partial}{\partial\omega_0}\left. V_3(k_j^2)\right|_{k_j^2=\mu^2}=0\\
-\end{aligned}\right.</script><p>代入(8)得到</p>
-<script type="math/tex; mode=display">\alpha h(\xi)-3\gamma_\varphi=0\tag{*.2}</script><p>最后(1)取$k^2=0$</p>
-<script type="math/tex; mode=display">\Pi(0)=\frac\alpha2\left[\frac16\mu^2+\omega_0^2\int_0^1\mathrm dx\ \ln\frac{\omega_0^2}{x(1-x)\mu^2+\omega_0^2}\right]</script><script type="math/tex; mode=display">\left\{\begin{aligned}
-\frac{\partial}{\partial\mu}\left.\Pi(k^2)\right|_{k^2=0}&=\frac\alpha2\left[\frac\mu3-\omega_0^2\int_0^1\mathrm dx\ \frac{2x(1-x)\mu}{x(1-x)\mu^2+\omega_0^2}\right]=\frac\alpha2\mu f(\xi)\\
-\frac{\partial}{\partial\alpha}\left.\Pi(k^2)\right|_{k^2=0}&=\frac12\left[\frac16\mu^2+\omega_0^2\int_0^1\mathrm dx\ \ln\frac{\omega_0^2}{x(1-x)\mu^2+\omega_0^2}\right]\\
-&=\\
-\frac{\partial}{\partial\omega_0}\left.\Pi(k^2)\right|_{k^2=0}&=\alpha\omega_0\int_0^1\mathrm dx\left[\ln\frac{\omega_0^2}{x(1-x)\mu^2+\omega_0^2}+\frac{x(1-x)\mu^2}{x(1-x)\mu^2+\omega_0^2}\right]\\
-\end{aligned}\right.</script>]]></content>
+&\hat s_z|n\rangle=(s-n)|n\rangle\\
+&\hat s_+|n\rangle=\sqrt{2s}\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\sqrt n|n-1\rangle=\sqrt{(2s-n+1)n}|n-1\rangle\\
+&\hat s_-|n\rangle=\sqrt{2s}\hat b^\dagger\left(1-\frac{n}{2s}\right)^{1/2}|n\rangle=\sqrt{(2s-n)(n+1)}|n+1\rangle\\
+\end{aligned}\right.\tag7</script><h3 id="大s展开"><a href="#大s展开" class="headerlink" title="大s展开"></a>大s展开</h3><p>将(5)代入(3)得到用$\hat b,\hat b^\dagger$表示的哈密顿量，当$s\gg n$时可只保留$\frac1s$低阶项。顺便可定义$M=s-n$代替$n$，但在此处用不到</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\hat H=-J\sum_{\langle\vec i,\vec j\rangle}\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}\\
+=&-J\sum_{\langle\vec i,\vec j\rangle}\left[\frac12\left(\hat s_{\vec i,+}\hat s_{\vec j,-}+\hat s_{\vec i,-}\hat s_{\vec j,+}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\right]\\
+\approx&-J\sum_{\langle\vec i,\vec j\rangle}\left[s\left(\hat b_{\vec i}\hat b^\dagger_{\vec j}+\hat b^\dagger_{\vec i}\hat b_{\vec j}\right)+\left(s-\hat b^\dagger_{\vec i}\hat b_{\vec i}\right)\left(s-\hat b^\dagger_{\vec j}\hat b_{\vec j}\right)\right]\\
+\approx&-Js\sum_{\langle\vec i,\vec j\rangle}\left(\hat b_{\vec i}\hat b^\dagger_{\vec j}+\hat b^\dagger_{\vec i}\hat b_{\vec j}-\hat b^\dagger_{\vec i}\hat b_{\vec i}-\hat b^\dagger_{\vec j}\hat b_{\vec j}\right)-J\sum_{\langle\vec i,\vec j\rangle}s^2\\
+\end{aligned}\tag8</script><p>第二项实际上就是基态能量$E_0-3JN^3s^2$正如(4)式；第一项为了方便起见展开写，最终为</p>
+<script type="math/tex; mode=display">\hat H=-Js\sum_{\vec i}\sum_{\nu=x,y,z}\left(\hat b_{\vec i}\hat b^\dagger_{\vec i+\vec e_\nu}+\hat b^\dagger_{\vec i}\hat b_{\vec i+\vec e_\nu}-\hat b^\dagger_{\vec i}\hat b_{\vec i}-\hat b^\dagger_{\vec i+\vec e_\nu}\hat b_{\vec i+\vec e_\nu}\right)+E_0\tag9</script><h3 id="对角化"><a href="#对角化" class="headerlink" title="对角化"></a>对角化</h3><p>一般而言，二次型通过傅里叶变换就能做到对角化，也就是说，定义</p>
+<script type="math/tex; mode=display">\tilde b_{\vec k}=\sum_{\vec i}\frac1{\sqrt{N^3}}\hat b_{\vec i}e^{-i\vec k\cdot\vec i}\tag{10}</script><p>因为格点有限，所以$\vec k$也是分立的，即用三个整数$k_x,k_y,k_z$描述</p>
+<script type="math/tex; mode=display">\vec k=\frac{2\pi}{Na}(k_x,k_y,k_z)\tag{11}</script><p>容易验证逆变换为</p>
+<script type="math/tex; mode=display">\hat b_{\vec i}=\sum_{\vec k}\frac1{\sqrt{N^3}}\tilde b_{\vec k}e^{i\vec k\cdot\vec i}\tag{12}</script><p>以及对易关系</p>
+<script type="math/tex; mode=display">\left[\tilde b_{\vec k},\tilde b^\dagger_{\vec k'}\right]=\sum_{\vec i,\vec j}\frac1{N^3}[\hat b_{\vec i},\hat b_{\vec j}^\dagger]e^{-i\vec k\cdot\vec i+i\vec k'\cdot\vec j}=\sum_{\vec i}\frac1{N^3}e^{-i(\vec k-\vec k')\cdot\vec i}=\delta_{\vec k,\vec k'}\tag{13}</script><script type="math/tex; mode=display">\left[\tilde b_{\vec k},\tilde b_{\vec k'}\right]=\left[\tilde b^\dagger_{\vec k},\tilde b^\dagger_{\vec k'}\right]=0</script><p>将(12)代入(9)即可，但在此之前先计算</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\sum_{\vec i}\hat b^\dagger_{\vec i}\hat b_{\vec i+\vec j}=\sum_{\vec i}\sum_{\vec k,\vec k'}\frac1{N^3}\tilde b_{\vec k}^\dagger e^{i\vec k\cdot\vec i}\tilde b_{\vec k'}e^{-i\vec k'\cdot(\vec i+\vec j)}\\
+=&\sum_{\vec i}\sum_{\vec k,\vec k'}\frac1{N^3}\tilde b_{\vec k}^\dagger\tilde b_{\vec k'}e^{i(\vec k-\vec k')\cdot\vec i}e^{-i\vec k'\cdot\vec j}\\
+=&\sum_{\vec k,\vec k'}\tilde b_{\vec k}^\dagger\tilde b_{\vec k'}\delta(\vec k-\vec k')e^{-i\vec k'\cdot\vec j}=\sum_{\vec k}\tilde b_{\vec k}^\dagger\tilde b_{\vec k}e^{-i\vec k\cdot\vec j}\\
+\end{aligned}\tag{14}</script><p>所以(9)为</p>
+<script type="math/tex; mode=display">\hat H=-Js\sum_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}\sum_{\nu=x,y,z}\left(e^{i\vec k\cdot\vec e_\nu}+e^{-i\vec k\cdot\vec e_\nu}-2\right)+E_0\tag{15}</script><p>即</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\hat H=\sum_{\vec k}\hbar\omega_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}+E_0\\
+&\hbar\omega_{\vec k}=4Js\left[\sin^2\frac{\vec k\cdot\vec e_x}2+\sin^2\frac{\vec k\cdot\vec e_y}2+\sin^2\frac{\vec k\cdot\vec e_z}2\right]
+\end{aligned}\tag{16}</script><h3 id="热容"><a href="#热容" class="headerlink" title="热容"></a>热容</h3><p>当然，为了要和实验对比，我们计算定容热容$C_V$，一般过程为</p>
+<script type="math/tex; mode=display">Z\rightarrow F\rightarrow U\rightarrow C_V</script><p>配分函数$Z$:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&Z=Tr\left[e^{-\beta\hat H}\right]=e^{-\beta E_0}Tr\left[\prod_{\vec k}e^{-\beta\hbar\omega_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}}\right]\\
+=&e^{-\beta E_0}\prod_{\vec k}\sum_{n_{\vec k}}e^{-\beta\hbar\omega_{\vec k}n_{\vec k}}=e^{-\beta E_0}\prod_{\vec k}\frac1{1-e^{-\beta\hbar\omega_{\vec k}}}\\
+\end{aligned}</script><p>自由能</p>
+<script type="math/tex; mode=display">F=-k_BT\ln Z=E_0+\sum_{\vec k}k_BT\ln\left(1-e^{-\hbar\omega_{\vec k}/k_BT}\right)</script><p>内能</p>
+<script type="math/tex; mode=display">U=F+TS=F-T\frac{\partial F}{\partial T}=E_0+\sum_{\vec k}\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k}/k_BT}-1}</script><p>其实这也正是Bose-Einstein分布的内能公式。而偏导是因为$F=F(V,T)$，体积的信息包含在$\vec k$中，正如(11)(16)式<br>进而定容内能为</p>
+<script type="math/tex; mode=display">C_V=\frac{\partial U}{\partial T}=\sum_{\vec k}\left(\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k}/k_BT}-1}\right)^2\frac{e^{\hbar\omega_{\vec k}/k_BT}}{k_BT^2}\tag{17}</script><p>低温极限根据(16)式可得$\omega_{\vec k}=\rho_s|\vec k|^2$，根据(11)式</p>
+<script type="math/tex; mode=display">\sum_{\vec k}=\left(\frac{Na}{2\pi}\right)^3\int_{|\vec k|<2\pi/a}\mathrm{d}^3\vec k</script><p>因此(17)近似为</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&C_V=\frac{\partial U}{\partial T}=\sum_{\vec k}\left(\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k^2/k_BT}}-1}\right)^2\frac{e^{\hbar\omega_{\vec k}/k_BT}}{k_BT^2}\\
+\approx&\left(\frac{Na}{2\pi}\right)^3\int_0^{\pi/a}4\pi k^2\mathrm{d}k\ \left(\frac{\hbar\rho_s k^2}{e^{\hbar\rho_s k^2/k_BT}-1}\right)^2\frac{e^{\hbar\rho_s k^2/k_BT}}{k_BT^2}\\
+=&\left(\frac{Na}{2\pi}\right)^3\int_0^{\sqrt{\frac{\hbar\rho_s\pi} {k_BTa}}}4\pi\left(\frac{k_BT}{\hbar\rho_s}\right)^{3/2} \frac{\sqrt u}2\mathrm{d}u\ \left(\frac{k_BTu}{e^u-1}\right)^2\frac{e^u}{k_BT^2}\\
+\approx&\frac{(Na)^3}{4\pi^2}\left(\frac{k_B}{\hbar\rho_s}\right)^{3/2}\int_0^\infty \frac{u^{5/2}e^u}{(e^u-1)^2}\mathrm{d}u\ k_BT^{3/2}
+\end{aligned}</script><p>所以低温下热容和温度$3/2$次方成正比。</p>
+]]></content>
       <categories>
-        <category>QFT</category>
+        <category>QSP</category>
       </categories>
       <tags>
         <tag>physics</tag>
@@ -155,6 +173,73 @@ h(\xi)&=\int\mathrm dF_3\frac{x_1x_2+x_2x_3+x_3x_1}{x_1x_2+x_2x_3+x_3x_1+\xi^2}
       </tags>
   </entry>
   <entry>
+    <title>Callan-Symanzik方程</title>
+    <url>/2020/11/26/Callan-Symanzik%E6%96%B9%E7%A8%8B/</url>
+    <content><![CDATA[<p>费曼图的积分中经常会出现发散，重整化的思想为将发散项根据有限个实验数值或理论假设替代为有限。不同的替代方案从物理上来讲应该是等价的。它们之间由Callan-Symanzik方程相连接。</p>
+<p>本文仍然以六维时空的$\varphi^3$理论为例。</p>
+<a id="more"></a>
+<h3 id="on-shell方案与-mu-方案"><a href="#on-shell方案与-mu-方案" class="headerlink" title="on-shell方案与$\mu$-方案"></a>on-shell方案与$\mu$-方案</h3><p>我们在<a href="/2020/11/14/一种正规化方案/">一种正规化方案</a>中计算过自能和三点顶角为</p>
+<script type="math/tex; mode=display">\Pi(k^2)=\frac\alpha2\left[\int_0^1\mathrm dx\ D\ln D+c_1+c_2k^2\right]</script><script type="math/tex; mode=display">V_3(k_1,k_2,k_3)=g\left[1-\frac\alpha2\left(\int\mathrm dF_3\ \ln D_3+c_3\right)\right]</script><p>其中</p>
+<script type="math/tex; mode=display">D=x(1-x)k^2+\omega_0^2,\quad D_3=x_1x_2k_3^2+x_2x_3k_1^2+x_3x_1k_2^2+\omega_0^2</script><p>当时取的是<strong>on-shell方案</strong>，即$\Pi(-\omega_0^2)=\Pi’(-\omega_0^2)=0,V_3(0,0,0)=g$，结果为</p>
+<script type="math/tex; mode=display">\Pi(k^2)=\frac\alpha{12}\left[(k^2+4\omega_0^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k^2}}{2m}}{\sqrt{k^2}}+(3-2\pi\sqrt3)\omega_0^2+(3-\pi\sqrt3)k^2\right]</script><script type="math/tex; mode=display">V_3(k_1,k_2,k_3)=g\left[1-\frac\alpha2\int\mathrm dF_3\ \ln \frac{D_3}{\omega_0^2}\right]</script><p>所谓的 <strong>$\mu$-方案</strong>指的是</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}&\Pi(\mu^2)=\Pi'(\mu^2)=0\\ &V_3(k_1,k_2,k_3)=g,\quad k_1^2=k_2^2=k_3^2=\mu^2\end{aligned}\right.</script><p>解得</p>
+<script type="math/tex; mode=display">\Pi(k^2)=\frac\alpha2\left[-\frac16(k^2-\mu^2)+\int_0^1\mathrm dx\ D\ln \frac D{x(1-x)\mu^2+\omega_0^2}\right]\tag1</script><script type="math/tex; mode=display">V_3(k_1,k_2,k_3)=g\left[1-\frac\alpha2\int\mathrm dF_3\ \ln \frac{D_3}{(x_1x_2+x_2x_3+x_3x_1)\mu^2+\omega_0^2}\right]\tag2</script><p>假设此时的拉氏量为</p>
+<script type="math/tex; mode=display">\mathcal L=-\frac12\partial_\mu\varphi\partial^\mu\varphi-\frac12\omega_0^2\varphi^2+\frac g{3!}\varphi^3\tag3</script><p>其中$\omega_0,g$都是$\mu$的函数，他们的限制为物理质量$m$和。</p>
+<h3 id="物理质量"><a href="#物理质量" class="headerlink" title="物理质量"></a>物理质量</h3><p>物理质量为传播子的极点，而传播子为</p>
+<script type="math/tex; mode=display">\hat{\mathbf\Delta}(k)=\frac1{k^2+\omega_0^2-\Pi(k^2)}</script><p>所以物理质量$m$满足如下方程</p>
+<script type="math/tex; mode=display">-m^2+\omega_0^2-\frac\alpha2\left[\frac16(m^2+\mu^2)+\int_0^1\mathrm dx\ (-{x(1-x)m^2+\omega_0^2})\ln \frac {-x(1-x)m^2+\omega_0^2}{x(1-x)\mu^2+\omega_0^2}\right]=0</script><p>也可理解为关于$\omega_0,\mu$的隐函数。</p>
+<h3 id="波函数"><a href="#波函数" class="headerlink" title="波函数"></a>波函数</h3><p>二阶关联函数为传播子，三阶关联函数除了传播子外还有一个顶点</p>
+<script type="math/tex; mode=display">\langle T\varphi\varphi\rangle=\Delta,\quad\langle T\varphi\varphi\varphi\rangle=\Delta\Delta\Delta V_3</script><p>所以可以得到三阶顶点的量纲，更一般地还能得到高阶顶点的量纲</p>
+<script type="math/tex; mode=display">V_3\propto\varphi^{-3}\rightarrow V_n\propto\varphi^{-n}</script><h3 id="Callan-Symanzik方程"><a href="#Callan-Symanzik方程" class="headerlink" title="Callan-Symanzik方程"></a>Callan-Symanzik方程</h3><p>假设方案$\mu\rightarrow\mu(1+\epsilon)$时波函数也改变了一个小量</p>
+<script type="math/tex; mode=display">\left.\varphi(x)\right|_{\mu(1+\epsilon)}=(1-\gamma_\varphi\epsilon)\left.\varphi(x)\right|_\mu</script><p>根据上一小节，可以得到传播子和顶点的变换关系</p>
+<script type="math/tex; mode=display">\left.\mathbf\Delta(k)^{-1}\right|_{\mu(1+\epsilon)}=(1+2\gamma_\varphi\epsilon)\left.\mathbf\Delta(k)^{-1}\right|_\mu\tag5</script><script type="math/tex; mode=display">\left.V_3\right|_{\mu(1+\epsilon)}=(1+3\gamma_\varphi\epsilon)\left.V_3\right|_\mu\tag6</script><p>(4)可以得到微分方程</p>
+<script type="math/tex; mode=display">\mu\epsilon\frac{\mathrm d}{\mathrm d\mu}\mathbf\Delta(k)^{-1}=2\gamma_\varphi\epsilon\mathbf\Delta(k)^{-1}</script><p>在(3)式的讨论中可知，按链式法则展开</p>
+<script type="math/tex; mode=display">\left(\frac{\partial}{\partial\ln\mu}
++\frac{\mathrm d\alpha}{\mathrm d\ln\mu}\frac{\partial}{\partial\alpha}
++\frac{\mathrm d\omega_0}{\mathrm d\ln\mu}\frac{\partial}{\partial\omega_0}
+-2\gamma_\varphi\right)\mathbf\Delta(k)^{-1}=0\tag7</script><p>同理</p>
+<script type="math/tex; mode=display">\left(\frac{\partial}{\partial\ln\mu}
++\frac{\mathrm d\alpha}{\mathrm d\ln\mu}\frac{\partial}{\partial\alpha}
++\frac{\mathrm d\omega_0}{\mathrm d\ln\mu}\frac{\partial}{\partial\omega_0}
+-3\gamma_\varphi\right)V_3=0\tag8</script><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>先给出结论</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\gamma_\varphi=\frac14f\left(\frac{\omega_0}\mu\right)\alpha+\mathcal O(\alpha^2)\\
+&\gamma_{\omega_0}\equiv\frac{\mathrm d\omega_0}{\mathrm d\ln\mu}=\frac14\left(1+\frac{\mu^2}{\omega_0^2}\right)f\left(\frac{\omega_0}{\mu}\right)\alpha\\
+&\gamma_\alpha\equiv\frac{\mathrm d\alpha}{\mathrm d\ln\mu}=\left(\frac32f\left(\frac{\omega_0}{\mu}\right)-2h\left(\frac{\omega_0}{\mu}\right)\right)\alpha^2+\mathcal O(\alpha^3)
+\end{aligned}\right.</script><p>其中</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+f(\xi)&=\frac13-2\xi^2+\frac{8\xi^4}{\sqrt{1+4\xi^2}}\mathrm{arcsinh}\frac1{2\xi}\\
+h(\xi)&=\int\mathrm dF_3\frac{x_1x_2+x_2x_3+x_3x_1}{x_1x_2+x_2x_3+x_3x_1+\xi^2}
+\end{aligned}\right.</script><p>可以看到，$\mu\gg\omega_0$时</p>
+<script type="math/tex; mode=display">f(\xi)\rightarrow\frac13-2\xi^2,\quad h(\xi)\rightarrow 1-4.68781\xi^2</script><p>所以根据第三条方程，耦合常数$\alpha$可解为</p>
+<script type="math/tex; mode=display">\alpha=\alpha_0\left/\left[1+\frac32\alpha_0\ln\frac\mu{\mu_0}\right]\right.</script><p>当$\mu$趋于无穷时，耦合常数趋于零，即所谓的渐近自由。</p>
+<p>此外，$\gamma_\varphi=\frac1{12}\alpha+\mathcal O(\alpha^2)$</p>
+<h3 id="参数的计算过程"><a href="#参数的计算过程" class="headerlink" title="参数的计算过程"></a>参数的计算过程</h3><p>利用微扰计算，方便起见，记$\xi=\omega_0/\mu$。</p>
+<p>利用(1)取$k^2=\mu^2$得,</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\frac{\partial}{\partial\mu}\left.\Pi(k^2)\right|_{k^2=\mu^2}=\frac\alpha2\left[\frac\mu3-\int_0^1\ 2x(1-x)\mu\right]=0\\
+&\frac{\partial}{\partial\alpha}\left.\Pi(k^2)\right|_{k^2=\mu^2}=\frac{\partial}{\partial\omega_0}\left.\Pi(k^2)\right|_{k^2=\mu^2}=0\\
+\end{aligned}\right.</script><p>代入(7)得到</p>
+<script type="math/tex; mode=display">2\omega_0\gamma_{\omega_0}-2\gamma_\varphi(\mu^2+\omega_0^2)=0\tag{*.1}</script><p>同理利用(2)取$k_1^2=k_2^2=k_3^2=\mu^2$得</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\frac{\partial}{\partial\mu}\left. V_3(k_j^2)\right|_{k_j^2=\mu^2}=g\alpha\int\mathrm dF_3\ \frac{(x_1x_2+x_2x_3+x_3x_2)\mu}{(x_1x_2+x_2x_3+x_3x_2)\mu^2+\omega_0^2}=g\alpha h(\xi)/\mu\\
+&\frac{\partial}{\partial\alpha}\left. V_3(k_j^2)\right|_{k^2_j=\mu^2}=\frac{\partial}{\partial\omega_0}\left. V_3(k_j^2)\right|_{k_j^2=\mu^2}=0\\
+\end{aligned}\right.</script><p>代入(8)得到</p>
+<script type="math/tex; mode=display">\alpha h(\xi)-3\gamma_\varphi=0\tag{*.2}</script><p>最后(1)取$k^2=0$</p>
+<script type="math/tex; mode=display">\Pi(0)=\frac\alpha2\left[\frac16\mu^2+\omega_0^2\int_0^1\mathrm dx\ \ln\frac{\omega_0^2}{x(1-x)\mu^2+\omega_0^2}\right]</script><script type="math/tex; mode=display">\left\{\begin{aligned}
+\frac{\partial}{\partial\mu}\left.\Pi(k^2)\right|_{k^2=0}&=\frac\alpha2\left[\frac\mu3-\omega_0^2\int_0^1\mathrm dx\ \frac{2x(1-x)\mu}{x(1-x)\mu^2+\omega_0^2}\right]=\frac\alpha2\mu f(\xi)\\
+\frac{\partial}{\partial\alpha}\left.\Pi(k^2)\right|_{k^2=0}&=\frac12\left[\frac16\mu^2+\omega_0^2\int_0^1\mathrm dx\ \ln\frac{\omega_0^2}{x(1-x)\mu^2+\omega_0^2}\right]\\
+&=\\
+\frac{\partial}{\partial\omega_0}\left.\Pi(k^2)\right|_{k^2=0}&=\alpha\omega_0\int_0^1\mathrm dx\left[\ln\frac{\omega_0^2}{x(1-x)\mu^2+\omega_0^2}+\frac{x(1-x)\mu^2}{x(1-x)\mu^2+\omega_0^2}\right]\\
+\end{aligned}\right.</script>]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Gell-Mann&amp;Low 定理</title>
     <url>/2020/10/15/Gell-Mann&amp;Low%E5%AE%9A%E7%90%86/</url>
     <content><![CDATA[<p>Gell-Mann Low 定理说的是，在绝热引入相互作用的方法下计算出的本征态就是相互作用系统的本征态。即系统的哈密顿量为</p>
@@ -218,173 +303,6 @@ h(\xi)&=\int\mathrm dF_3\frac{x_1x_2+x_2x_3+x_3x_1}{x_1x_2+x_2x_3+x_3x_1+\xi^2}
 ]]></content>
       <categories>
         <category>QSP</category>
-      </categories>
-      <tags>
-        <tag>physics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Heisenberg模型</title>
-    <url>/2020/10/05/Heisenberg%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<p>根据北京大学shindou开设的《量子统计物理》第一次作业第二题整理。</p>
-<p>Heisenberg模型是描述铁磁性的最简单的模型。考虑一个$N\times N\times N$，晶格常数为$a$的立方晶体，在每个格点上都有自旋算符$\hat{\vec s}_{\vec j}=(\hat s_{\vec j,x},\hat s_{\vec j,y},\hat s_{\vec j,z})$。哈密顿量为</p>
-<script type="math/tex; mode=display">\hat H=-J\sum_{\langle\vec i,\vec j\rangle}\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}</script><p>其中$\langle\vec i,\vec j\rangle$表示近邻原子，相互作用$J&gt;0$。<br><a id="more"></a></p>
-<h3 id="基态-full-rangle-z"><a href="#基态-full-rangle-z" class="headerlink" title="基态$|full\rangle_z$"></a>基态$|full\rangle_z$</h3><p>显然当所有格点上自旋均同向时能量最低，定义此时为基态$|full\rangle_z$。当然，要求它是哈密顿算符的本征态。</p>
-<script type="math/tex; mode=display">|full\rangle_z\equiv\prod_{\vec j}|s(s+1),s\rangle_{\vec j,z}\tag{1}</script><p>其中$|s(s+1),s\rangle_{\vec j,z}$是$\hat{\vec s}_{\vec j}^2,\hat s_{\vec j,z}$的共同本征态，本征值为$s(s+1),s$。为了证明它是哈密顿量的本征态，先计算$\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}$（不要求近邻）作用其上的结果。<br>定义升降算符</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-\hat s_{\vec j,+}&=\hat s_{\vec j,x}+i\hat s_{\vec j,y}\\
-\hat s_{\vec j,-}&=\hat s_{\vec j,x}-i\hat s_{\vec j,y}\\
-\end{aligned}\right.\tag{2}</script><p>略去下标$\vec j$，容易证明$[\hat s_z,\hat s_+]=i\hat s_j+\hat s_x=\hat s_+,[\hat s_z,\hat s_-]=-\hat s_-$，因此物理意义为升降算符。这样的话</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}=\hat s_{\vec i,x}\hat s_{\vec j,x}+\hat s_{\vec i,y}\hat s_{\vec j,y}+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
-=&\frac14\left(\hat s_{\vec i,+}+\hat s_{\vec i,-}\right)\left(\hat s_{\vec j,+}+\hat s_{\vec j,-}\right)
--\frac14\left(\hat s_{\vec i,+}-\hat s_{\vec i,-}\right)\left(\hat s_{\vec j,+}-\hat s_{\vec j,-}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
-=&\frac12\left(\hat s_{\vec i,+}\hat s_{\vec j,-}+\hat s_{\vec i,-}\hat s_{\vec j,+}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\\
-\end{aligned}\tag3</script><p>根据升降算符的性质$\hat s_{\vec i,+}|s(s+1),s\rangle_{\vec i,z}=0$，所以</p>
-<script type="math/tex; mode=display">\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}|full\rangle=\hat s_{\vec i,z}\hat s_{\vec j,z}|full\rangle=s^2|full\rangle</script><p>对所有近邻自旋求和得</p>
-<script type="math/tex; mode=display">\hat H|full\rangle=-3JN^3s^2|full\rangle\tag4</script><h3 id="较低激发态-准玻色子"><a href="#较低激发态-准玻色子" class="headerlink" title="较低激发态-准玻色子"></a>较低激发态-准玻色子</h3><p>使用Holstein-Primakoff变换，玻色子$[\hat b,\hat b^\dagger]=1$</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&\hat s_z=s-\hat b^\dagger\hat b\\
-&\hat s_+=\sqrt{2s}\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\hat b\\
-&\hat s_-=\sqrt{2s}\hat b^\dagger\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\\
-\end{aligned}\right.\tag5</script><p>验证对易关系</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&[\hat s_x,\hat s_y]=i\hat s_z\\
-&[\hat s_z,\hat s_x]=i\hat s_y\\
-&[\hat s_z,\hat s_y]=-i\hat s_x\\
-\end{aligned}\right.\Leftrightarrow
-\left\{\begin{aligned}
-&[\hat s_+,\hat s_-]=2\hat s_z\\
-&[\hat s_z,\hat s_+]=\hat s_+\\
-&[\hat s_z,\hat s_-]=-\hat s_-\\
-\end{aligned}\right.
-\tag6</script><p>右边三项都是极其容易证明的。<br>考虑$\hat b^\dagger\hat b$的本征态$|n\rangle$，则根据(5)式得</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&\hat s_z|n\rangle=(s-n)|n\rangle\\
-&\hat s_+|n\rangle=\sqrt{2s}\left(1-\frac{\hat b^\dagger\hat b}{2s}\right)^{1/2}\sqrt n|n-1\rangle=\sqrt{(2s-n+1)n}|n-1\rangle\\
-&\hat s_-|n\rangle=\sqrt{2s}\hat b^\dagger\left(1-\frac{n}{2s}\right)^{1/2}|n\rangle=\sqrt{(2s-n)(n+1)}|n+1\rangle\\
-\end{aligned}\right.\tag7</script><h3 id="大s展开"><a href="#大s展开" class="headerlink" title="大s展开"></a>大s展开</h3><p>将(5)代入(3)得到用$\hat b,\hat b^\dagger$表示的哈密顿量，当$s\gg n$时可只保留$\frac1s$低阶项。顺便可定义$M=s-n$代替$n$，但在此处用不到</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\hat H=-J\sum_{\langle\vec i,\vec j\rangle}\hat{\vec s}_{\vec i}\cdot\hat{\vec s}_{\vec j}\\
-=&-J\sum_{\langle\vec i,\vec j\rangle}\left[\frac12\left(\hat s_{\vec i,+}\hat s_{\vec j,-}+\hat s_{\vec i,-}\hat s_{\vec j,+}\right)+\hat s_{\vec i,z}\hat s_{\vec j,z}\right]\\
-\approx&-J\sum_{\langle\vec i,\vec j\rangle}\left[s\left(\hat b_{\vec i}\hat b^\dagger_{\vec j}+\hat b^\dagger_{\vec i}\hat b_{\vec j}\right)+\left(s-\hat b^\dagger_{\vec i}\hat b_{\vec i}\right)\left(s-\hat b^\dagger_{\vec j}\hat b_{\vec j}\right)\right]\\
-\approx&-Js\sum_{\langle\vec i,\vec j\rangle}\left(\hat b_{\vec i}\hat b^\dagger_{\vec j}+\hat b^\dagger_{\vec i}\hat b_{\vec j}-\hat b^\dagger_{\vec i}\hat b_{\vec i}-\hat b^\dagger_{\vec j}\hat b_{\vec j}\right)-J\sum_{\langle\vec i,\vec j\rangle}s^2\\
-\end{aligned}\tag8</script><p>第二项实际上就是基态能量$E_0-3JN^3s^2$正如(4)式；第一项为了方便起见展开写，最终为</p>
-<script type="math/tex; mode=display">\hat H=-Js\sum_{\vec i}\sum_{\nu=x,y,z}\left(\hat b_{\vec i}\hat b^\dagger_{\vec i+\vec e_\nu}+\hat b^\dagger_{\vec i}\hat b_{\vec i+\vec e_\nu}-\hat b^\dagger_{\vec i}\hat b_{\vec i}-\hat b^\dagger_{\vec i+\vec e_\nu}\hat b_{\vec i+\vec e_\nu}\right)+E_0\tag9</script><h3 id="对角化"><a href="#对角化" class="headerlink" title="对角化"></a>对角化</h3><p>一般而言，二次型通过傅里叶变换就能做到对角化，也就是说，定义</p>
-<script type="math/tex; mode=display">\tilde b_{\vec k}=\sum_{\vec i}\frac1{\sqrt{N^3}}\hat b_{\vec i}e^{-i\vec k\cdot\vec i}\tag{10}</script><p>因为格点有限，所以$\vec k$也是分立的，即用三个整数$k_x,k_y,k_z$描述</p>
-<script type="math/tex; mode=display">\vec k=\frac{2\pi}{Na}(k_x,k_y,k_z)\tag{11}</script><p>容易验证逆变换为</p>
-<script type="math/tex; mode=display">\hat b_{\vec i}=\sum_{\vec k}\frac1{\sqrt{N^3}}\tilde b_{\vec k}e^{i\vec k\cdot\vec i}\tag{12}</script><p>以及对易关系</p>
-<script type="math/tex; mode=display">\left[\tilde b_{\vec k},\tilde b^\dagger_{\vec k'}\right]=\sum_{\vec i,\vec j}\frac1{N^3}[\hat b_{\vec i},\hat b_{\vec j}^\dagger]e^{-i\vec k\cdot\vec i+i\vec k'\cdot\vec j}=\sum_{\vec i}\frac1{N^3}e^{-i(\vec k-\vec k')\cdot\vec i}=\delta_{\vec k,\vec k'}\tag{13}</script><script type="math/tex; mode=display">\left[\tilde b_{\vec k},\tilde b_{\vec k'}\right]=\left[\tilde b^\dagger_{\vec k},\tilde b^\dagger_{\vec k'}\right]=0</script><p>将(12)代入(9)即可，但在此之前先计算</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\sum_{\vec i}\hat b^\dagger_{\vec i}\hat b_{\vec i+\vec j}=\sum_{\vec i}\sum_{\vec k,\vec k'}\frac1{N^3}\tilde b_{\vec k}^\dagger e^{i\vec k\cdot\vec i}\tilde b_{\vec k'}e^{-i\vec k'\cdot(\vec i+\vec j)}\\
-=&\sum_{\vec i}\sum_{\vec k,\vec k'}\frac1{N^3}\tilde b_{\vec k}^\dagger\tilde b_{\vec k'}e^{i(\vec k-\vec k')\cdot\vec i}e^{-i\vec k'\cdot\vec j}\\
-=&\sum_{\vec k,\vec k'}\tilde b_{\vec k}^\dagger\tilde b_{\vec k'}\delta(\vec k-\vec k')e^{-i\vec k'\cdot\vec j}=\sum_{\vec k}\tilde b_{\vec k}^\dagger\tilde b_{\vec k}e^{-i\vec k\cdot\vec j}\\
-\end{aligned}\tag{14}</script><p>所以(9)为</p>
-<script type="math/tex; mode=display">\hat H=-Js\sum_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}\sum_{\nu=x,y,z}\left(e^{i\vec k\cdot\vec e_\nu}+e^{-i\vec k\cdot\vec e_\nu}-2\right)+E_0\tag{15}</script><p>即</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\hat H=\sum_{\vec k}\hbar\omega_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}+E_0\\
-&\hbar\omega_{\vec k}=4Js\left[\sin^2\frac{\vec k\cdot\vec e_x}2+\sin^2\frac{\vec k\cdot\vec e_y}2+\sin^2\frac{\vec k\cdot\vec e_z}2\right]
-\end{aligned}\tag{16}</script><h3 id="热容"><a href="#热容" class="headerlink" title="热容"></a>热容</h3><p>当然，为了要和实验对比，我们计算定容热容$C_V$，一般过程为</p>
-<script type="math/tex; mode=display">Z\rightarrow F\rightarrow U\rightarrow C_V</script><p>配分函数$Z$:</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&Z=Tr\left[e^{-\beta\hat H}\right]=e^{-\beta E_0}Tr\left[\prod_{\vec k}e^{-\beta\hbar\omega_{\vec k}\tilde b^\dagger_{\vec k}\tilde b_{\vec k}}\right]\\
-=&e^{-\beta E_0}\prod_{\vec k}\sum_{n_{\vec k}}e^{-\beta\hbar\omega_{\vec k}n_{\vec k}}=e^{-\beta E_0}\prod_{\vec k}\frac1{1-e^{-\beta\hbar\omega_{\vec k}}}\\
-\end{aligned}</script><p>自由能</p>
-<script type="math/tex; mode=display">F=-k_BT\ln Z=E_0+\sum_{\vec k}k_BT\ln\left(1-e^{-\hbar\omega_{\vec k}/k_BT}\right)</script><p>内能</p>
-<script type="math/tex; mode=display">U=F+TS=F-T\frac{\partial F}{\partial T}=E_0+\sum_{\vec k}\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k}/k_BT}-1}</script><p>其实这也正是Bose-Einstein分布的内能公式。而偏导是因为$F=F(V,T)$，体积的信息包含在$\vec k$中，正如(11)(16)式<br>进而定容内能为</p>
-<script type="math/tex; mode=display">C_V=\frac{\partial U}{\partial T}=\sum_{\vec k}\left(\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k}/k_BT}-1}\right)^2\frac{e^{\hbar\omega_{\vec k}/k_BT}}{k_BT^2}\tag{17}</script><p>低温极限根据(16)式可得$\omega_{\vec k}=\rho_s|\vec k|^2$，根据(11)式</p>
-<script type="math/tex; mode=display">\sum_{\vec k}=\left(\frac{Na}{2\pi}\right)^3\int_{|\vec k|<2\pi/a}\mathrm{d}^3\vec k</script><p>因此(17)近似为</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&C_V=\frac{\partial U}{\partial T}=\sum_{\vec k}\left(\frac{\hbar\omega_{\vec k}}{e^{\hbar\omega_{\vec k^2/k_BT}}-1}\right)^2\frac{e^{\hbar\omega_{\vec k}/k_BT}}{k_BT^2}\\
-\approx&\left(\frac{Na}{2\pi}\right)^3\int_0^{\pi/a}4\pi k^2\mathrm{d}k\ \left(\frac{\hbar\rho_s k^2}{e^{\hbar\rho_s k^2/k_BT}-1}\right)^2\frac{e^{\hbar\rho_s k^2/k_BT}}{k_BT^2}\\
-=&\left(\frac{Na}{2\pi}\right)^3\int_0^{\sqrt{\frac{\hbar\rho_s\pi} {k_BTa}}}4\pi\left(\frac{k_BT}{\hbar\rho_s}\right)^{3/2} \frac{\sqrt u}2\mathrm{d}u\ \left(\frac{k_BTu}{e^u-1}\right)^2\frac{e^u}{k_BT^2}\\
-\approx&\frac{(Na)^3}{4\pi^2}\left(\frac{k_B}{\hbar\rho_s}\right)^{3/2}\int_0^\infty \frac{u^{5/2}e^u}{(e^u-1)^2}\mathrm{d}u\ k_BT^{3/2}
-\end{aligned}</script><p>所以低温下热容和温度$3/2$次方成正比。</p>
-]]></content>
-      <categories>
-        <category>QSP</category>
-      </categories>
-      <tags>
-        <tag>physics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KG场的路径积分</title>
-    <url>/2020/10/22/KG%E5%9C%BA%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<p>路径积分的思想为：所有可能的路径都对传播子有贡献，权重为作用量的指数因子。其优势有</p>
-<ol>
-<li>能自然地给出编时乘积的期望值</li>
-<li>所有量都是纯数/Grassmann数，无需考虑复杂的算符对易关系</li>
-<li>只需求导，计算方便<del>代价是最开始的计算复杂</del></li>
-<li>数值计算方便、误差小<del>可能吧，别人说的，我也不知道</del></li>
-</ol>
-<p>在应用到四维时空上时出现了很严重的问题，希望将来能够解决。</p>
-<ul>
-<li>[ ] 在欧氏空间和闵氏空间里分别计算传播子</li>
-</ul>
-<a id="more"></a>
-<h3 id="路径积分与编时算符期望值"><a href="#路径积分与编时算符期望值" class="headerlink" title="路径积分与编时算符期望值"></a>路径积分与编时算符期望值</h3><p>约定 $t_\pm$ 满足 $\Im(t_\pm)\rightarrow\mp\infty$，实部不做限制。假设Hamiltonian最低本征值为0，则对于任意态矢，只要和基态不正交，就有</p>
-<script type="math/tex; mode=display">
-e^{iHt_-}|1\rangle=\langle0|1\rangle|0\rangle,\langle2|e^{-iHt_+}=\langle0|\langle2|0\rangle</script><p>所以海森堡表象中</p>
-<script type="math/tex; mode=display">
-\langle0|Q(t_1)Q(t_2)|0\rangle=\frac{\langle2|
-e^{-iH(t_+-t_1)}Q(0)e^{-iH(t_1-t_2)}Q(0)e^{-iH(t_2-t_-)}|1\rangle}{\langle2|e^{-iH(t_+-t_-)}|1\rangle}\tag{1}</script><p>用$Q$的本征值构造恒等算符，在$Q(0)$附近插入</p>
-<script type="math/tex; mode=display">
-Q(0)=\int\mathrm dq\mathrm dq\ |q'\rangle\langle q'|Q(0)|q\rangle\langle q|=\int\mathrm dq\mathrm dq\ q|q'\rangle\langle q'|q\rangle\langle q|=\int\mathrm dq\ q|q\rangle\langle q|</script><p>取足够多的“时间”点使得对于$j=0\sim N,t^{(j)}-t^{(j+1)}\rightarrow0+0i$，右边强调的是虚部和实部都足够“连续”。其中$|q^{(0)}\rangle=|2\rangle,|q^{(N+1)}\rangle=|1\rangle,t^{(i_1)}=t_1,t^{(i_2)}=t_2$。(1)式变为</p>
-<script type="math/tex; mode=display">
-分子=\int\prod_{j=1}^N\left(\mathrm dq^{(j)}\right)q^{(i_1)}q^{(i_2)}\prod_{j=0}^N\langle q^{(j)}|e^{-iH(t^{(j)}-t^{(j+1)})}|q^{(j+1)}\rangle</script><p>第二个连乘中每一项都插入正则动量$P$的完备性关系，考虑到$\delta t$保留一阶项时总误差能控制在一阶，所以指数上的算符可以“当作纯数”来处理</p>
-<script type="math/tex; mode=display">
-\prod_{j=0}^N\int\frac{\mathrm d^dp}{(2\pi)^d}e^{-iH(p,q)\delta t}e^{ip(q^{(j)}-q^{(j+1)})}=\exp\left[i\int_{t_-}^{t_+}\mathrm dt\ \left(p\dot q-H\right)\right]</script><p>指数上为作用量$iS=i\int L\mathrm dt$。同样可以计算(1)的分母，所以完整形式为</p>
-<script type="math/tex; mode=display">
-\langle 0|Q(t_1)Q(t_2)|0\rangle=\frac
-{\int[\mathrm dq]\ q(t_1)q(t_2)e^{iS}}
-{\int[\mathrm dq]\ e^{iS}}\tag{2}</script><h3 id="常见路径（编时、虚时）"><a href="#常见路径（编时、虚时）" class="headerlink" title="常见路径（编时、虚时）"></a>常见路径（编时、虚时）</h3><p>当然可以额外要求$\Im\left(t^{(j)}-t^{(j+1)}\right)\le 0$，这样使得积分路径单调“下降”。如下图$\color{blue}蓝线$<br><img data-src="/images/pathIntegral.png" alt="三种不同路径"><br>或者给时间一个很小的虚部，如$\color{red}{红线}$。此时可以看到取（几乎）实轴为路径时自动给出编时算符期望值。<br>在红线基础上做Wick转动，可以证明无穷远处的积分为零，所以$\color{green}{绿线}$（虚轴）积分值与红线相等。进一步可做变量代换$x^4\equiv x_4\equiv ix_0=it$，此时$\int_{green}\mathrm dt=i\int_{-\infty}^\infty\mathrm dx^4$，因此变为欧氏空间的积分。</p>
-<h3 id="含源路径积分和Wick定理"><a href="#含源路径积分和Wick定理" class="headerlink" title="含源路径积分和Wick定理"></a>含源路径积分和Wick定理</h3><p>定义</p>
-<script type="math/tex; mode=display">
-Z[J]=\int[\mathrm dq]\ e^{iS+\int\mathrm dt\ J(t)q(t)}\tag{3}</script><p>则(2)式为</p>
-<script type="math/tex; mode=display">
-\langle0|Q(t_1)Q(t_2)|0\rangle=\frac{1}{Z[0]}\left.\frac{\delta^2 Z[J]}{\delta J(t_1)\delta J(t_2)}\right|_{J=0}\tag4</script><p>若$S$为二次型，即找得到$K(t_i,t_j)=K(t_j,t_i)$满足</p>
-<script type="math/tex; mode=display">
-iS=-\int\mathrm dt_i\mathrm dt_j\ K(t_i,t_j)q(t_i)q(t_j)</script><p>那么(3)式做shift：$q(t_i)\rightarrow q(t_i)+\frac12\int\mathrm dt_j\ K^{-1}(t_i,t_j)q(t_j)$可得</p>
-<script type="math/tex; mode=display">
-Z[J]=Z[0]\exp\left[\frac14\int\mathrm dt_i\mathrm dt_j\ K^{-1}(t_i,t_j)J(t_i)J(t_j)\right]\tag5</script><p>由(4)(5)即可很容易看出Wick定理，即高阶项可以用二阶项表示。对于有相互作用体系，作用量不再是二次型，但是可以通过微扰展开（费曼图方法）。</p>
-<p>因此，很基础的问题是：二阶项/传播子/格林函数是什么样子的？</p>
-<h3 id="传播子"><a href="#传播子" class="headerlink" title="传播子"></a>传播子</h3><p>传播子的定义为</p>
-<script type="math/tex; mode=display">
-\Delta(x-y)=i\langle0|T\phi(x)\phi(y)|0\rangle</script><p>根据之前讨论，为绿线上的路径积分。KG场的作用量为</p>
-<script type="math/tex; mode=display">
-S=\int\mathrm d^4x\ \mathcal L,\quad
-\mathcal L(x)=-\frac12\partial_\mu\phi(x)\partial^\mu\phi(x)-\frac12m^2\phi(x)^2</script><h4 id="Wick转动至虚时"><a href="#Wick转动至虚时" class="headerlink" title="Wick转动至虚时"></a>Wick转动至虚时</h4><p>做Wick转动并引入虚时$x_E^4=it,\varphi(x_E)=\phi(x)$</p>
-<script type="math/tex; mode=display">iS=-\int\mathrm d^4x_E\ \frac12\left(\sum_{i=1}^4(\partial_i\varphi(x_E))^2+m^2\varphi(x_E)^2\right)</script><p>下标$E$表示欧氏空间。做傅里叶变换</p>
-<script type="math/tex; mode=display">\tilde\varphi(k_E)=\int\mathrm d^4x_E\ e^{-ik_E\cdot x_E}\varphi(x_E)</script><p>则作用量变为</p>
-<script type="math/tex; mode=display">iS=-\int\frac{\mathrm d^4k_E}{(2\pi)^4}\ \frac12\left(k_E^2+m^2\right)\tilde\varphi(k_E)\tilde\varphi(-k_E)</script><p>根据(5)有</p>
-<script type="math/tex; mode=display">Z[J(k_E)]=Z[0]\exp\left[\int\mathrm d^4 k_E\ \frac14\frac{2(2\pi)^4}{k_E^2+m^2}J(k_E)J(-k_E)\right]</script><p>所以</p>
-<script type="math/tex; mode=display">\langle0|\tilde\varphi(k_E)\tilde\varphi(l_E)|0\rangle=\frac{(2\pi)^4}{k_E^2+m^2}\delta(k_E+J_E)</script><p>进而可计算</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\Delta_E(x_E-y_E)=&i\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac{\mathrm d^4l_E}{(2\pi)^4}\ e^{ik_E\cdot x_E+il_E\cdot y_E}\langle0|\tilde\varphi(k_E)\tilde\varphi(l_E)|0\rangle\\
-=&i\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac{e^{ik_E\cdot(x_E-y_E)}}{k_E^2+m^2}
-\end{aligned}\tag6</script><p>为了看得更清楚，将(6)拆分开</p>
-<script type="math/tex; mode=display">\Delta(t,\mathbf x)=\Delta_E(x_E)=i\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\int_{-\infty}^\infty\frac{\mathrm dk^4}{2\pi}\frac{e^{i\mathbf{k\cdot x}}e^{ik^4(it)}}{(k^4)^2+\mathbf k^2+m^2}</script><p>要使$k^0$从$+i\infty\rightarrow-i\infty$，应当为$k^4=ik^0$，因此</p>
-<script type="math/tex; mode=display">\Delta(t,\mathbf x)=-\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\int_{i\infty}^{-i\infty}\frac{\mathrm dk^0}{2\pi}\frac{e^{i\mathbf{k\cdot x}}e^{-ik^0t}}{-(k^0)^2+\mathbf k^2+m^2}</script><p>$k^0$转动回（接近）实轴，则为了不穿过极点$\pm\sqrt{\mathbf k^2+m^2}$，需要将极点写为$\pm(\sqrt{\mathbf k^2+m^2}-i\epsilon)$——也可理解为换一个实轴</p>
-<script type="math/tex; mode=display">\Delta(t,\mathbf x)=-\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{e^{i\mathbf{k\cdot x}}e^{-ik^0t}}{k^2+m^2-i\epsilon}\tag7</script><h4 id="Wick转动回实时"><a href="#Wick转动回实时" class="headerlink" title="Wick转动回实时"></a>Wick转动回实时</h4><p>需要注意的是(7)式中$\Re(t)=0$，通过解析延拓至实轴可知</p>
-<script type="math/tex; mode=display">\Delta(x)=-\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{e^{i\mathbf{k\cdot x}}e^{-ik^0t}}{k^2+m^2-i\epsilon}=-\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{e^{ik\cdot x}}{k^2+m^2-i\epsilon}\tag8</script><h3 id="四维时空下的传播子（有很大问题）"><a href="#四维时空下的传播子（有很大问题）" class="headerlink" title="四维时空下的传播子（有很大问题）"></a>四维时空下的传播子（有很大问题）</h3><p>对于四维时空，是可以精确求出，我们从(6)和(8)分别计算之。<strong>两种方法都出现了很严重的问题，甚至比两者结果不同更加严重</strong></p>
-<h4 id="欧氏空间-解析延拓"><a href="#欧氏空间-解析延拓" class="headerlink" title="欧氏空间-解析延拓"></a>欧氏空间-解析延拓</h4><script type="math/tex; mode=display">\begin{aligned}
-&\Delta_E(x_E)=i\int\frac{d^4k_E}{(2\pi)^4}\frac{e^{ik_E\cdot x_E}}{k_E^2+m^2}\\
-=&i\int_0^\infty\frac{k^3\mathrm dk}{(2\pi)^4}\frac{1}{k^2+m^2}\int_0^\pi\sin^2\alpha e^{ik|x_E|\cos\alpha}\mathrm d\alpha\int_0^\pi\sin\beta\mathrm d\beta\int_0^{2\pi}\mathrm d\gamma\\
-=&i\int_0^\infty\frac{k^3\mathrm dk}{(2\pi)^2}\frac{1}{k^2+m^2}\frac{J_1(k|x_E|)}{k|x_E|}=\frac{im}{(2\pi)^2}\frac{K_1(m|x_E|)}{|x_E|}
-\end{aligned}</script><script type="math/tex; mode=display">\Rightarrow\Delta(x)=\frac{im}{(2\pi)^2}\frac{K_1(m\sqrt{\mathbf x^2-t^2})}{\sqrt{\mathbf x^2-t^2}}\tag9</script><p>它的问题在于，类空的时候有意义，类时的意义需要进一步探讨。</p>
-<h4 id="闵氏空间-直接计算"><a href="#闵氏空间-直接计算" class="headerlink" title="闵氏空间-直接计算"></a>闵氏空间-直接计算</h4><p>先对$k^0$积分：$t&lt;0$时取上半围道，否则取下半围道</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\Delta(x)&=\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}e^{i\mathbf {k\cdot x}}\int\mathrm dk^0\frac{e^{-ik^0t}}{(k^0-\omega_{\mathbf k}+i\epsilon)(k^0+\omega_{\mathbf k}-i\epsilon)}\\
-&=\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}e^{i\mathbf {k\cdot x}}\left[-\frac{\pi i}{\omega_\mathbf k-i\epsilon}\theta(t)+\frac{\pi i}{-\omega_\mathbf k+i\epsilon}\theta(-t)\right]\\
-&=-i\pi\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}\frac{e^{i\mathbf {k\cdot x}}}{\omega_\mathbf k-i\epsilon}\\
-&=-i\int_0^\infty\frac{k^2\mathrm dk}{(2\pi)^2}\frac{1}{\sqrt{k^2+m^2}-i\epsilon}\frac{\sin k|\mathbf x|}{k|\mathbf x|}\\
-&=-\frac i{|\mathbf x|}\int_0^\infty\frac{\mathrm dk}{(2\pi)^2}\frac{k\sin k|\mathbf x|}{\sqrt{k^2+m^2}}\\
-&=-\frac i{\mathbf x^2}\int_0^\infty\frac{\mathrm du}{(2\pi)^2}\frac{u\sin u}{\sqrt{u^2+m^2\mathbf x^2}}\\
-\end{aligned}</script><p>之所以能扔掉$\epsilon$，是因为即使是一阶项在$\epsilon\rightarrow0$时也趋于零。最后一个等号为变量代换。<br>可惜最后的积分不收敛。</p>
-]]></content>
-      <categories>
-        <category>QFT</category>
       </categories>
       <tags>
         <tag>physics</tag>
@@ -517,6 +435,342 @@ H=&\frac12\int\frac{\tilde{\mathrm{d}k}}{2\omega_{\vec k}}(-\omega_{\vec k}^2+\v
 \end{aligned}\tag{26}</script><p>用$\omega_{\vec k}^2=\vec k^2+\omega_0^2$即可将第一项清零并将第二项化简，结果为</p>
 <script type="math/tex; mode=display">H=\int\tilde{\mathrm dk}\ \omega_{\vec k}a^\dagger(\vec k)a(\vec k)+\int\mathrm{d}^3\vec k\ \omega_{\vec k}\delta(0)\tag{27}</script><p>第二项是自能发散，往往可以直接置为$0$，因为我们并不关心它。</p>
 ]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KG场的路径积分</title>
+    <url>/2020/10/22/KG%E5%9C%BA%E7%9A%84%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<p>路径积分的思想为：所有可能的路径都对传播子有贡献，权重为作用量的指数因子。其优势有</p>
+<ol>
+<li>能自然地给出编时乘积的期望值</li>
+<li>所有量都是纯数/Grassmann数，无需考虑复杂的算符对易关系</li>
+<li>只需求导，计算方便<del>代价是最开始的计算复杂</del></li>
+<li>数值计算方便、误差小<del>可能吧，别人说的，我也不知道</del></li>
+</ol>
+<p>在应用到四维时空上时出现了很严重的问题，希望将来能够解决。</p>
+<ul>
+<li>[ ] 在欧氏空间和闵氏空间里分别计算传播子</li>
+</ul>
+<a id="more"></a>
+<h3 id="路径积分与编时算符期望值"><a href="#路径积分与编时算符期望值" class="headerlink" title="路径积分与编时算符期望值"></a>路径积分与编时算符期望值</h3><p>约定 $t_\pm$ 满足 $\Im(t_\pm)\rightarrow\mp\infty$，实部不做限制。假设Hamiltonian最低本征值为0，则对于任意态矢，只要和基态不正交，就有</p>
+<script type="math/tex; mode=display">
+e^{iHt_-}|1\rangle=\langle0|1\rangle|0\rangle,\langle2|e^{-iHt_+}=\langle0|\langle2|0\rangle</script><p>所以海森堡表象中</p>
+<script type="math/tex; mode=display">
+\langle0|Q(t_1)Q(t_2)|0\rangle=\frac{\langle2|
+e^{-iH(t_+-t_1)}Q(0)e^{-iH(t_1-t_2)}Q(0)e^{-iH(t_2-t_-)}|1\rangle}{\langle2|e^{-iH(t_+-t_-)}|1\rangle}\tag{1}</script><p>用$Q$的本征值构造恒等算符，在$Q(0)$附近插入</p>
+<script type="math/tex; mode=display">
+Q(0)=\int\mathrm dq\mathrm dq\ |q'\rangle\langle q'|Q(0)|q\rangle\langle q|=\int\mathrm dq\mathrm dq\ q|q'\rangle\langle q'|q\rangle\langle q|=\int\mathrm dq\ q|q\rangle\langle q|</script><p>取足够多的“时间”点使得对于$j=0\sim N,t^{(j)}-t^{(j+1)}\rightarrow0+0i$，右边强调的是虚部和实部都足够“连续”。其中$|q^{(0)}\rangle=|2\rangle,|q^{(N+1)}\rangle=|1\rangle,t^{(i_1)}=t_1,t^{(i_2)}=t_2$。(1)式变为</p>
+<script type="math/tex; mode=display">
+分子=\int\prod_{j=1}^N\left(\mathrm dq^{(j)}\right)q^{(i_1)}q^{(i_2)}\prod_{j=0}^N\langle q^{(j)}|e^{-iH(t^{(j)}-t^{(j+1)})}|q^{(j+1)}\rangle</script><p>第二个连乘中每一项都插入正则动量$P$的完备性关系，考虑到$\delta t$保留一阶项时总误差能控制在一阶，所以指数上的算符可以“当作纯数”来处理</p>
+<script type="math/tex; mode=display">
+\prod_{j=0}^N\int\frac{\mathrm d^dp}{(2\pi)^d}e^{-iH(p,q)\delta t}e^{ip(q^{(j)}-q^{(j+1)})}=\exp\left[i\int_{t_-}^{t_+}\mathrm dt\ \left(p\dot q-H\right)\right]</script><p>指数上为作用量$iS=i\int L\mathrm dt$。同样可以计算(1)的分母，所以完整形式为</p>
+<script type="math/tex; mode=display">
+\langle 0|Q(t_1)Q(t_2)|0\rangle=\frac
+{\int[\mathrm dq]\ q(t_1)q(t_2)e^{iS}}
+{\int[\mathrm dq]\ e^{iS}}\tag{2}</script><h3 id="常见路径（编时、虚时）"><a href="#常见路径（编时、虚时）" class="headerlink" title="常见路径（编时、虚时）"></a>常见路径（编时、虚时）</h3><p>当然可以额外要求$\Im\left(t^{(j)}-t^{(j+1)}\right)\le 0$，这样使得积分路径单调“下降”。如下图$\color{blue}蓝线$<br><img data-src="/images/pathIntegral.png" alt="三种不同路径"><br>或者给时间一个很小的虚部，如$\color{red}{红线}$。此时可以看到取（几乎）实轴为路径时自动给出编时算符期望值。<br>在红线基础上做Wick转动，可以证明无穷远处的积分为零，所以$\color{green}{绿线}$（虚轴）积分值与红线相等。进一步可做变量代换$x^4\equiv x_4\equiv ix_0=it$，此时$\int_{green}\mathrm dt=i\int_{-\infty}^\infty\mathrm dx^4$，因此变为欧氏空间的积分。</p>
+<h3 id="含源路径积分和Wick定理"><a href="#含源路径积分和Wick定理" class="headerlink" title="含源路径积分和Wick定理"></a>含源路径积分和Wick定理</h3><p>定义</p>
+<script type="math/tex; mode=display">
+Z[J]=\int[\mathrm dq]\ e^{iS+\int\mathrm dt\ J(t)q(t)}\tag{3}</script><p>则(2)式为</p>
+<script type="math/tex; mode=display">
+\langle0|Q(t_1)Q(t_2)|0\rangle=\frac{1}{Z[0]}\left.\frac{\delta^2 Z[J]}{\delta J(t_1)\delta J(t_2)}\right|_{J=0}\tag4</script><p>若$S$为二次型，即找得到$K(t_i,t_j)=K(t_j,t_i)$满足</p>
+<script type="math/tex; mode=display">
+iS=-\int\mathrm dt_i\mathrm dt_j\ K(t_i,t_j)q(t_i)q(t_j)</script><p>那么(3)式做shift：$q(t_i)\rightarrow q(t_i)+\frac12\int\mathrm dt_j\ K^{-1}(t_i,t_j)q(t_j)$可得</p>
+<script type="math/tex; mode=display">
+Z[J]=Z[0]\exp\left[\frac14\int\mathrm dt_i\mathrm dt_j\ K^{-1}(t_i,t_j)J(t_i)J(t_j)\right]\tag5</script><p>由(4)(5)即可很容易看出Wick定理，即高阶项可以用二阶项表示。对于有相互作用体系，作用量不再是二次型，但是可以通过微扰展开（费曼图方法）。</p>
+<p>因此，很基础的问题是：二阶项/传播子/格林函数是什么样子的？</p>
+<h3 id="传播子"><a href="#传播子" class="headerlink" title="传播子"></a>传播子</h3><p>传播子的定义为</p>
+<script type="math/tex; mode=display">
+\Delta(x-y)=i\langle0|T\phi(x)\phi(y)|0\rangle</script><p>根据之前讨论，为绿线上的路径积分。KG场的作用量为</p>
+<script type="math/tex; mode=display">
+S=\int\mathrm d^4x\ \mathcal L,\quad
+\mathcal L(x)=-\frac12\partial_\mu\phi(x)\partial^\mu\phi(x)-\frac12m^2\phi(x)^2</script><h4 id="Wick转动至虚时"><a href="#Wick转动至虚时" class="headerlink" title="Wick转动至虚时"></a>Wick转动至虚时</h4><p>做Wick转动并引入虚时$x_E^4=it,\varphi(x_E)=\phi(x)$</p>
+<script type="math/tex; mode=display">iS=-\int\mathrm d^4x_E\ \frac12\left(\sum_{i=1}^4(\partial_i\varphi(x_E))^2+m^2\varphi(x_E)^2\right)</script><p>下标$E$表示欧氏空间。做傅里叶变换</p>
+<script type="math/tex; mode=display">\tilde\varphi(k_E)=\int\mathrm d^4x_E\ e^{-ik_E\cdot x_E}\varphi(x_E)</script><p>则作用量变为</p>
+<script type="math/tex; mode=display">iS=-\int\frac{\mathrm d^4k_E}{(2\pi)^4}\ \frac12\left(k_E^2+m^2\right)\tilde\varphi(k_E)\tilde\varphi(-k_E)</script><p>根据(5)有</p>
+<script type="math/tex; mode=display">Z[J(k_E)]=Z[0]\exp\left[\int\mathrm d^4 k_E\ \frac14\frac{2(2\pi)^4}{k_E^2+m^2}J(k_E)J(-k_E)\right]</script><p>所以</p>
+<script type="math/tex; mode=display">\langle0|\tilde\varphi(k_E)\tilde\varphi(l_E)|0\rangle=\frac{(2\pi)^4}{k_E^2+m^2}\delta(k_E+J_E)</script><p>进而可计算</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\Delta_E(x_E-y_E)=&i\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac{\mathrm d^4l_E}{(2\pi)^4}\ e^{ik_E\cdot x_E+il_E\cdot y_E}\langle0|\tilde\varphi(k_E)\tilde\varphi(l_E)|0\rangle\\
+=&i\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac{e^{ik_E\cdot(x_E-y_E)}}{k_E^2+m^2}
+\end{aligned}\tag6</script><p>为了看得更清楚，将(6)拆分开</p>
+<script type="math/tex; mode=display">\Delta(t,\mathbf x)=\Delta_E(x_E)=i\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\int_{-\infty}^\infty\frac{\mathrm dk^4}{2\pi}\frac{e^{i\mathbf{k\cdot x}}e^{ik^4(it)}}{(k^4)^2+\mathbf k^2+m^2}</script><p>要使$k^0$从$+i\infty\rightarrow-i\infty$，应当为$k^4=ik^0$，因此</p>
+<script type="math/tex; mode=display">\Delta(t,\mathbf x)=-\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\int_{i\infty}^{-i\infty}\frac{\mathrm dk^0}{2\pi}\frac{e^{i\mathbf{k\cdot x}}e^{-ik^0t}}{-(k^0)^2+\mathbf k^2+m^2}</script><p>$k^0$转动回（接近）实轴，则为了不穿过极点$\pm\sqrt{\mathbf k^2+m^2}$，需要将极点写为$\pm(\sqrt{\mathbf k^2+m^2}-i\epsilon)$——也可理解为换一个实轴</p>
+<script type="math/tex; mode=display">\Delta(t,\mathbf x)=-\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{e^{i\mathbf{k\cdot x}}e^{-ik^0t}}{k^2+m^2-i\epsilon}\tag7</script><h4 id="Wick转动回实时"><a href="#Wick转动回实时" class="headerlink" title="Wick转动回实时"></a>Wick转动回实时</h4><p>需要注意的是(7)式中$\Re(t)=0$，通过解析延拓至实轴可知</p>
+<script type="math/tex; mode=display">\Delta(x)=-\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{e^{i\mathbf{k\cdot x}}e^{-ik^0t}}{k^2+m^2-i\epsilon}=-\int\frac{\mathrm d^4k}{(2\pi)^4}\frac{e^{ik\cdot x}}{k^2+m^2-i\epsilon}\tag8</script><h3 id="四维时空下的传播子（有很大问题）"><a href="#四维时空下的传播子（有很大问题）" class="headerlink" title="四维时空下的传播子（有很大问题）"></a>四维时空下的传播子（有很大问题）</h3><p>对于四维时空，是可以精确求出，我们从(6)和(8)分别计算之。<strong>两种方法都出现了很严重的问题，甚至比两者结果不同更加严重</strong></p>
+<h4 id="欧氏空间-解析延拓"><a href="#欧氏空间-解析延拓" class="headerlink" title="欧氏空间-解析延拓"></a>欧氏空间-解析延拓</h4><script type="math/tex; mode=display">\begin{aligned}
+&\Delta_E(x_E)=i\int\frac{d^4k_E}{(2\pi)^4}\frac{e^{ik_E\cdot x_E}}{k_E^2+m^2}\\
+=&i\int_0^\infty\frac{k^3\mathrm dk}{(2\pi)^4}\frac{1}{k^2+m^2}\int_0^\pi\sin^2\alpha e^{ik|x_E|\cos\alpha}\mathrm d\alpha\int_0^\pi\sin\beta\mathrm d\beta\int_0^{2\pi}\mathrm d\gamma\\
+=&i\int_0^\infty\frac{k^3\mathrm dk}{(2\pi)^2}\frac{1}{k^2+m^2}\frac{J_1(k|x_E|)}{k|x_E|}=\frac{im}{(2\pi)^2}\frac{K_1(m|x_E|)}{|x_E|}
+\end{aligned}</script><script type="math/tex; mode=display">\Rightarrow\Delta(x)=\frac{im}{(2\pi)^2}\frac{K_1(m\sqrt{\mathbf x^2-t^2})}{\sqrt{\mathbf x^2-t^2}}\tag9</script><p>它的问题在于，类空的时候有意义，类时的意义需要进一步探讨。</p>
+<h4 id="闵氏空间-直接计算"><a href="#闵氏空间-直接计算" class="headerlink" title="闵氏空间-直接计算"></a>闵氏空间-直接计算</h4><p>先对$k^0$积分：$t&lt;0$时取上半围道，否则取下半围道</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\Delta(x)&=\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}e^{i\mathbf {k\cdot x}}\int\mathrm dk^0\frac{e^{-ik^0t}}{(k^0-\omega_{\mathbf k}+i\epsilon)(k^0+\omega_{\mathbf k}-i\epsilon)}\\
+&=\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}e^{i\mathbf {k\cdot x}}\left[-\frac{\pi i}{\omega_\mathbf k-i\epsilon}\theta(t)+\frac{\pi i}{-\omega_\mathbf k+i\epsilon}\theta(-t)\right]\\
+&=-i\pi\int\frac{\mathrm d^3\mathbf k}{(2\pi)^4}\frac{e^{i\mathbf {k\cdot x}}}{\omega_\mathbf k-i\epsilon}\\
+&=-i\int_0^\infty\frac{k^2\mathrm dk}{(2\pi)^2}\frac{1}{\sqrt{k^2+m^2}-i\epsilon}\frac{\sin k|\mathbf x|}{k|\mathbf x|}\\
+&=-\frac i{|\mathbf x|}\int_0^\infty\frac{\mathrm dk}{(2\pi)^2}\frac{k\sin k|\mathbf x|}{\sqrt{k^2+m^2}}\\
+&=-\frac i{\mathbf x^2}\int_0^\infty\frac{\mathrm du}{(2\pi)^2}\frac{u\sin u}{\sqrt{u^2+m^2\mathbf x^2}}\\
+\end{aligned}</script><p>之所以能扔掉$\epsilon$，是因为即使是一阶项在$\epsilon\rightarrow0$时也趋于零。最后一个等号为变量代换。<br>可惜最后的积分不收敛。</p>
+]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Majorana</title>
+    <url>/2020/11/27/Majorana/</url>
+    <content><![CDATA[<p>Klein-Gordon场$\rightarrow$Majorana场$\rightarrow$自旋场、电磁场</p>
+<p>todo:</p>
+<ol>
+<li>为什么对于任意满足$k_\mu k^\mu=-m^2$的4-矢量，根据Lorentz不变性可以得到一个解</li>
+<li>验证(3.10)(3.11)</li>
+</ol>
+<a id="more"></a>
+<h3 id="自由场理论"><a href="#自由场理论" class="headerlink" title="自由场理论"></a>自由场理论</h3><p>自由场应该满足两个条件：1. 时空平移不变性；2. Lorentz不变性。我们可以将复数场分解为两个实数场，所以可以限制自由场为实数。</p>
+<h4 id="Klein-Gordon场"><a href="#Klein-Gordon场" class="headerlink" title="Klein-Gordon场"></a>Klein-Gordon场</h4><p>从我们已知的Klein-Gordon场出发，我们可以写成线性方程组。定义</p>
+<script type="math/tex; mode=display">\varphi_1\equiv\varphi,\varphi_a\equiv\frac1m\partial^{a-2}\varphi,2\le a\le5\tag{1.1}</script><p>以上定义了五个新的“标量场”，以及四个方程（第一个除外）。第五个方程为Klein-Gordon方程</p>
+<script type="math/tex; mode=display">0=-\partial_\mu(m\varphi_{\mu+2})+m^2\varphi_1\Rightarrow
+-\partial_0\varphi_2-\partial_1\varphi_3-\partial_2\varphi_4-\partial_3\varphi_5+m\varphi_1=0\tag{1.2}</script><p>将这五条<strong>一阶偏微分方程</strong>写成矩阵形式</p>
+<script type="math/tex; mode=display">(C^\mu\partial_\mu+m)\varphi=0\tag{1.3}</script><p>其中</p>
+<script type="math/tex; mode=display">
+C^0=\left[\begin{array}{ccccc}
+0 & -1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right],
+C^1=\left[\begin{array}{ccccc}
+0 & 0 & -1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+-1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right],
+C^2=\left[\begin{array}{ccccc}
+0 & 0 & 0 & -1 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+-1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array}\right],
+C^3=\left[\begin{array}{ccccc}
+0 & 0 & 0 & 0 & -1 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+-1 & 0 & 0 & 0 & 0 \\
+\end{array}\right],
+\varphi=\left[\begin{array}{c}
+\varphi_1 \\\varphi_2 \\\varphi_3 \\\varphi_4 \\\varphi_5 \\
+\end{array}\right],</script><p>如果一个自由场理论有两个甚至多个质量参数，那么可以将其解耦为多个理论。所以我们可以假设只有一个质量参数</p>
+<h4 id="对称性的限制"><a href="#对称性的限制" class="headerlink" title="对称性的限制"></a>对称性的限制</h4><p>一般而言，对$\varphi=(\varphi_1,\cdots\varphi_N)^T$，自由场方程为$(C^\mu\partial_\mu+m)\varphi$，其中$C^0,C^1,C^2,C^3\in\mathbb R^{N\times N},m\ge0$。</p>
+<p>根据时空平移对称性，$C^\mu$是常量。</p>
+<p>根据Lorentz不变性，存在一个解为$\varphi(x)=ue^{ik\cdot(x-a)}+c.c$，进而$ue^{ik\cdot x}$也满足自由场方程（但不是解，因为不是实的），即</p>
+<script type="math/tex; mode=display">(ik_\mu C^\mu+m)u=0\Rightarrow\det(ik_\mu C^\mu+m)=0\tag{1.4}</script><p>此外，自由场可变换基底$\varphi=S\varphi’$，场方程化为$(S^{-1}C^\mu S\partial_\mu+m)\varphi’=0$，这说明相似变换联系着相同的场。</p>
+<h3 id="Majorana自由场"><a href="#Majorana自由场" class="headerlink" title="Majorana自由场"></a>Majorana自由场</h3><p>而on-shell要求$k_1^2+k_2^2+k_3^2\ge m^2$有下界。但根据(1.4)可知$N=1$要求$k_\mu$形成一个平面，所以不可能。同理$N=3$也不可能。至于$N=2$，则要求</p>
+<script type="math/tex; mode=display">(if_1-m)(if_2-m)-i^2f_3f_4=-k_0^2+k_1^2+k_2^2+k_3^2+m^2\tag{2.1}</script><p>其中$f_j$均为$k_0,k_1,k_2,k_3$的一次齐次式。因为$m$没有一次项，所以</p>
+<script type="math/tex; mode=display">f_1+f_2=0\Rightarrow f_1^2+f_3f_4=-k_0^2+k_1^2+k_2^2+k_3^2\tag{2.2}</script><p>利用待定系数法，共有$4\times3=12$个待定系数和$10$条方程。</p>
+<p>所谓的Majorana场为$N=4$，所以它不是Klein-Gordon场。$C^\mu$不唯一，至少可以用相似变换联系起来，一个特解为</p>
+<script type="math/tex; mode=display">
+C^0=\left[\begin{array}{cccc}
+0 & 0 & 0 & -1 \\
+0 & 0 & -1 & 0 \\
+0 & +1 & 0 & 0 \\
++1 & 0 & 0 & 0 \\
+\end{array}\right],
+C^1=\left[\begin{array}{cccc}
+0 & +1 & 0 & 0 \\
++1 & 0 & 0 & 0 \\
+0 & 0 & 0 & -1 \\
+0 & 0 & -1 & 0 \\
+\end{array}\right],
+C^2=\left[\begin{array}{cccc}
++1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & +1 & 0 \\
+0 & 0 & 0 & -1 \\
+\end{array}\right],
+C^3=\left[\begin{array}{cccc}
+0 & 0 & 0 & -1 \\
+0 & 0 & -1 & 0 \\
+0 & -1 & 0 & 0 \\
+-1 & 0 & 0 & 0 \\
+\end{array}\right]</script><p>可以验证</p>
+<script type="math/tex; mode=display">\det(ik_\mu C^\mu+m)=(k^2+m^2)^2\tag{2.3}</script><p>当然，可以显式地写为</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+-\partial_0\varphi_4+\partial_1\varphi_2+\partial_2\varphi_1-\partial_3\varphi_4+m\varphi_1=0\\
+-\partial_0\varphi_3+\partial_1\varphi_1-\partial_2\varphi_2-\partial_3\varphi_3+m\varphi_2=0\\
++\partial_0\varphi_2-\partial_1\varphi_4+\partial_2\varphi_3-\partial_3\varphi_2+m\varphi_3=0\\
++\partial_0\varphi_1-\partial_1\varphi_3-\partial_2\varphi_4-\partial_3\varphi_1+m\varphi_4=0\\
+\end{aligned}\right.\tag{2.4}</script><p>容易验证这些矩阵满足反对易关系</p>
+<script type="math/tex; mode=display">\frac12\{C^\mu,C^\nu\}=g^{\mu\nu}\tag{2.5}</script><p>最后，我们说明，Majorana场的每个组成部分都是Klein-Gordon场</p>
+<script type="math/tex; mode=display">0=(C^\nu\partial_\nu+m)(C^\mu\partial_\mu-m)\varphi=(C^\nu C^\mu\partial_\mu\partial_\nu-m^2)\varphi\tag{2.6}</script><p>将指标交换不改变结果，因此</p>
+<script type="math/tex; mode=display">0=\left(\frac12\{C^\nu,C^\mu\}\partial_\mu\partial_\nu-m^2\right)\varphi=(\partial_\mu\partial^\mu-m^2)\varphi\tag{2.6}</script><h3 id="Majorana场的Lorentz变换"><a href="#Majorana场的Lorentz变换" class="headerlink" title="Majorana场的Lorentz变换"></a>Majorana场的Lorentz变换</h3><p>在标量场中，Lorentz变换为对坐标做逆变换。但在多分量的自由场中，还需要对分量之间做变换，只是这个变换我们尚未知晓</p>
+<script type="math/tex; mode=display">\varphi(x)\rightarrow\bar\varphi(x)=L(\Lambda)\varphi(\Lambda^{-1}x)\tag{3.1}</script><h4 id="无穷小变换"><a href="#无穷小变换" class="headerlink" title="无穷小变换"></a>无穷小变换</h4><p>无穷小变换可写为</p>
+<script type="math/tex; mode=display">L(1+\theta)=1+\frac i2\theta_{\mu\nu}S^{\mu\nu}\tag{3.2}</script><p>回忆标量场时利用保内积证明</p>
+<script type="math/tex; mode=display">g_{\mu\nu}\Lambda^\mu_{\ \rho}\Lambda^\nu_{\ \sigma}=g_{\rho\sigma}\Rightarrow0=g_{\rho\nu}\theta^\nu_{\ \sigma}+g_{\mu\sigma}\theta^\mu_{\ \rho}=\theta_{\rho\sigma}+\theta_{\sigma\rho}\tag{3.3}</script><p>因此$S$的”对称“部分无贡献，即可假设$S^{\mu\nu}=-S^{\nu\mu}$。所以有六个独立分量$S^{01},S^{02},S^{03},S^{12},S^{23},S^{13}$</p>
+<blockquote>
+<p>需要注意的是，这里要求$S$反对称，但不要求$S^{\mu\nu}\in\mathbb R^{4\times 4}$反对称</p>
+</blockquote>
+<h4 id="变换的表示"><a href="#变换的表示" class="headerlink" title="变换的表示"></a>变换的表示</h4><p>注意到$L(\Lambda)$的表示空间是自由场的多分量</p>
+<script type="math/tex; mode=display">(C^\mu\partial_\mu+m)\bar\varphi(x)=L(\Lambda)\left[(\Lambda^{-1})^\mu_{\ \nu}L^{-1}(\Lambda)C^\nu L(\Lambda)\frac{\partial}{\partial y^\mu}+m\right]\varphi(y)\tag{3.4}</script><p>这说明</p>
+<script type="math/tex; mode=display">L^{-1}(\Lambda)C^\nu L(\Lambda)=C^\mu\Leftrightarrow L^{-1}(\Lambda)C^\nu L(\Lambda)=\Lambda^\nu_{\ \mu}C^\mu\tag{3.5}</script><h4 id="生成元"><a href="#生成元" class="headerlink" title="生成元"></a>生成元</h4><p>(3.2)代入(3.5)得</p>
+<script type="math/tex; mode=display">-\frac i2\theta_{\rho\sigma}\left[S^{\rho\sigma},C^\nu\right]=\theta^\nu_{\ \mu}C^\mu=g^{\nu\rho}\theta_{\rho\sigma}C^\sigma\tag{3.6}</script><p>既然对所有无穷小都成立，所以</p>
+<script type="math/tex; mode=display">\frac12\left[C^\nu,iS^{\rho\sigma}\right]=g^{\nu\rho}C^\sigma\tag{3.7}</script><p>利用$S^{\rho\sigma}=-S^{\sigma\rho}$得</p>
+<script type="math/tex; mode=display">\left[C^\nu,iS^{\rho\sigma}\right]=g^{\nu\rho}C^\sigma-g^{\nu\sigma}C^\rho\tag{3.7}</script><p>假设$S_1^{\rho\sigma},S_2^{\rho\sigma}$都是(3.7)的解，那么它们的差$X$满足</p>
+<script type="math/tex; mode=display">\left[C^\nu,X\right]=0\tag{3.8}</script><p>$C^2$给出$X_{12}=X_{14}=X_{21}=X_{23}=X_{32}=X_{34}=X_{41}=X_{43}=0$；再利用$C^0\pm C^3$给出其他四个非对角元也为零，以及$X_{11}=X_{44},X_{22}=X_{33}$；最后根据$C^2$给出$X_{11}=X_{22}$。综上所述，$X=\xi\mathbb1$，因此可以再给一个限制使得不确定性消失</p>
+<script type="math/tex; mode=display">\mathrm{Tr}S^{\rho\sigma}=0\tag{3.9}</script><blockquote>
+<p>利用(2.5)检验下式</p>
+<script type="math/tex; mode=display">\begin{aligned}\left[C^\mu,\left[C^\rho,C^\gamma\right]\right]
+=&-\left[C^\rho,\left[C^\gamma,C^\mu\right]\right]-\left[C^\gamma,\left[C^\mu,C^\rho\right]\right]\\
+\end{aligned}</script></blockquote>
+<p>可以证明（但没证过）</p>
+<script type="math/tex; mode=display">S^{\rho\sigma}=-\frac i4[C^\rho,C^\sigma]\tag{3.10}</script><script type="math/tex; mode=display">[S^{\mu\nu},S^{\rho\sigma}]=i\left[g^{\mu\rho}S^{\nu\sigma}-(\mu\leftrightarrow\sigma)\right]-(\rho\leftrightarrow\sigma)\tag{3.11}</script><h3 id="自旋"><a href="#自旋" class="headerlink" title="自旋"></a>自旋</h3><p>转动算符为$U(\Lambda)$</p>
+<script type="math/tex; mode=display">U(\Lambda^{-1})\varphi(x)U(\Lambda)=L(\Lambda)\varphi(\Lambda^{-1}x)\tag{4.1}</script><p>同样考虑无穷小变换$\Lambda=1+\theta$，注意希腊字母代表0-3，英文字母代表1-4</p>
+<script type="math/tex; mode=display">\left(1-\frac i2\theta_{\mu\nu}M^{\mu\nu}\right)\varphi_a(x)\left(1+\frac i2\theta_{\mu\nu}M^{\mu\nu}\right)=\left(1+\frac i2\theta_{\mu\nu}S^{\mu\nu}\right)^b_{a}\varphi_b(x+\theta x)\tag{4.2}</script><p>与经典对应可知，$M$为角动量，具体而言，$M^{ij}=\epsilon_{ijk}J_k$，进而可以定义$M^{0i}=K_i$。至于其他分量，和之前的讨论一样我们可以假设$M^{ab}=-M^{ba}$。展开到一阶</p>
+<script type="math/tex; mode=display">-\frac i2\theta_{\mu\nu}\left[M^{\mu\nu},\varphi_a(x)\right]=\theta_{\mu\nu}x^\mu\partial^\nu\varphi_a(x)+\frac i2\theta_{\mu\nu}\left(S^{\mu\nu}\right)^b_a\varphi_b(x)\tag{4.3}</script><p>注意到$\theta_{\mu\nu}=-\theta_{\mu\nu}$，通过指标对换可以写得更加对称</p>
+<script type="math/tex; mode=display">\left[\varphi_a(x),M^{\mu\nu}\right]=\frac1i\left(x^\mu\partial^\nu-x^\nu\partial^\mu\right)\varphi_a(x)+\left(S^{\mu\nu}\right)^b_a\varphi_b(x)\tag{4.3}</script><hr>
+<p>特殊地，我们考虑特殊情况</p>
+<script type="math/tex; mode=display">\left[\varphi_a(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_a(x)+\left(S^{12}\right)^b_a\varphi_b(x)\tag{4.3}</script><p>利用(3.10)</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&\left[\varphi_1(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_1(x)+\frac i2\varphi_2(x)\\
+&\left[\varphi_2(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_2(x)-\frac i2\varphi_1(x)\\
+&\left[\varphi_3(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_3(x)-\frac i2\varphi_4(x)\\
+&\left[\varphi_4(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_4(x)+\frac i2\varphi_3(x)\\
+\end{aligned}\right.\tag{4.4}</script><p>对于固定的零分量，可以定义</p>
+<script type="math/tex; mode=display">O_1(t)=\int\mathrm d^3\bm x\ [\varphi_1(x)+i\varphi_2(x)]\Rightarrow[O_1(t),J_3]=\frac12O_1(t)\tag{4.5}</script><p>所以升降算符每次升降为$1/2$，即自旋1/2</p>
+<h3 id="左-右手旋量"><a href="#左-右手旋量" class="headerlink" title="左/右手旋量"></a>左/右手旋量</h3>]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>QED单圈重整化</title>
+    <url>/2020/11/14/QED%E5%8D%95%E5%9C%88%E9%87%8D%E6%95%B4%E5%8C%96/</url>
+    <content><![CDATA[<p>这篇将会写比较长时间吧。一来因为计算量确实不小，二来……算了，也不要二来了。</p>
+<p>高维球的体积和表面积公式直接给出吧。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$d$</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">$\cdots$</th>
+<th style="text-align:center">$d$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$V^d$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$\pi$</td>
+<td style="text-align:center">$\frac{4\pi}3$</td>
+<td style="text-align:center">$\frac{\pi^2}4$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$\pi^{d/2}/\Gamma\left(\frac d2+1\right)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$S^d$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$2\pi$</td>
+<td style="text-align:center">$4\pi$</td>
+<td style="text-align:center">$2\pi^2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$2\pi^{d/2}/\Gamma\left(\frac d2\right)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>以及所谓的”积木“</p>
+<script type="math/tex; mode=display">
+S(k)=\frac{m-ip\!\!\!\backslash}{p^2+m^2-i\epsilon},\Delta^{\mu\nu}(k)=\frac1{k^2-i\epsilon}\left[g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right]</script><a id="more"></a>
+<h3 id="光子自能"><a href="#光子自能" class="headerlink" title="光子自能"></a>光子自能</h3><p>光子自能图为</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=(-1)\int\frac{-i\mathrm d^4l}{(2\pi)^4}\ \mathrm{Tr}\left[S(l+k)ieC^\mu S(l)ieC^\nu\right]=e^2\int\frac{\mathrm d^4l}{(2\pi)^4}\mathrm{Tr}\left[\frac{m-i(l\!\!\backslash+k\!\!\!\backslash)}{(l+k)^2+m^2}C^\mu\frac{m-il\!\!\backslash}{l^2+m^2}C^\nu\right]</script><p>求迹这种东西嘛，主要就是用$\{C^\mu,C^\nu\}=2g^{\mu\nu}\Rightarrow\mathrm{Tr}[C^\mu C^\nu]=4g^{\mu\nu}$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\mathrm{Tr}[C^\rho C^\mu C^\sigma C^\nu]
+=\mathrm{Tr}[C^\rho C^\mu(2g^{\sigma\nu}-C^\nu C^\sigma)]\\
+=&8g^{\rho\mu}g^{\sigma\nu}-\mathrm{Tr}[C^\rho C^\mu C^\nu C^\sigma]=8g^{\rho\mu}g^{\sigma\nu}-\mathrm{Tr}[C^\rho(2g^{\mu\nu}-C^\nu C^\mu)C^\sigma]\\
+=&8g^{\rho\mu}g^{\sigma\nu}-8g^{\mu\nu}g^{\rho\sigma}+\mathrm{Tr}[C^\rho C^\nu C^\mu C^\sigma]\\
+=&8(g^{\rho\mu}g^{\sigma\nu}-g^{\mu\nu}g^{\rho\sigma}+g^{\nu\rho}g^{\mu\sigma})-\mathrm{Tr}[C^\nu C^\rho C^\mu C^\sigma]
+\end{aligned}</script><p>所以$\mathrm{Tr}[C^\rho C^\mu C^\sigma C^\nu]=4(g^{\rho\mu}g^{\sigma\nu}-g^{\mu\nu}g^{\rho\sigma}+g^{\nu\rho}g^{\mu\sigma})$，因此</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=4e^2\int\frac{-i\mathrm d^4l}{(2\pi)^4}\frac{[m^2+(l+k)_\rho l_\sigma g^{\rho\sigma}]g^{\mu\nu}-[(l+k)^\mu l^\nu+(l+k)^\nu l^\mu]g^{\mu\mu}g^{\nu\nu}}{[(l+k)^2+m^2][l^2+m^2]}</script><p>做完Wick转动$l^0=il^4,k^0=ik^4$</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=4e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{[m^2+(l+k)\cdot l]\delta^{ij}-[(l+k)^\mu l^\nu+(l+k)^j l^i]}{[(l+k)^2+m^2][l^2+m^2]}</script><p>做Feynman参数化</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=4e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{[m^2+(l+k)\cdot l]\delta^{ij}-[(l+k)^il^j+(l+k)^jl^i]}{[(l+xk)^2+x(1-x)k^2+m^2]^2}</script><p>设$q=l+xk,D=x(1-x)k^2+m^2$。略去一次项</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=4e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-2q^iq^j+2x(1-x)k^ik^j}{[q^2+x(1-x)k^2+m^2]^2}</script><p>利用$\int\mathrm d^4q\ q^iq^jf(q^2)=\frac14\delta^{ij}\int\mathrm d^4q\ q^2f(q^2)$得</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Pi^{ij}(k_E)
+=&4e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2 q^3\mathrm dq}{(2\pi)^4}\frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-\frac12\delta^{ij}q^2+2x(1-x)k^ik^j}{[q^2+D]^2}\\
+=&\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\int_0^\infty q^2\mathrm dq^2\ \frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-\frac12\delta^{ij}q^2+2x(1-x)k^ik^j}{[q^2+D]^2}\\
+=&\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\int_0^\infty \mathrm dt\ \frac{[m^2\delta^{ij}-x(1-x)(k^2\delta^{ij}-2k^ik^j)]t+\frac12\delta^{ij}t^2}{[t+D]^2}\\
+\end{aligned}</script><p>分别计算两项</p>
+<script type="math/tex; mode=display">
+\int_0^\infty\mathrm dt\frac t{(t+D)^2}=\int_0^Q\frac{t}{(t+D)^2}\mathrm dt+\int_Q^\infty\frac{\mathrm dt}t=-\frac{Q}{D+Q}+\ln\frac{D+Q}D-\ln\frac{\infty}{Q}=-\ln D+c_1</script><script type="math/tex; mode=display">
+\int_0^\infty\frac{t^2\mathrm dt}{(t+D)^2}=\left[\frac{Q(2D+Q)}{D+Q}+2D\ln\frac{D}{D+Q}\right]+\infty-Q-2D\ln\frac{\infty}{Q}=2D\ln D+c_2+c_3D</script><p>所以</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\ \left\{[m^2\delta^{ij}-x(1-x)(k^2\delta^{ij}-2k^ik^j)](-\ln D+c_1)+\delta^{ij}(D\ln D+\frac12c_2+\frac12c_3D)\right\}</script><p>整理得</p>
+<script type="math/tex; mode=display">
+\Pi^{ij}(k_E)=\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\ \left\{2x(1-x)\ln D[k^2\delta^{ij}-k^ik^j]+2b_1k^ik^j+2(b_2+b_3k^2)\delta^{ij}\right\}</script><p>上式用到了$D=x(1-x)k^2+m^2$。变换回闵氏空间</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}\int_0^1\mathrm dx[x(1-x)\ln D (k^2g^{\mu\nu}-k^\mu k^\nu)+b_1k^\mu k^\nu+(b_2+b_3k^2)g^{\mu\nu}]</script><p>On-shell 条件要求$k^2=0$时$\Pi^{\mu\nu}(k)=0,\partial\Pi^{\mu\nu}(k)=0$</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}(k^2g^{\mu\nu}-k^\mu k^\nu)\int_0^1x(1-x)\ln \frac{x(1-x)k^2+m^2}{m^2}\mathrm dx</script><p>当$k^2\gg m^2$时</p>
+<script type="math/tex; mode=display">
+\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}\left[-\frac5{18}+\frac16\ln\frac{k^2}{m^2}\right]</script><h3 id="电子自能"><a href="#电子自能" class="headerlink" title="电子自能"></a>电子自能</h3><script type="math/tex; mode=display">
+\Sigma(p)=\int\frac{-i\mathrm d^4l}{(2\pi)^4}ieC^\nu S(l)ieC^\mu\Delta_{\mu\nu}(p-l)
+=-e^2\int\frac{-i\mathrm d^4l}{(2\pi)^4}\frac{C^\nu(m-iC^\rho l_\rho)C^\mu}{l^2+m^2-i\epsilon}\frac{g_{\mu\nu}}{(p-l)^2-i\epsilon}</script><p>做Wick转动和变量代换</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Sigma(p)=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{C^i(m-iC^al_a)C^j\delta_{ij}}{(l^2+m^2)(p-l)^2}\\
+=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m-i\sum_jC^jC^aC^jl_a}{(l^2+m^2)(p-l)^2}\\
+=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m+2iC^al_a}{(l^2+m^2)(p-l)^2}\\
+\end{aligned}</script><p>做Feynman参数化</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Sigma(p)=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m+2iC^al_a}
+{[(l-xp)^2+(1-x)m^2+x(1-x)p^2]^2}\\
+=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{4m+2xiC^ap_a}
+{[q^2+D]^2}\\
+=&-e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2q^3\mathrm dq}{(2\pi)^4}\frac{4m+2xiC^ap_a}
+{[q^2+D]^2}\\
+=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\int_0^\infty t\mathrm dt\frac{4m+2xiC^ap_a}
+{[t+D]^2}\\
+=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\left[-\frac{Q}{D+Q}+\ln\frac{D+Q}D+\ln\frac{\infty}{Q}\right](4m+2xiC^ap_a)\\
+=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\left[-\ln D+c\right](4m+2xiC^ap_a)\\
+\end{aligned}</script><p>当$p^2+m^2=0$时$\Sigma(p)=0$</p>
+<script type="math/tex; mode=display">
+\Sigma(p)=\frac{e^2}{16\pi^2}\int_0^1(4m+2xip\!\!\!\backslash)\left[\ln\frac{(1-x)m^2+x(1-x)p^2}{m^2}+2\right]\mathrm dx</script><p>同样，$p^2\gg m^2$时</p>
+<script type="math/tex; mode=display">
+\Sigma(p)=\frac{e^2}{16\pi^2}\int(m+2xip\!\!\!\backslash)\left[\ln x(1-x)+2+\ln\frac{p^2}{m^2}\right]\mathrm dx
+=\frac{e^2}{16\pi^2}(m+ip\!\!\!\backslash)\ln\frac{p^2}{m^2}</script><h3 id="顶点"><a href="#顶点" class="headerlink" title="顶点"></a>顶点</h3><script type="math/tex; mode=display">
+\mathbf V(p,p',k)=\int\frac{-i\mathrm d^4l}{(2\pi)^4} ieC^\rho S(p'-l)ieC^\nu S(p-l)ieC^\mu \Delta_{\mu\rho}(l)</script><p>Wick转动和变量代换</p>
+<script type="math/tex; mode=display">
+\mathbf V(p,p',(k,\mu))=-i\frac{e^3}{(2\pi)^4}\int\mathrm d^4l_E\ \frac{C^\rho(m-i(p\!\!\!\backslash'-l\!\!\backslash))C^\mu(m-i(p\!\!\!\backslash-l\!\!\backslash))C^\nu\delta_{\nu\rho}}{[(p'-l)^2+m^2][(p-l)^2+m^2]l^2}</script><script type="math/tex; mode=display">
+\mathbf V(p,p',(k,\mu))=-i\frac{e^3}{(2\pi)^4}\int\mathrm d^4l_E\ \frac{-2C^\mu m^2-i8m(p^\mu+p'^\mu-2l^\mu)+(p\!\!\!\backslash-l\!\!\backslash)C^\mu(p\!\!\!\backslash'-l\!\!\backslash)}{[(p'-l)^2+m^2][(p-l)^2+m^2]l^2}</script>]]></content>
       <categories>
         <category>QFT</category>
       </categories>
@@ -677,260 +931,6 @@ H=&\frac i2\int\mathrm d^3\vec y\ \phi^TC^0(C^k\partial_k+m)\phi\\
       </tags>
   </entry>
   <entry>
-    <title>QED单圈重整化</title>
-    <url>/2020/11/14/QED%E5%8D%95%E5%9C%88%E9%87%8D%E6%95%B4%E5%8C%96/</url>
-    <content><![CDATA[<p>这篇将会写比较长时间吧。一来因为计算量确实不小，二来……算了，也不要二来了。</p>
-<p>高维球的体积和表面积公式直接给出吧。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">$d$</th>
-<th style="text-align:center">0</th>
-<th style="text-align:center">1</th>
-<th style="text-align:center">2</th>
-<th style="text-align:center">3</th>
-<th style="text-align:center">4</th>
-<th style="text-align:center">$\cdots$</th>
-<th style="text-align:center">$d$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">$V^d$</td>
-<td style="text-align:center">$1$</td>
-<td style="text-align:center">$2$</td>
-<td style="text-align:center">$\pi$</td>
-<td style="text-align:center">$\frac{4\pi}3$</td>
-<td style="text-align:center">$\frac{\pi^2}4$</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">$\pi^{d/2}/\Gamma\left(\frac d2+1\right)$</td>
-</tr>
-<tr>
-<td style="text-align:center">$S^d$</td>
-<td style="text-align:center">$0$</td>
-<td style="text-align:center">$2$</td>
-<td style="text-align:center">$2\pi$</td>
-<td style="text-align:center">$4\pi$</td>
-<td style="text-align:center">$2\pi^2$</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">$2\pi^{d/2}/\Gamma\left(\frac d2\right)$</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>以及所谓的”积木“</p>
-<script type="math/tex; mode=display">
-S(k)=\frac{m-ip\!\!\!\backslash}{p^2+m^2-i\epsilon},\Delta^{\mu\nu}(k)=\frac1{k^2-i\epsilon}\left[g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right]</script><a id="more"></a>
-<h3 id="光子自能"><a href="#光子自能" class="headerlink" title="光子自能"></a>光子自能</h3><p>光子自能图为</p>
-<script type="math/tex; mode=display">
-\Pi^{\mu\nu}(k)=(-1)\int\frac{-i\mathrm d^4l}{(2\pi)^4}\ \mathrm{Tr}\left[S(l+k)ieC^\mu S(l)ieC^\nu\right]=e^2\int\frac{\mathrm d^4l}{(2\pi)^4}\mathrm{Tr}\left[\frac{m-i(l\!\!\backslash+k\!\!\!\backslash)}{(l+k)^2+m^2}C^\mu\frac{m-il\!\!\backslash}{l^2+m^2}C^\nu\right]</script><p>求迹这种东西嘛，主要就是用$\{C^\mu,C^\nu\}=2g^{\mu\nu}\Rightarrow\mathrm{Tr}[C^\mu C^\nu]=4g^{\mu\nu}$</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-&\mathrm{Tr}[C^\rho C^\mu C^\sigma C^\nu]
-=\mathrm{Tr}[C^\rho C^\mu(2g^{\sigma\nu}-C^\nu C^\sigma)]\\
-=&8g^{\rho\mu}g^{\sigma\nu}-\mathrm{Tr}[C^\rho C^\mu C^\nu C^\sigma]=8g^{\rho\mu}g^{\sigma\nu}-\mathrm{Tr}[C^\rho(2g^{\mu\nu}-C^\nu C^\mu)C^\sigma]\\
-=&8g^{\rho\mu}g^{\sigma\nu}-8g^{\mu\nu}g^{\rho\sigma}+\mathrm{Tr}[C^\rho C^\nu C^\mu C^\sigma]\\
-=&8(g^{\rho\mu}g^{\sigma\nu}-g^{\mu\nu}g^{\rho\sigma}+g^{\nu\rho}g^{\mu\sigma})-\mathrm{Tr}[C^\nu C^\rho C^\mu C^\sigma]
-\end{aligned}</script><p>所以$\mathrm{Tr}[C^\rho C^\mu C^\sigma C^\nu]=4(g^{\rho\mu}g^{\sigma\nu}-g^{\mu\nu}g^{\rho\sigma}+g^{\nu\rho}g^{\mu\sigma})$，因此</p>
-<script type="math/tex; mode=display">
-\Pi^{\mu\nu}(k)=4e^2\int\frac{-i\mathrm d^4l}{(2\pi)^4}\frac{[m^2+(l+k)_\rho l_\sigma g^{\rho\sigma}]g^{\mu\nu}-[(l+k)^\mu l^\nu+(l+k)^\nu l^\mu]g^{\mu\mu}g^{\nu\nu}}{[(l+k)^2+m^2][l^2+m^2]}</script><p>做完Wick转动$l^0=il^4,k^0=ik^4$</p>
-<script type="math/tex; mode=display">
-\Pi^{ij}(k_E)=4e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{[m^2+(l+k)\cdot l]\delta^{ij}-[(l+k)^\mu l^\nu+(l+k)^j l^i]}{[(l+k)^2+m^2][l^2+m^2]}</script><p>做Feynman参数化</p>
-<script type="math/tex; mode=display">
-\Pi^{ij}(k_E)=4e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{[m^2+(l+k)\cdot l]\delta^{ij}-[(l+k)^il^j+(l+k)^jl^i]}{[(l+xk)^2+x(1-x)k^2+m^2]^2}</script><p>设$q=l+xk,D=x(1-x)k^2+m^2$。略去一次项</p>
-<script type="math/tex; mode=display">
-\Pi^{ij}(k_E)=4e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-2q^iq^j+2x(1-x)k^ik^j}{[q^2+x(1-x)k^2+m^2]^2}</script><p>利用$\int\mathrm d^4q\ q^iq^jf(q^2)=\frac14\delta^{ij}\int\mathrm d^4q\ q^2f(q^2)$得</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\Pi^{ij}(k_E)
-=&4e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2 q^3\mathrm dq}{(2\pi)^4}\frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-\frac12\delta^{ij}q^2+2x(1-x)k^ik^j}{[q^2+D]^2}\\
-=&\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\int_0^\infty q^2\mathrm dq^2\ \frac{[m^2+q^2-x(1-x)k^2]\delta^{ij}-\frac12\delta^{ij}q^2+2x(1-x)k^ik^j}{[q^2+D]^2}\\
-=&\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\int_0^\infty \mathrm dt\ \frac{[m^2\delta^{ij}-x(1-x)(k^2\delta^{ij}-2k^ik^j)]t+\frac12\delta^{ij}t^2}{[t+D]^2}\\
-\end{aligned}</script><p>分别计算两项</p>
-<script type="math/tex; mode=display">
-\int_0^\infty\mathrm dt\frac t{(t+D)^2}=\int_0^Q\frac{t}{(t+D)^2}\mathrm dt+\int_Q^\infty\frac{\mathrm dt}t=-\frac{Q}{D+Q}+\ln\frac{D+Q}D-\ln\frac{\infty}{Q}=-\ln D+c_1</script><script type="math/tex; mode=display">
-\int_0^\infty\frac{t^2\mathrm dt}{(t+D)^2}=\left[\frac{Q(2D+Q)}{D+Q}+2D\ln\frac{D}{D+Q}\right]+\infty-Q-2D\ln\frac{\infty}{Q}=2D\ln D+c_2+c_3D</script><p>所以</p>
-<script type="math/tex; mode=display">
-\Pi^{ij}(k_E)=\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\ \left\{[m^2\delta^{ij}-x(1-x)(k^2\delta^{ij}-2k^ik^j)](-\ln D+c_1)+\delta^{ij}(D\ln D+\frac12c_2+\frac12c_3D)\right\}</script><p>整理得</p>
-<script type="math/tex; mode=display">
-\Pi^{ij}(k_E)=\frac{e^2}{4\pi^2}\int_0^1\mathrm dx\ \left\{2x(1-x)\ln D[k^2\delta^{ij}-k^ik^j]+2b_1k^ik^j+2(b_2+b_3k^2)\delta^{ij}\right\}</script><p>上式用到了$D=x(1-x)k^2+m^2$。变换回闵氏空间</p>
-<script type="math/tex; mode=display">
-\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}\int_0^1\mathrm dx[x(1-x)\ln D (k^2g^{\mu\nu}-k^\mu k^\nu)+b_1k^\mu k^\nu+(b_2+b_3k^2)g^{\mu\nu}]</script><p>On-shell 条件要求$k^2=0$时$\Pi^{\mu\nu}(k)=0,\partial\Pi^{\mu\nu}(k)=0$</p>
-<script type="math/tex; mode=display">
-\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}(k^2g^{\mu\nu}-k^\mu k^\nu)\int_0^1x(1-x)\ln \frac{x(1-x)k^2+m^2}{m^2}\mathrm dx</script><p>当$k^2\gg m^2$时</p>
-<script type="math/tex; mode=display">
-\Pi^{\mu\nu}(k)=\frac{e^2}{2\pi^2}\left[-\frac5{18}+\frac16\ln\frac{k^2}{m^2}\right]</script><h3 id="电子自能"><a href="#电子自能" class="headerlink" title="电子自能"></a>电子自能</h3><script type="math/tex; mode=display">
-\Sigma(p)=\int\frac{-i\mathrm d^4l}{(2\pi)^4}ieC^\nu S(l)ieC^\mu\Delta_{\mu\nu}(p-l)
-=-e^2\int\frac{-i\mathrm d^4l}{(2\pi)^4}\frac{C^\nu(m-iC^\rho l_\rho)C^\mu}{l^2+m^2-i\epsilon}\frac{g_{\mu\nu}}{(p-l)^2-i\epsilon}</script><p>做Wick转动和变量代换</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\Sigma(p)=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{C^i(m-iC^al_a)C^j\delta_{ij}}{(l^2+m^2)(p-l)^2}\\
-=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m-i\sum_jC^jC^aC^jl_a}{(l^2+m^2)(p-l)^2}\\
-=&-e^2\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m+2iC^al_a}{(l^2+m^2)(p-l)^2}\\
-\end{aligned}</script><p>做Feynman参数化</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\Sigma(p)=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4l_E}{(2\pi)^4}\frac{4m+2iC^al_a}
-{[(l-xp)^2+(1-x)m^2+x(1-x)p^2]^2}\\
-=&-e^2\int_0^1\mathrm dx\int\frac{\mathrm d^4q}{(2\pi)^4}\frac{4m+2xiC^ap_a}
-{[q^2+D]^2}\\
-=&-e^2\int_0^1\mathrm dx\int_0^\infty\frac{2\pi^2q^3\mathrm dq}{(2\pi)^4}\frac{4m+2xiC^ap_a}
-{[q^2+D]^2}\\
-=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\int_0^\infty t\mathrm dt\frac{4m+2xiC^ap_a}
-{[t+D]^2}\\
-=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\left[-\frac{Q}{D+Q}+\ln\frac{D+Q}D+\ln\frac{\infty}{Q}\right](4m+2xiC^ap_a)\\
-=&-\frac{e^2}{8\pi^2}\int_0^1\mathrm dx\left[-\ln D+c\right](4m+2xiC^ap_a)\\
-\end{aligned}</script><p>当$p^2+m^2=0$时$\Sigma(p)=0$</p>
-<script type="math/tex; mode=display">
-\Sigma(p)=\frac{e^2}{16\pi^2}\int_0^1(4m+2xip\!\!\!\backslash)\left[\ln\frac{(1-x)m^2+x(1-x)p^2}{m^2}+2\right]\mathrm dx</script><p>同样，$p^2\gg m^2$时</p>
-<script type="math/tex; mode=display">
-\Sigma(p)=\frac{e^2}{16\pi^2}\int(m+2xip\!\!\!\backslash)\left[\ln x(1-x)+2+\ln\frac{p^2}{m^2}\right]\mathrm dx
-=\frac{e^2}{16\pi^2}(m+ip\!\!\!\backslash)\ln\frac{p^2}{m^2}</script><h3 id="顶点"><a href="#顶点" class="headerlink" title="顶点"></a>顶点</h3><script type="math/tex; mode=display">
-\mathbf V(p,p',k)=\int\frac{-i\mathrm d^4l}{(2\pi)^4} ieC^\rho S(p'-l)ieC^\nu S(p-l)ieC^\mu \Delta_{\mu\rho}(l)</script><p>Wick转动和变量代换</p>
-<script type="math/tex; mode=display">
-\mathbf V(p,p',(k,\mu))=-i\frac{e^3}{(2\pi)^4}\int\mathrm d^4l_E\ \frac{C^\rho(m-i(p\!\!\!\backslash'-l\!\!\backslash))C^\mu(m-i(p\!\!\!\backslash-l\!\!\backslash))C^\nu\delta_{\nu\rho}}{[(p'-l)^2+m^2][(p-l)^2+m^2]l^2}</script><script type="math/tex; mode=display">
-\mathbf V(p,p',(k,\mu))=-i\frac{e^3}{(2\pi)^4}\int\mathrm d^4l_E\ \frac{-2C^\mu m^2-i8m(p^\mu+p'^\mu-2l^\mu)+(p\!\!\!\backslash-l\!\!\backslash)C^\mu(p\!\!\!\backslash'-l\!\!\backslash)}{[(p'-l)^2+m^2][(p-l)^2+m^2]l^2}</script>]]></content>
-      <categories>
-        <category>QFT</category>
-      </categories>
-      <tags>
-        <tag>physics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Majorana</title>
-    <url>/2020/11/27/Majorana/</url>
-    <content><![CDATA[<p>Klein-Gordon场$\rightarrow$Majorana场$\rightarrow$自旋场、电磁场</p>
-<p>todo:</p>
-<ol>
-<li>为什么对于任意满足$k_\mu k^\mu=-m^2$的4-矢量，根据Lorentz不变性可以得到一个解</li>
-<li>验证(3.10)(3.11)</li>
-</ol>
-<a id="more"></a>
-<h3 id="自由场理论"><a href="#自由场理论" class="headerlink" title="自由场理论"></a>自由场理论</h3><p>自由场应该满足两个条件：1. 时空平移不变性；2. Lorentz不变性。我们可以将复数场分解为两个实数场，所以可以限制自由场为实数。</p>
-<h4 id="Klein-Gordon场"><a href="#Klein-Gordon场" class="headerlink" title="Klein-Gordon场"></a>Klein-Gordon场</h4><p>从我们已知的Klein-Gordon场出发，我们可以写成线性方程组。定义</p>
-<script type="math/tex; mode=display">\varphi_1\equiv\varphi,\varphi_a\equiv\frac1m\partial^{a-2}\varphi,2\le a\le5\tag{1.1}</script><p>以上定义了五个新的“标量场”，以及四个方程（第一个除外）。第五个方程为Klein-Gordon方程</p>
-<script type="math/tex; mode=display">0=-\partial_\mu(m\varphi_{\mu+2})+m^2\varphi_1\Rightarrow
--\partial_0\varphi_2-\partial_1\varphi_3-\partial_2\varphi_4-\partial_3\varphi_5+m\varphi_1=0\tag{1.2}</script><p>将这五条<strong>一阶偏微分方程</strong>写成矩阵形式</p>
-<script type="math/tex; mode=display">(C^\mu\partial_\mu+m)\varphi=0\tag{1.3}</script><p>其中</p>
-<script type="math/tex; mode=display">
-C^0=\left[\begin{array}{ccccc}
-0 & -1 & 0 & 0 & 0 \\
-1 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
-\end{array}\right],
-C^1=\left[\begin{array}{ccccc}
-0 & 0 & -1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
--1 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
-\end{array}\right],
-C^2=\left[\begin{array}{ccccc}
-0 & 0 & 0 & -1 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
--1 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
-\end{array}\right],
-C^3=\left[\begin{array}{ccccc}
-0 & 0 & 0 & 0 & -1 \\
-0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 \\
--1 & 0 & 0 & 0 & 0 \\
-\end{array}\right],
-\varphi=\left[\begin{array}{c}
-\varphi_1 \\\varphi_2 \\\varphi_3 \\\varphi_4 \\\varphi_5 \\
-\end{array}\right],</script><p>如果一个自由场理论有两个甚至多个质量参数，那么可以将其解耦为多个理论。所以我们可以假设只有一个质量参数</p>
-<h4 id="对称性的限制"><a href="#对称性的限制" class="headerlink" title="对称性的限制"></a>对称性的限制</h4><p>一般而言，对$\varphi=(\varphi_1,\cdots\varphi_N)^T$，自由场方程为$(C^\mu\partial_\mu+m)\varphi$，其中$C^0,C^1,C^2,C^3\in\mathbb R^{N\times N},m\ge0$。</p>
-<p>根据时空平移对称性，$C^\mu$是常量。</p>
-<p>根据Lorentz不变性，存在一个解为$\varphi(x)=ue^{ik\cdot(x-a)}+c.c$，进而$ue^{ik\cdot x}$也满足自由场方程（但不是解，因为不是实的），即</p>
-<script type="math/tex; mode=display">(ik_\mu C^\mu+m)u=0\Rightarrow\det(ik_\mu C^\mu+m)=0\tag{1.4}</script><p>此外，自由场可变换基底$\varphi=S\varphi’$，场方程化为$(S^{-1}C^\mu S\partial_\mu+m)\varphi’=0$，这说明相似变换联系着相同的场。</p>
-<h3 id="Majorana自由场"><a href="#Majorana自由场" class="headerlink" title="Majorana自由场"></a>Majorana自由场</h3><p>而on-shell要求$k_1^2+k_2^2+k_3^2\ge m^2$有下界。但根据(1.4)可知$N=1$要求$k_\mu$形成一个平面，所以不可能。同理$N=3$也不可能。至于$N=2$，则要求</p>
-<script type="math/tex; mode=display">(if_1-m)(if_2-m)-i^2f_3f_4=-k_0^2+k_1^2+k_2^2+k_3^2+m^2\tag{2.1}</script><p>其中$f_j$均为$k_0,k_1,k_2,k_3$的一次齐次式。因为$m$没有一次项，所以</p>
-<script type="math/tex; mode=display">f_1+f_2=0\Rightarrow f_1^2+f_3f_4=-k_0^2+k_1^2+k_2^2+k_3^2\tag{2.2}</script><p>利用待定系数法，共有$4\times3=12$个待定系数和$10$条方程。</p>
-<p>所谓的Majorana场为$N=4$，所以它不是Klein-Gordon场。$C^\mu$不唯一，至少可以用相似变换联系起来，一个特解为</p>
-<script type="math/tex; mode=display">
-C^0=\left[\begin{array}{cccc}
-0 & 0 & 0 & -1 \\
-0 & 0 & -1 & 0 \\
-0 & +1 & 0 & 0 \\
-+1 & 0 & 0 & 0 \\
-\end{array}\right],
-C^1=\left[\begin{array}{cccc}
-0 & +1 & 0 & 0 \\
-+1 & 0 & 0 & 0 \\
-0 & 0 & 0 & -1 \\
-0 & 0 & -1 & 0 \\
-\end{array}\right],
-C^2=\left[\begin{array}{cccc}
-+1 & 0 & 0 & 0 \\
-0 & -1 & 0 & 0 \\
-0 & 0 & +1 & 0 \\
-0 & 0 & 0 & -1 \\
-\end{array}\right],
-C^3=\left[\begin{array}{cccc}
-0 & 0 & 0 & -1 \\
-0 & 0 & -1 & 0 \\
-0 & -1 & 0 & 0 \\
--1 & 0 & 0 & 0 \\
-\end{array}\right]</script><p>可以验证</p>
-<script type="math/tex; mode=display">\det(ik_\mu C^\mu+m)=(k^2+m^2)^2\tag{2.3}</script><p>当然，可以显式地写为</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
--\partial_0\varphi_4+\partial_1\varphi_2+\partial_2\varphi_1-\partial_3\varphi_4+m\varphi_1=0\\
--\partial_0\varphi_3+\partial_1\varphi_1-\partial_2\varphi_2-\partial_3\varphi_3+m\varphi_2=0\\
-+\partial_0\varphi_2-\partial_1\varphi_4+\partial_2\varphi_3-\partial_3\varphi_2+m\varphi_3=0\\
-+\partial_0\varphi_1-\partial_1\varphi_3-\partial_2\varphi_4-\partial_3\varphi_1+m\varphi_4=0\\
-\end{aligned}\right.\tag{2.4}</script><p>容易验证这些矩阵满足反对易关系</p>
-<script type="math/tex; mode=display">\frac12\{C^\mu,C^\nu\}=g^{\mu\nu}\tag{2.5}</script><p>最后，我们说明，Majorana场的每个组成部分都是Klein-Gordon场</p>
-<script type="math/tex; mode=display">0=(C^\nu\partial_\nu+m)(C^\mu\partial_\mu-m)\varphi=(C^\nu C^\mu\partial_\mu\partial_\nu-m^2)\varphi\tag{2.6}</script><p>将指标交换不改变结果，因此</p>
-<script type="math/tex; mode=display">0=\left(\frac12\{C^\nu,C^\mu\}\partial_\mu\partial_\nu-m^2\right)\varphi=(\partial_\mu\partial^\mu-m^2)\varphi\tag{2.6}</script><h3 id="Majorana场的Lorentz变换"><a href="#Majorana场的Lorentz变换" class="headerlink" title="Majorana场的Lorentz变换"></a>Majorana场的Lorentz变换</h3><p>在标量场中，Lorentz变换为对坐标做逆变换。但在多分量的自由场中，还需要对分量之间做变换，只是这个变换我们尚未知晓</p>
-<script type="math/tex; mode=display">\varphi(x)\rightarrow\bar\varphi(x)=L(\Lambda)\varphi(\Lambda^{-1}x)\tag{3.1}</script><h4 id="无穷小变换"><a href="#无穷小变换" class="headerlink" title="无穷小变换"></a>无穷小变换</h4><p>无穷小变换可写为</p>
-<script type="math/tex; mode=display">L(1+\theta)=1+\frac i2\theta_{\mu\nu}S^{\mu\nu}\tag{3.2}</script><p>回忆标量场时利用保内积证明</p>
-<script type="math/tex; mode=display">g_{\mu\nu}\Lambda^\mu_{\ \rho}\Lambda^\nu_{\ \sigma}=g_{\rho\sigma}\Rightarrow0=g_{\rho\nu}\theta^\nu_{\ \sigma}+g_{\mu\sigma}\theta^\mu_{\ \rho}=\theta_{\rho\sigma}+\theta_{\sigma\rho}\tag{3.3}</script><p>因此$S$的”对称“部分无贡献，即可假设$S^{\mu\nu}=-S^{\nu\mu}$。所以有六个独立分量$S^{01},S^{02},S^{03},S^{12},S^{23},S^{13}$</p>
-<blockquote>
-<p>需要注意的是，这里要求$S$反对称，但不要求$S^{\mu\nu}\in\mathbb R^{4\times 4}$反对称</p>
-</blockquote>
-<h4 id="变换的表示"><a href="#变换的表示" class="headerlink" title="变换的表示"></a>变换的表示</h4><p>注意到$L(\Lambda)$的表示空间是自由场的多分量</p>
-<script type="math/tex; mode=display">(C^\mu\partial_\mu+m)\bar\varphi(x)=L(\Lambda)\left[(\Lambda^{-1})^\mu_{\ \nu}L^{-1}(\Lambda)C^\nu L(\Lambda)\frac{\partial}{\partial y^\mu}+m\right]\varphi(y)\tag{3.4}</script><p>这说明</p>
-<script type="math/tex; mode=display">L^{-1}(\Lambda)C^\nu L(\Lambda)=C^\mu\Leftrightarrow L^{-1}(\Lambda)C^\nu L(\Lambda)=\Lambda^\nu_{\ \mu}C^\mu\tag{3.5}</script><h4 id="生成元"><a href="#生成元" class="headerlink" title="生成元"></a>生成元</h4><p>(3.2)代入(3.5)得</p>
-<script type="math/tex; mode=display">-\frac i2\theta_{\rho\sigma}\left[S^{\rho\sigma},C^\nu\right]=\theta^\nu_{\ \mu}C^\mu=g^{\nu\rho}\theta_{\rho\sigma}C^\sigma\tag{3.6}</script><p>既然对所有无穷小都成立，所以</p>
-<script type="math/tex; mode=display">\frac12\left[C^\nu,iS^{\rho\sigma}\right]=g^{\nu\rho}C^\sigma\tag{3.7}</script><p>利用$S^{\rho\sigma}=-S^{\sigma\rho}$得</p>
-<script type="math/tex; mode=display">\left[C^\nu,iS^{\rho\sigma}\right]=g^{\nu\rho}C^\sigma-g^{\nu\sigma}C^\rho\tag{3.7}</script><p>假设$S_1^{\rho\sigma},S_2^{\rho\sigma}$都是(3.7)的解，那么它们的差$X$满足</p>
-<script type="math/tex; mode=display">\left[C^\nu,X\right]=0\tag{3.8}</script><p>$C^2$给出$X_{12}=X_{14}=X_{21}=X_{23}=X_{32}=X_{34}=X_{41}=X_{43}=0$；再利用$C^0\pm C^3$给出其他四个非对角元也为零，以及$X_{11}=X_{44},X_{22}=X_{33}$；最后根据$C^2$给出$X_{11}=X_{22}$。综上所述，$X=\xi\mathbb1$，因此可以再给一个限制使得不确定性消失</p>
-<script type="math/tex; mode=display">\mathrm{Tr}S^{\rho\sigma}=0\tag{3.9}</script><blockquote>
-<p>利用(2.5)检验下式</p>
-<script type="math/tex; mode=display">\begin{aligned}\left[C^\mu,\left[C^\rho,C^\gamma\right]\right]
-=&-\left[C^\rho,\left[C^\gamma,C^\mu\right]\right]-\left[C^\gamma,\left[C^\mu,C^\rho\right]\right]\\
-\end{aligned}</script></blockquote>
-<p>可以证明（但没证过）</p>
-<script type="math/tex; mode=display">S^{\rho\sigma}=-\frac i4[C^\rho,C^\sigma]\tag{3.10}</script><script type="math/tex; mode=display">[S^{\mu\nu},S^{\rho\sigma}]=i\left[g^{\mu\rho}S^{\nu\sigma}-(\mu\leftrightarrow\sigma)\right]-(\rho\leftrightarrow\sigma)\tag{3.11}</script><h3 id="自旋"><a href="#自旋" class="headerlink" title="自旋"></a>自旋</h3><p>转动算符为$U(\Lambda)$</p>
-<script type="math/tex; mode=display">U(\Lambda^{-1})\varphi(x)U(\Lambda)=L(\Lambda)\varphi(\Lambda^{-1}x)\tag{4.1}</script><p>同样考虑无穷小变换$\Lambda=1+\theta$，注意希腊字母代表0-3，英文字母代表1-4</p>
-<script type="math/tex; mode=display">\left(1-\frac i2\theta_{\mu\nu}M^{\mu\nu}\right)\varphi_a(x)\left(1+\frac i2\theta_{\mu\nu}M^{\mu\nu}\right)=\left(1+\frac i2\theta_{\mu\nu}S^{\mu\nu}\right)^b_{a}\varphi_b(x+\theta x)\tag{4.2}</script><p>与经典对应可知，$M$为角动量，具体而言，$M^{ij}=\epsilon_{ijk}J_k$，进而可以定义$M^{0i}=K_i$。至于其他分量，和之前的讨论一样我们可以假设$M^{ab}=-M^{ba}$。展开到一阶</p>
-<script type="math/tex; mode=display">-\frac i2\theta_{\mu\nu}\left[M^{\mu\nu},\varphi_a(x)\right]=\theta_{\mu\nu}x^\mu\partial^\nu\varphi_a(x)+\frac i2\theta_{\mu\nu}\left(S^{\mu\nu}\right)^b_a\varphi_b(x)\tag{4.3}</script><p>注意到$\theta_{\mu\nu}=-\theta_{\mu\nu}$，通过指标对换可以写得更加对称</p>
-<script type="math/tex; mode=display">\left[\varphi_a(x),M^{\mu\nu}\right]=\frac1i\left(x^\mu\partial^\nu-x^\nu\partial^\mu\right)\varphi_a(x)+\left(S^{\mu\nu}\right)^b_a\varphi_b(x)\tag{4.3}</script><hr>
-<p>特殊地，我们考虑特殊情况</p>
-<script type="math/tex; mode=display">\left[\varphi_a(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_a(x)+\left(S^{12}\right)^b_a\varphi_b(x)\tag{4.3}</script><p>利用(3.10)</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&\left[\varphi_1(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_1(x)+\frac i2\varphi_2(x)\\
-&\left[\varphi_2(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_2(x)-\frac i2\varphi_1(x)\\
-&\left[\varphi_3(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_3(x)-\frac i2\varphi_4(x)\\
-&\left[\varphi_4(x),J_3\right]=\frac1i\left(x^1\partial^2-x^2\partial^1\right)\varphi_4(x)+\frac i2\varphi_3(x)\\
-\end{aligned}\right.\tag{4.4}</script><p>对于固定的零分量，可以定义</p>
-<script type="math/tex; mode=display">O_1(t)=\int\mathrm d^3\bm x\ [\varphi_1(x)+i\varphi_2(x)]\Rightarrow[O_1(t),J_3]=\frac12O_1(t)\tag{4.5}</script><p>所以升降算符每次升降为$1/2$，即自旋1/2</p>
-<h3 id="左-右手旋量"><a href="#左-右手旋量" class="headerlink" title="左/右手旋量"></a>左/右手旋量</h3>]]></content>
-      <categories>
-        <category>QFT</category>
-      </categories>
-      <tags>
-        <tag>physics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>flutter发布</title>
     <url>/2020/10/24/flutter%E5%8F%91%E5%B8%83/</url>
     <content><![CDATA[<p>用flutter发布Android app 一般需要以下步骤（不包括发布到应用商店）</p>
@@ -970,122 +970,6 @@ C^3=\left[\begin{array}{cccc}
 ]]></content>
       <tags>
         <tag>flutter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一道积分证明</title>
-    <url>/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/</url>
-    <content><![CDATA[<p>在<a href="/2020/09/29/Klein-Gordon场量子化">之前的一篇文章</a>里提到一个积分</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\int\frac{\mathrm d^4k}{(2\pi)^4}(2\pi)\left[e^{ik\cdot x}\theta(k^0)-e^{ik\cdot x}\theta(-k^0)\right]\delta(k^2+\omega_0^2)</script><script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]</script><p>本文用于证明此积分。<br><a id="more"></a></p>
-<p>先将$k^0$积掉，只计算第一项</p>
-<script type="math/tex; mode=display">\int_{-\infty}^\infty\mathrm dk^0\ e^{-ik^0x^0}\theta(k^0)\delta\left[-(k^0)^2+\vec k^2+\omega_0^2\right]=\frac{e^{-i\sqrt{\vec k^2+\omega_0^2}x^0}}{2\sqrt{\vec k^2+\omega_0^2}}</script><p>再将积分变换到球坐标，定义$|\vec x|=r,r^0=x^0-y^0$，那么 $\tau^2=(r^0)^2-r^2$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac1{c_+}[\phi(x),\phi(y)]\\
-=&\int\frac{k^2\sin\theta\mathrm{d}k\mathrm{d}\theta\mathrm{d}\phi}{(2\pi)^32\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)e^{ikr\cos\theta}\\
-=&\int_0^\infty\frac{k^2\mathrm{d}k}{(2\pi)^22\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{2\sin kr}{kr}\\
-=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
-=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left[\sum_{n=0}^\infty\frac{(r^0)^{2n+1}}{(2n+1)!}(-1)^{n+1}2i\sqrt{k^2+\omega_0^2}^{2n+1}\right]\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
-=&\sum_{n=0}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\int_0^\infty(k^2+\omega_0^2)^nk\sin kr\mathrm{d}k\\
-=&\sum_{n=0}^\infty\sum_{m=0}^n\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-=&\sum_{m=0}^\infty\sum_{n=m}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-\end{aligned}\tag{1}</script><p>求和变换 $(n,m)\rightarrow(l=n-m,m)$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac1{c_+}[\phi(x),\phi(y)]\\
-=&\sum_{m=0}^\infty\sum_{l=0}^\infty\frac{(r^0)^{2(l+m)+1}(-1)^{m+l+1}i}{(2m+2l+1)!2\pi^2r}\frac{(m+l)!}{m!l!}\int_0^\infty k^{2l+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
-=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
-\sum_{l=0}^\infty\frac{(-1)^l(m+l)!}{(2m+2l+1)!l!} (kr^0)^{2l+1}\sin kr\mathrm{d}k\\
-=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
-2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr\mathrm{d}k\\
-\end{aligned}\tag{2}</script><p>其中 $j_m$ 是球贝塞尔函数。简单起见，定义</p>
-<script type="math/tex; mode=display">I[m;r,\epsilon]=\int_0^\infty2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr e^{-k\epsilon}\mathrm{d}k\tag{3}</script><p>利用Mathematica，计算得</p>
-<script type="math/tex; mode=display">I[0;r,\epsilon]=\int_0^\infty\sin kr^0\sin kr e^{-k\epsilon}\mathrm{d}k=\frac{2\epsilon r^0r}{\epsilon^4+2\epsilon^2(r^2+(r^0)^2)+((r^0)^2-r^2)^2}</script><p>也就是</p>
-<script type="math/tex; mode=display">\begin{aligned}
-I[0;r,0^+]&=\pi rr^0\sqrt{\frac2{(r^0)^2+r^2}}\delta((r^0)^2-r^2)\\
-&=\pi r\mathrm{sign}(r^0)\delta((r^0)^2-r^2)\\
-&=\pi r\mathrm{sign}(r^0)\delta(\tau^2)
-\end{aligned}\tag{4}</script><p>再次利用Mathematica，有公式</p>
-<script type="math/tex; mode=display">\int_0^{\pm\infty}\mathrm{d}x\ x^{1-m}j_m(x)\sin xy=\pm2^{-m}\pi y\frac{(1-y^2)^{-1+m}}{\Gamma(m)}\theta(1-y^2)</script><p>令$x=kr^0,y=r/r^0$，得到</p>
-<script type="math/tex; mode=display">I[m;r,0]=2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\tag{5}</script><p>(4)(5)代入(2)</p>
-<script type="math/tex; mode=display">\begin{aligned}
-&\frac 1c_+[\phi(x),\phi(y)]=i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}I[m;r,0]\\
-=&i\frac{-1}{2\pi^2r}\pi r\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=1}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\\
-=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=1}^\infty\frac{(-1)^{m+1}}{2\pi m!(m-1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m}\theta(\tau^2)\mathrm{sign}(r^0)\\
-=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
-+&i\sum_{m=0}^\infty\frac{(-1)^m}{2\pi m!(m+1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m+2}\theta(\tau^2)\mathrm{sign}(r^0)\\
-\end{aligned}\tag{6}</script><p>注意到</p>
-<script type="math/tex; mode=display">J_1(x)=\sum_{m=0}^\infty\frac{(-1)^m}{m!(m+1)!}\left(\frac x2\right)^{2m+1}</script><p>(6)式变为</p>
-<script type="math/tex; mode=display">\frac 1{c_+}[\phi(x),\phi(y)]=i\frac1{2\pi}\mathrm{sign}(r^0)\left[-\delta(\tau^2)+\frac{1}{\tau^2}\frac{\omega_0\tau}2J_1(\omega_0\tau)\theta(\tau^2)\right]</script><p>这正是我们要证明的</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(y)]=ic_+\mathrm{sign}(r^0)\left[\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac1{2\pi}\delta(\tau^2)\right]\tag{7}</script>]]></content>
-      <categories>
-        <category>QFT</category>
-      </categories>
-      <tags>
-        <tag>math</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一种正规化方案</title>
-    <url>/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<p>正规化是用于处理无穷大的一种技术手段，常见的方式有</p>
-<ul>
-<li>维数正规化</li>
-<li>Pauli-Villars正规化</li>
-<li>晶格正规化</li>
-<li>$\zeta$函数正规化</li>
-<li>Hadamard正规化</li>
-<li>点分裂正规化</li>
-</ul>
-<p>至今为止，我对正规化一无所知。北京大学檀时钠《量子场论》课上给出一种正规化方案，本文用于重现这种方案。将来可能会将其与正常做法作比较。</p>
-<a id="more"></a>
-<h3 id="引理一：高维球体积"><a href="#引理一：高维球体积" class="headerlink" title="引理一：高维球体积"></a>引理一：高维球体积</h3><script type="math/tex; mode=display">V^{(d)}=\frac{\pi^{d/2}}{\Gamma\left(\frac d2+1\right)},\quad S^{(d)}=\frac{2\pi^{d/2}}{\Gamma\left(\frac d2\right)}\tag1</script><p>证明很直接，利用数学归纳法即可，关键一步为</p>
-<script type="math/tex; mode=display">V^{(d)}=\int_{-1}^1\frac{\pi^{(d-1)/2}}{\Gamma\left(\frac{d-1}2+1\right)}(1-x^2)^{\frac{d-1}2}\mathrm dx
-=\frac{\pi^{(d-1)/2}}{\Gamma\left(\frac{d-1}2+1\right)}\int_{-\pi/2}^{\pi/2}\cos^d\theta\mathrm d\theta
-=\frac{\pi^{d/2}}{\Gamma\left(\frac d2+1\right)}</script><p>而表面积为体积对半径的微商，那就很显然了。</p>
-<h3 id="引理二：Feynman参数积分"><a href="#引理二：Feynman参数积分" class="headerlink" title="引理二：Feynman参数积分"></a>引理二：Feynman参数积分</h3><script type="math/tex; mode=display">\begin{aligned}
-&\frac{1}{(A_1+i\eta_1)\cdots(A_n+i\eta_n)}=\int\mathrm dF_n\left(x_1A_1+\cdots+x_nA_n\right)^{-n}\\
-&\int\mathrm dF_n=(n-1)!\int\mathrm dx_1\cdots\mathrm dx_n\ \delta\left(x_1+\cdots+x_n-1\right)\end{aligned}\tag2</script><p>对于单个而言，我们有</p>
-<script type="math/tex; mode=display">\frac1{A+i\eta}=-i\int_0^\infty\mathrm dt\ e^{(-\eta+iA)t}</script><p>可以看到正数 $\eta_j$ 使积分收敛。所以 $n$ 项积分为</p>
-<script type="math/tex; mode=display">LHS=(-i)^n\int_0^\infty\mathrm dt_1\cdots\mathrm dt_n\ e^{i(A_1t_1+\cdots A_nt_n)-0}</script><p>再引入一个辅助量$\lambda$</p>
-<script type="math/tex; mode=display">\int_0^\infty\frac{\mathrm d\lambda}{\lambda}\delta\left(1-\frac1\lambda\sum_{j=1}^nt_j\right)=\int_0^\infty\frac{\mathrm d\lambda}\lambda\frac{\delta(\lambda-\sum_{j=1}^nt_j)}{1/\lambda}=1</script><p>插入上式，并换元 $x_j=t_j/\lambda$</p>
-<script type="math/tex; mode=display">LHS=(-i)^n\int_0^\infty\mathrm dx_1\cdots\mathrm dx_n\mathrm d\lambda\ \lambda^{n-1}\delta(\lambda-\lambda\sum_{j=1}^nx_j)e^{i\lambda(A_1x_1+\cdots+A_nx_n)-0\lambda}</script><p>对$\lambda$积分是个Gamma函数，因此可以求解，最终得到(2)式</p>
-<h3 id="例子一：六维时空-varphi-3-理论自能项"><a href="#例子一：六维时空-varphi-3-理论自能项" class="headerlink" title="例子一：六维时空$\varphi^3$理论自能项"></a>例子一：六维时空$\varphi^3$理论自能项</h3><h4 id="变换到欧氏空间"><a href="#变换到欧氏空间" class="headerlink" title="变换到欧氏空间"></a>变换到欧氏空间</h4><script type="math/tex; mode=display">\mathcal L=-\frac12\partial_\mu\varphi\partial^\mu\varphi-\frac{m^2}2\varphi^2+\frac g{3!}\varphi^3</script><p>拉氏量和场算符的维数分别是$d,d/2-1$，所以当时空维数$d=6$时$g$无量纲。自能最低阶为</p>
-<script type="math/tex; mode=display">\Pi(k^2)\approx \frac{g^2}{2}\int\frac{-i\mathrm d^dl}{(2\pi)^d}\Delta(l)\Delta(k+l)=\frac{g^2}2\int\frac{-i\mathrm d^dl}{(2\pi)^d}\frac{1}{\left[l^2+m^2-i\epsilon\right]\left[(l+k)^2+m^2-i\epsilon\right]}</script><p>变换到欧氏空间</p>
-<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{1}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]}</script><h4 id="考察发散性质"><a href="#考察发散性质" class="headerlink" title="考察发散性质"></a>考察发散性质</h4><p>对$k_E$求导，符号记为$\partial_k^2=g^{\mu\nu}\frac{\partial}{\partial k^\mu}\frac{\partial}{\partial k^\nu}$</p>
-<script type="math/tex; mode=display">\partial_k^2\Pi(k_E^2)=-\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{8}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]^2}</script><p>仍然发散</p>
-<script type="math/tex; mode=display">\partial_k^2\partial_k^2\Pi(k_E^2)=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{128}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]^3}</script><p>收敛，所以$\Pi(k_E^2)=\Pi^{\text{特解}}(k_E^2)+c_1+c_2k_E^2$</p>
-<h4 id="实际积分"><a href="#实际积分" class="headerlink" title="实际积分"></a>实际积分</h4><p>利用(2)</p>
-<script type="math/tex; mode=display">\begin{aligned}\Pi(k_E^2)&=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\int_0^1\mathrm dx\left\{(1-x)(l_E^2+m^2)+x\left[(l_E+k_E)^2+m^2\right]\right\}^{-2}\\
-&=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\int_0^1\mathrm dx\left\{(l_E+xk_E)^2+(x-x^2)k_E^2+m^2\right\}^{-2}\\
-&=\frac{g^2}2\int_0^1\mathrm dx\int\frac{\mathrm d^dl_E}{(2\pi)^d}\left\{l_E^2+(x-x^2)k_E^2+m^2\right\}^{-2}\\
-\end{aligned}</script><p>最后一步做了个平移，因为是对全空间积分，所以不影响结果。可以看到，当$d\ge3$时积分发散，</p>
-<p>分为在半径为$Q$的球内外两部分积分，球内部分需要用到(1)，球外部分直接写为$f(k_E^2;Q)$。并设$D=(x-x^2)k_E^2+m^2$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\Pi(k_E^2)&=\frac{g^2}2\int_0^1\mathrm dx\left[\int_0^Q\frac{\pi^3r^5\mathrm dr}{2(2\pi)^6}\left\{r^2+D\right\}^{-2}+f(k_E^2;Q)\right]\\
-&=\frac{g^2}2\int_0^1\mathrm dx\left[\frac{1}{64\pi^3}\left(\frac{(2D+Q^2)Q^2}{2(D+Q^2)}+D\ln\frac{D}{D+Q^2}\right)+f(k_E^2;Q)\right]\\
-&=\frac{g^2}2\int_0^1\mathrm dx\left[\frac{1}{64\pi^3}\left(\frac D2+D\ln D+\frac{Q^2}2-2D\ln Q\right)+f(k_E^2;Q)+\mathcal O(Q^{-2})\right]\\
-\end{aligned}</script><p>因为总的积分值与$Q$无关，所以根据之前考察的发散性质可知</p>
-<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{g^2}{128\pi^2}\int_0^1\mathrm dx\left(\frac D2+D\ln D\right)+c_1+c_2k_E^2</script><p>积分的最终结果为（下式中的$c_1,c_2$与上式不同。注意到第一项积分只会出现常数项和二次项，所以可以吸收进待定系数）</p>
-<script type="math/tex; mode=display">
-\Pi(k_E^2)=\frac{g^2}{768\pi^2}\left[(k_E^2+4m^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k_E^2}}{2m}}{\sqrt{k_E^2}}
-+c_1+c_2k_E^2\right]\tag4</script><p><strong>在on-shell方案下</strong> $\Pi(-m^2)=\Pi’(-m^2)=0$，因此定出$c_1,c_2$</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&\sqrt3\pi m^2+c_1-c_2m^2=0\\
-&\sqrt3\pi-3+c_2=0
-\end{aligned}\right.</script><p>所以令$\alpha=g^2/(4\pi)^3$</p>
-<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{\alpha}{12}\left[(k_E^2+4m^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k_E^2}}{2m}}{\sqrt{k_E^2}}
-+(3-2\sqrt3\pi)m^2+(3-\sqrt3\pi)k_E^2\right]</script><h4 id="变换回闵氏空间"><a href="#变换回闵氏空间" class="headerlink" title="变换回闵氏空间"></a>变换回闵氏空间</h4><p>根据(4)，$k^2\gg m^2$时</p>
-<script type="math/tex; mode=display">\frac{\Pi(k^2)}{k^2+m^2}\approx\frac\alpha{12}\left[\ln\frac{k^2}{m^2}+c_2\right]</script><p>当$-k^2\gg m^2$时</p>
-<script type="math/tex; mode=display">\frac{\Pi(k^2)}{k^2+m^2}\approx\frac\alpha{12}\left[-i\pi+\ln\frac{|k^2|}{m^2}+c_2\right]</script><p>由Dyson方程可得</p>
-<script type="math/tex; mode=display">\mathbf\Delta(k)=\left[1-\Delta(k)\Pi(k^2)\right]^{-1}\Delta(k)=\frac{1}{\left[1-\frac{\Pi(k^2)}{k^2+m^2}\right]\left(k^2+m^2-i\epsilon\right)}</script><p>因此在$k^2\gg m^2$时</p>
-<script type="math/tex; mode=display">\mathbf\Delta(k)\approx\frac1{k^2+m^2-i\epsilon}\underline{\left(1+\frac\alpha{12}\ln\frac{k^2}{m^2}\right)}\approx\frac{1}{k^2}\underline{\left(\frac{k^2}{m^2}\right)^{\alpha/12}}</script><h3 id="其他例子"><a href="#其他例子" class="headerlink" title="其他例子"></a>其他例子</h3><p>见<a href="/2020/11/24/单圈修正/">单圈修正</a></p>
-]]></content>
-      <categories>
-        <category>QFT</category>
-      </categories>
-      <tags>
-        <tag>physics</tag>
       </tags>
   </entry>
   <entry>
@@ -1161,55 +1045,63 @@ C-\overline C=\int\mathrm d^4x\tilde{dk}\ ie^{ik\cdot x}\tilde g(0)f(\mathbf k)(
       </tags>
   </entry>
   <entry>
-    <title>分波法</title>
-    <url>/2020/12/15/%E5%88%86%E6%B3%A2%E6%B3%95/</url>
-    <content><![CDATA[<p>中心势场具有球对称性，所以采用球谐函数为基也许会比较简单，即将本征波函数写为</p>
-<script type="math/tex; mode=display">\psi_{klm}(\vec x)=R_{kl}(r)Y_{lm}(\theta,\phi)\tag1</script><p>而散射的情形要求</p>
-<script type="math/tex; mode=display">\psi(\vec x)=e^{i\vec k\cdot\vec x}+\frac{e^{ikr}}{r}f(\theta,\phi)\tag2</script><p>所以分波法的思想为把(2)用(1)展开</p>
+    <title>一种正规化方案</title>
+    <url>/2020/11/14/%E4%B8%80%E7%A7%8D%E6%AD%A3%E8%A7%84%E5%8C%96%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<p>正规化是用于处理无穷大的一种技术手段，常见的方式有</p>
+<ul>
+<li>维数正规化</li>
+<li>Pauli-Villars正规化</li>
+<li>晶格正规化</li>
+<li>$\zeta$函数正规化</li>
+<li>Hadamard正规化</li>
+<li>点分裂正规化</li>
+</ul>
+<p>至今为止，我对正规化一无所知。北京大学檀时钠《量子场论》课上给出一种正规化方案，本文用于重现这种方案。将来可能会将其与正常做法作比较。</p>
 <a id="more"></a>
-<h3 id="形式展开"><a href="#形式展开" class="headerlink" title="形式展开"></a>形式展开</h3><p>(2)两部分分别写为(1)的形式，第一部分是固定的</p>
-<script type="math/tex; mode=display">e^{i\vec k\cdot\vec x}=\sum_{lm}4\pi i^l j_l(kr)Y_{lm}^*(\hat k)Y_{lm}(\hat r)\tag{1.1}</script><p>第二部分只能形式地写</p>
-<script type="math/tex; mode=display">\frac{e^{ikr}}rf(\theta,\phi)=\sum_{lm}\frac{e^{ikr}}rf_{lm}Y_{lm}(\hat r)\tag{1.2}</script><p>其中</p>
-<script type="math/tex; mode=display">f(\theta,\phi)=\sum_{lm}f_{lm}Y_{lm}(\theta,\phi)\Leftrightarrow f_{lm}=\int\mathrm d\Omega\ f(\theta,\phi)Y^*_{lm}(\theta,\phi)\tag{1.3}</script><p>假设(2)用(1)展开的展开系数为$A_{lm}$，则</p>
-<script type="math/tex; mode=display">A_{lm}R_{kl}(r)=4\pi i^l j_l(kr)Y_{lm}^*(\hat k)+\frac{e^{ikr}}rf_{lm}\tag{1.4}</script><h3 id="求解自由情形径向方程"><a href="#求解自由情形径向方程" class="headerlink" title="求解自由情形径向方程"></a>求解自由情形径向方程</h3><p>既然(1)是本征函数，那么应该满足薛定谔方程</p>
-<script type="math/tex; mode=display">\left[-\frac{\hbar^2}{2m}\left(\frac1{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right)+\frac1{r^2\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial}{\partial\theta}\right)+\frac1{r^2\sin^2\theta}\frac{\partial^2}{\partial\phi^2}\right)+V(r)\right]\psi_{klm}(\vec x)=\frac{\hbar^2k^2}{2m}\psi_{klm}(\vec x)\tag{2.1}</script><p>利用球谐函数可知上式可化为</p>
-<script type="math/tex; mode=display">\left[-\frac{\hbar^2}{2m}\left(\frac1{r^2}\frac{\mathrm d}{\mathrm d r}\left(r^2\frac{\mathrm d}{\mathrm d r}\right)-\frac{l(l+1)}{r^2}\right)+V(r)\right]R_{kl}(r)=\frac{\hbar^2k^2}{2m}R_{kl}(r)\tag{2.2}</script><p>自由情形$V(r)\equiv0$，所以</p>
-<script type="math/tex; mode=display">\left[\frac1{r^2}\frac{\mathrm d}{\mathrm d r}\left(r^2\frac{\mathrm d}{\mathrm d r}\right)-\frac{l(l+1)}{r^2}\right]R_{kl}(r)=-k^2R_{kl}(r)\tag{2.2}</script><p>两个线性无关解为</p>
+<h3 id="引理一：高维球体积"><a href="#引理一：高维球体积" class="headerlink" title="引理一：高维球体积"></a>引理一：高维球体积</h3><script type="math/tex; mode=display">V^{(d)}=\frac{\pi^{d/2}}{\Gamma\left(\frac d2+1\right)},\quad S^{(d)}=\frac{2\pi^{d/2}}{\Gamma\left(\frac d2\right)}\tag1</script><p>证明很直接，利用数学归纳法即可，关键一步为</p>
+<script type="math/tex; mode=display">V^{(d)}=\int_{-1}^1\frac{\pi^{(d-1)/2}}{\Gamma\left(\frac{d-1}2+1\right)}(1-x^2)^{\frac{d-1}2}\mathrm dx
+=\frac{\pi^{(d-1)/2}}{\Gamma\left(\frac{d-1}2+1\right)}\int_{-\pi/2}^{\pi/2}\cos^d\theta\mathrm d\theta
+=\frac{\pi^{d/2}}{\Gamma\left(\frac d2+1\right)}</script><p>而表面积为体积对半径的微商，那就很显然了。</p>
+<h3 id="引理二：Feynman参数积分"><a href="#引理二：Feynman参数积分" class="headerlink" title="引理二：Feynman参数积分"></a>引理二：Feynman参数积分</h3><script type="math/tex; mode=display">\begin{aligned}
+&\frac{1}{(A_1+i\eta_1)\cdots(A_n+i\eta_n)}=\int\mathrm dF_n\left(x_1A_1+\cdots+x_nA_n\right)^{-n}\\
+&\int\mathrm dF_n=(n-1)!\int\mathrm dx_1\cdots\mathrm dx_n\ \delta\left(x_1+\cdots+x_n-1\right)\end{aligned}\tag2</script><p>对于单个而言，我们有</p>
+<script type="math/tex; mode=display">\frac1{A+i\eta}=-i\int_0^\infty\mathrm dt\ e^{(-\eta+iA)t}</script><p>可以看到正数 $\eta_j$ 使积分收敛。所以 $n$ 项积分为</p>
+<script type="math/tex; mode=display">LHS=(-i)^n\int_0^\infty\mathrm dt_1\cdots\mathrm dt_n\ e^{i(A_1t_1+\cdots A_nt_n)-0}</script><p>再引入一个辅助量$\lambda$</p>
+<script type="math/tex; mode=display">\int_0^\infty\frac{\mathrm d\lambda}{\lambda}\delta\left(1-\frac1\lambda\sum_{j=1}^nt_j\right)=\int_0^\infty\frac{\mathrm d\lambda}\lambda\frac{\delta(\lambda-\sum_{j=1}^nt_j)}{1/\lambda}=1</script><p>插入上式，并换元 $x_j=t_j/\lambda$</p>
+<script type="math/tex; mode=display">LHS=(-i)^n\int_0^\infty\mathrm dx_1\cdots\mathrm dx_n\mathrm d\lambda\ \lambda^{n-1}\delta(\lambda-\lambda\sum_{j=1}^nx_j)e^{i\lambda(A_1x_1+\cdots+A_nx_n)-0\lambda}</script><p>对$\lambda$积分是个Gamma函数，因此可以求解，最终得到(2)式</p>
+<h3 id="例子一：六维时空-varphi-3-理论自能项"><a href="#例子一：六维时空-varphi-3-理论自能项" class="headerlink" title="例子一：六维时空$\varphi^3$理论自能项"></a>例子一：六维时空$\varphi^3$理论自能项</h3><h4 id="变换到欧氏空间"><a href="#变换到欧氏空间" class="headerlink" title="变换到欧氏空间"></a>变换到欧氏空间</h4><script type="math/tex; mode=display">\mathcal L=-\frac12\partial_\mu\varphi\partial^\mu\varphi-\frac{m^2}2\varphi^2+\frac g{3!}\varphi^3</script><p>拉氏量和场算符的维数分别是$d,d/2-1$，所以当时空维数$d=6$时$g$无量纲。自能最低阶为</p>
+<script type="math/tex; mode=display">\Pi(k^2)\approx \frac{g^2}{2}\int\frac{-i\mathrm d^dl}{(2\pi)^d}\Delta(l)\Delta(k+l)=\frac{g^2}2\int\frac{-i\mathrm d^dl}{(2\pi)^d}\frac{1}{\left[l^2+m^2-i\epsilon\right]\left[(l+k)^2+m^2-i\epsilon\right]}</script><p>变换到欧氏空间</p>
+<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{1}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]}</script><h4 id="考察发散性质"><a href="#考察发散性质" class="headerlink" title="考察发散性质"></a>考察发散性质</h4><p>对$k_E$求导，符号记为$\partial_k^2=g^{\mu\nu}\frac{\partial}{\partial k^\mu}\frac{\partial}{\partial k^\nu}$</p>
+<script type="math/tex; mode=display">\partial_k^2\Pi(k_E^2)=-\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{8}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]^2}</script><p>仍然发散</p>
+<script type="math/tex; mode=display">\partial_k^2\partial_k^2\Pi(k_E^2)=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\frac{128}{(l_E^2+m^2)[(l_E+k_E)^2+m^2]^3}</script><p>收敛，所以$\Pi(k_E^2)=\Pi^{\text{特解}}(k_E^2)+c_1+c_2k_E^2$</p>
+<h4 id="实际积分"><a href="#实际积分" class="headerlink" title="实际积分"></a>实际积分</h4><p>利用(2)</p>
+<script type="math/tex; mode=display">\begin{aligned}\Pi(k_E^2)&=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\int_0^1\mathrm dx\left\{(1-x)(l_E^2+m^2)+x\left[(l_E+k_E)^2+m^2\right]\right\}^{-2}\\
+&=\frac{g^2}2\int\frac{\mathrm d^dl_E}{(2\pi)^d}\int_0^1\mathrm dx\left\{(l_E+xk_E)^2+(x-x^2)k_E^2+m^2\right\}^{-2}\\
+&=\frac{g^2}2\int_0^1\mathrm dx\int\frac{\mathrm d^dl_E}{(2\pi)^d}\left\{l_E^2+(x-x^2)k_E^2+m^2\right\}^{-2}\\
+\end{aligned}</script><p>最后一步做了个平移，因为是对全空间积分，所以不影响结果。可以看到，当$d\ge3$时积分发散，</p>
+<p>分为在半径为$Q$的球内外两部分积分，球内部分需要用到(1)，球外部分直接写为$f(k_E^2;Q)$。并设$D=(x-x^2)k_E^2+m^2$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\Pi(k_E^2)&=\frac{g^2}2\int_0^1\mathrm dx\left[\int_0^Q\frac{\pi^3r^5\mathrm dr}{2(2\pi)^6}\left\{r^2+D\right\}^{-2}+f(k_E^2;Q)\right]\\
+&=\frac{g^2}2\int_0^1\mathrm dx\left[\frac{1}{64\pi^3}\left(\frac{(2D+Q^2)Q^2}{2(D+Q^2)}+D\ln\frac{D}{D+Q^2}\right)+f(k_E^2;Q)\right]\\
+&=\frac{g^2}2\int_0^1\mathrm dx\left[\frac{1}{64\pi^3}\left(\frac D2+D\ln D+\frac{Q^2}2-2D\ln Q\right)+f(k_E^2;Q)+\mathcal O(Q^{-2})\right]\\
+\end{aligned}</script><p>因为总的积分值与$Q$无关，所以根据之前考察的发散性质可知</p>
+<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{g^2}{128\pi^2}\int_0^1\mathrm dx\left(\frac D2+D\ln D\right)+c_1+c_2k_E^2</script><p>积分的最终结果为（下式中的$c_1,c_2$与上式不同。注意到第一项积分只会出现常数项和二次项，所以可以吸收进待定系数）</p>
+<script type="math/tex; mode=display">
+\Pi(k_E^2)=\frac{g^2}{768\pi^2}\left[(k_E^2+4m^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k_E^2}}{2m}}{\sqrt{k_E^2}}
++c_1+c_2k_E^2\right]\tag4</script><p><strong>在on-shell方案下</strong> $\Pi(-m^2)=\Pi’(-m^2)=0$，因此定出$c_1,c_2$</p>
 <script type="math/tex; mode=display">\left\{\begin{aligned}
-&R_{kl}(r)=\sum_{n=0}^\infty \frac{(-1)^n}{2^nn!(2l+2n+1)!!}(kr)^{l+2n}\quad\rightarrow j_l(kr)\\
-&R_{kl}(r)=\sum_{n=0}^\infty\frac{(-1)^n}{2^nn!(-2l+2n-1)!!} (kr)^{-l-1+2n}\quad\rightarrow y_l(kr)\\
-\end{aligned}\right.\tag{2.3}</script><p>当半径很大时，渐近形式为</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&j_l(kr)\sim\frac{\sin(kr-l\pi/2)}{kr}\\
-&y_l(kr)\sim-\frac{\cos(kr-l\pi/2)}{kr}\\
-\end{aligned}\right.\tag{2.4}</script><p>所以方便（球面波形式）起见，采用其线性叠加，即所谓的汉克尔函数</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&h^{(1)}_l(kr)=j_l(kr)+iy_l(kr)\sim \frac{e^{ikr-i(l+1)\pi/2}}{kr}\\
-&h^{(2)}_l(kr)=j_l(kr)-iy_l(kr)\sim \frac{e^{-ikr+i(l+1)\pi/2}}{kr}\\
-\end{aligned}\right.\tag{2.5}</script><h3 id="分波法结论"><a href="#分波法结论" class="headerlink" title="分波法结论"></a>分波法结论</h3><p>取$R_{kl}(r)=e^{i\delta_l}h_l^{(1)}(kr)+e^{-i\delta_l}h_l^{(2)}(kr)$，代入(1.4)</p>
-<script type="math/tex; mode=display">A_{lm}\left[e^{i\delta_l}h_l^{(1)}(kr)+e^{-i\delta_l}h_l^{(2)}(kr)\right]=4\pi i^l j_l(kr)Y_{lm}^*(\hat k)+\frac{e^{ikr}}rf_{lm}\tag{3.1}</script><p>在半径很大时，根据(2.4)(2.5)得到渐近形式</p>
-<script type="math/tex; mode=display">A_{lm}\left[(-i)^{l+1}e^{ikr+i\delta_l}+i^{l+1}e^{-ikr-i\delta_l}\right]=-2\pi i\left[e^{ikr}+(-1)^{l+1}e^{-ikr}\right]Y_{lm}^*(\hat k)+ke^{ikr}f_{lm}\tag{3.2}</script><p>将发散部分和汇聚部分分开</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-&i^{l+1}e^{-i\delta_l}A_{lm}=-2\pi i(-1)^{l+1}Y_{lm}^*(\hat k)\\
-&(-i)^{l+1}e^{i\delta_l}A_{lm}=-2\pi iY_{lm}^*(\hat k)+kf_{lm}
-\end{aligned}\right.\Rightarrow\left\{\begin{aligned}
-&A_{lm}=2\pi i^lY_{lm}^*(\hat k)e^{i\delta_l}\\
-&f_{lm}=-\frac{2\pi i}{k}Y_{lm}^*(\hat k)(e^{i2\delta_l}-1)=\frac{4\pi}kY_{lm}^*(\hat k)e^{i\delta_l}\sin\delta_l
-\end{aligned}\right.\tag{3.3}</script><p>进而根据(1.3)得到</p>
-<script type="math/tex; mode=display">f(\theta,\phi)=\frac{4\pi}k \sum_{lm}e^{i\delta_l}\sin\delta_l Y_{lm}^*(\hat k)Y_{lm}(\theta,\phi)\tag{3.4}</script><p>当$\hat k=\hat z$时，$Y_{lm}(\hat k)\neq0\Rightarrow m=0$，所以</p>
-<script type="math/tex; mode=display">f(\theta,\phi)=\frac{4\pi}k \sum_{l}e^{i\delta_l}\sin\delta_l\sqrt{\frac{2l+1}{4\pi}}\times\sqrt{\frac{2l+1}{4\pi}}P_l(\cos\theta)
-=\frac1k\sum_{l=0}^\infty(2l+1)e^{i\delta_l}\sin\delta_lP_l(\cos\theta)\tag{3.5}</script><p>进而微分散射截面和总截面分别为</p>
-<script type="math/tex; mode=display">\frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta,\phi)=|f(\theta,\phi)|^2=\frac1{k^2}\sum_{ll'}(2l+1)(2l'+1)e^{i(\delta_l-\delta_{l'})}\sin\delta_l\sin\delta_{l'}P_l(\cos\theta)P_{l'}(\cos\theta)\tag{3.6}</script><script type="math/tex; mode=display">\begin{aligned}
-\sigma_{tot}=&\frac{2\pi}{k^2}\sum_{ll'}(2l+1)(2l'+1)e^{i(\delta_l-\delta_{l'})}\sin\delta_l\sin\delta_{l'}\int_{-1}^1P_l(x)P_{l'}(x)\mathrm dx\\
-=&\frac{2\pi}{k^2}\sum_{ll'}(2l+1)(2l'+1)e^{i(\delta_l-\delta_{l'})}\sin\delta_l\sin\delta_{l'}\frac{2}{2l+1}\delta_{ll'}\\
-=&\frac{4\pi}{k^2}\sum_{l}(2l+1)\sin^2\delta_l
-\end{aligned}\tag{3.7}</script><h3 id="应用：硬球势"><a href="#应用：硬球势" class="headerlink" title="应用：硬球势"></a>应用：硬球势</h3><p>硬球势的相移因子可根据硬球内部($r\le a$)波函数为零定出，即</p>
-<script type="math/tex; mode=display">\psi_{klm}(a,\theta,\phi)\equiv=0\Rightarrow R_{kl}(a)=e^{i\delta_l}h_l^{(1)}(ka)+e^{-i\delta_l}h_l^{(2)}(ka)=0\tag{4.1}</script><script type="math/tex; mode=display">\Rightarrow e^{2i\delta_l}=-\frac{h_l^{(2)}(ka)}{h_l^{(1)}(ka)}=-\frac{j_l(ka)-iy_l(ka)}{j_l(ka)+iy_l(ka)}\tag{4.2}</script><p>从(2.3)可以看出，在$k\ll1$时，球贝塞尔函数相比于球诺伊曼函数而言是小量，所以</p>
-<script type="math/tex; mode=display">e^{2i\delta_l}=\frac{1+ij_l(ka)/y_l(ka)}{1-ij_l(ka)/y_l(ka)}\approx e^{i2j_l(ka)/y_l(ka)}\Rightarrow \delta_l\approx\frac{j_l(ka)}{y_l(ka)}
-\approx\frac{(ka)^l/(2l+1)!!}{-(2l-1)!!/(ka)^{l+1}}\tag{4.3}</script><p>因此只有$l=0,\delta_0=-ka$最为显著，即s波散射</p>
-<script type="math/tex; mode=display">\sigma_{tot}\approx\frac{4\pi}{k^2}\sin^2(-ka)\approx 4\pi a^2\tag{4.4}</script>]]></content>
+&\sqrt3\pi m^2+c_1-c_2m^2=0\\
+&\sqrt3\pi-3+c_2=0
+\end{aligned}\right.</script><p>所以令$\alpha=g^2/(4\pi)^3$</p>
+<script type="math/tex; mode=display">\Pi(k_E^2)=\frac{\alpha}{12}\left[(k_E^2+4m^2)^{3/2}\frac{2\mathrm{arcsinh}\frac{\sqrt{k_E^2}}{2m}}{\sqrt{k_E^2}}
++(3-2\sqrt3\pi)m^2+(3-\sqrt3\pi)k_E^2\right]</script><h4 id="变换回闵氏空间"><a href="#变换回闵氏空间" class="headerlink" title="变换回闵氏空间"></a>变换回闵氏空间</h4><p>根据(4)，$k^2\gg m^2$时</p>
+<script type="math/tex; mode=display">\frac{\Pi(k^2)}{k^2+m^2}\approx\frac\alpha{12}\left[\ln\frac{k^2}{m^2}+c_2\right]</script><p>当$-k^2\gg m^2$时</p>
+<script type="math/tex; mode=display">\frac{\Pi(k^2)}{k^2+m^2}\approx\frac\alpha{12}\left[-i\pi+\ln\frac{|k^2|}{m^2}+c_2\right]</script><p>由Dyson方程可得</p>
+<script type="math/tex; mode=display">\mathbf\Delta(k)=\left[1-\Delta(k)\Pi(k^2)\right]^{-1}\Delta(k)=\frac{1}{\left[1-\frac{\Pi(k^2)}{k^2+m^2}\right]\left(k^2+m^2-i\epsilon\right)}</script><p>因此在$k^2\gg m^2$时</p>
+<script type="math/tex; mode=display">\mathbf\Delta(k)\approx\frac1{k^2+m^2-i\epsilon}\underline{\left(1+\frac\alpha{12}\ln\frac{k^2}{m^2}\right)}\approx\frac{1}{k^2}\underline{\left(\frac{k^2}{m^2}\right)^{\alpha/12}}</script><h3 id="其他例子"><a href="#其他例子" class="headerlink" title="其他例子"></a>其他例子</h3><p>见<a href="/2020/11/24/单圈修正/">单圈修正</a></p>
+]]></content>
       <categories>
-        <category>AQM</category>
+        <category>QFT</category>
       </categories>
       <tags>
         <tag>physics</tag>
@@ -1264,75 +1156,55 @@ C_V=\frac{V}{6\pi^3c^3}k_B^4T_D^3=3Nk_B</script>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>单圈费曼图</title>
-    <url>/2020/11/23/%E5%8D%95%E5%9C%88%E8%B4%B9%E6%9B%BC%E5%9B%BE/</url>
-    <content><![CDATA[<p>在圈近似中，我们会遇到一类由单圈和相互作用组成的图。事实上，写为代数形式为</p>
-<script type="math/tex; mode=display">\int\frac{\mathrm d^4q}{(2\pi)^4}\left[\Pi_0(q)V(q)\right]^n\tag1</script><p>其中</p>
-<script type="math/tex; mode=display">\Pi(q)=\frac{2}{i\hbar}\int\frac{\mathrm d^4k}{(2\pi)^4}\ G^0(k)G^0(k+q)\tag2</script><p>本文在费米海的模型下计算(2)</p>
-<a id="more"></a>
-<h3 id="费米海模型"><a href="#费米海模型" class="headerlink" title="费米海模型"></a>费米海模型</h3><h4 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h4><p>对于费米海，自由格林函数为</p>
-<script type="math/tex; mode=display">G^0(\mathbf k,\epsilon)=\frac{\theta(|\mathbf k|-k_F)}{\epsilon-\omega_{\mathbf k}+i\eta}+\frac{\theta(k_F-|\mathbf k|)}{\epsilon-\omega_{\mathbf k}-i\eta}\tag{1.1}</script><p>代入(2)式，取$k=(\mathbf k,\epsilon),q=(\mathbf q,\omega)$得</p>
-<script type="math/tex; mode=display">\Pi(q)=\frac2{i\hbar}\int\frac{\mathrm d^3\mathbf k\mathrm d\epsilon}{(2\pi)^4}
-\left[\frac{\theta(|\mathbf k|-k_F)}{\epsilon-\omega_{\mathbf k}+i\eta}+\frac{\theta(k_F-|\mathbf k|)}{\epsilon-\omega_{\mathbf k}-i\eta}\right]
-\left[\frac{\theta(|\mathbf{k+q}|-k_F)}{\epsilon+\omega-\omega_{\mathbf{k+q}}+i\eta}+\frac{\theta(k_F-|\mathbf{k+q}|)}{\epsilon+\omega-\omega_{\mathbf{k+q}}-i\eta}\right]</script><p>对$\epsilon$积分，乘积本应有四项，但只有两项能在上半平面（格林函数应含有一个$e^{i\omega 0^+}$部分）积分后非零，即</p>
-<script type="math/tex; mode=display">\Pi(q)=\frac2\hbar\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
-\frac{\theta(k_F-|\mathbf k|)\theta(|\mathbf{k+q}|-k_F)}{\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}}+i\eta}+
-\frac{\theta(|\mathbf k|-k_F)\theta(k_F-|\mathbf{k+q}|)}{-\omega-\omega_{\mathbf k}+\omega_{\mathbf{k+q}}+i\eta}
-\right]</script><p>取$\mathbf k\rightarrow-\mathbf{k+q}$，可以将两项的阶梯函数变为相同</p>
-<script type="math/tex; mode=display">\Pi(q)=\frac2\hbar\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
-\frac{1}{\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}}+i\eta}-
-\frac{1}{\omega+\omega_{\mathbf{k+q}}-\omega_{\mathbf k}-i\eta}
-\right]</script><p>其中积分区域$D=\theta(1-|\mathbf k|)\theta(|\mathbf{k+q}|-1)$。并且可以看出关于频率是奇函数，所以只须考虑$\omega\ge0$部分。</p>
-<p>实部和虚部分别为</p>
-<script type="math/tex; mode=display">\Re\Pi(q)=\frac2\hbar\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
-\frac{\mathscr P}{\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}}}-
-\frac{\mathscr P}{\omega+\omega_{\mathbf{k+q}}-\omega_{\mathbf k}}
-\right]</script><script type="math/tex; mode=display">\Im\Pi(q)=-\frac1\hbar\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^2}\left[
-\delta(\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}})+
-\delta(\omega+\omega_{\mathbf{k+q}}-\omega_{\mathbf k})
-\right]</script><p>方便起见，做参数化$\mathbf k\rightarrow \mathbf kk_F,\mathbf q\rightarrow \mathbf qk_F,\omega\rightarrow\nu\frac{\hbar k_F^2}m$，并利用色散关系$\hbar\omega_{\mathbf k}=\frac{\hbar^2\mathbf k^2}{2m}$得</p>
-<script type="math/tex; mode=display">\Re\Pi(q)=\frac{2mk_F}{\hbar^2}\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
-\frac{\mathscr P}{\nu-\mathbf{k\cdot q}-\frac{\mathbf q^2}2}-
-\frac{\mathscr P}{\nu+\mathbf{k\cdot q}+\frac{\mathbf q^2}2}
-\right]\tag{1.2}</script><script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{\hbar^2}\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^2}\left[
-\delta(\nu-\mathbf{k\cdot q}-\frac{\mathbf q^2}2)+
-\delta(\nu+\mathbf{k\cdot q}+\frac{\mathbf q^2}2)
-\right]\tag{1.3}</script><p>重申两点。</p>
-<ol>
-<li>$\nu\ge0$，否则可利用奇函数性质计算</li>
-<li>积分区域$D=\theta(1-|\mathbf k|)\theta(|\mathbf{k+q}|-1)$，几何上看为一个在原点的单位球内，扣除另一个不在原点的单位球。因此可自然地根据$|\mathbf q|-2$的正负性分类</li>
-</ol>
-<h4 id="虚部"><a href="#虚部" class="headerlink" title="虚部"></a>虚部</h4><p>根据(1.3)，以$\mathbf q$为$z$轴，只有$k_z=-\frac{|\mathbf q|}2\pm\frac\nu{|\mathbf q|}$时被积函数不为零。画出积分区域便能发现，只有取正号的时候才可能落在积分区域内。并可分为四类讨论</p>
-<ol>
-<li>$|\mathbf q|&gt;2$时，要求$-1\le-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\le1\Leftrightarrow\frac{\mathbf q^2}2-|\mathbf q|\le\nu\le\frac{\mathbf q^2}2+|\mathbf q|$<script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{(2\pi\hbar)^2|\mathbf q|}\pi\left[1-\left(-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2\right]</script></li>
-<li>$|\mathbf q|&lt;2$，且$1\ge-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\ge1-|\mathbf q|\Leftrightarrow|\mathbf q|-\frac{\mathbf q^2}2\le\nu\le|\mathbf q|+\frac{\mathbf q^2}2$时<script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{(2\pi\hbar)^2|\mathbf q|}\pi\left[1-\left(-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2\right]</script></li>
-<li>$|\mathbf q|&lt;2$，且$-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}&lt;1-|\mathbf q|\Leftrightarrow\nu&lt;|\mathbf q|-\frac{\mathbf q^2}2$时<script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{(2\pi\hbar)^2|\mathbf q|}\left[\left(\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2-\left(-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2\right]
-=-\frac{mk_F\nu}{2\pi\hbar^2|\mathbf q|}</script></li>
-<li>尚未讨论到的区域，积分值恒为零</li>
-</ol>
-<p>据说，重要的是虚部不为零的区域形状。</p>
-<h4 id="实部"><a href="#实部" class="headerlink" title="实部"></a>实部</h4><h3 id="物理意义"><a href="#物理意义" class="headerlink" title="物理意义"></a>物理意义</h3><h3 id="标量场模型"><a href="#标量场模型" class="headerlink" title="标量场模型"></a>标量场模型</h3><p>出于好玩（以及练习量子场论的重整化），再算算标量场下的情况。相应的，格林函数为</p>
-<script type="math/tex; mode=display">G(k)=\frac1{k^2+m^2-i\epsilon}</script><p>所以代入(2)</p>
-<script type="math/tex; mode=display">\Pi(q)=\frac2{i\hbar}\int\frac{\mathrm d^4k}{(2\pi)^4}\frac1{[k^2+m^2-i\epsilon][(k+q)^2+m^2-i\epsilon]}</script><p>频率部分Wick转动至虚轴，并做相应变量替换</p>
-<script type="math/tex; mode=display">\Pi(q_E)=\frac2\hbar\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac1{[k_E^2+m^2][(k_E+q_E)^2+m^2]}</script><p>做Feynman参数积分得</p>
-<script type="math/tex; mode=display">\begin{aligned}\Pi(q_E)
-=&\frac2\hbar\int\frac{\mathrm d^4k_E}{(2\pi)^4}\int_0^1\frac{\mathrm dx}{\left[(1-x)(k_E^2+m^2)+x[(k_E+q_E)^2+m^2]\right]^2}\\
-=&\frac2\hbar\int\frac{\mathrm d^4k_E}{(2\pi)^4}\int_0^1\frac{\mathrm dx}{\left[(k_E+xq_E)^2+x(1-x)q_E^2+m^2\right]^2}\\
-=&\frac2\hbar\int_0^1\mathrm dx\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac1{\left[k_E^2+x(1-x)q_E^2+m^2\right]^2}\\
-\end{aligned}</script><p>变换到四维球坐标得</p>
-<script type="math/tex; mode=display">\begin{aligned}\Pi(q_E)
-=&\frac2\hbar\int_0^1\mathrm dx\int_0^\infty\frac{\mathrm dk_E}{(2\pi)^4}\frac{8\pi}3\frac{k_E^3}{\left[k_E^2+x(1-x)q_E^2+m^2\right]^2}\\
-=&\frac2\hbar\frac{1}{(2\pi)^4}\frac{8\pi}3\int_0^1\mathrm dx\left[-\frac12\frac{Q^2}{x(1-x)q_E^2+m^2+Q^2}+\ln\sqrt{x(1-x)q_E^2+m^2+Q^2}\right.\\
-&\left.-\ln\sqrt{x(1-x)q_E^2+m^2}+\int_Q^\infty\frac{k_E^3\mathrm dk_E}{\left[k_E^2+x(1-x)q_E^2+m^2\right]^2}\right]\\
-\end{aligned}</script><p>取$Q\rightarrow\infty$，尚未积出的积分与$-\ln Q$只差一个常数，尽管这个常数是无穷大，因此恰好与最后一个等号的第一行抵消</p>
-<script type="math/tex; mode=display">\Pi(q_E)=\frac1{3\pi^3\hbar}\int_0^1\mathrm dx\left[c_1-\ln\sqrt{x(1-x)q_E^2+m^2}\right]</script><p>当$2m&gt;q_E$时</p>
-<script type="math/tex; mode=display">\Pi(q_E)=\frac1{3\pi^3\hbar}\left[c_2-\sqrt{\frac{4m^2}{q^2_E}+1}\ \mathrm{arccosh}\sqrt{\frac{q_E^2}{4m^2}+1}\right]</script><p>所以变量替换回去得到下式，对其做解析延拓是复杂的，但没有原则性困难</p>
-<script type="math/tex; mode=display">\Pi(q)=\frac1{3\pi^3\hbar}\left[c_2-\sqrt{\frac{4m^2}{q^2}+1}\ \mathrm{arccosh}\sqrt{\frac{q^2}{4m^2}+1}\right]</script>]]></content>
+    <title>一道积分证明</title>
+    <url>/2020/10/08/%E4%B8%80%E9%81%93%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/</url>
+    <content><![CDATA[<p>在<a href="/2020/09/29/Klein-Gordon场量子化">之前的一篇文章</a>里提到一个积分</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\int\frac{\mathrm d^4k}{(2\pi)^4}(2\pi)\left[e^{ik\cdot x}\theta(k^0)-e^{ik\cdot x}\theta(-k^0)\right]\delta(k^2+\omega_0^2)</script><script type="math/tex; mode=display">[\phi(x),\phi(y)]=c_+\mathrm{sign}(x^0-y^0)\left[i\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac i{2\pi}\delta(\tau^2)\right]</script><p>本文用于证明此积分。<br><a id="more"></a></p>
+<p>先将$k^0$积掉，只计算第一项</p>
+<script type="math/tex; mode=display">\int_{-\infty}^\infty\mathrm dk^0\ e^{-ik^0x^0}\theta(k^0)\delta\left[-(k^0)^2+\vec k^2+\omega_0^2\right]=\frac{e^{-i\sqrt{\vec k^2+\omega_0^2}x^0}}{2\sqrt{\vec k^2+\omega_0^2}}</script><p>再将积分变换到球坐标，定义$|\vec x|=r,r^0=x^0-y^0$，那么 $\tau^2=(r^0)^2-r^2$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\frac1{c_+}[\phi(x),\phi(y)]\\
+=&\int\frac{k^2\sin\theta\mathrm{d}k\mathrm{d}\theta\mathrm{d}\phi}{(2\pi)^32\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)e^{ikr\cos\theta}\\
+=&\int_0^\infty\frac{k^2\mathrm{d}k}{(2\pi)^22\sqrt{k^2+\omega_0^2}}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{2\sin kr}{kr}\\
+=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left(e^{-i\sqrt{k^2+\omega_0^2}r^0}-e^{i\sqrt{k^2+\omega_0^2}r^0}\right)\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
+=&\int_0^\infty\frac{\mathrm{d}k}{(2\pi)^2r}\left[\sum_{n=0}^\infty\frac{(r^0)^{2n+1}}{(2n+1)!}(-1)^{n+1}2i\sqrt{k^2+\omega_0^2}^{2n+1}\right]\frac{k\sin kr}{\sqrt{k^2+\omega_0^2}}\\
+=&\sum_{n=0}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\int_0^\infty(k^2+\omega_0^2)^nk\sin kr\mathrm{d}k\\
+=&\sum_{n=0}^\infty\sum_{m=0}^n\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
+=&\sum_{m=0}^\infty\sum_{n=m}^\infty\frac{(r^0)^{2n+1}(-1)^{n+1}i}{(2n+1)!2\pi^2r}\frac{n!}{m!(n-m)!}\int_0^\infty k^{2(n-m)+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
+\end{aligned}\tag{1}</script><p>求和变换 $(n,m)\rightarrow(l=n-m,m)$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\frac1{c_+}[\phi(x),\phi(y)]\\
+=&\sum_{m=0}^\infty\sum_{l=0}^\infty\frac{(r^0)^{2(l+m)+1}(-1)^{m+l+1}i}{(2m+2l+1)!2\pi^2r}\frac{(m+l)!}{m!l!}\int_0^\infty k^{2l+1}\omega_0^{2m}\sin kr\mathrm{d}k\\
+=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
+\sum_{l=0}^\infty\frac{(-1)^l(m+l)!}{(2m+2l+1)!l!} (kr^0)^{2l+1}\sin kr\mathrm{d}k\\
+=&i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}\int_0^\infty
+2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr\mathrm{d}k\\
+\end{aligned}\tag{2}</script><p>其中 $j_m$ 是球贝塞尔函数。简单起见，定义</p>
+<script type="math/tex; mode=display">I[m;r,\epsilon]=\int_0^\infty2^{-m}(kr^0)^{1-m}j_m(kr^0)\sin kr e^{-k\epsilon}\mathrm{d}k\tag{3}</script><p>利用Mathematica，计算得</p>
+<script type="math/tex; mode=display">I[0;r,\epsilon]=\int_0^\infty\sin kr^0\sin kr e^{-k\epsilon}\mathrm{d}k=\frac{2\epsilon r^0r}{\epsilon^4+2\epsilon^2(r^2+(r^0)^2)+((r^0)^2-r^2)^2}</script><p>也就是</p>
+<script type="math/tex; mode=display">\begin{aligned}
+I[0;r,0^+]&=\pi rr^0\sqrt{\frac2{(r^0)^2+r^2}}\delta((r^0)^2-r^2)\\
+&=\pi r\mathrm{sign}(r^0)\delta((r^0)^2-r^2)\\
+&=\pi r\mathrm{sign}(r^0)\delta(\tau^2)
+\end{aligned}\tag{4}</script><p>再次利用Mathematica，有公式</p>
+<script type="math/tex; mode=display">\int_0^{\pm\infty}\mathrm{d}x\ x^{1-m}j_m(x)\sin xy=\pm2^{-m}\pi y\frac{(1-y^2)^{-1+m}}{\Gamma(m)}\theta(1-y^2)</script><p>令$x=kr^0,y=r/r^0$，得到</p>
+<script type="math/tex; mode=display">I[m;r,0]=2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\tag{5}</script><p>(4)(5)代入(2)</p>
+<script type="math/tex; mode=display">\begin{aligned}
+&\frac 1c_+[\phi(x),\phi(y)]=i\sum_{m=0}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}I[m;r,0]\\
+=&i\frac{-1}{2\pi^2r}\pi r\mathrm{sign}(r^0)\delta(\tau^2)\\
++&i\sum_{m=1}^\infty\frac{(-1)^{m+1}(\omega_0r^0)^{2m}}{2\pi^2m!r}2^{-2m}\pi r\frac{(\tau^2)^{-1+m}}{(m-1)!(r^0)^{2m}}\theta(\tau^2)\mathrm{sign}(r^0)\\
+=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
++&i\sum_{m=1}^\infty\frac{(-1)^{m+1}}{2\pi m!(m-1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m}\theta(\tau^2)\mathrm{sign}(r^0)\\
+=&i\frac{-1}{2\pi}\mathrm{sign}(r^0)\delta(\tau^2)\\
++&i\sum_{m=0}^\infty\frac{(-1)^m}{2\pi m!(m+1)!\tau^2}\left(\frac{\omega_0\tau}2\right)^{2m+2}\theta(\tau^2)\mathrm{sign}(r^0)\\
+\end{aligned}\tag{6}</script><p>注意到</p>
+<script type="math/tex; mode=display">J_1(x)=\sum_{m=0}^\infty\frac{(-1)^m}{m!(m+1)!}\left(\frac x2\right)^{2m+1}</script><p>(6)式变为</p>
+<script type="math/tex; mode=display">\frac 1{c_+}[\phi(x),\phi(y)]=i\frac1{2\pi}\mathrm{sign}(r^0)\left[-\delta(\tau^2)+\frac{1}{\tau^2}\frac{\omega_0\tau}2J_1(\omega_0\tau)\theta(\tau^2)\right]</script><p>这正是我们要证明的</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(y)]=ic_+\mathrm{sign}(r^0)\left[\omega_0\theta(\tau^2)\frac{J_1(\omega_0\tau)}{4\pi\tau}-\frac1{2\pi}\delta(\tau^2)\right]\tag{7}</script>]]></content>
       <categories>
-        <category>QSP</category>
+        <category>QFT</category>
       </categories>
       <tags>
-        <tag>physics</tag>
         <tag>math</tag>
       </tags>
   </entry>
@@ -1602,6 +1474,134 @@ l^2+x_2(1-x_2)k_1^2+x_1(1-x_1)k_2^2+2x_2x_1k_1k_2+m^2\right\}^3}\\
       </tags>
   </entry>
   <entry>
+    <title>分波法</title>
+    <url>/2020/12/15/%E5%88%86%E6%B3%A2%E6%B3%95/</url>
+    <content><![CDATA[<p>中心势场具有球对称性，所以采用球谐函数为基也许会比较简单，即将本征波函数写为</p>
+<script type="math/tex; mode=display">\psi_{klm}(\vec x)=R_{kl}(r)Y_{lm}(\theta,\phi)\tag1</script><p>而散射的情形要求</p>
+<script type="math/tex; mode=display">\psi(\vec x)=e^{i\vec k\cdot\vec x}+\frac{e^{ikr}}{r}f(\theta,\phi)\tag2</script><p>所以分波法的思想为把(2)用(1)展开</p>
+<a id="more"></a>
+<h3 id="形式展开"><a href="#形式展开" class="headerlink" title="形式展开"></a>形式展开</h3><p>(2)两部分分别写为(1)的形式，第一部分是固定的</p>
+<script type="math/tex; mode=display">e^{i\vec k\cdot\vec x}=\sum_{lm}4\pi i^l j_l(kr)Y_{lm}^*(\hat k)Y_{lm}(\hat r)\tag{1.1}</script><p>第二部分只能形式地写</p>
+<script type="math/tex; mode=display">\frac{e^{ikr}}rf(\theta,\phi)=\sum_{lm}\frac{e^{ikr}}rf_{lm}Y_{lm}(\hat r)\tag{1.2}</script><p>其中</p>
+<script type="math/tex; mode=display">f(\theta,\phi)=\sum_{lm}f_{lm}Y_{lm}(\theta,\phi)\Leftrightarrow f_{lm}=\int\mathrm d\Omega\ f(\theta,\phi)Y^*_{lm}(\theta,\phi)\tag{1.3}</script><p>假设(2)用(1)展开的展开系数为$A_{lm}$，则</p>
+<script type="math/tex; mode=display">A_{lm}R_{kl}(r)=4\pi i^l j_l(kr)Y_{lm}^*(\hat k)+\frac{e^{ikr}}rf_{lm}\tag{1.4}</script><h3 id="求解自由情形径向方程"><a href="#求解自由情形径向方程" class="headerlink" title="求解自由情形径向方程"></a>求解自由情形径向方程</h3><p>既然(1)是本征函数，那么应该满足薛定谔方程</p>
+<script type="math/tex; mode=display">\left[-\frac{\hbar^2}{2m}\left(\frac1{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right)+\frac1{r^2\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial}{\partial\theta}\right)+\frac1{r^2\sin^2\theta}\frac{\partial^2}{\partial\phi^2}\right)+V(r)\right]\psi_{klm}(\vec x)=\frac{\hbar^2k^2}{2m}\psi_{klm}(\vec x)\tag{2.1}</script><p>利用球谐函数可知上式可化为</p>
+<script type="math/tex; mode=display">\left[-\frac{\hbar^2}{2m}\left(\frac1{r^2}\frac{\mathrm d}{\mathrm d r}\left(r^2\frac{\mathrm d}{\mathrm d r}\right)-\frac{l(l+1)}{r^2}\right)+V(r)\right]R_{kl}(r)=\frac{\hbar^2k^2}{2m}R_{kl}(r)\tag{2.2}</script><p>自由情形$V(r)\equiv0$，所以</p>
+<script type="math/tex; mode=display">\left[\frac1{r^2}\frac{\mathrm d}{\mathrm d r}\left(r^2\frac{\mathrm d}{\mathrm d r}\right)-\frac{l(l+1)}{r^2}\right]R_{kl}(r)=-k^2R_{kl}(r)\tag{2.2}</script><p>两个线性无关解为</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&R_{kl}(r)=\sum_{n=0}^\infty \frac{(-1)^n}{2^nn!(2l+2n+1)!!}(kr)^{l+2n}\quad\rightarrow j_l(kr)\\
+&R_{kl}(r)=\sum_{n=0}^\infty\frac{(-1)^n}{2^nn!(-2l+2n-1)!!} (kr)^{-l-1+2n}\quad\rightarrow y_l(kr)\\
+\end{aligned}\right.\tag{2.3}</script><p>当半径很大时，渐近形式为</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&j_l(kr)\sim\frac{\sin(kr-l\pi/2)}{kr}\\
+&y_l(kr)\sim-\frac{\cos(kr-l\pi/2)}{kr}\\
+\end{aligned}\right.\tag{2.4}</script><p>所以方便（球面波形式）起见，采用其线性叠加，即所谓的汉克尔函数</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&h^{(1)}_l(kr)=j_l(kr)+iy_l(kr)\sim \frac{e^{ikr-i(l+1)\pi/2}}{kr}\\
+&h^{(2)}_l(kr)=j_l(kr)-iy_l(kr)\sim \frac{e^{-ikr+i(l+1)\pi/2}}{kr}\\
+\end{aligned}\right.\tag{2.5}</script><h3 id="分波法结论"><a href="#分波法结论" class="headerlink" title="分波法结论"></a>分波法结论</h3><p>取$R_{kl}(r)=e^{i\delta_l}h_l^{(1)}(kr)+e^{-i\delta_l}h_l^{(2)}(kr)$，代入(1.4)</p>
+<script type="math/tex; mode=display">A_{lm}\left[e^{i\delta_l}h_l^{(1)}(kr)+e^{-i\delta_l}h_l^{(2)}(kr)\right]=4\pi i^l j_l(kr)Y_{lm}^*(\hat k)+\frac{e^{ikr}}rf_{lm}\tag{3.1}</script><p>在半径很大时，根据(2.4)(2.5)得到渐近形式</p>
+<script type="math/tex; mode=display">A_{lm}\left[(-i)^{l+1}e^{ikr+i\delta_l}+i^{l+1}e^{-ikr-i\delta_l}\right]=-2\pi i\left[e^{ikr}+(-1)^{l+1}e^{-ikr}\right]Y_{lm}^*(\hat k)+ke^{ikr}f_{lm}\tag{3.2}</script><p>将发散部分和汇聚部分分开</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&i^{l+1}e^{-i\delta_l}A_{lm}=-2\pi i(-1)^{l+1}Y_{lm}^*(\hat k)\\
+&(-i)^{l+1}e^{i\delta_l}A_{lm}=-2\pi iY_{lm}^*(\hat k)+kf_{lm}
+\end{aligned}\right.\Rightarrow\left\{\begin{aligned}
+&A_{lm}=2\pi i^lY_{lm}^*(\hat k)e^{i\delta_l}\\
+&f_{lm}=-\frac{2\pi i}{k}Y_{lm}^*(\hat k)(e^{i2\delta_l}-1)=\frac{4\pi}kY_{lm}^*(\hat k)e^{i\delta_l}\sin\delta_l
+\end{aligned}\right.\tag{3.3}</script><p>进而根据(1.3)得到</p>
+<script type="math/tex; mode=display">f(\theta,\phi)=\frac{4\pi}k \sum_{lm}e^{i\delta_l}\sin\delta_l Y_{lm}^*(\hat k)Y_{lm}(\theta,\phi)\tag{3.4}</script><p>当$\hat k=\hat z$时，$Y_{lm}(\hat k)\neq0\Rightarrow m=0$，所以</p>
+<script type="math/tex; mode=display">f(\theta,\phi)=\frac{4\pi}k \sum_{l}e^{i\delta_l}\sin\delta_l\sqrt{\frac{2l+1}{4\pi}}\times\sqrt{\frac{2l+1}{4\pi}}P_l(\cos\theta)
+=\frac1k\sum_{l=0}^\infty(2l+1)e^{i\delta_l}\sin\delta_lP_l(\cos\theta)\tag{3.5}</script><p>进而微分散射截面和总截面分别为</p>
+<script type="math/tex; mode=display">\frac{\mathrm d\sigma}{\mathrm d\Omega}(\theta,\phi)=|f(\theta,\phi)|^2=\frac1{k^2}\sum_{ll'}(2l+1)(2l'+1)e^{i(\delta_l-\delta_{l'})}\sin\delta_l\sin\delta_{l'}P_l(\cos\theta)P_{l'}(\cos\theta)\tag{3.6}</script><script type="math/tex; mode=display">\begin{aligned}
+\sigma_{tot}=&\frac{2\pi}{k^2}\sum_{ll'}(2l+1)(2l'+1)e^{i(\delta_l-\delta_{l'})}\sin\delta_l\sin\delta_{l'}\int_{-1}^1P_l(x)P_{l'}(x)\mathrm dx\\
+=&\frac{2\pi}{k^2}\sum_{ll'}(2l+1)(2l'+1)e^{i(\delta_l-\delta_{l'})}\sin\delta_l\sin\delta_{l'}\frac{2}{2l+1}\delta_{ll'}\\
+=&\frac{4\pi}{k^2}\sum_{l}(2l+1)\sin^2\delta_l
+\end{aligned}\tag{3.7}</script><h3 id="应用：硬球势"><a href="#应用：硬球势" class="headerlink" title="应用：硬球势"></a>应用：硬球势</h3><p>硬球势的相移因子可根据硬球内部($r\le a$)波函数为零定出，即</p>
+<script type="math/tex; mode=display">\psi_{klm}(a,\theta,\phi)\equiv=0\Rightarrow R_{kl}(a)=e^{i\delta_l}h_l^{(1)}(ka)+e^{-i\delta_l}h_l^{(2)}(ka)=0\tag{4.1}</script><script type="math/tex; mode=display">\Rightarrow e^{2i\delta_l}=-\frac{h_l^{(2)}(ka)}{h_l^{(1)}(ka)}=-\frac{j_l(ka)-iy_l(ka)}{j_l(ka)+iy_l(ka)}\tag{4.2}</script><p>从(2.3)可以看出，在$k\ll1$时，球贝塞尔函数相比于球诺伊曼函数而言是小量，所以</p>
+<script type="math/tex; mode=display">e^{2i\delta_l}=\frac{1+ij_l(ka)/y_l(ka)}{1-ij_l(ka)/y_l(ka)}\approx e^{i2j_l(ka)/y_l(ka)}\Rightarrow \delta_l\approx\frac{j_l(ka)}{y_l(ka)}
+\approx\frac{(ka)^l/(2l+1)!!}{-(2l-1)!!/(ka)^{l+1}}\tag{4.3}</script><p>因此只有$l=0,\delta_0=-ka$最为显著，即s波散射</p>
+<script type="math/tex; mode=display">\sigma_{tot}\approx\frac{4\pi}{k^2}\sin^2(-ka)\approx 4\pi a^2\tag{4.4}</script>]]></content>
+      <categories>
+        <category>AQM</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>单圈费曼图</title>
+    <url>/2020/11/23/%E5%8D%95%E5%9C%88%E8%B4%B9%E6%9B%BC%E5%9B%BE/</url>
+    <content><![CDATA[<p>在圈近似中，我们会遇到一类由单圈和相互作用组成的图。事实上，写为代数形式为</p>
+<script type="math/tex; mode=display">\int\frac{\mathrm d^4q}{(2\pi)^4}\left[\Pi_0(q)V(q)\right]^n\tag1</script><p>其中</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac{2}{i\hbar}\int\frac{\mathrm d^4k}{(2\pi)^4}\ G^0(k)G^0(k+q)\tag2</script><p>本文在费米海的模型下计算(2)</p>
+<a id="more"></a>
+<h3 id="费米海模型"><a href="#费米海模型" class="headerlink" title="费米海模型"></a>费米海模型</h3><h4 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h4><p>对于费米海，自由格林函数为</p>
+<script type="math/tex; mode=display">G^0(\mathbf k,\epsilon)=\frac{\theta(|\mathbf k|-k_F)}{\epsilon-\omega_{\mathbf k}+i\eta}+\frac{\theta(k_F-|\mathbf k|)}{\epsilon-\omega_{\mathbf k}-i\eta}\tag{1.1}</script><p>代入(2)式，取$k=(\mathbf k,\epsilon),q=(\mathbf q,\omega)$得</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac2{i\hbar}\int\frac{\mathrm d^3\mathbf k\mathrm d\epsilon}{(2\pi)^4}
+\left[\frac{\theta(|\mathbf k|-k_F)}{\epsilon-\omega_{\mathbf k}+i\eta}+\frac{\theta(k_F-|\mathbf k|)}{\epsilon-\omega_{\mathbf k}-i\eta}\right]
+\left[\frac{\theta(|\mathbf{k+q}|-k_F)}{\epsilon+\omega-\omega_{\mathbf{k+q}}+i\eta}+\frac{\theta(k_F-|\mathbf{k+q}|)}{\epsilon+\omega-\omega_{\mathbf{k+q}}-i\eta}\right]</script><p>对$\epsilon$积分，乘积本应有四项，但只有两项能在上半平面（格林函数应含有一个$e^{i\omega 0^+}$部分）积分后非零，即</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac2\hbar\int\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
+\frac{\theta(k_F-|\mathbf k|)\theta(|\mathbf{k+q}|-k_F)}{\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}}+i\eta}+
+\frac{\theta(|\mathbf k|-k_F)\theta(k_F-|\mathbf{k+q}|)}{-\omega-\omega_{\mathbf k}+\omega_{\mathbf{k+q}}+i\eta}
+\right]</script><p>取$\mathbf k\rightarrow-\mathbf{k+q}$，可以将两项的阶梯函数变为相同</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac2\hbar\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
+\frac{1}{\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}}+i\eta}-
+\frac{1}{\omega+\omega_{\mathbf{k+q}}-\omega_{\mathbf k}-i\eta}
+\right]</script><p>其中积分区域$D=\theta(1-|\mathbf k|)\theta(|\mathbf{k+q}|-1)$。并且可以看出关于频率是奇函数，所以只须考虑$\omega\ge0$部分。</p>
+<p>实部和虚部分别为</p>
+<script type="math/tex; mode=display">\Re\Pi(q)=\frac2\hbar\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
+\frac{\mathscr P}{\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}}}-
+\frac{\mathscr P}{\omega+\omega_{\mathbf{k+q}}-\omega_{\mathbf k}}
+\right]</script><script type="math/tex; mode=display">\Im\Pi(q)=-\frac1\hbar\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^2}\left[
+\delta(\omega+\omega_{\mathbf k}-\omega_{\mathbf{k+q}})+
+\delta(\omega+\omega_{\mathbf{k+q}}-\omega_{\mathbf k})
+\right]</script><p>方便起见，做参数化$\mathbf k\rightarrow \mathbf kk_F,\mathbf q\rightarrow \mathbf qk_F,\omega\rightarrow\nu\frac{\hbar k_F^2}m$，并利用色散关系$\hbar\omega_{\mathbf k}=\frac{\hbar^2\mathbf k^2}{2m}$得</p>
+<script type="math/tex; mode=display">\Re\Pi(q)=\frac{2mk_F}{\hbar^2}\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^3}\left[
+\frac{\mathscr P}{\nu-\mathbf{k\cdot q}-\frac{\mathbf q^2}2}-
+\frac{\mathscr P}{\nu+\mathbf{k\cdot q}+\frac{\mathbf q^2}2}
+\right]\tag{1.2}</script><script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{\hbar^2}\int_D\frac{\mathrm d^3\mathbf k}{(2\pi)^2}\left[
+\delta(\nu-\mathbf{k\cdot q}-\frac{\mathbf q^2}2)+
+\delta(\nu+\mathbf{k\cdot q}+\frac{\mathbf q^2}2)
+\right]\tag{1.3}</script><p>重申两点。</p>
+<ol>
+<li>$\nu\ge0$，否则可利用奇函数性质计算</li>
+<li>积分区域$D=\theta(1-|\mathbf k|)\theta(|\mathbf{k+q}|-1)$，几何上看为一个在原点的单位球内，扣除另一个不在原点的单位球。因此可自然地根据$|\mathbf q|-2$的正负性分类</li>
+</ol>
+<h4 id="虚部"><a href="#虚部" class="headerlink" title="虚部"></a>虚部</h4><p>根据(1.3)，以$\mathbf q$为$z$轴，只有$k_z=-\frac{|\mathbf q|}2\pm\frac\nu{|\mathbf q|}$时被积函数不为零。画出积分区域便能发现，只有取正号的时候才可能落在积分区域内。并可分为四类讨论</p>
+<ol>
+<li>$|\mathbf q|&gt;2$时，要求$-1\le-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\le1\Leftrightarrow\frac{\mathbf q^2}2-|\mathbf q|\le\nu\le\frac{\mathbf q^2}2+|\mathbf q|$<script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{(2\pi\hbar)^2|\mathbf q|}\pi\left[1-\left(-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2\right]</script></li>
+<li>$|\mathbf q|&lt;2$，且$1\ge-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\ge1-|\mathbf q|\Leftrightarrow|\mathbf q|-\frac{\mathbf q^2}2\le\nu\le|\mathbf q|+\frac{\mathbf q^2}2$时<script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{(2\pi\hbar)^2|\mathbf q|}\pi\left[1-\left(-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2\right]</script></li>
+<li>$|\mathbf q|&lt;2$，且$-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}&lt;1-|\mathbf q|\Leftrightarrow\nu&lt;|\mathbf q|-\frac{\mathbf q^2}2$时<script type="math/tex; mode=display">\Im\Pi(q)=-\frac{mk_F}{(2\pi\hbar)^2|\mathbf q|}\left[\left(\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2-\left(-\frac{|\mathbf q|}2+\frac\nu{|\mathbf q|}\right)^2\right]
+=-\frac{mk_F\nu}{2\pi\hbar^2|\mathbf q|}</script></li>
+<li>尚未讨论到的区域，积分值恒为零</li>
+</ol>
+<p>据说，重要的是虚部不为零的区域形状。</p>
+<h4 id="实部"><a href="#实部" class="headerlink" title="实部"></a>实部</h4><h3 id="物理意义"><a href="#物理意义" class="headerlink" title="物理意义"></a>物理意义</h3><h3 id="标量场模型"><a href="#标量场模型" class="headerlink" title="标量场模型"></a>标量场模型</h3><p>出于好玩（以及练习量子场论的重整化），再算算标量场下的情况。相应的，格林函数为</p>
+<script type="math/tex; mode=display">G(k)=\frac1{k^2+m^2-i\epsilon}</script><p>所以代入(2)</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac2{i\hbar}\int\frac{\mathrm d^4k}{(2\pi)^4}\frac1{[k^2+m^2-i\epsilon][(k+q)^2+m^2-i\epsilon]}</script><p>频率部分Wick转动至虚轴，并做相应变量替换</p>
+<script type="math/tex; mode=display">\Pi(q_E)=\frac2\hbar\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac1{[k_E^2+m^2][(k_E+q_E)^2+m^2]}</script><p>做Feynman参数积分得</p>
+<script type="math/tex; mode=display">\begin{aligned}\Pi(q_E)
+=&\frac2\hbar\int\frac{\mathrm d^4k_E}{(2\pi)^4}\int_0^1\frac{\mathrm dx}{\left[(1-x)(k_E^2+m^2)+x[(k_E+q_E)^2+m^2]\right]^2}\\
+=&\frac2\hbar\int\frac{\mathrm d^4k_E}{(2\pi)^4}\int_0^1\frac{\mathrm dx}{\left[(k_E+xq_E)^2+x(1-x)q_E^2+m^2\right]^2}\\
+=&\frac2\hbar\int_0^1\mathrm dx\int\frac{\mathrm d^4k_E}{(2\pi)^4}\frac1{\left[k_E^2+x(1-x)q_E^2+m^2\right]^2}\\
+\end{aligned}</script><p>变换到四维球坐标得</p>
+<script type="math/tex; mode=display">\begin{aligned}\Pi(q_E)
+=&\frac2\hbar\int_0^1\mathrm dx\int_0^\infty\frac{\mathrm dk_E}{(2\pi)^4}\frac{8\pi}3\frac{k_E^3}{\left[k_E^2+x(1-x)q_E^2+m^2\right]^2}\\
+=&\frac2\hbar\frac{1}{(2\pi)^4}\frac{8\pi}3\int_0^1\mathrm dx\left[-\frac12\frac{Q^2}{x(1-x)q_E^2+m^2+Q^2}+\ln\sqrt{x(1-x)q_E^2+m^2+Q^2}\right.\\
+&\left.-\ln\sqrt{x(1-x)q_E^2+m^2}+\int_Q^\infty\frac{k_E^3\mathrm dk_E}{\left[k_E^2+x(1-x)q_E^2+m^2\right]^2}\right]\\
+\end{aligned}</script><p>取$Q\rightarrow\infty$，尚未积出的积分与$-\ln Q$只差一个常数，尽管这个常数是无穷大，因此恰好与最后一个等号的第一行抵消</p>
+<script type="math/tex; mode=display">\Pi(q_E)=\frac1{3\pi^3\hbar}\int_0^1\mathrm dx\left[c_1-\ln\sqrt{x(1-x)q_E^2+m^2}\right]</script><p>当$2m&gt;q_E$时</p>
+<script type="math/tex; mode=display">\Pi(q_E)=\frac1{3\pi^3\hbar}\left[c_2-\sqrt{\frac{4m^2}{q^2_E}+1}\ \mathrm{arccosh}\sqrt{\frac{q_E^2}{4m^2}+1}\right]</script><p>所以变量替换回去得到下式，对其做解析延拓是复杂的，但没有原则性困难</p>
+<script type="math/tex; mode=display">\Pi(q)=\frac1{3\pi^3\hbar}\left[c_2-\sqrt{\frac{4m^2}{q^2}+1}\ \mathrm{arccosh}\sqrt{\frac{q^2}{4m^2}+1}\right]</script>]]></content>
+      <categories>
+        <category>QSP</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>场的量子化</title>
     <url>/2020/09/24/%E5%9C%BA%E7%9A%84%E9%87%8F%E5%AD%90%E5%8C%96/</url>
     <content><![CDATA[<p>根据北京大学shindou开设的《量子统计物理》第一章部分内容整理。</p>
@@ -1673,6 +1673,51 @@ H(\phi,\Pi)&=\frac12\int\frac{\mathrm{d}^2\vec k}{(2\pi)^2}\left[\Pi(-\vec k)\Pi
       </tags>
   </entry>
   <entry>
+    <title>搭建hexo博客</title>
+    <url>/2020/09/28/%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>记录搭建hexo博客的步骤。</p>
+<p>默认安装好了node.js和git,如若没有:</p>
+<p><a href="https://nodejs.org">点击此处下载node.js</a></p>
+<p><a href="https://git-scm.com">点击此处下载git</a></p>
+<a id="more"></a>
+<h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><p>安装hexo</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save <span class="comment"># 安装git插件</span></span><br></pre></td></tr></table></figure>
+<p>修改_config.xml</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">&lt;your</span> <span class="string">url&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">depoly:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@&lt;your</span> <span class="string">repository&gt;</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>初始化git</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br></pre></td></tr></table></figure>
+<p>创建ssh秘钥</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line">cat /root/.ssh/id_rsa.pub <span class="comment"># for Linux</span></span><br><span class="line"><span class="built_in">type</span> C:\\Users\&lt;user<span class="string">&#x27;s name&gt;\.ssh\id_rsa.pub # for windows</span></span><br></pre></td></tr></table></figure>
+<p>复制到github里的ssh密钥。</p>
+<p>备份源码至同一仓库（可选）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;your repository&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;&lt;commit message&gt;&quot;</span></span><br><span class="line">git push --set-upstream origin origin/<span class="built_in">source</span></span><br></pre></td></tr></table></figure>
+<p>简单命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo s <span class="comment"># server 创建本地服务器，打开https://localhost:4000即可查看</span></span><br><span class="line">hexo g <span class="comment"># generate 生成网页文件</span></span><br><span class="line">hexo d <span class="comment"># deploy 配置到github</span></span><br><span class="line">hexo clean <span class="comment"># 清理生成文件</span></span><br></pre></td></tr></table></figure>
+<h3 id="主题相关"><a href="#主题相关" class="headerlink" title="主题相关"></a>主题相关</h3><p>更换主题，以Next为例</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>修改_config.xml</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Themes:</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+<p>配置主题themes/next/_config.yml。参见文档内注释即可</p>
+<h3 id="创建tags界面-categories同理"><a href="#创建tags界面-categories同理" class="headerlink" title="创建tags界面(categories同理)"></a>创建tags界面(categories同理)</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>在source/tags/index.md修改为</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="数学模式"><a href="#数学模式" class="headerlink" title="数学模式"></a>数学模式</h3><p>需要更换markdown引擎</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+<p>在node_modules/kramed/lib/rules/inline.js中修改一些语义处理</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
+<p>最后再在<strong>主题配置</strong>和<strong>文件头</strong>里打开mathjax即可</p>
+<h3 id="插图方式"><a href="#插图方式" class="headerlink" title="插图方式"></a>插图方式</h3><p>打开本地配置_config.yml的开关</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>在source文件夹下建立images文件夹，将图片放于此文件夹下，引用时</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">&lt;name&gt;</span>](<span class="link">/images/&lt;pic-name&gt;</span>)</span><br></pre></td></tr></table></figure>
+<p>或者放在创建文章时的同名文件夹下，引用时直接使用名字</p>
+<h3 id="引用其他博文"><a href="#引用其他博文" class="headerlink" title="引用其他博文"></a>引用其他博文</h3><p>将配置文件的永久链接修改为</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:category/:title/</span></span><br></pre></td></tr></table></figure>
+<p>至此文件储存路径为”/目录/标题”，因此引用时可</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[](../<span class="xml"><span class="tag">&lt;<span class="name">同级目录下的文件</span>&gt;</span></span>)</span><br><span class="line">[](/<span class="xml"><span class="tag">&lt;<span class="name">绝对路径-目录</span>&gt;</span></span>/<span class="xml"><span class="tag">&lt;<span class="name">标题</span>&gt;</span></span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>散射与衰变</title>
     <url>/2020/11/06/%E6%95%A3%E5%B0%84%E4%B8%8E%E8%A1%B0%E5%8F%98/</url>
     <content><![CDATA[<p>本文可以视为LSZ约化公式的应用。</p>
@@ -1741,49 +1786,66 @@ P_n&=\frac{1}{n'!}\int\tilde{\mathrm dp'}\tilde{\mathrm dp}\tilde{\mathrm dq}(2\
       </tags>
   </entry>
   <entry>
-    <title>搭建hexo博客</title>
-    <url>/2020/09/28/%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>记录搭建hexo博客的步骤。</p>
-<p>默认安装好了node.js和git,如若没有:</p>
-<p><a href="https://nodejs.org">点击此处下载node.js</a></p>
-<p><a href="https://git-scm.com">点击此处下载git</a></p>
-<a id="more"></a>
-<h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><p>安装hexo</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save <span class="comment"># 安装git插件</span></span><br></pre></td></tr></table></figure>
-<p>修改_config.xml</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">&lt;your</span> <span class="string">url&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">depoly:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@&lt;your</span> <span class="string">repository&gt;</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<p>初始化git</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br></pre></td></tr></table></figure>
-<p>创建ssh秘钥</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line">cat /root/.ssh/id_rsa.pub <span class="comment"># for Linux</span></span><br><span class="line"><span class="built_in">type</span> C:\\Users\&lt;user<span class="string">&#x27;s name&gt;\.ssh\id_rsa.pub # for windows</span></span><br></pre></td></tr></table></figure>
-<p>复制到github里的ssh密钥。</p>
-<p>备份源码至同一仓库（可选）</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;your repository&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;&lt;commit message&gt;&quot;</span></span><br><span class="line">git push --set-upstream origin origin/<span class="built_in">source</span></span><br></pre></td></tr></table></figure>
-<p>简单命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo s <span class="comment"># server 创建本地服务器，打开https://localhost:4000即可查看</span></span><br><span class="line">hexo g <span class="comment"># generate 生成网页文件</span></span><br><span class="line">hexo d <span class="comment"># deploy 配置到github</span></span><br><span class="line">hexo clean <span class="comment"># 清理生成文件</span></span><br></pre></td></tr></table></figure>
-<h3 id="主题相关"><a href="#主题相关" class="headerlink" title="主题相关"></a>主题相关</h3><p>更换主题，以Next为例</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>修改_config.xml</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Themes:</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
-<p>配置主题themes/next/_config.yml。参见文档内注释即可</p>
-<h3 id="创建tags界面-categories同理"><a href="#创建tags界面-categories同理" class="headerlink" title="创建tags界面(categories同理)"></a>创建tags界面(categories同理)</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在source/tags/index.md修改为</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="数学模式"><a href="#数学模式" class="headerlink" title="数学模式"></a>数学模式</h3><p>需要更换markdown引擎</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
-<p>在node_modules/kramed/lib/rules/inline.js中修改一些语义处理</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
-<p>最后再在<strong>主题配置</strong>和<strong>文件头</strong>里打开mathjax即可</p>
-<h3 id="插图方式"><a href="#插图方式" class="headerlink" title="插图方式"></a>插图方式</h3><p>打开本地配置_config.yml的开关</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>在source文件夹下建立images文件夹，将图片放于此文件夹下，引用时</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">&lt;name&gt;</span>](<span class="link">/images/&lt;pic-name&gt;</span>)</span><br></pre></td></tr></table></figure>
-<p>或者放在创建文章时的同名文件夹下，引用时直接使用名字</p>
-<h3 id="引用其他博文"><a href="#引用其他博文" class="headerlink" title="引用其他博文"></a>引用其他博文</h3><p>将配置文件的永久链接修改为</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:category/:title/</span></span><br></pre></td></tr></table></figure>
-<p>至此文件储存路径为”/目录/标题”，因此引用时可</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[](../<span class="xml"><span class="tag">&lt;<span class="name">同级目录下的文件</span>&gt;</span></span>)</span><br><span class="line">[](/<span class="xml"><span class="tag">&lt;<span class="name">绝对路径-目录</span>&gt;</span></span>/<span class="xml"><span class="tag">&lt;<span class="name">标题</span>&gt;</span></span>)</span><br></pre></td></tr></table></figure>
+    <title>标量场理论</title>
+    <url>/2020/09/25/%E6%A0%87%E9%87%8F%E5%9C%BA%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<p>标量场是指场变量与参考系无关的场。在参考系变换下</p>
+<script type="math/tex; mode=display">\left\{\begin{array}{ll}
+x\rightarrow\bar x=\Lambda x+a & (\bar x^\mu=\Lambda^\mu_{\ \ \nu} x^\nu+a^\mu)\\
+\phi\rightarrow\phi & (\bar\phi(\bar x)=\bar\phi(\bar x(x))=\phi(x))
+\end{array}\right.</script><p>其中$\Lambda$是恰当正时Lorentz变换。假设$a=0$，则</p>
+<script type="math/tex; mode=display">\bar\phi(\bar x)=\phi(x)=\phi(\Lambda^{-1}\bar x)</script><a id="more"></a>
+<p>对于无穷小变换$\Lambda^\mu_{\ \ \nu}=\delta^\mu_{\ \ \nu}+\theta^\mu_{\ \ \nu}$，其逆变换为$(\Lambda^{-1})^\mu_{\ \ \nu}=\delta^\mu_{\ \ \nu}-\theta^\mu_{\ \ \nu}$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\delta\phi(x)&\equiv\bar\phi(x)-\phi(x)=\phi(\Lambda^{-1}x)-\phi(x)\\
+&=-\theta^\mu_{\ \ \nu}x^\nu\frac{\partial}{\partial x^\mu}\phi(x)\equiv-\theta_{\mu\nu}x^\nu\partial^\nu\phi(x)
+\end{aligned}</script><blockquote>
+<p>接下来会多次用到$\theta$的反对称性，证明思路如下：<br>根据间隔不变性有</p>
+<script type="math/tex; mode=display">\mathrm ds^2=g_{\mu\nu}x^\mu x^\nu=g_{\mu\nu}\Lambda^\mu_{\ \ \alpha}\Lambda^\nu_{\ \ \beta}x^\alpha x^\beta</script><p>因此$g_{\mu\nu}\Lambda^\mu_{\ \ \alpha}\Lambda^\nu_{\ \ \beta}=g_{\alpha\beta}$，将无穷小变换代入并略去$\theta$的高阶项得</p>
+<script type="math/tex; mode=display">g_{\alpha\nu}\theta^\nu_{\ \ \beta}+g_{\mu\beta}\theta^\mu_{\ \ \alpha}=\theta_{\alpha\beta}+\theta_{\beta\alpha}=0</script></blockquote>
+<p>对其进行进一步变换（第三个等号用到$\theta$反对称）</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\delta\phi(x)&=-\theta_{\mu\nu}x^\nu\partial^\mu\phi(x)\\
+&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu+\theta_{\mu\nu}x^\nu\partial^\mu\right)\phi(x)\\
+&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\nu\mu}x^\nu\partial^\mu\right)\phi(x)\\
+&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\mu\nu}x^\mu\partial^\nu\right)\phi(x)
+\end{aligned}</script><p>定义线性变换</p>
+<script type="math/tex; mode=display">\mathscr L^{\mu\nu}=-i\left(x^\nu\partial^\mu-x^\mu\partial^\nu\right)</script><p>$\color{red}{\mathbf{注意}}$ 这个线性变换不是做在态矢量的Hilbert空间上，而是做在场算符组成的空间上<br>结论为：</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\delta\phi(x)=&\frac i2\theta_{\mu\nu}\mathscr L^{\mu\nu}\phi(x)\\
+=&i\left[\theta_{01}\mathscr L^{01}+\theta_{02}\mathscr L^{02}+\theta_{03}\mathscr L^{03}\right.\\
+&+\theta_{12}\mathscr L^{12}+\theta_{23}\mathscr L^{23}+\theta_{31}\mathscr L^{31}\left.\right]\phi(x)
+\end{aligned}</script><blockquote>
+<p>容易看出，$\mathscr L^{12}$对应$z$方向角动量，同理可得其他六项的意义。<br>所以$\phi$与自旋无关，即对应无自旋粒子。</p>
+</blockquote>
+<h4 id="正则量子化"><a href="#正则量子化" class="headerlink" title="正则量子化"></a>正则量子化</h4><p>Klein-Gordon方程为</p>
+<script type="math/tex; mode=display">\left(\frac{\partial^2}{\partial t^2}-\nabla^2+\omega_0^2\right)\Psi=0</script><p>或写作</p>
+<script type="math/tex; mode=display">(-\partial^2+\omega_0^2)\Psi=0\tag{1.1}</script><p>我们假设场算符满足（反）对易关系，即</p>
+<script type="math/tex; mode=display">\phi(x)\phi(y)-\sigma\phi(y)\phi(x)=C(x-y)\tag{1.2}</script><p>其中$\sigma=\pm1$。为了确定具体是正是负，我们考虑</p>
+<script type="math/tex; mode=display">C(-x)=\phi(0)\phi(x)-\sigma\phi(x)\phi(0)=-\sigma C(x)\tag{1.3}</script><p>因此$\sigma$的正负性与$C(x)$的奇偶性相关。取$y=0$，将$(-\partial^2+\omega_0^2)$作用在(1.2)式上得</p>
+<script type="math/tex; mode=display">0=(-\partial^2+\omega_0^2)C(x)\tag{1.4}</script><p>为了求解$C(x)$，做变换</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+\tilde C(k)&=\int\mathrm{d}^4xe^{-ik\cdot x}C(x)\\
+C(x)&=\int\frac{\mathrm{d}^4k}{(2\pi)^4}e^{ik\cdot x}\tilde C(k)
+\end{aligned}\tag{1.5}\right.</script><blockquote>
+<script type="math/tex; mode=display">k\cdot x=g_{\mu\nu}k^\mu x^\nu=-k^0t+\vec k\cdot\vec x</script></blockquote>
+<p>因此(1.4)化为</p>
+<script type="math/tex; mode=display">0=\int\frac{\mathrm{d}^4k}{(2\pi)^4}(k^2+\omega_0^2)e^{ik\cdot x}\tilde C(k)\tag{1.6}</script><p>这说明除了$k^2+\omega_0^2=0$的地方以外，$\tilde C(k)\equiv0$。<br>根据Lorentz不变性</p>
+<script type="math/tex; mode=display">\begin{aligned}\tilde C(\Lambda k)=&\int\mathrm{d}^4(\Lambda^{-1}x)e^{-i(\Lambda k)\cdot(\Lambda^{-1}x)}C(\Lambda^{-1}x)\\
+=&\int\mathrm{d}^4(\Lambda^{-1}x)e^{-ik\cdot x}C(\Lambda^{-1}x)\\
+=&\int\mathrm{d}^4xe^{-ik\cdot x}C(x)=\tilde C(k)\end{aligned}\tag{1.7}</script><p>因此$\tilde C(k)$在$k_0=\sqrt{\vec k^2+\omega_0^2}\equiv\omega_{\vec k}$上取值均相等，在$k_0=-\omega_{\vec k}$上取值也均相等。</p>
+<script type="math/tex; mode=display">\tilde C(k)=c_+(2\pi)\delta(k^2+\omega_0^2)\theta(k^0)+c_-(2\pi)\delta(k^2+\omega_0^2)\theta(-k^0)\tag{1.8}</script><p>之所以选择$\delta(k^2+\omega_0^2)$而非$\delta(k^0\pm\omega_{\vec k})$是为了满足Lorentz不变性的要求。而两者之间有联系</p>
+<script type="math/tex; mode=display">\delta(k^2+\omega_0^2)=\frac{1}{2\omega_{\vec k}}\left(\delta(k^0+\omega_{\vec k})+\delta(k^0-\omega_{\vec k})\right)\tag{1.9}</script><p>将(1.8)(1.9)代入(1.5)变换回坐标表象得</p>
+<script type="math/tex; mode=display">C(x)=\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[c_+e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}+c_-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.10}</script><p>取类空坐标$C(t=0,\vec x)=0$，即得到$c_++c_-=0$，于是</p>
+<script type="math/tex; mode=display">C(x)=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.11}</script><p>因此</p>
+<script type="math/tex; mode=display">C(-x)=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{i\omega_{\vec k}t-i\vec k\cdot\vec x}-e^{-i\omega_{\vec k}t-i\vec k\cdot\vec x}\right]=-C(x)\tag{1.12}</script><p>第二个等号取了$\vec k\rightarrow-\vec k$。根据(1.3)可知$\sigma=1$，即场算符对易关系为</p>
+<script type="math/tex; mode=display">[\phi(x),\phi(0)]=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.13}</script><p><a href="/2020/09/29/Klein-Gordon场量子化">未完待续</a></p>
 ]]></content>
+      <categories>
+        <category>QFT</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
   </entry>
   <entry>
     <title>有限温场论</title>
@@ -1902,68 +1964,6 @@ p(t)&=-x(0)\sin t+p(0)\cos t\end{aligned}</script>这说明参数按照经典运
       </tags>
   </entry>
   <entry>
-    <title>标量场理论</title>
-    <url>/2020/09/25/%E6%A0%87%E9%87%8F%E5%9C%BA%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<p>标量场是指场变量与参考系无关的场。在参考系变换下</p>
-<script type="math/tex; mode=display">\left\{\begin{array}{ll}
-x\rightarrow\bar x=\Lambda x+a & (\bar x^\mu=\Lambda^\mu_{\ \ \nu} x^\nu+a^\mu)\\
-\phi\rightarrow\phi & (\bar\phi(\bar x)=\bar\phi(\bar x(x))=\phi(x))
-\end{array}\right.</script><p>其中$\Lambda$是恰当正时Lorentz变换。假设$a=0$，则</p>
-<script type="math/tex; mode=display">\bar\phi(\bar x)=\phi(x)=\phi(\Lambda^{-1}\bar x)</script><a id="more"></a>
-<p>对于无穷小变换$\Lambda^\mu_{\ \ \nu}=\delta^\mu_{\ \ \nu}+\theta^\mu_{\ \ \nu}$，其逆变换为$(\Lambda^{-1})^\mu_{\ \ \nu}=\delta^\mu_{\ \ \nu}-\theta^\mu_{\ \ \nu}$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\delta\phi(x)&\equiv\bar\phi(x)-\phi(x)=\phi(\Lambda^{-1}x)-\phi(x)\\
-&=-\theta^\mu_{\ \ \nu}x^\nu\frac{\partial}{\partial x^\mu}\phi(x)\equiv-\theta_{\mu\nu}x^\nu\partial^\nu\phi(x)
-\end{aligned}</script><blockquote>
-<p>接下来会多次用到$\theta$的反对称性，证明思路如下：<br>根据间隔不变性有</p>
-<script type="math/tex; mode=display">\mathrm ds^2=g_{\mu\nu}x^\mu x^\nu=g_{\mu\nu}\Lambda^\mu_{\ \ \alpha}\Lambda^\nu_{\ \ \beta}x^\alpha x^\beta</script><p>因此$g_{\mu\nu}\Lambda^\mu_{\ \ \alpha}\Lambda^\nu_{\ \ \beta}=g_{\alpha\beta}$，将无穷小变换代入并略去$\theta$的高阶项得</p>
-<script type="math/tex; mode=display">g_{\alpha\nu}\theta^\nu_{\ \ \beta}+g_{\mu\beta}\theta^\mu_{\ \ \alpha}=\theta_{\alpha\beta}+\theta_{\beta\alpha}=0</script></blockquote>
-<p>对其进行进一步变换（第三个等号用到$\theta$反对称）</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\delta\phi(x)&=-\theta_{\mu\nu}x^\nu\partial^\mu\phi(x)\\
-&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu+\theta_{\mu\nu}x^\nu\partial^\mu\right)\phi(x)\\
-&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\nu\mu}x^\nu\partial^\mu\right)\phi(x)\\
-&=-\frac12\left(\theta_{\mu\nu}x^\nu\partial^\mu-\theta_{\mu\nu}x^\mu\partial^\nu\right)\phi(x)
-\end{aligned}</script><p>定义线性变换</p>
-<script type="math/tex; mode=display">\mathscr L^{\mu\nu}=-i\left(x^\nu\partial^\mu-x^\mu\partial^\nu\right)</script><p>$\color{red}{\mathbf{注意}}$ 这个线性变换不是做在态矢量的Hilbert空间上，而是做在场算符组成的空间上<br>结论为：</p>
-<script type="math/tex; mode=display">\begin{aligned}
-\delta\phi(x)=&\frac i2\theta_{\mu\nu}\mathscr L^{\mu\nu}\phi(x)\\
-=&i\left[\theta_{01}\mathscr L^{01}+\theta_{02}\mathscr L^{02}+\theta_{03}\mathscr L^{03}\right.\\
-&+\theta_{12}\mathscr L^{12}+\theta_{23}\mathscr L^{23}+\theta_{31}\mathscr L^{31}\left.\right]\phi(x)
-\end{aligned}</script><blockquote>
-<p>容易看出，$\mathscr L^{12}$对应$z$方向角动量，同理可得其他六项的意义。<br>所以$\phi$与自旋无关，即对应无自旋粒子。</p>
-</blockquote>
-<h4 id="正则量子化"><a href="#正则量子化" class="headerlink" title="正则量子化"></a>正则量子化</h4><p>Klein-Gordon方程为</p>
-<script type="math/tex; mode=display">\left(\frac{\partial^2}{\partial t^2}-\nabla^2+\omega_0^2\right)\Psi=0</script><p>或写作</p>
-<script type="math/tex; mode=display">(-\partial^2+\omega_0^2)\Psi=0\tag{1.1}</script><p>我们假设场算符满足（反）对易关系，即</p>
-<script type="math/tex; mode=display">\phi(x)\phi(y)-\sigma\phi(y)\phi(x)=C(x-y)\tag{1.2}</script><p>其中$\sigma=\pm1$。为了确定具体是正是负，我们考虑</p>
-<script type="math/tex; mode=display">C(-x)=\phi(0)\phi(x)-\sigma\phi(x)\phi(0)=-\sigma C(x)\tag{1.3}</script><p>因此$\sigma$的正负性与$C(x)$的奇偶性相关。取$y=0$，将$(-\partial^2+\omega_0^2)$作用在(1.2)式上得</p>
-<script type="math/tex; mode=display">0=(-\partial^2+\omega_0^2)C(x)\tag{1.4}</script><p>为了求解$C(x)$，做变换</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-\tilde C(k)&=\int\mathrm{d}^4xe^{-ik\cdot x}C(x)\\
-C(x)&=\int\frac{\mathrm{d}^4k}{(2\pi)^4}e^{ik\cdot x}\tilde C(k)
-\end{aligned}\tag{1.5}\right.</script><blockquote>
-<script type="math/tex; mode=display">k\cdot x=g_{\mu\nu}k^\mu x^\nu=-k^0t+\vec k\cdot\vec x</script></blockquote>
-<p>因此(1.4)化为</p>
-<script type="math/tex; mode=display">0=\int\frac{\mathrm{d}^4k}{(2\pi)^4}(k^2+\omega_0^2)e^{ik\cdot x}\tilde C(k)\tag{1.6}</script><p>这说明除了$k^2+\omega_0^2=0$的地方以外，$\tilde C(k)\equiv0$。<br>根据Lorentz不变性</p>
-<script type="math/tex; mode=display">\begin{aligned}\tilde C(\Lambda k)=&\int\mathrm{d}^4(\Lambda^{-1}x)e^{-i(\Lambda k)\cdot(\Lambda^{-1}x)}C(\Lambda^{-1}x)\\
-=&\int\mathrm{d}^4(\Lambda^{-1}x)e^{-ik\cdot x}C(\Lambda^{-1}x)\\
-=&\int\mathrm{d}^4xe^{-ik\cdot x}C(x)=\tilde C(k)\end{aligned}\tag{1.7}</script><p>因此$\tilde C(k)$在$k_0=\sqrt{\vec k^2+\omega_0^2}\equiv\omega_{\vec k}$上取值均相等，在$k_0=-\omega_{\vec k}$上取值也均相等。</p>
-<script type="math/tex; mode=display">\tilde C(k)=c_+(2\pi)\delta(k^2+\omega_0^2)\theta(k^0)+c_-(2\pi)\delta(k^2+\omega_0^2)\theta(-k^0)\tag{1.8}</script><p>之所以选择$\delta(k^2+\omega_0^2)$而非$\delta(k^0\pm\omega_{\vec k})$是为了满足Lorentz不变性的要求。而两者之间有联系</p>
-<script type="math/tex; mode=display">\delta(k^2+\omega_0^2)=\frac{1}{2\omega_{\vec k}}\left(\delta(k^0+\omega_{\vec k})+\delta(k^0-\omega_{\vec k})\right)\tag{1.9}</script><p>将(1.8)(1.9)代入(1.5)变换回坐标表象得</p>
-<script type="math/tex; mode=display">C(x)=\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[c_+e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}+c_-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.10}</script><p>取类空坐标$C(t=0,\vec x)=0$，即得到$c_++c_-=0$，于是</p>
-<script type="math/tex; mode=display">C(x)=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.11}</script><p>因此</p>
-<script type="math/tex; mode=display">C(-x)=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{i\omega_{\vec k}t-i\vec k\cdot\vec x}-e^{-i\omega_{\vec k}t-i\vec k\cdot\vec x}\right]=-C(x)\tag{1.12}</script><p>第二个等号取了$\vec k\rightarrow-\vec k$。根据(1.3)可知$\sigma=1$，即场算符对易关系为</p>
-<script type="math/tex; mode=display">[\phi(x),\phi(0)]=c_0\int\frac{\mathrm{d}^3\vec k}{(2\pi)^3}\frac{1}{2\omega_{\vec k}}\left[e^{-i\omega_{\vec k}t+i\vec k\cdot\vec x}-e^{i\omega_{\vec k}t+i\vec k\cdot\vec x}\right]\tag{1.13}</script><p><a href="/2020/09/29/Klein-Gordon场量子化">未完待续</a></p>
-]]></content>
-      <categories>
-        <category>QFT</category>
-      </categories>
-      <tags>
-        <tag>physics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>磁致自旋</title>
     <url>/2021/01/08/%E7%A3%81%E8%87%B4%E8%87%AA%E6%97%8B/</url>
     <content><![CDATA[<p>含有磁缺陷的体系哈密顿量可以写为</p>
@@ -2036,6 +2036,76 @@ V(\vec y)=\frac{imk_F^4}{8\pi^4\hbar^2u}\lim_{\eta\rightarrow 0}\left[\int_{1+\e
 \int_0^\infty i\mathrm dt\ e^{iu(1+it)}(1-(1+it)^2)\ln\frac{(\epsilon+it)^2+\eta^2}{(-\epsilon+it)^2+\eta^2}=e^{iu}\int_0^\infty\mathrm dt\ (t^2-2it)e^{-ut}(-2\pi i)=-4\pi ie^{iu}\left(\frac{1}{u^3}-\frac{i}{u^2}\right)</script><p>同理可算另外两项积分，最终为</p>
 <script type="math/tex; mode=display">
 V(\vec y)=\frac{mk_F^4}{2\pi^3\hbar^2u}(\frac{\cos u}{u^3}-\frac{\sin u}{u^2})</script>]]></content>
+      <categories>
+        <category>QSP</category>
+      </categories>
+      <tags>
+        <tag>physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>量子场论对称性</title>
+    <url>/2021/01/09/%E9%87%8F%E5%AD%90%E5%9C%BA%E8%AE%BA%E5%AF%B9%E7%A7%B0%E6%80%A7/</url>
+    <content><![CDATA[<p>本文在路径积分框架下讨论Dyson-Schwinger方程和Ward-Takahashi恒等式，以及其部分应用。</p>
+<a id="more"></a>
+<h3 id="Dyson-Schwinger方程"><a href="#Dyson-Schwinger方程" class="headerlink" title="Dyson-Schwinger方程"></a>Dyson-Schwinger方程</h3><h4 id="一般形式"><a href="#一般形式" class="headerlink" title="一般形式"></a>一般形式</h4><p>假设作用量为$S=S[\varphi_1(x),\varphi_2(x),\cdots,\varphi_N(x)]$，做微小平移$\varphi_a(x)\rightarrow\varphi_a(x)+\eta_a(x)$，应当有</p>
+<script type="math/tex; mode=display">
+\int\mathrm D\varphi\ e^{iS[\varphi]}\varphi_{a_1}(x_1)\cdots\varphi_{a_n}(x_n)=\int\mathrm D[\varphi+\eta]\ e^{iS[\varphi+\eta]}[\varphi_{a_1}(x_1)+\eta_{a_1}(x_1)]\cdots[\varphi_{a_n}(x_n)+\eta_{a_n}(x_n)]</script><p>其中$a_1,a_2,\cdots a_n$可以重复。由于$\eta$可以任取，选定$\eta_a\neq0$，其他均为零，保留一阶项</p>
+<script type="math/tex; mode=display">
+\int\mathrm D\varphi\ e^{iS[\varphi]}\left[\left(\int i\frac{\delta S}{\delta\varphi_a(x)}\eta_a(x)\mathrm dx\right)\varphi_{a_1}(x_1)\cdots\varphi_{a_n}(x_n)+\sum_{j=1}^n\varphi_{a_1}(x_1)\cdots\delta_{aa_j}\eta_a(x_j)\cdots\varphi_{a_n}(x_n)\right]=0</script><p>这意味着</p>
+<script type="math/tex; mode=display">
+i\left\langle T\frac{\delta S}{\delta\varphi_a(x)}\varphi_{a_1}(x_1)\cdots\varphi_{a_n}(x_n)\right\rangle+\sum_{j=1}^n\left\langle T\varphi_{a_1}(x_1)\cdots\delta_{aa_j}\delta^4(x-x_j)\cdots\varphi_{a_n}(x_n)\right\rangle=0\tag{1.1}</script><p>利用$S=\int\mathrm d^4x\ \mathcal L(\varphi,\partial_\mu\varphi)$可得</p>
+<script type="math/tex; mode=display">
+\frac{\delta S}{\delta\varphi_a(x)}=\frac{\partial\mathcal L}{\partial\varphi_a(x)}-\partial_\mu\frac{\partial\mathcal L}{\partial(\partial_\mu\varphi_a(x))}\tag{1.2}</script><p>所以Dyson-Schwinger方程为(1.1)(1.2)</p>
+<h4 id="例子：标量场"><a href="#例子：标量场" class="headerlink" title="例子：标量场"></a>例子：标量场</h4><script type="math/tex; mode=display">
+\mathcal L=-\frac12\partial_\mu\varphi\partial^\mu\varphi-\frac12m^2\varphi^2+\frac{g}{4!}\varphi^4</script><p>因此</p>
+<script type="math/tex; mode=display">
+\frac{\delta S}{\delta\varphi(x)}=-m^2\varphi+\frac{g}{3!}\varphi^3+\partial^2\varphi</script><p>当$n=0,1,2$时，(1.1)变为</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+&(\partial^2-m^2)\langle\varphi(x)\rangle+\frac g6\langle\varphi^3(x)\rangle=0\\
+&(\partial^2-m^2)\langle T\varphi(x)\varphi(y)\rangle+\frac g6\langle T\varphi^3(x)\varphi(y)\rangle=i\delta^4(x-y)\\
+&(\partial^2-m^2)\langle T\varphi(x)\varphi(y)\varphi(z)\rangle+\frac g6\langle T\varphi^3(x)\varphi(y)\varphi(z)\rangle=i\left[\delta^4(x-y)+\delta^4(x-z)\right]\langle\varphi(x)\rangle
+\end{aligned}\right.</script><p>$n=0,2$时左右都为零，显然成立。$n=1$时，按耦合系数展开，应该有</p>
+<script type="math/tex; mode=display">\begin{aligned}
+(\partial^2-m^2)&\Delta(x-y)=i\delta^4(x-y)\\
+(\partial^2-m^2)&\int\mathrm{id}^4z\ \Delta(x-z)\Delta(z-y)\Delta(z-z)=0\\
+(\partial^2-m^2)&\int\mathrm{id}^4z_1\mathrm{id}^4z_2\left[\Delta(x-z_1)\Delta(z_1-z_2)\Delta(z_2-y)\Delta^2(0)+\right.\\
+&\left.\frac16\Delta(x-z_1)\Delta^3(z_1-z_2)\Delta(z_2-y)+\frac12\Delta(x-z_1)\Delta(z_1-y)\Delta(z_1-z_2)^2\Delta(0)\right]\\
+&+\frac 16\int\mathrm{id}^4z\ \Delta^3(x-z)\Delta(z-y)=0
+\end{aligned}</script><p>第一项根据$\Delta(x)=\int\frac{-i\mathrm{id}^4k}{(2\pi)^4}\frac{e^{ikx}}{k^2+m^2-i\epsilon}$即可得到。第二项利用$\Delta(0)\equiv0$的重整化方案可证。第三项由以上分析化为</p>
+<script type="math/tex; mode=display">
+\int\mathrm{id}^4z_1\mathrm{id}^4z_2\ \frac16i\delta^4(x-z_1)\Delta^3(z_1-z_2)\Delta(z_2-y)+\frac16\int\cdots=0</script><p>因此也成立。更高阶的不再验证</p>
+<h4 id="例子：QED"><a href="#例子：QED" class="headerlink" title="例子：QED"></a>例子：QED</h4><script type="math/tex; mode=display">
+\mathcal L=-\bar\psi(\partial\!\!\!\backslash+m)\psi-\frac14 F_{\mu\nu}F^{\mu\nu}+ieA_\mu\bar\psi C^\mu\psi</script><p>因此</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\frac{\delta S}{\delta\psi_a(x)}=-\bar\psi_am+ieA_\mu\bar\psi_a C^\mu-\partial_\mu(\bar\psi_a C^\mu)=-[C^\mu(\partial_\mu-ieA_\mu)+m]\bar\psi_a(x)\\
+&\frac{\delta S}{\delta\bar\psi_a(x)}=-(\partial\!\!\!\backslash+m-ieA_\mu C^\mu)\psi_a(x)-[C^\mu(\partial_\mu-ieA_\mu)+m]\psi_a(x)\\
+&\frac{\delta S}{\delta A_\mu(x)}=ie\bar\psi C^\mu\psi-\partial_\nu F^{\mu\nu}(x)
+\end{aligned}</script><h3 id="Ward-Takahashi-恒等式"><a href="#Ward-Takahashi-恒等式" class="headerlink" title="Ward-Takahashi 恒等式"></a>Ward-Takahashi 恒等式</h3><h4 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h4><p>假设存在某个对称操作$\varphi(x)\rightarrow\varphi(x)+\delta\varphi(x)$，对应Nother流$j^\mu(x)=\delta\varphi_a(x)\frac{\partial\mathcal L}{\partial(\partial_\mu\varphi_a(x))}-K^\mu(x)$</p>
+<p>(1.1)左乘$\delta\varphi_a(x)$并求和得</p>
+<script type="math/tex; mode=display">
+-i\partial_\mu\left\langle Tj^\mu(x)\varphi_{a_1}(x_1)\cdots\varphi_{a_n}(x_n)\right\rangle+\sum_{j=1}^n\delta^4(x-x_j)\left\langle T\varphi_{a_1}(x_1)\cdots\delta\varphi_{a_j}(x_j)\cdots\varphi_{a_n}(x_n)\right\rangle=0\tag{2.1}</script><h4 id="QED中的应用"><a href="#QED中的应用" class="headerlink" title="QED中的应用"></a>QED中的应用</h4><p>U(1)对称性下</p>
+<script type="math/tex; mode=display">
+\psi(x)\rightarrow e^{-ie\epsilon}\psi(x),\bar\psi(x)\rightarrow e^{+ie\epsilon}\bar\psi(x)</script><p>所以</p>
+<script type="math/tex; mode=display">
+\delta\psi(x)=-ie\psi(x),\delta\bar\psi(x)=+ie\psi(x),j^\mu=\sum_a(-ie\psi_a)(\bar\psi_aC^\mu)=ie\bar\psi C^\mu\psi</script><p>$n=2$时</p>
+<script type="math/tex; mode=display">
+-i\partial_\mu\langle Tj^\mu(x)\psi_a(y)\bar\psi_b(z)\rangle+\delta^4(x-y)\langle T\delta\psi_a(y)\bar\psi_b(z)\rangle+\delta^4(x-z)\langle T\psi_a(y)\delta\bar\psi_b(z)\rangle=0</script><p>即为</p>
+<script type="math/tex; mode=display">
+-i\partial_\mu\langle Tj^\mu(x)\psi_a(y)\bar\psi_b(z)\rangle+ie\left[-\delta^4(x-y)+\delta^4(x-z)\right]\langle T\psi_a(y)\bar\psi_b(z)\rangle=0</script><p>第一项绘图为<br><img data-src="/images/jmu.png" alt="含有Nother流的图解"></p>
+<p>做Fourier变换</p>
+<script type="math/tex; mode=display">
+k_\mu\langle j^\mu(k)\psi_a(k_y)\bar\psi_b(k_z)\rangle-ie\langle\psi_a(k+k_y)\bar\psi_b(k_z)\rangle+ie\langle\psi_a(k_y)\bar\psi_b(k_z-k)\rangle=0</script><p>因此$k+k_y=k_z$，所以</p>
+<script type="math/tex; mode=display">
+(k_2-k_1)_\mu\langle j^\mu(k_2-k_1)\psi_a(k_1)\bar\psi_b(k_2)\rangle=ie\left[\langle\psi_1(k_2)\bar\psi_b(k_2)\rangle-\langle\psi_1(k_1)\bar\psi_b(k_1)\rangle\right]</script><p>左式为$(k_2-k_1)_\mu\mathbf S(k_2)\mathbf V^\mu(k_2,k_1)\mathbf S(k_1)$，右式为$ie\left[\mathbf S(k_2)-\mathbf S(k_1)\right]$，所以</p>
+<script type="math/tex; mode=display">
+(k_2-k_1)_\mu\mathbf V^\mu(k_2,k_1)=ie\left[\mathbf S(k_1)^{-1}-\mathbf S(k_2)^{-1}\right]</script><hr>
+<p>若$y=z$，则</p>
+<script type="math/tex; mode=display">
+-i\partial_\mu\langle T j^\mu(x)\psi_a(y)\bar\psi_b(y)\rangle=0\Rightarrow
+\partial_\mu\langle Tj^\mu(x)j^\nu(y)\rangle=0\Rightarrow
+k_\mu\Pi^{\mu\nu}(k)=0</script>]]></content>
       <categories>
         <category>QSP</category>
       </categories>
